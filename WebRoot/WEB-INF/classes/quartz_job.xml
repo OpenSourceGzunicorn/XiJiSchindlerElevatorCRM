@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quartz xmlns="http://www.opensymphony.com/quartz/JobSchedulingData"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<!-- job>
+		<job-detail>
+			<name>timeworktest</name>
+			<group>timeworktestzu</group>
+			<job-class>com.gzunicorn.common.task.TimeWorkTest</job-class>
+		</job-detail>
+		<trigger>
+			<cron>
+				<name>timeworktestWork</name>
+				<group>timeworktestzu</group>
+				<job-name>timeworktestTimeLog</job-name>
+				<job-group>timeworktestzu</job-group>
+				<cron-expression>0 0 1 * * ?</cron-expression>
+			</cron>
+		</trigger>
+	</job-->
+	<!-- job>
+	<job-detail>
+			<name>ElevatorSalesInfotime</name>
+			<group>ElevatorSalesInfozu</group>
+			<job-class>com.gzunicorn.common.task.ElevatorSalesInfotimework</job-class>
+		</job-detail>
+		<trigger>
+			<cron>
+				<name>ElevatorSalesInfotimeWork</name>
+				<group>ElevatorSalesInfozu</group>
+				<job-name>ElevatorSalesInfoTimeLog</job-name>
+				<job-group>ElevatorSalesInfozu</job-group>
+				<cron-expression>0 42 9 * * ?</cron-expression>
+			</cron>
+		</trigger>
+		</job-->
+</quartz>
+
+

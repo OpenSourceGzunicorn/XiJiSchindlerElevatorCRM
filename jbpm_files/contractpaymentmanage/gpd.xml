@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root-container name="contractpaymentmanage" width="839" height="700">
+  <node name="填写合同付款申请" x="316" y="47" width="165" height="36">
+    <edge>
+      <label x="-9" y="-10"/>
+    </edge>
+  </node>
+  <node name="保养单审核人审核" x="321" y="110" width="158" height="36">
+    <edge>
+      <label x="-61" y="-11"/>
+    </edge>
+    <edge>
+      <label x="43" y="-19"/>
+      <bendpoint w1="-263" h1="-1" w2="0" h2="-552"/>
+    </edge>
+  </node>
+  <node name="例行回访结果审核" x="320" y="179" width="157" height="36">
+    <edge>
+      <label x="-56" y="-9"/>
+    </edge>
+  </node>
+  <node name="热线管理人审核" x="319" y="248" width="155" height="36">
+    <edge>
+      <label x="-53" y="-12"/>
+    </edge>
+  </node>
+  <node name="旧件退回情况审核" x="318" y="319" width="156" height="36">
+    <edge>
+      <label x="-39" y="-10"/>
+    </edge>
+  </node>
+  <node name="分部长审核" x="332" y="393" width="132" height="36">
+    <edge>
+      <label x="-9" y="-11"/>
+    </edge>
+  </node>
+  <node name="是否有扣款" x="330" y="460" width="132" height="36">
+    <edge>
+      <label x="-4" y="-11"/>
+    </edge>
+    <edge>
+      <label x="-5" y="-26"/>
+      <bendpoint w1="-109" h1="0" w2="-110" h2="-155"/>
+      <bendpoint w1="-109" h1="138" w2="-109" h2="3"/>
+    </edge>
+  </node>
+  <node name="总部长审核" x="330" y="526" width="132" height="36">
+    <edge>
+      <label x="-8" y="-12"/>
+    </edge>
+    <edge>
+      <label x="-15" y="-4"/>
+      <bendpoint w1="112" h1="0" w2="110" h2="133"/>
+      <bendpoint w1="113" h1="-133" w2="111" h2="0"/>
+    </edge>
+  </node>
+  <node name="关闭流程" x="333" y="594" width="132" height="36">
+    <edge>
+      <label x="-9" y="-9"/>
+    </edge>
+  </node>
+  <node name="流程通过" x="334" y="663" width="132" height="36"/>
+  <node name="流程终止" x="71" y="661" width="132" height="36"/>
+</root-container>

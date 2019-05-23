@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root-container name="qualitycheckmanagement" width="839" height="581">
+  <node name="填写维保质量检查结果" x="322" y="50" width="167" height="36">
+    <edge>
+      <label x="-12" y="-13"/>
+    </edge>
+  </node>
+  <node name="督查组长审核" x="340" y="127" width="132" height="36">
+    <edge>
+      <label x="-10" y="-14"/>
+    </edge>
+    <edge>
+      <label x="5" y="-20"/>
+      <bendpoint w1="-77" h1="40" w2="187" h2="41"/>
+      <bendpoint w1="-263" h1="40" w2="1" h2="41"/>
+    </edge>
+    <edge>
+      <label x="-23" y="38"/>
+      <bendpoint w1="234" h1="0" w2="-4" h2="-419"/>
+    </edge>
+  </node>
+  <node name="是否合格" x="340" y="196" width="132" height="36">
+    <edge>
+      <label x="-27" y="-62"/>
+      <bendpoint w1="119" h1="1" w2="121" h2="-273"/>
+      <bendpoint w1="120" h1="345" w2="122" h2="-5"/>
+    </edge>
+    <edge>
+      <label x="-48" y="-13"/>
+    </edge>
+  </node>
+  <node name="维保经理审核" x="341" y="281" width="132" height="36">
+    <edge>
+      <label x="-46" y="-10"/>
+    </edge>
+  </node>
+  <node name="维保分部长审核" x="341" y="368" width="132" height="36">
+    <edge>
+      <label x="-42" y="-9"/>
+    </edge>
+  </node>
+  <node name="督查组长审核2" x="340" y="461" width="132" height="36">
+    <edge>
+      <label x="-9" y="-10"/>
+    </edge>
+  </node>
+  <node name="修改维保质量检查结果" x="59" y="126" width="166" height="36">
+    <edge>
+      <label x="-18" y="-19"/>
+    </edge>
+  </node>
+  <node name="流程通过" x="340" y="544" width="132" height="36"/>
+  <node name="流程终止" x="574" y="542" width="132" height="36"/>
+</root-container>

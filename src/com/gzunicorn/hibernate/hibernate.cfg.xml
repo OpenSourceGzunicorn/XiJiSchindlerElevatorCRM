@@ -1,0 +1,396 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<hibernate-configuration>
+
+	<session-factory>
+
+		<property name="connection.username">xjscrm</property>
+		<property name="connection.password">xjscrm</property>
+		<property name="connection.url">jdbc:jtds:sqlserver://192.168.1.56:1533/XJSCRM</property>
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+
+		<property name="show_sql">false</property>
+		<property name="format_sql">true</property>
+		<property name="hibernate.jdbc.batch_size">25</property>
+
+		<property name="dbcp.min_size">20</property>
+		<property name="dbcp.max_size">2000</property>
+		<property name="dbcp.timeout">36000</property>
+		<property name="dbcp.max_statements">1000</property>
+		<property name="dbcp.idle_test_period">300000</property>
+
+
+		<!-- mapping files -->
+		<mapping
+			resource="com/gzunicorn/hibernate/jbpmmanager/Jbpmnodeext.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/Viewmugstorage.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/jbpmmanager/Jbpmnodeextactors.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/jbpmmanager/Jbpmnodeexttarget.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/jbpmmanager/Jbpmdecisionjump.hbm.xml" />
+
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/Viewuseroperation.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/ViewLoginUserInfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/Viewuserallowflag.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/Viewcompanytype.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/Viewstorageref.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/Viewstoragetype.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/Viewduty.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/Viewallowflag.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/Viewroleallowflagy.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/Viewuserrolenode.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/Viewuserrolenodewrite.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/ViewUserDept.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/ViewClassUser.hbm.xml" />
+
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Userarearef.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Role.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Rolenode.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Module.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Modulenode.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Operationref.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Loginuser.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Storageid.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Company.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Workspacebaseproperty.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Wsroleconfig.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/Getnum.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/sysmanager/pulldown/Pulldown.hbm.xml" />
+
+		<mapping
+			resource="com/gzunicorn/hibernate/proshr/ProcessSetAuditDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/proshr/ProcessSetAuditMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/proshr/ProcessSetBranch.hbm.xml" />
+
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/Fileinfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/Class1.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/city/City.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/country/Country.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/province/Province.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/region/Region.hbm.xml" />
+
+		<!-- cb start -->
+		<mapping
+			resource="com/gzunicorn/hibernate/mobileofficeplatform/faultrepairentrymaster/FaultRepairEntryMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/servicingcontractquotedetail/ServicingContractQuoteDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/servicingcontractquotemaster/ServicingContractQuoteMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/servicingcontractquotematerialsdetail/ServicingContractQuoteMaterialsDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/servicingcontractquoteotherdetail/ServicingContractQuoteOtherDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/servicingcontractquoteprocess/ServicingContractQuoteProcess.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/ContractFileinfo/ContractFileinfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/servicingcontractdetail/ServicingContractDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/servicingcontractmaster/ServicingContractMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/hotlinemanagement/calloutmaster/CalloutMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/hotlinemanagement/calloutprocess/CalloutProcess.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/hotlinemanagement/calloutsms/CalloutSms.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/hotlinemanagement/smshistory/SmsHistory.hbm.xml" />
+
+		<!-- cb end -->
+
+		<!-- hqs -->
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/customer/Customer.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/principal/Principal.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/elevatorsales/ElevatorSalesInfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/personnelmanage/PersonnelManageMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/jobhistory/JobHistory.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/traininghistory/TrainingHistory.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/certificateexam/CertificateExam.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/maintcontractquotedetail/MaintContractQuoteDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/maintcontractquotemaster/MaintContractQuoteMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/maintcontractquoteprocess/MaintContractQuoteProcess.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/maintcontractdelaydetail/MaintContractDelayDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/maintcontractdelaymaster/MaintContractDelayMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/maintcontractdelayprocess/MaintContractDelayProcess.hbm.xml" />
+		<!-- hqs -->
+
+		<!-- cgw start -->
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/hotlinefaulttype/HotlineFaultType.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/hotlinefaultclassification/HotlineFaultClassification.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/hotlinemotherboardtype/HotlineMotherboardType.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/handoverelevatorcheckitem/HandoverElevatorCheckItem.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/elevatorarchivesinfo/ElevatorArchivesInfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/qualitycheckmanagement/QualityCheckManagement.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/markingitemscomply/MarkingItemsComply.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/shouldexamineitemscomply/ShouldExamineItemsComply.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/termsecurityriskscomply/TermSecurityRisksComply.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/hotlinemanagement/advisorycomplaintsmanage/AdvisoryComplaintsManage.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/entrustcontractdetail/EntrustContractDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/entrustcontractmaster/EntrustContractMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/elevatortransfercaseprocess/ElevatorTransferCaseProcess.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/elevatortransfercaseregister/ElevatorTransferCaseRegister.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/handoverelevatorcheckitemregister/HandoverElevatorCheckItemRegister.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/costmanagement/freefittingcostsmanage/FreeFittingCostsManage.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/costmanagement/maintstationreimbursement/MaintStationReimbursement.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/costmanagement/projectfittingcosts/ProjectFittingCosts.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/costmanagement/projectreimbursement/ProjectReimbursement.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/costmanagement/reimbursexpensemanag/ReimbursExpenseManag.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/costmanagement/salarybonusdetail/SalaryBonusDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/costmanagement/salarybonusmanage/SalaryBonusManage.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contractpayment/contractinvoicemanage/ContractInvoiceManage.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contractpayment/contractparagraphmanage/ContractParagraphManage.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contractpayment/procontractarfeemaster/ProContractArfeeMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/viewmanager/compact_view/CompactView.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/qualitycheckprocess/QualityCheckProcess.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/markingscoreregister/MarkingScoreRegister.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/markingscoreregisterfileinfo/MarkingScoreRegisterFileinfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/lostelevatorreport/LostElevatorReport.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/markingscoreregisterdetail/MarkingScoreRegisterDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contractpaymentmanage/contractpaymentprocess/ContractPaymentProcess.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/returningmaintaindetail/ReturningMaintainDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/lostelevatorregistermaster/LostElevatorRegisterMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/lostelevatorregisterdetail/LostElevatorRegisterDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/lostelevatorregisterlssue/LostElevatorRegisterLssue.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/entrustcontractquotedetail/EntrustContractQuoteDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/entrustcontractquotemaster/EntrustContractQuoteMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/entrustcontractquoteprocess/EntrustContractQuoteProcess.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/outsourcecontractquotedetail/OutsourceContractQuoteDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/outsourcecontractquotemaster/OutsourceContractQuoteMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/outsourcecontractquoteprocess/OutsourceContractQuoteProcess.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/effectiveelevatormaintain/EffectiveElevatorMaintain.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/effectiveelevatorregistermaster/EffectiveElevatorRegisterMaster.hbm.xml" />
+
+		<!-- cgw end -->
+
+		<!-- lyg start -->
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/markingitems/MarkingItems.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/termsecurityrisks/TermSecurityRisks.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/shouldexamineitems/ShouldExamineItems.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/officecomplaintcategory/OfficeComplaintCategory.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/officecontracttypes/OfficeContractTypes.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/officecauseanalysis/OfficeCauseAnalysis.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/maintenanceworkinghours/MaintenanceWorkingHours.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/returningmaintain/ReturningMaintain.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/custreturnregistermaster/CustReturnRegisterMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/custreturnregisterlssue/CustReturnRegisterLssue.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/custreturnregisterdetail/CustReturnRegisterDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/maintcontractmaster/MaintContractMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/maintcontractdetail/MaintContractDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/customervisitfeedback/CustomerVisitFeedback.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/customervisitplandetail/CustomerVisitPlanDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/customervisitplanmaster/CustomerVisitPlanMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/mobileofficeplatform/technologysupport/TechnologySupport.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/mobileofficeplatform/technologysupportfiles/TechnologySupportFiles.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/mobileofficeplatform/accessoriesrequisition/AccessoriesRequisition.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/mobileofficeplatform/logmanagement/LogManagement.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/maintenanceworkplanmanager/maintenanceworkplanmaster/MaintenanceWorkPlanMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/maintenanceworkplanmanager/maintenanceworkplandetail/MaintenanceWorkPlanDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/maintenanceworkplanmanager/maintenanceworkplanfileinfo/MaintenanceWorkPlanFileinfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contractpaymentmanage/contractpayablesmaster/ContractPayablesMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contractpaymentmanage/contractpaymentmanage/ContractPaymentManage.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contractpaymentmanage/contractticketmanage/ContractTicketManage.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/markingscore/MarkingScore.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/markingscoredetail/MarkingScoreDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/handoverelevatorcheckfileinfo/HandoverElevatorCheckFileinfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/handoverelevatorspecialclaim/HandoverElevatorSpecialClaim.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/handoverelevatorspecialregister/HandoverElevatorSpecialRegister.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/costmanagement/noreimbursement/NoReimbursement.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/costmanagement/maintstationreimbursementdetail/MaintStationReimbursementDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/costmanagement/maintdivisionreimbursementdetail/MaintDivisionReimbursementDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/costmanagement/maintdivisionreimbursement/MaintDivisionReimbursement.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/customervisitdispatching/CustomerVisitDispatching.hbm.xml" />
+
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/outsourcecontractmaster/OutsourceContractMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/outsourcecontractdetail/OutsourceContractDetail.hbm.xml" />
+
+
+		<!-- lyg end -->
+
+		<!-- lsw start -->
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/receivablesname/ReceivablesName.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/invoicetype/InvoiceType.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/elevatorcoordinatelocation/ElevatorCoordinateLocation.hbm.xml" />
+
+		<!-- lsw end -->
+
+		<!-- hyc start -->
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/LostElevatorMaintain/LostElevatorMaintain.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/custregistervisitplan/LostElevatorMaintainDetail/LostElevatorMaintainDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/wbfileinfo/Wbfileinfo.hbm.xml" />
+		<!-- hyc end -->
+		<mapping
+			resource="com/gzunicorn/hibernate/maintcontractother/MaintContractOther.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/CalloutFileinfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/MaintainProjectInfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/maintainprojectinfowork/MaintainProjectInfoWork.hbm.xml" />
+
+		<mapping
+			resource="com/gzunicorn/hibernate/basedata/toolreceive/ToolReceive.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/infomanager/elevatortransfercasebhtype/ElevatorTransferCaseBhType.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contracttransfer/ContractTransferMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contracttransfer/ContractTransferFileinfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contracttransfer/ContractTransferFeedback.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contracttransfer/ContractTransferFeedbackFileinfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contracttransfer/ContractTransferFileTypes.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contracttransfer/ContractTransferDebugFileinfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/contracttransfer/ContractTransferFeedbackType.hbm.xml" />
+
+	</session-factory>
+
+</hibernate-configuration>

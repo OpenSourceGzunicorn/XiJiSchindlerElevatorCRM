@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Sun Jan 18 15:21:59 CST 2009                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.jbpmmanager">
+
+    <class name="Jbpmdecisionjump" table="Jbpm_DecisionJump">
+        <id name="jnl" column="jnl" type="integer">
+            <generator class="native"/>
+        </id>
+ 		<property name="nodeid" column="NodeId" type="long"  not-null="true" />
+        <property name="flag" column="Flag" type="integer"  not-null="true" />
+        <property name="selpath" column="SelPath" type="string"  not-null="true" />
+        <property name="minqty" column="MinQty" type="double"  not-null="true" />
+        <property name="maxqty" column="MaxQty" type="double"  not-null="true" />
+        <property name="tranpath" column="TranPath" type="string"  not-null="true" />
+        <property name="ext1" column="Ext1" type="string" />
+        <property name="ext2" column="Ext2" type="string" />
+        <property name="ext3" column="Ext3" type="string" />
+        <property name="ext4" column="Ext4" type="string" />
+        <property name="ext5" column="Ext5" type="string" />
+        <property name="ext6" column="Ext6" type="double" />
+        <property name="ext7" column="Ext7" type="double" />
+        <property name="ext8" column="Ext8" type="double" />
+        <property name="ext9" column="Ext9" type="double" />
+        <property name="ext10" column="Ext10" type="double" />
+ 
+        
+    </class>
+    
+</hibernate-mapping>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  xmlns=""  name="entrustcontractquotemaster">
+
+
+	<start-state name="填写维保委托报价申请">
+		<task>
+			<assignment class="com.gzunicorn.workflow.assignment.ApplyActorsAssignment"></assignment>
+		</task>
+		<transition to="维保分部长审核" name="提交"></transition>
+	</start-state>
+
+
+	<task-node name="修改维保委托报价申请">
+		<task name="修改维保委托报价申请">
+			<assignment class="com.gzunicorn.workflow.assignment.ApplyActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApplyTacheEventHandler" class="com.gzunicorn.workflow.event.ApplyTacheEventHandler"></action>
+		</event>
+		<transition to="维保分部长审核" name="提交"></transition>
+		<transition to="流程终止" name="终止流程"></transition>
+	</task-node>
+
+	<task-node name="维保分部长审核">
+		<task name="维保分部长审核">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="加价率" name="同意"></transition>
+		<transition to="修改维保委托报价申请" name="不同意"></transition>
+	</task-node>
+
+	<task-node name="维保总部长审核">
+		<task name="维保总部长审核">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="关闭流程" name="同意"></transition>
+		<transition to="修改维保委托报价申请" name="不同意"></transition>
+	</task-node>
+
+	<decision name="加价率">
+		<handler class="com.gzunicorn.workflow.decision.AppointDecisionHandler"></handler>
+		<transition to="维保总部长审核" name="10%以上"></transition>
+		<transition to="关闭流程" name="10%及以下"></transition>
+	</decision>
+
+	<task-node name="关闭流程">
+		<task name="关闭流程">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="流程通过" name="关闭"></transition>
+	</task-node>
+
+
+	<end-state name="流程通过">
+		<event type="node-enter">
+			<action name="EndPassTacheEventHandler" class="com.gzunicorn.workflow.event.EndPassTacheEventHandler"></action>
+		</event>
+	</end-state>
+
+	<end-state name="流程终止">
+		<event type="node-enter">
+			<action class="com.gzunicorn.workflow.event.EndNoPassTacheEventHandler" name="EndNoPassTacheEventHandler"></action>
+		</event>
+	</end-state>
+
+
+</process-definition>

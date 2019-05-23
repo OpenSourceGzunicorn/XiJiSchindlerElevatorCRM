@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Thu Oct 30 10:17:56 CST 2008                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.jbpmmanager">
+
+    <class name="Jbpmtokenflow" table="JBPMTokenFlow">
+        <id name="jnl" column="Jnl" type="long">
+            <generator class="native"/>
+        </id>
+ 
+        <property name="taskinstancetoken" column="TaskInstanceToken" type="long"  not-null="true" />
+        <property name="flowver" column="FlowVer" type="string"  not-null="true" />
+        <property name="r1" column="R1" type="long" />
+        <property name="r2" column="R2" type="long" />
+        <property name="r3" column="R3" type="string" />
+        <property name="r4" column="R4" type="string" />
+        <property name="r5" column="R5" type="string" />
+    </class>
+    
+</hibernate-mapping>

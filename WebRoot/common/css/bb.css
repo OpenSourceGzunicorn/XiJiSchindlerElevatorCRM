@@ -1,0 +1,126 @@
+body {
+	font-family: Arial, Helvetica, sans-serif, "宋体";
+	font-size:9pt;
+	color: #000000;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #F4F2F5;
+}
+.table { BORDER-BOTTOM: #000 0px solid; BORDER-LEFT: #000 0px solid;BORDER-top: #000 0px solid; BORDER-right: #000 0px solid; text-align:center;}
+.td{background-color:#efefef;}
+.td_1{background-color:#F0F8FF;}
+.td_3{text-align:right; background-color:#ADC6E7;line-height:20px; width:150px;}
+.td_3_1{text-align:center; background-color:#ADC6E7;line-height:20px; width:150px;}
+.textarea{width:120px; border:1px #666 solid;}
+.text{color:#ff0000;}
+.tab-on {
+     cursor: hand;
+     width: 150px;
+	 text-align:center;
+	  background-color:#B8C4F4;
+	  line-height:22px; 
+	   color:#000000;
+	   background-image:url(/XJSCRM/common/images/line_bg.gif);
+}
+
+.tab-off {
+     background-color: #D1D9FC;
+     cursor: hand;
+     width: 150px;
+	 text-align:center;
+	 line-height:22px;
+	 color:#000000; 
+	 background-image:url(/XJSCRM/common/images/line_bg_1.gif);
+}
+.botton{font-size:9pt; font-family:Arial,"宋体"; padding-top:2px; width:75px;}
+
+
+.tab-on {
+     cursor: hand;
+     width: 120px;
+	 text-align:center;
+	  background-color:#B8C4F4;
+	  line-height:22px; 
+	   color:#000000;
+	   background-image:url(/XJSCRM/common/images/line_bg.gif);
+}
+
+.tab-off {
+     background-color: #D1D9FC;
+     cursor: hand;
+     width: 120px;
+	 text-align:center;
+	 line-height:22px;
+	 color:#000000; 
+	 background-image:url(/XJSCRM/common/images/line_bg_1.gif);
+}
+.textarea_01{border:1px #666 solid; width:95%;}
+.textarea_02{border:1px #666 solid; width:98%;}
+.title_01{ font-weight:bold; color:#9E0B0E;}
+
+.title_02{ 
+	font-weight:bold;
+	color:#000;
+	font-size:12pt;
+	text-align:center;
+	}
+	
+.td_01{background-color:#F0F8FF; text-align:center;}
+
+
+/***按钮样式*/
+.default_button {
+	border:1px #939EB2 solid;
+	line-height:18px;
+	height: 20px;
+	width:75px;
+	background:#CBDAF7;
+	color:#000000;
+	font-size: 9pt;
+    font-family:"宋体";
+} 
+/**
+用于动态添加表格时，但不可修改的文本框样式
+*/
+
+.DyTableInput_Readonly
+{
+	border:0px;
+	height:20px;
+	font-family:"宋体";
+	width:80px;
+	background:#F0F8FF;
+}
+.DyTableInput_Readonlyprice
+{
+	border:0px;
+	height:20px;
+	font-family:"宋体";
+	width:80px;
+	background:#FFFFFF;
+}
+/**
+用于动态添加表格时，但可修改的文本框样式
+*/
+
+.DyTableInput_edit
+{
+	border:1px solid #666666;
+	height:20px;
+	font-family:"宋体";
+	width:85px;
+	background:#FFFFFF;
+}
+
+
+.wordtdapply {
+	font-size: 12px;
+	text-align:center;
+	padding-top: 6px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	background-color: #b8c4f4;
+}

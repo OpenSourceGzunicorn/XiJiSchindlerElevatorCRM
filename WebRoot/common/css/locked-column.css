@@ -1,0 +1,34 @@
+DIV#tbl-container {
+	OVERFLOW:auto; WIDTH: 100%; scrollbar-face-color: #DEE3E7;
+scrollbar-highlight-color: #FFFFFF;
+scrollbar-shadow-color: #DEE3E7;
+scrollbar-3dlight-color: #D1D7DC;
+scrollbar-arrow-color:  #006699;
+scrollbar-track-color: #EFEFEF;
+scrollbar-darkshadow-color: #98AAB1;
+}
+.TABLE {
+	TABLE-LAYOUT:fixed;
+}
+DIV#tbl-container TABLE TH {
+	WIDTH: 100%;
+}
+THEAD TH {
+	FONT-SIZE: 12px; POSITION: relative; TEXT-ALIGN: center;
+}
+THEAD TH.locked {
+	 FONT-SIZE: 12px; POSITION: relative;  TEXT-ALIGN: center;
+}
+THEAD TH {
+	Z-INDEX: 20; TOP: expression(document.getElementById("tbl-container").scrollTop-0); border-right:1px #dfe8f6 solid; border-top:1px #dfe8f6 solid; border-left:0px #dfe8f6 solid;
+}
+THEAD TH.locked {
+	Z-INDEX: 30;
+}
+TD.locked {
+	Z-INDEX: 10; LEFT: expression(parentNode.parentNode.parentNode.parentNode.scrollLeft); POSITION: relative;  border-top:1px #dfe8f6 solid; border-left:0px #dfe8f6 solid;
+}
+TH.locked {
+	Z-INDEX: 10; LEFT: expression(parentNode.parentNode.parentNode.parentNode.scrollLeft); POSITION: relative; 
+}
+

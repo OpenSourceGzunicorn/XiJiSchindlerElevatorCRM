@@ -1,0 +1,123 @@
+/*1-31天正常状态*/
+.DayN
+{
+    font-family: Arial;
+    font-size: 11px;
+    background-color: #CFD8F2;
+    color: rgb(0,0,0);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid #CFD8F2;
+}
+/*1-31天鼠标放上去状态*/
+.DayU
+{
+    font-family: Arial;
+    font-size: 11px;
+    background-color: #55A7F3;
+    color: rgb(255,255,255);
+    font-weight:bold;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px outset #CCCCCC;
+}
+/*1-31天被选中状态*/
+.DayD
+{
+    font-family: Arial;
+    font-size: 11px;
+    background-color: white;
+    color: rgb(0,0,0);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px inset #CCCCCC;
+}
+/*一到五*/
+.WeekDay
+{
+    font-family: Arial;
+    font-size: 11px;
+    background-color: #0745BE;
+    color: rgb(255,255,255);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border-left: 1px solid rgb(255,255,255);
+    border-right: 1px solid rgb(255,255,255);
+    border-top: 1px solid rgb(255,255,255);
+}
+/*日、六*/
+.WeekEnd
+{
+    font-family: Arial;
+    font-size: 11px;
+    background-color: #0759FC;
+    color: rgb(255,255,255);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border-left: 1px solid rgb(255,255,255);
+    border-right: 1px solid rgb(255,255,255);
+    border-top: 1px solid rgb(255,255,255)
+}
+/*前后箭头正常状态*/
+.ArrowN
+{
+    font-family: Arial;
+    font-size: 13px;
+    background-color: #4D6CC6;
+    color: rgb(255,255,255);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px solid #CCCCCC;
+}
+/*前后箭头鼠标放上去状态*/
+.ArrowU
+{
+    font-family: Arial;
+    font-size: 13px;
+    background-color: #55A7F3;
+    color: rgb(255,255,255);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px outset #CCCCCC;
+}
+/*前后箭头被选中状态*/
+.ArrowD
+{
+    font-family: Arial;
+    font-size: 13px;
+    background-color: #55A7F3;
+    color: rgb(255,255,255);
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border: 2px inset #CCCCCC;
+}
+/*年、月Select*/
+.DateSelect
+{
+    position:relative;
+    font-family: Arial;
+    font-size: 11px;
+    background-color: #CFD8F2;
+    font-weight: bold;
+    text-align: right
+}
+/*整个Calendar大Table*/
+.cCalendarTable
+{
+    font-size: 11px;
+    cursor: hand;
+    background-color: #CFD8F2;
+    border: 1px solid #6A8DD7;
+}
+/*年、月Select所在Td*/
+.cSelectUtil
+{
+    background-color: #CFD8F2;
+}

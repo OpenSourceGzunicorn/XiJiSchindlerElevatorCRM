@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root-container name="entrustcontractquotemaster" width="839" height="407">
+  <node name="填写维保委托报价申请" x="379" y="15" width="167" height="36">
+    <edge>
+      <label x="-10" y="-8"/>
+    </edge>
+  </node>
+  <node name="修改维保委托报价申请" x="143" y="88" width="173" height="36">
+    <edge>
+      <label x="-17" y="-13"/>
+    </edge>
+    <edge>
+      <label x="5" y="-10"/>
+    </edge>
+  </node>
+  <node name="维保分部长审核" x="399" y="88" width="132" height="36">
+    <edge>
+      <label x="-10" y="-12"/>
+    </edge>
+    <edge>
+      <label x="-14" y="-16"/>
+      <bendpoint w1="-102" h1="42" w2="134" h2="42"/>
+    </edge>
+  </node>
+  <node name="维保总部长审核" x="400" y="227" width="132" height="36">
+    <edge>
+      <label x="-9" y="-11"/>
+    </edge>
+    <edge>
+      <label x="-9" y="-16"/>
+      <bendpoint w1="-107" h1="1" w2="131" h2="223"/>
+    </edge>
+  </node>
+  <node name="加价率" x="401" y="155" width="132" height="36">
+    <edge>
+      <label x="-22" y="-9"/>
+    </edge>
+    <edge>
+      <label x="-22" y="-45"/>
+      <bendpoint w1="96" h1="-1" w2="95" h2="-150"/>
+      <bendpoint w1="97" h1="145" w2="95" h2="-2"/>
+    </edge>
+  </node>
+  <node name="流程通过" x="403" y="370" width="132" height="36"/>
+  <node name="流程终止" x="162" y="370" width="132" height="36"/>
+  <node name="关闭流程" x="402" y="302" width="132" height="36">
+    <edge>
+      <label x="-8" y="-9"/>
+    </edge>
+  </node>
+</root-container>

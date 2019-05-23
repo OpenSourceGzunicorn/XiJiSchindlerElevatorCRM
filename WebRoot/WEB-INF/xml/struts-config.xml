@@ -1,0 +1,1188 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+           "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<!-- This is the Struts configuration file for the example application, using 
+	the proposed new syntax. -->
+<struts-config>
+	<!--========== Data Source Configuration =============================== -->
+	<data-sources>		 
+	</data-sources>
+
+	<!--========== Form Bean Definitions =================================== -->
+	<form-beans>
+	
+		<form-bean name="serveTableForm" type="com.zubarev.htmltable.action.ServeTableForm" />
+		<form-bean name="logonForm" type="com.gzunicorn.struts.form.LogonForm" />
+
+		<form-bean name="nullForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="headerId" type="java.lang.String" />
+			<form-property name="deletedIds" type="java.lang.String" />
+			<form-property name="userIds" type="java.lang.String[]" />
+		</form-bean>
+		<form-bean name="roleForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="rolename" type="java.lang.String" />
+			<form-property name="enabledflag" type="java.lang.String" />
+			<form-property name="moduleid" type="java.lang.String" />
+			<form-property name="allowflag" type="java.lang.String" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="rem1" type="java.lang.String" />
+			<form-property name="roleid" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="loginuserForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="passwd" type="java.lang.String" />
+			<form-property name="ispasswd" type="java.lang.String" />
+			<form-property name="userid" type="java.lang.String" />
+			<form-property name="class1id" type="java.lang.String" />
+			<form-property name="enabledflag" type="java.lang.String" />
+			<form-property name="rem1" type="java.lang.String" />
+			<form-property name="grcid" type="java.lang.String" />
+			<form-property name="username" type="java.lang.String" />
+			<form-property name="roleid" type="java.lang.String" />
+			<form-property name="storageid" type="java.lang.String" />
+			<form-property name="dutyid" type="java.lang.String" />
+			<form-property name="operref" type="java.lang.String" />
+			<form-property name="phone" type="java.lang.String" />
+			<form-property name="fax" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+			<form-property name="idcardno" type="java.lang.String" />
+			<form-property name="phoneimei" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="isreturn" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="companyForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="comid" type="java.lang.String" />
+			<form-property name="comname" type="java.lang.String" />
+			<form-property name="comfullname" type="java.lang.String" />
+			<form-property name="comtype" type="java.lang.String" />
+			<form-property name="comtel" type="java.lang.String" />
+			<form-property name="linkman" type="java.lang.String" />
+			<form-property name="linkmantel" type="java.lang.String" />
+			<form-property name="fax" type="java.lang.String" />
+			<form-property name="artperson" type="java.lang.String" />
+			<form-property name="bank" type="java.lang.String" />
+			<form-property name="account" type="java.lang.String" />
+			<form-property name="address" type="java.lang.String" />
+			<form-property name="enabledflag" type="java.lang.String" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="storageidForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="storageid" type="java.lang.String" />
+			<form-property name="storagename" type="java.lang.String" />
+			<form-property name="comid" type="java.lang.String" />
+			<form-property name="parentstorageid" type="java.lang.String" />
+			<form-property name="storagehead" type="java.lang.String" />
+			<form-property name="storagetype" type="java.lang.String" />
+			<form-property name="phone" type="java.lang.String" />
+			<form-property name="fax" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+			<form-property name="enabledflag" type="java.lang.String" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="taskExamplesSetForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="id_" type="java.lang.Integer" />
+			<form-property name="class_" type="java.lang.String" />
+			<form-property name="name_" type="java.lang.String" />
+			<form-property name="actorid_" type="java.lang.String" />
+			<form-property name="task_" type="java.lang.Integer" />
+			<form-property name="token_" type="java.lang.Integer" />
+			<form-property name="isopen_" type="java.lang.Integer" />
+			<form-property name="issuspended_" type="java.lang.Integer" />
+			<form-property name="pooledactor_" type="java.lang.String[]" />
+			<form-property name="actorid_0" type="java.lang.String[]" />
+
+			<form-property name="taskid" type="java.lang.String" />
+			<form-property name="taskname" type="java.lang.String" />
+			<form-property name="userid" type="java.lang.String" />
+			<form-property name="username" type="java.lang.String" />
+			<form-property name="userid2" type="java.lang.String" />
+			<form-property name="username2" type="java.lang.String" />
+
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="issub" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="flowForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="processdefineid" type="java.lang.Long" />
+			<form-property name="processdefinename" type="java.lang.String" />
+			<form-property name="processdefinealiasname" type="java.lang.String" />
+			<form-property name="version" type="java.lang.Integer" />
+			<form-property name="jump" type="java.lang.String" />
+
+			<form-property name="nodeid" type="java.lang.Long[]" />
+			<form-property name="nodeclass" type="java.lang.String[]" />
+			<form-property name="nodename" type="java.lang.String[]" />
+			<form-property name="des" type="java.lang.String[]" />
+			<form-property name="orgfilter" type="java.lang.Integer[]" />
+			<form-property name="indfilter" type="java.lang.Integer[]" />
+			<form-property name="areafilter" type="java.lang.Integer[]" />
+			<form-property name="jumpflag" type="java.lang.Integer[]" />
+			<form-property name="rem1" type="java.lang.String[]" />
+			<form-property name="ext1" type="java.lang.String[]" />
+			<form-property name="ext2" type="java.lang.String[]" />
+			<form-property name="ext3" type="java.lang.String[]" />
+			<form-property name="ext4" type="java.lang.String[]" />
+			<form-property name="ext5" type="java.lang.String[]" />
+
+			<form-property name="decnodeid" type="java.lang.Long[]" />
+			<form-property name="decflag" type="java.lang.Integer[]" />
+			<form-property name="decselpath" type="java.lang.String[]" />
+			<form-property name="decminqty" type="java.lang.Double[]" />
+			<form-property name="decmaxqty" type="java.lang.Double[]" />
+			<form-property name="dectranpath" type="java.lang.String[]" />
+			<form-property name="decext1" type="java.lang.String[]" />
+			<form-property name="decext2" type="java.lang.String[]" />
+			<form-property name="decext3" type="java.lang.String[]" />
+			<form-property name="decext4" type="java.lang.String[]" />
+			<form-property name="decext5" type="java.lang.String[]" />
+			<form-property name="decext6" type="java.lang.Double[]" />
+			<form-property name="decext7" type="java.lang.Double[]" />
+			<form-property name="decext8" type="java.lang.Double[]" />
+			<form-property name="decext9" type="java.lang.Double[]" />
+			<form-property name="decext10" type="java.lang.Double[]" />
+
+			<form-property name="actnodeid" type="java.lang.Long[]" />
+			<form-property name="actactors" type="java.lang.String[]" />
+			<form-property name="acttypeid" type="java.lang.Integer[]" />
+			<form-property name="acttableid" type="java.lang.Integer[]" />
+			<form-property name="actext1" type="java.lang.String[]" />
+			<form-property name="actext2" type="java.lang.String[]" />
+			<form-property name="actext3" type="java.lang.String[]" />
+			<form-property name="actext4" type="java.lang.String[]" />
+			<form-property name="actext5" type="java.lang.String[]" />
+
+			<form-property name="tarnodeid" type="java.lang.Long[]" />
+			<form-property name="taractionname" type="java.lang.String[]" />
+			<form-property name="tardes" type="java.lang.String[]" />
+			<form-property name="taranabledflag" type="java.lang.String[]" />
+			<form-property name="tarurl1" type="java.lang.String[]" />
+			<form-property name="tarparam1" type="java.lang.String[]" />
+			<form-property name="tartarget1" type="java.lang.String[]" />
+			<form-property name="tarurl2" type="java.lang.String[]" />
+			<form-property name="tarparam2" type="java.lang.String[]" />
+			<form-property name="tartarget2" type="java.lang.String[]" />
+			<form-property name="tarurl3" type="java.lang.String[]" />
+			<form-property name="tarparam3" type="java.lang.String[]" />
+			<form-property name="tartarget3" type="java.lang.String[]" />
+			<form-property name="tarext1" type="java.lang.String[]" />
+			<form-property name="tarext2" type="java.lang.String[]" />
+			<form-property name="tarext3" type="java.lang.String[]" />
+			<form-property name="tarext4" type="java.lang.String[]" />
+			<form-property name="tarext5" type="java.lang.String[]" />
+
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="isreturn" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="workSpaceBaseFitForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="wsid" type="java.lang.String" />
+			<form-property name="wskey" type="java.lang.String" />
+			<form-property name="title" type="java.lang.String" />
+			<form-property name="link" type="java.lang.String" />
+			<form-property name="tip" type="java.lang.String" />
+			<form-property name="divid" type="java.lang.String" />
+			<form-property name="jsfuname" type="java.lang.String" />
+			<form-property name="enabledflag" type="java.lang.String" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="numno" type="java.lang.Integer" />
+		</form-bean>
+		<form-bean name="WorkSpaceRoleConfigForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="rolename" type="java.lang.String" />
+			<form-property name="enabledflag" type="java.lang.String" />
+			<form-property name="moduleid" type="java.lang.String" />
+			<form-property name="wsid" type="java.lang.String[]" />
+			<form-property name="title" type="java.lang.String[]" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="rem1" type="java.lang.String" />
+			<form-property name="roleid" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="changePasswordForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="userid" type="java.lang.String" />
+			<form-property name="username" type="java.lang.String" />
+			<form-property name="passwd" type="java.lang.String" />
+			<form-property name="oldpasswd" type="java.lang.String" />
+			<form-property name="repeatpasswd" type="java.lang.String" />
+		</form-bean>
+    	<form-bean name="countryForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="countryId" type="java.lang.String" />
+			<form-property name="countryName" type="java.lang.String" />
+			<form-property name="enabledflag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="provinceForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="provinceId" type="java.lang.String" />
+			<form-property name="provinceName" type="java.lang.String" />
+			<form-property name="enabledflag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="countryId" type="java.lang.String" />
+			<form-property name="countriesName" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="cityForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="cityId" type="java.lang.String" />
+			<form-property name="cityName" type="java.lang.String" />
+			<form-property name="enabledflag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="provinceId" type="java.lang.String" />
+			<form-property name="provincesName" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="regionForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="regionId" type="java.lang.String" />
+			<form-property name="regionName" type="java.lang.String" />
+			<form-property name="enabledflag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="cityId" type="java.lang.String" />
+			<form-property name="citiesName" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="pulldownForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="pullid" type="java.lang.String"/>
+			<form-property name="typeflag" type="java.lang.String"/>
+			<form-property name="pullname" type="java.lang.String"/>
+			<form-property name="orderby" type="java.lang.Integer"/>
+			<form-property name="enabledflag" type="java.lang.String"/>
+			<form-property name="pullrem" type="java.lang.String"/>
+			<form-property name="comid" type="java.lang.String"/>
+			<form-property name="storageid" type="java.lang.String"/>
+			<form-property name="r1" type="java.lang.String"/>
+			<form-property name="r2" type="java.lang.String"/>
+			<form-property name="r3" type="java.lang.String"/>
+			<form-property name="r4" type="java.lang.String"/>
+			<form-property name="r5" type="java.lang.String"/>
+			<form-property name="r6" type="java.lang.String"/>
+			
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+		</form-bean>
+		<form-bean name="class1Form"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="class1id" type="java.lang.String"></form-property>
+			<form-property name="class1name" type="java.lang.String"></form-property>
+			<form-property name="levelid" type="java.lang.Integer"></form-property>
+			<form-property name="rem1" type="java.lang.String"></form-property>
+			<form-property name="enabledflag" type="java.lang.String"></form-property>
+			<form-property name="r1" type="java.lang.String"></form-property>
+			
+			<!--for add data -->
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+		</form-bean>
+		<!-- lzh start -->
+			<form-bean name="MaintManagerFollowForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="class1id" type="java.lang.String"></form-property>
+			<form-property name="class1name" type="java.lang.String"></form-property>
+			<form-property name="id" type="java.lang.String"></form-property>
+			<form-property name="ids" type="java.lang.String"></form-property>
+			<form-property name="isreturn" type="java.lang.String"></form-property>
+		</form-bean>
+		
+		
+		<form-bean name="MaintFMinisterFollowForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="class1id" type="java.lang.String"></form-property>
+			<form-property name="class1name" type="java.lang.String"></form-property>
+				<form-property name="id" type="java.lang.String"></form-property>
+			<form-property name="ids" type="java.lang.String"></form-property>
+			<form-property name="isreturn" type="java.lang.String"></form-property>
+		</form-bean>
+		
+		
+		<form-bean name="MaintZMinisterFollowForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="class1id" type="java.lang.String"></form-property>
+			<form-property name="class1name" type="java.lang.String"></form-property>
+				<form-property name="id" type="java.lang.String"></form-property>
+			<form-property name="ids" type="java.lang.String"></form-property>
+			<form-property name="isreturn" type="java.lang.String"></form-property>
+		</form-bean>
+		
+				<form-bean name="loginuserauditForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="passwd" type="java.lang.String" />
+			<form-property name="ispasswd" type="java.lang.String" />
+			<form-property name="userid" type="java.lang.String" />
+			<form-property name="class1id" type="java.lang.String" />
+			<form-property name="enabledflag" type="java.lang.String" />
+			<form-property name="rem1" type="java.lang.String" />
+			<form-property name="grcid" type="java.lang.String" />
+			<form-property name="username" type="java.lang.String" />
+			<form-property name="roleid" type="java.lang.String" />
+			<form-property name="storageid" type="java.lang.String" />
+			<form-property name="dutyid" type="java.lang.String" />
+			<form-property name="operref" type="java.lang.String" />
+			<form-property name="phone" type="java.lang.String" />
+			<form-property name="fax" type="java.lang.String" />
+			<form-property name="email" type="java.lang.String" />
+			<form-property name="idcardno" type="java.lang.String" />
+			<form-property name="phoneimei" type="java.lang.String" />
+			<form-property name="newphone" type="java.lang.String" />
+			<form-property name="newemail" type="java.lang.String" />
+			<form-property name="nweidcardno" type="java.lang.String" />
+			<form-property name="auditdate" type="java.lang.String" />
+			<form-property name="auditrem" type="java.lang.String" />
+			<form-property name="auditoperid" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="isreturn" type="java.lang.String" />
+		</form-bean>
+    <!-- lzh end -->
+    
+    
+    	<form-bean name="ContractTransferAssignForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="billno" type="java.lang.String[]" />
+			<form-property name="companyid" type="java.lang.String[]" />
+			<form-property name="maintcontractno" type="java.lang.String[]" />
+			<form-property name="salescontractno" type="java.lang.String[]" />
+			<form-property name="elevatorno" type="java.lang.String[]" />
+			<form-property name="maintdivision" type="java.lang.String[]" />
+			<form-property name="maintstation" type="java.lang.String[]" />
+			<form-property name="contractsdate" type="java.lang.String[]" />
+			<form-property name="contractedate" type="java.lang.String[]" />
+			<form-property name="submittype" type="java.lang.String[]" />
+			<form-property name="operid" type="java.lang.String[]" />
+			<form-property name="operdate" type="java.lang.String[]" />
+			
+			<form-property name="filetype" type="java.lang.String[]" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="assignfile" type="org.apache.struts.upload.FormFile" />
+		</form-bean>
+		
+    	<form-bean name="ContractTransferFeedBackForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="billno" type="java.lang.String[]" />
+			<form-property name="companyid" type="java.lang.String[]" />
+			<form-property name="maintcontractno" type="java.lang.String[]" />
+			<form-property name="salescontractno" type="java.lang.String[]" />
+			<form-property name="elevatorno" type="java.lang.String[]" />
+			<form-property name="maintdivision" type="java.lang.String[]" />
+			<form-property name="maintstation" type="java.lang.String[]" />
+			<form-property name="contractsdate" type="java.lang.String[]" />
+			<form-property name="contractedate" type="java.lang.String[]" />
+			<form-property name="submittype" type="java.lang.String[]" />
+			<form-property name="operid" type="java.lang.String[]" />
+			<form-property name="operdate" type="java.lang.String[]" />
+			
+			<form-property name="filetype" type="java.lang.String[]" />
+			<form-property name="transferdate" type="java.lang.String[]" />
+			<form-property name="transferrem" type="java.lang.String[]" />
+			<form-property name="auditstatus" type="java.lang.String[]" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+    
+    
+	</form-beans>	
+		
+	<!--========== Global Forward Definitions ============================== -->
+	<global-forwards>
+		<forward name="OnlineEditJS" path="/FCKeditor/fckeditor.js" />
+		<forward name="OnlineEditCSS" path="/FCKeditor/_samples/sample.css" />
+		<forward name="publicCSS" path="/common/css/publicCSS.jsp" />
+		<forward name="publicCSS1" path="/common/css/publicCSS1.jsp" />
+		<forward name="menuAndButtonbarCSS" path="/common/css/MenuAndButtonbar.jsp" />
+		<forward name="CalendarCSS2" path="/common/css/Calendar.css" />
+		<forward name="fSelect" path="/common/css/fSelect.css" />
+		<forward name="queryCSS" path="/common/css/query.css" />
+		<forward name="toolbarCSS" path="/common/css/toolbar.css" />
+		<forward name="formCSS" path="/common/css/Form.css" />
+		<forward name="LogonCSS" path="/common/css/css.css" />
+		<forward name="calendarCSS" path="/common/css/CalendarAndTime.css" />
+		<forward name="DialogSuccess" path="/common/success.jsp" />
+		<forward name="DialogError" path="/common/error.jsp" />
+		<forward name="validator" path="/common/javascript/validator.jsp" />
+		<forward name="select" path="/common/javascript/select.js" />
+		<forward name="webToolbarJS" path="/common/javascript/webtoolbar.js" />
+		<forward name="menuAndButtonbarJS" path="/common/javascript/MenuAndButtonbar.js" />
+		<forward name="checkInputJS" path="/common/javascript/i_CheckInput.js" />
+		<forward name="i_selectJS" path="/common/javascript/i_select.js" />
+		<forward name="tTreeJS" path="/common/javascript/tTree.js" />
+		<forward name="calendarJS" path="/common/javascript/CalendarAndTime.js" />
+		<forward name="createTreeJS" path="/common/javascript/CreateTree.jsp" />
+		<forward name="staticJavascript" path="/common/javascript/staticJavascript.jsp" />
+		<forward name="CommonFunc" path="/common/include/CommonFunc.js" />
+		<forward name="Calendar" path="/common/include/Calendar.js" />
+		<forward name="selete" path="/common/include/selete.js" />
+		<forward name="Logon" path="/logon/logon.jsp" />
+		<forward name="dTreeJS" path="/common/javascript/dtree.js" />
+		<forward name="dTreeCSS" path="/common/css/dtree.css" />
+		<forward name="dTreeVJJS" path="/common/javascript/dtreeVJ.js" />
+		<forward name="stylessCSS" path="/common/css/styles.css" />
+		<forward name="jeditCSS" path="/common/css/jedit.css" />
+		<forward name="pageJS" path="/common/javascript/page.js" />
+		<forward name="mathChangeJS" path="/common/javascript/MathChange.js" />
+		<forward name="pageJS2" path="/MugCustomer/js/toolBar.js" />
+		<forward name="ntkoocx" path="/MugCustomer/js/ntkoocx.js" />
+		<forward name="ReportCSS" path="/common/css/report.css" />
+		<forward name="reportCSS" path="/common/css/reportCSS.css" />
+		<forward name="ntkoocxJS" path="/common/javascript/ntkoocx.js" />
+		<forward name="ntkoocxbuildJS" path="/common/javascript/ntkoocxbuild.js" />
+		<forward name="tabeditJS" path="/common/javascript/tabedit.js" />
+		<forward name="contractCSS" path="/common/css/contractcss.css" />
+		<forward name="onlineEditTableJS" path="/common/javascript/onlineEditTable.js" />
+		<forward name="CalendarMonthJS" path="/common/javascript/CalendarMonth.js" />
+		<forward name="SelectMonthCSS" path="/common/css/SelectMonth.css" />
+		<forward name="SaleContractParmCSS" path="/common/css/salecontractparm.css" />
+		<forward name="techDetailCSS" path="/common/css/techDetail.css" />
+		<forward name="businessAnalyseCSS" path="/common/css/businessanalyse.css" />
+		<forward name="projectanalyseCSS" path="/common/css/projectanalyse.css" />
+		<forward name="bankJS" path="/common/javascript/bank.js" />
+		<forward name="TpriceJS" path="/common/javascript/Tprice.js" />
+		<forward name="FpriceJS" path="/common/javascript/Fprice.js" />
+		<forward name="myAjaxJS" path="/common/javascript/myAjax.js" />
+		<forward name="AjaxliftT" path="/common/javascript/AjaxliftT.js" />
+		<forward name="AJAX" path="/common/javascript/AjaxRequest.js" />
+		<forward name="DatePickerJS" path="/common/DatePicker/WdatePicker.js" />
+		<forward name="SystemJS" path="/common/javascript/System.js" />
+		<forward name="balanceJS" path="/common/javascript/balance.js" />
+		<forward name="SparepartJS" path="/common/javascript/sparepart.js" />
+		<forward name="CommonJS" path="/common/javascript/common.js" />
+		<forward name="delivergoodsadvicesearchCSS" path="/common/css/delivergoodsadvicesearch.css" />
+		<forward name="yui-utilities"	path="/sparepart/common/javascript/utilities_2.1.0.js" />
+		<forward name="ext-yui-adapter" path="/sparepart/common/javascript/yui-ext.js" />
+		<forward name="addGoodsJS" path="/sparepart/dialog/hello.js" />
+		<forward name="yui-mainCSS" path="/sparepart/common/css/yui-ext.css" />
+		<forward name="ext-allCSS" path="/sparepart/common/css/examples.css" />
+		<forward name="printCSS" path="/common/css/print.css" />
+		<!-- main page config -->
+		<forward name="ExtCSS" path="/common/extjs/resources/css/ext-all.css" />
+		<forward name="ExtBase" path="/common/extjs/adapter/ext/ext-base.js" />
+		<forward name="ExtAll" path="/common/extjs/ext-all.js" />
+		<forward name="j_extallCSS" path="/layout/css/ext-all.css" />
+		<forward name="j_extbaseJS" path="/layout/ext-base.js" />
+		<forward name="j_extalldebugJS" path="/layout/ext-all-debug.js" />
+		<forward name="j_tabclosemenuJS" path="/layout/js/TabCloseMenu.js" />
+		<forward name="j_rowexpanderJS" path="/layout/RowExpander.js" />
+		
+	</global-forwards>
+
+	<!--========== Action Mapping Definitions ============================== -->
+	<action-mappings>
+	
+		<action attribute="serveTableForm" name="serveTableForm" path="/ServeTable"
+			scope="request" 
+			type="com.zubarev.htmltable.action.ServeTableAction">
+			
+			<forward name="fClass1" path="/Class1SearchAction.do" />
+			<forward name="fPullDown" path="/PullDownSearchAction.do" />
+			<forward name="fCountry" path="/countrySearchAction.do" />
+			<forward name="fProvince" path="/provinceSearchAction.do" />
+			<forward name="fCity" path="/citySearchAction.do" />
+			<forward name="fRegion" path="/regionSearchAction.do" />
+			<forward name="fRole" path="/roleSearchAction.do" />
+			<forward name="fLoginUser" path="/loginuserSearchAction.do" />
+			<forward name="fLoginUserAudit" path="/LoginUserAuditSearchAction.do" />
+			<forward name="fCompany" path="/companySearchAction.do" />
+			<forward name="fStorageID" path="/storageidSearchAction.do" />
+			<forward name="fTaskExamplesSet" path="/taskExamplesSetSearchAction.do" />
+			<forward name="fflowgetshr" path="/flowSearchAction.do?method=getusershr" />
+			<forward name="fFlowSearch" path="/flowSearchAction.do" />
+			<forward name="fSearchworkspacebasefitlist" path="/workSpaceBaseFitSearchAction.do" />
+			<forward name="fworkspaceroleconfig" path="/workSpaceRoleConfigSearchAction.do" />
+			<forward name="fsearchworkspacebasepropertylist" path="/searchWorkSpaceBasePropertySelectAction.do" />
+			<forward name="fSearchViewLoginUserInfo" path="/searchViewLoginUserInfoAction.do" />
+			<forward name="fCustomer" path="/customerSearchAction.do" />
+			<forward name="fPrincipal" path="/principalSearchAction.do" />
+			<forward name="fFaultProcess" path="/FaultProcessSearchAction.do" />
+			<forward name="fElevatorSale" path="/elevatorSaleSearchAction.do" />
+			<forward name="fMarkingItems" path="/markingItemsSearchAction.do" />
+			<forward name="fHotlineFaultType" path="/hotlineFaultTypeSearchAction.do"/>
+			<forward name="fReceivablesName" path="/receivablesNameSearchAction.do"/>
+			<forward name="fInvoiceType" path="/invoiceTypeSearchAction.do"/>
+			<forward name="fElevatorCoordinateLocation" path="/elevatorCoordinateLocationSearchAction.do"/>
+			<forward name="fHotlineFaultClassification" path="/hotlineFaultClassificationSearchAction.do"/>
+			<forward name="fHotlineMotherboardType" path="/hotlineMotherboardTypeSearchAction.do"/>
+			<forward name="fTermSecurityRisks" path="/termSecurityRisksSearchAction.do"/>
+			<forward name="fShouldExamineItems" path="/shouldExamineItemsSearchAction.do"/>
+			<forward name="fHandoverElevatorCheckItem" path="/handoverElevatorCheckItemSearchAction.do"/>
+            <forward name="fOfficeComplaintCategory" path="/officeComplaintCategorySearchAction.do"/>
+            <forward name="fOfficeContractTypes" path="/officeContractTypesSearchAction.do"/>
+            <forward name="fOfficeCauseAnalysis" path="/officeCauseAnalysisSearchAction.do"/>
+			<forward name="fPersonnelManage" path="/personnelManageSearchAction.do" />
+			<forward name="fMaintenanceWorkingHours" path="/maintenanceWorkingHoursSearchAction.do" />
+			<forward name="fMaintContractQuote" path="/maintContractQuoteSearchAction.do" />
+			<forward name="fMaintContractOther" path="/maintContractOtherSearchAction.do" />
+			<forward name="fElevatorArchivesInfo" path="/elevatorArchivesInfoSearchAction.do" />
+			<forward name="fSearchElevatorSale" path="/searchElevatorSaleAction.do" />
+			<forward name="fSearchCustomer" path="/searchCustomerAction.do" />
+			<forward name="fLostElevator" path="/SearchLostElevatorMaintainAction.do" />
+			<forward name="fReturningMaintain" path="/returningMaintainSearchAction.do" />
+			<forward name="fLostElevatorMaintain" path="/lostElevatorMaintainSearchAction.do" />
+			<forward name="fLostElevatorReport" path="/SearchLostElevatorReportAction.do" />
+			<forward name="fLostReport" path="/SearchLostElevatorReportAction.do" />
+			<forward name="fSearchElevator" path="/searchElevatorSaleAction.do?method=toSearchRecord2" />
+			<forward name="fSearchElevator2" path="/searchElevatorSaleAction.do?method=toSearchRecord3" />
+			<forward name="fwgchangeSearch" path="/wgchangeSearchAction.do?method=toSearchRecord" />
+			<forward name="fwgchangeContractAuditSearch" path="/wgchangeContractAuditSearchAction.do?method=toSearchRecord" />
+			<forward name="fwgchangeAuditSearch" path="/wgchangeAuditSearchAction.do?method=toSearchRecord" />
+			<forward name="fServicingContractSearch" path="/wgchangeContractSearchAction.do?method=toSearchRecord" />
+			<forward name="fServicingContractNextSearch" path="/wgchangeContractSearchAction.do?method=toNextSearchRecord" />			
+			<forward name="fQualityCheckManagement" path="/qualityCheckManagementSearchAction.do" />
+			<forward name="fQualityCheckRegistration" path="/qualityCheckManagementSearchAction.do?method=toSearchRecordRegistration" />			
+			<forward name="fQualityCheckAudit" path="/qualityCheckManagementSearchAction.do?method=toSearchRecordAudit" />
+			<forward name="fCustReturnRegister" path="/custReturnRegisterSearchAction.do" />
+			<forward name="fSearchMarkingItems" path="/searchMarkingItemsAction.do" />
+			<forward name="fSearchhotphone" path="/hotphonexdwSearchAction.do?method=toSearchRecord2" />			
+			<forward name="fSearchShouldExamineItems" path="/searchShouldExamineItemsAction.do" />
+			<forward name="fSearchTermSecurityRisks" path="/searchTermSecurityRisksAction.do" />
+			<forward name="fSearchMaintContractMaster" path="/searchMaintContractMasterAction.do" />
+			<forward name="fMaintContractQuoteAudit" path="/maintContractQuoteAuditSearchAction.do" />
+			<forward name="fMaintContract" path="/maintContractSearchAction.do" />
+		    <forward name="fCustomerLevel" path="/customerLevelSearchAction.do" />
+		    <forward name="fMaintContractNext" path="/maintContractSearchAction.do?method=toSearchNext" />
+		    <forward name="fCustomerVisitPlan" path="/customerVisitPlanSearchAction.do" />
+		    <forward name="fCustomerVisitFeedback" path="/customerVisitFeedbackSearchAction.do" />
+		    <forward name="fProjectName" path="/searchProjectNameAction.do" />
+		    <forward name="fMaintContractAudit" path="/maintContractAuditSearchAction.do" />
+		    <forward name="fMaintContractModifyDisplay" path="/maintContractModifySearchAction.do" />
+		    <forward name="fTechnologySupport" path="/technologySupportSearchAction.do" />		
+		    <forward name="fTechnologySupportMaintMinister" path="/technologySupportMaintMinisterSearchAction.do" />
+		    <forward name="fTechnologySupportMaintStation" path="/technologySupportMaintStationSearchAction.do" />
+		    <forward name="fTechnologySupportTechnicalSupport" path="/technologySupportTechnicalSupportSearchAction.do" />
+		    <forward name="fAdvisoryComplaintsManage" path="/advisoryComplaintsManageSearchAction.do" />
+			<forward name="fAdvisoryComplaintsDispose" path="/advisoryComplaintsManageSearchAction.do?method=toSearchRecordDispose" />			
+			<forward name="fAdvisoryComplaintsAudit" path="/advisoryComplaintsManageSearchAction.do?method=toSearchRecordAudit" />
+			<forward name="fAdvisoryComplaintsDispatch" path="/advisoryComplaintsManageSearchAction.do?method=toSearchRecordDispatch" />
+			<forward name="fAdvisoryComplaintsReject" path="/advisoryComplaintsManageSearchAction.do?method=toSearchRecordReject" />
+			<forward name="fEntrustContractMaster" path="/entrustContractMasterSearchAction.do" />
+			<forward name="fEntrustContractMasterAudit" path="/entrustContractMasterSearchAction.do?method=toSearchRecordAudit" />
+			
+			<forward name="fEntrustContractModify" path="/entrustContractModifySearchAction.do" />
+			<forward name="fAccessoriesRequisitionCkbl" path="/accessoriesRequisitionCkblSearchAction.do" />
+			<forward name="fEntrustContractMasterNext" path="/entrustContractMasterSearchAction.do?method=toSearchNext" />
+		    <forward name="fAccessoriesRequisition" path="/accessoriesRequisitionSearchAction.do" />
+	        <forward name="fAccessoriesRequisitionMaintenance" path="/accessoriesRequisitionMaintenanceSearchAction.do" />
+	        <forward name="fAccessoriesRequisitionStoreman" path="/accessoriesRequisitionStoremanSearchAction.do" />
+	        <forward name="fAccessoriesRequisitionReturn" path="/accessoriesRequisitionReturnSearchAction.do" />
+            <forward name="fLogManagement" path="/logManagementSearchAction.do" />
+            <forward name="fQcLogManagement" path="/qcLogManagementSearchAction.do" />
+            <forward name="fEtcLogManagement" path="/etcLogManagementSearchAction.do" />
+            <forward name="fElevatorTransferCaseRegister" path="/elevatorTransferCaseRegisterManageSearchAction.do" />
+			<forward name="fElevatorTransferCaseRegisterDispose" path="/elevatorTransferCaseRegisterSearchAction.do?method=toSearchRecordDispose" />			
+			<forward name="fElevatorTransferCaseRegisterAudit" path="/elevatorTransferCaseRegisterAuditSearchAction.do?method=toSearchRecord" />
+			<forward name="fSearchHandoverElevatorCheckItem" path="/searchHandoverElevatorCheckItemAction.do" />
+			<forward name="fMaintContractDelay" path="/maintContractDelaySearchAction.do" />	
+			<forward name="fMaintContractDelayNext" path="/maintContractDelaySearchAction.do?method=toSearchNext" />						
+		    <forward name="fCalloutMaster" path="/hotphoneSearchAction.do?method=toSearchRecord" />
+		    <forward name="fHotCalloutModify" path="/hotCalloutModifySearchAction.do?method=toSearchRecord" />
+		    <forward name="fHotCalloutAudit" path="/hotCalloutAuditSearchAction.do?method=toSearchRecord" />
+		    <forward name="fSearchElevatorTransferCaseRegister" path="/searchElevatorTransferCaseRegisterAction.do" />
+		    <forward name="fMaintContractDelayAudit" path="/maintContractDelayAuditSearchAction.do" />			      
+		    <forward name="fMaintenanceWorkPlanCustomize" path="/maintenanceWorkPlanCustomizeSearchAction.do" />
+		    <forward name="fMaintenanceWorkPlanAudit" path="/maintenanceWorkPlanAuditSearchAction.do" />
+		    <forward name="fMaintenanceWorkPlanCompletion" path="/maintenanceWorkPlanCompletionSearchAction.do" />
+		    <forward name="fReimbursExpenseManag" path="/reimbursExpenseManagSearchAction.do" />
+		    <forward name="fSalaryBonusManage" path="/salaryBonusManageSearchAction.do" />
+		    <forward name="fFreeFittingCostsManage" path="/freeFittingCostsManageSearchAction.do" />
+		    <forward name="fSearchProjectReimbursement" path="/searchProjectReimbursementAction.do" />
+		    <forward name="fProContractARFeeModify" path="/proContractArfeeModifySearchAction.do" />
+		    <forward name="fProContractARFeeMaster" path="/proContractArfeeMasterSearchAction.do" />
+		    <forward name="fProContractARFeeMasterAudit" path="/proContractArfeeMasterSearchAction.do?method=toSearchRecordAudit" />
+		    <forward name="fProContractARFeeMasterNext" path="/proContractArfeeMasterSearchAction.do?method=toSearchNext" />
+		    <forward name="fContractInvoiceManage" path="/contractInvoiceManageSearchAction.do" />
+		    <forward name="fContractInvoiceManageAudit" path="/contractInvoiceManageSearchAction.do?method=toSearchRecordAudit" />
+		    <forward name="fContractInvoiceManageAudit2" path="/contractInvoiceManageAudit2SearchAction.do?method=toSearchRecordAudit" />
+		    <forward name="fContractInvoiceManageAudit3" path="/contractInvoiceManageAudit3SearchAction.do?method=toSearchRecordAudit" />
+		    <forward name="fContractInvoiceManageAudit4" path="/contractInvoiceManageAudit4SearchAction.do?method=toSearchRecordAudit" />
+		    <forward name="fContractInvoiceManageNext" path="/contractInvoiceManageSearchAction.do?method=toSearchNext" />
+		    <forward name="fContractParagraphManage" path="/contractParagraphManageSearchAction.do" />
+		    <forward name="fContractParagraphAudit" path="/contractParagraphAuditSearchAction.do?method=toSearchRecordAudit" />
+		    <forward name="fContractParagraphManageNext" path="/contractParagraphManageSearchAction.do?method=toSearchNext" />
+		    <forward name="fSearchStaff" path="/searchStaffAction.do" />
+		    <forward name="fAccountsPayableManage" path="/accountsPayableManageSearchAction.do" />
+		    <forward name="fAccountsPayableManageNext" path="/accountsPayableManageSearchAction.do?method=toSearchNext" />
+		    <forward name="fAccountsPayableAudit" path="/accountsPayableAuditSearchAction.do" />
+		    <forward name="fAccountsPayableModify" path="/accountsPayableModifySearchAction.do" />
+		    <forward name="fInvoiceManage" path="/invoiceManageSearchAction.do" />
+    		<forward name="fInvoiceManageNext" path="/invoiceManageSearchAction.do?method=toSearchNext" />
+    		<forward name="fInvoiceAudit" path="/invoiceAuditSearchAction.do" />
+    		<forward name="fContractPaymentQuery" path="/contractPaymentQuerySearchAction.do" />
+		    <forward name="fPaymentManage" path="/paymentManageSearchAction.do" />
+    		<forward name="fPaymentManageNext" path="/paymentManageSearchAction.do?method=toSearchNext" />
+    		<forward name="fPaymentAudit" path="/paymentAuditSearchAction.do" />
+    		<forward name="fContractPaymentEnquiry" path="/contractPaymentEnquirySearchAction.do" />
+    		<forward name="fMarkingScore" path="/markingScoreSearchAction.do" />
+			<forward name="fSearchMarkingScoreRegister" path="/searchMarkingScoreRegisterAction.do" />
+			<forward name="fSearchCompany" path="/searchCompanyAction.do" />
+			<forward name="fOutsideFootballElevator" path="/outsideFootballElevatorSearchAction.do" />
+			<forward name="fEntrustCustomer" path="/entrustCustomerSearchAction.do" />
+			<forward name="fLostElevatorReport" path="/lostElevatorReportSearchAction.do" />
+			<forward name="fLostElevatorReportNext" path="/lostElevatorReportSearchAction.do?method=toSearchNext" />
+			<forward name="fLostElevatorReportAudit" path="/lostElevatorReportAuditSearchAction.do" />
+			<forward name="fLostElevatorReportHf" path="/lostElevatorReportHfSearchAction.do" />
+			<forward name="fLostElevatorReportAudit2" path="/lostElevatorReportAudit2SearchAction.do" />
+			<forward name="fLostElevatorReportAudit3" path="/lostElevatorReportAudit3SearchAction.do" />
+		    <forward name="fHandoverElevatorSpecialClaim" path="/specialRequirementsSearchAction.do" />
+		    <forward name="fSpecialRegister" path="/searchSpecialRegisterAction.do" />
+		    <forward name="fMaintenanceRegistration" path="/maintenanceRegistrationSearchAction.do" />
+		    <forward name="fSearchStaff2" path="/searchStaffAction.do?method=toSearchRecord2" />
+			<forward name="fSearchStaff3" path="/searchStaffAction.do?method=toSearchRecord3" />
+			<forward name="fSearchMarkingScoreRegisterDetail" path="/searchMarkingScoreRegisterDetailAction.do?method=toSearchRecord" />
+		    <forward name="fRepairTasksRegistration" path="/repairTasksRegistrationSearchAction.do?method=toSearchRecord" />
+		    <forward name="fSearchReimbursPeople" path="/searchReimbursPeopleationAction.do" />
+		    <forward name="fSearchMaintDivisionBX" path="/searchMaintDivisionBXAction.do" />
+		    <forward name="fSearchCalloutHmt" path="/searchCalloutAction.do?method=toSearchRecord" />
+		    <forward name="fSearchCalloutHft" path="/searchCalloutAction.do?method=toSearchRecord2" />
+		    <forward name="fSearchCalloutEleno" path="/searchCalloutAction.do?method=toSearchRecord3" />
+		    <forward name="fSearchCompany2" path="/searchCompanyAction.do?method=toSearchRecord2" />
+		    <forward name="fSearchProjectReimbursement2" path="/searchProjectReimbursementAction.do?method=toSearchRecord2" />
+		    <forward name="fSearchReturningMaintainDetail" path="/searchReturningMaintainDetailAction.do" />
+		    <forward name="fCustomerVisitFeedbackAudit" path="/customerVisitFeedbackAuditSearchAction.do" />
+		    <forward name="fElevatorTransferCaseRegisterCopy" path="/searchHandoverElevatorCheckItemAction.do?method=toSearchRecord2" />
+		    <forward name="fOutsourcingContract" path="/outsourcingContractSearchAction.do?method=toSearchRecord" />
+			<forward name="fOutsourcingContractNextSearch" path="/outsourcingContractSearchAction.do?method=toNextSearchRecord" />			
+		    <forward name="fOutsourcingContractAudit" path="/outsourcingContractAuditSearchAction.do?method=toSearchRecord" />
+		    <forward name="fSmsHistory" path="/smsHistorySearchAction.do" />
+		    <forward name="fEntrustContractQuote" path="/entrustContractQuoteMasterSearchAction.do" />
+		    <forward name="fEntrustContractQuoteNext" path="/entrustContractQuoteMasterSearchAction.do?method=toSearchNext" />
+		    <forward name="fEntrustContractQuoteAudit" path="/entrustContractQuoteAuditSearchAction.do" />
+		    <forward name="fOutsourceContractQuote" path="/outsourceContractQuoteMasterSearchAction.do" />
+		    <forward name="fOutsourceContractQuoteNext" path="/outsourceContractQuoteMasterSearchAction.do?method=toSearchNext" />
+		    <forward name="fOutsourceContractQuoteAudit" path="/outsourceContractQuoteAuditSearchAction.do" />
+		    <forward name="fElevatorTransferCaseRegisterDisplay" path="/elevatorTransferCaseRegisterDisplaySearchAction.do?method=toSearchRecord" />
+		    <forward name="fSearchQuoteCustomer" path="/searchCustomerAction.do?method=toSearchRecord2" />
+		    <forward name="fElevatorTransferCaseRegisterModify" path="/elevatorTransferCaseRegisterModifySearchAction.do?method=toSearchRecord" />
+		    <forward name="fEffectiveElevatorMaintain" path="/effectiveElevatorSearchAction.do" />
+		    <forward name="fEffectiveElevator" path="/searchEffectiveElevatorAction.do" />
+		    <forward name="fsearchCustomerlevel" path="/searchCustomerlevelAction.do" />
+		    <forward name="fSearchProjectReimbursement3" path="/searchProjectReimbursementAction.do?method=toSearchRecord3" />
+		    
+		    <forward name="fMaintManagerFollow" path="/MaintManagerFollowSearchAction.do" />
+		    <forward name="fMaintFMinisterFollow" path="/MaintFMinisterFollowSearchAction.do" />
+		    <forward name="fMaintZMinisterFollow" path="/MaintZMinisterFollowSearchAction.do" />
+		    <forward name="fMaintainProjectInfo" path="/MaintainProjectInfoSearchAction.do" />    
+		    
+		    <forward name="fgzImportSearch" path="/gzImportSearchAction.do" />
+		    <forward name="fnzjImportSearch" path="/nzjImportSearchAction.do" />
+		    <forward name="fsbzcImportSearch" path="/sbzcImportSearchAction.do" />
+		    <forward name="fzbtlydImportSearch" path="/zbtlydImportSearchAction.do" />
+		    <forward name="fmbfImportSearch" path="/mbfImportSearchAction.do" />
+		    
+		    <!-- lwj start -->
+			<forward name="fQualityCheckManagementCheck" path="/qualityCheckManagementCheckSearchAction.do" />
+			<forward name="fContractTransferUpload" path="/ContractTransferUploadSearchAction.do" />
+			<forward name="fContractTransferAudit" path="/ContractTransferAuditSearchAction.do" />
+			<!-- lwj end -->
+			
+			<forward name="fContractTransferManagerAudit" path="/ContractTransferManagerAuditSearchAction.do" />
+			<forward name="fContractTransferAssign" path="/ContractTransferAssignSearchAction.do" />
+			<forward name="fContractTransferAjax" path="/ContractTransferAssignSearchAction.do?method=addElevator" />
+			<forward name="fContractTransferFeedBack" path="/ContractTransferFeedBackSearchAction.do" />
+			
+		</action>
+
+		<action
+	      	 attribute="class1Form"
+	      	 parameter="method"
+	      	 name="class1Form"
+	      	 path="/Class1Action"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.sysmanager.Class1Action">
+	      		
+	      		<forward name="returnList" path="/Class1SearchAction.do?method=toSearchRecord"></forward>
+	      		<forward name="returnModify" path="/Class1SearchAction.do?method=toSearchRecord"></forward>
+	      		<forward name="class1Modify" path="class1.Class1Modify"></forward>
+	      		<forward name="exportExcel" path="/main/report.jsp" />
+	      		<forward name="returnAdd" path="class1.class1add"></forward>
+	      		<forward name="class1List" path="class1.Class1List" />
+				<forward name="class1Display" path="class1.Class1Display" />
+	      </action>
+	      <action attribute="serveTableForm" name="serveTableForm"
+				parameter="method" path="/Class1SearchAction" scope="request"
+				type="com.gzunicorn.struts.action.sysmanager.Class1Action">
+					<forward name="class1List" path="class1.Class1SearchList" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm" parameter="method" path="/PullDownSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.PullDownAction">
+			<forward name="pulldownList" path="pulldown.List" />
+		</action>
+		<action attribute="pulldownForm" name="pulldownForm" parameter="method" path="/PullDownAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.PullDownAction">
+			<forward name="pulldownAdd" path="pulldown.Add" />
+			<forward name="pulldownModify" path="pulldown.Modify" />
+			<forward name="returnAdd" path="/PullDownAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/PullDownAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/PullDownSearchAction.do?method=toSearchRecord" />
+			<forward name="pulldownDisplay" path="pulldown.Display" />
+			
+			<forward name="pulldownUploadFile" path="pulldown.UploadFile" />
+			<forward name="returnUploadFile" path="/PullDownAction.do?method=toPrepareUploadFile" />
+		</action>
+		<action attribute="countryForm" name="countryForm" parameter="method"
+			path="/countryAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.CountryAction">
+			<forward name="countryList" path="basedata.countryList" />
+			<forward name="countryAdd" path="basedata.countryAdd" />
+			<forward name="countryModify" path="basedata.countryModify" />
+			<forward name="countryDisplay" path="basedata.countryDisplay" />
+			<forward name="returnList" path="/countrySearchAction.do?method=toSearchRecord" />
+			<forward name="returnAdd" path="/countryAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/countryAction.do?method=toPrepareUpdateRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/countrySearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.CountryAction">
+			<forward name="countryList" path="basedata.countryList" />
+		</action>
+
+		<action attribute="provinceForm" name="provinceForm" parameter="method"
+			path="/provinceAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.ProvinceAction">
+			<forward name="provinceList" path="basedata.provinceList" />
+			<forward name="provinceAdd" path="basedata.provinceAdd" />
+			<forward name="provinceModify" path="basedata.provinceModify" />
+			<forward name="provinceDisplay" path="basedata.provinceDisplay" />
+			<forward name="returnList"	path="/provinceSearchAction.do?method=toSearchRecord" />
+			<forward name="returnAdd" path="/provinceAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/provinceAction.do?method=toPrepareUpdateRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/provinceSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.ProvinceAction">
+			<forward name="provinceList" path="basedata.provinceList" />
+		</action>
+
+		<action attribute="cityForm" name="cityForm" parameter="method"
+			path="/cityAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.CityAction">
+			<forward name="cityList" path="basedata.cityList" />
+			<forward name="cityAdd" path="basedata.cityAdd" />
+			<forward name="cityModify" path="basedata.cityModify" />
+			<forward name="cityDisplay" path="basedata.cityDisplay" />
+			<forward name="returnList" path="/citySearchAction.do?method=toSearchRecord" />
+			<forward name="returnAdd" path="/cityAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/cityAction.do?method=toPrepareUpdateRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/citySearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.CityAction">
+			<forward name="cityList" path="basedata.cityList" />
+		</action>
+
+		<action attribute="regionForm" name="regionForm" parameter="method"
+			path="/regionAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.RegionAction">
+			<forward name="regionList" path="basedata.regionList" />
+			<forward name="regionAdd" path="basedata.regionAdd" />
+			<forward name="regionModify" path="basedata.regionModify" />
+			<forward name="regionDisplay" path="basedata.regionDisplay" />
+			<forward name="returnList" path="/regionSearchAction.do?method=toSearchRecord" />
+			<forward name="returnAdd" path="/regionAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/regionAction.do?method=toPrepareUpdateRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/regionSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.RegionAction">
+			<forward name="regionList" path="basedata.regionList" />
+		</action>
+		
+		<action attribute="changePasswordForm" name="changePasswordForm"
+			parameter="method" path="/changePasswordAction" scope="request"
+			type="com.gzunicorn.struts.action.ChangePasswordAction">
+			<forward name="prepareModify" path="sysbasedata.changePasswordPreModify" />
+		</action>
+		<action
+         attribute="serveTableForm"
+         parameter="method" 
+         name="serveTableForm"
+         path="/searchWorkSpaceBasePropertySelectAction" 
+         scope="request"
+         type="com.gzunicorn.struts.action.query.SearchWorkSpaceBasePropertySelectAction">
+         <forward name="searchWorkSpaceBasePropertyList" path="query.WorkSpaceBasePropertySelectlist" />
+      </action>
+		<action
+         attribute="WorkSpaceRoleConfigForm"
+         name="WorkSpaceRoleConfigForm"
+         path="/WorkSpaceRoleConfigAction"
+         scope="request"
+         parameter="method" 
+         type="com.gzunicorn.struts.action.WorkSpaceRoleConfigAction" >
+         <forward name="WorkSpaceRoleConfigList" path="sysbasedata.WorkSpaceRoleConfiglist" />
+         <forward name="WorkSpaceRoleConfigModify" path="sysbasedata.WorkSpaceRoleConfigmodify" />
+         <forward name="WorkSpaceRoleConfigDisplay" path="sysbasedata.WorkSpaceRoleConfigdisplay"/>
+         <forward name="returnList" path="/workSpaceRoleConfigSearchAction.do?method=toSearchRecord"/>
+         <forward name="returnModify" path="/WorkSpaceRoleConfigAction.do?method=toPrepareUpdateRecord"/>
+         <forward name="exportExcel" path="/main/report.jsp"/>
+      </action>
+      <action
+         attribute="serveTableForm"
+         parameter="method" 
+         name="serveTableForm"
+         path="/workSpaceRoleConfigSearchAction" 
+         scope="request"
+         type="com.gzunicorn.struts.action.WorkSpaceRoleConfigAction">
+         <forward name="WorkSpaceRoleConfigList" path="sysbasedata.WorkSpaceRoleConfiglist" />
+      </action>
+		<action
+         attribute="workSpaceBaseFitForm"
+         parameter="method" 
+         name="workSpaceBaseFitForm"
+         path="/workSpaceBaseFitAction"
+         scope="request"
+         type="com.gzunicorn.struts.action.WorkSpaceBaseFitAction">
+         <forward name="workspacebasefitlist" path="sysbasedata.WorkSpaceBaseFitList" />
+         <forward name="workspacebasefitAdd" path="sysbasedata.WorkSpaceBaseFitadd" />
+         <forward name="workspacebasefitModify" path="sysbasedata.WorkSpaceBaseFitmodify" />
+         <forward name="workspacebasefitDisplay" path="sysbasedata.WorkSpaceBaseFitdisplay"/>
+         <forward name="workspacebasefitMiniDisplay" path="sysbasedata.WorkSpaceBaseFitMinidisplay"/>
+         <forward name="returnList" path="/workSpaceBaseFitSearchAction.do?method=toSearchRecord"/>
+         <forward name="returnAdd" path="/workSpaceBaseFitAction.do?method=toPrepareAddRecord"/>
+         <forward name="returnModify" path="/workSpaceBaseFitAction.do?method=toPrepareUpdateRecord"/>
+         <forward name="exportExcel" path="/sysbasedata/report.jsp"/>
+      </action> 
+       <action
+      	attribute="serveTableForm"
+      	name="serveTableForm"
+      	parameter="method"
+      	path="/workSpaceBaseFitSearchAction"
+      	scope="request"
+      	type="com.gzunicorn.struts.action.WorkSpaceBaseFitAction">
+      	<forward name="workspacebasefitlist" path="sysbasedata.WorkSpaceBaseFitList"/>
+      </action>
+		<action
+	         attribute="flowForm"
+	         name="flowForm"
+	         parameter="method"
+	         path="/flowAction"
+	         scope="request"
+	         type="com.gzunicorn.struts.action.FlowAction">
+	         <forward name="ToList" 	path="Flow.ToList"/>
+	         <forward name="ReToList" 	path="/flowSearchAction.do?method=toSearchRecord"/>
+	         <forward name="ToSet" 		path="Flow.ToSet" />
+	         <forward name="ToShr" 		path="Flow.ToShr" />
+	         <forward name="tshr" 		path="Flow.Tshr" />
+	         <forward name="ReToShr" 	path="/flowAction.do?method=toPrepareSetShrRecord" />
+			 <forward name="ReToSet" 	path="/flowAction.do?method=toPrepareSetRecord" />
+			 <forward name="ToDisplay" 	path="Flow.ToDisplay" />
+			 <forward name="ToPreview" 	path="Flow.ToPreview" />
+	      </action>
+	      <action
+	         attribute="serveTableForm"
+			 name="serveTableForm"
+	         parameter="method"
+	         path="/flowSearchAction"
+	         scope="request"
+	         type="com.gzunicorn.struts.action.FlowAction">
+         <forward name="ToList" path="Flow.ToList"/>
+         <forward name="tshr" 	path="Flow.Tshr" />
+      </action>
+		<action
+	         attribute="serveTableForm"
+	         parameter="method" 
+	         name="serveTableForm"
+	         path="/taskExamplesSetSearchAction" 
+	         scope="request"
+	         type="com.gzunicorn.struts.action.taskexamplesset.TaskExamplesSetAction">
+	         	<forward name="toList" path="taskset.taskexamplessetlist" />
+	      </action>
+	    <action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/searchViewLoginUserInfoAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.query.SearchViewLoginUserInfoAction">
+			<forward name="searchViewLoginUserInfoList"
+				path="search.searchViewLoginUserInfoList" />
+		</action>
+          <action
+	         attribute="taskExamplesSetForm"
+	         name="taskExamplesSetForm"
+	         path="/taskExamplesSetAction"
+	         scope="request"
+	         type="com.gzunicorn.struts.action.taskexamplesset.TaskExamplesSetAction">
+	         <forward name="toList" 		path="taskset.taskexamplessetlist"/>
+	         <forward name="toSet"	 		path="taskset.taskexamplesset" />
+	         <forward name="toView" 		path="taskset.taskexamplessetview"/>
+	         <forward name="reList" 		path="/taskExamplesSetSearchAction.do?method=toSearchRecord"/>
+	         <forward name="reSet" 			path="/taskExamplesSetAction.do?method=toPrepareUpdateRecord"/>
+          </action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/UserReportAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.UserReportAction">
+			<forward name="logincheck" path="sysmanage.logincheck" />
+			<forward name="shopusereport" path="sysmanage.shopusereport" />
+		</action>
+		<action attribute="storageidForm" name="storageidForm"
+			parameter="method" path="/storageidAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.StorageIDAction">
+			<forward name="storageidList" path="sysbasedata.storageidList" />
+			<forward name="storageidAdd" path="sysbasedata.storageidAdd" />
+			<forward name="storageidModify" path="sysbasedata.storageidModify" />
+			<forward name="storageidDisplay" path="sysbasedata.storageidDisplay" />
+			<forward name="returnList"	path="/storageidSearchAction.do?method=toSearchRecord" />
+			<forward name="returnAdd" path="/storageidAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/storageidAction.do?method=toPrepareUpdateRecord" />
+			<forward name="exportExcel" path="/main/report.jsp" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/storageidSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.StorageIDAction">
+			<forward name="storageidList" path="sysbasedata.storageidList" />
+		</action>
+		<action attribute="companyForm" name="companyForm" parameter="method"
+			path="/companyAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.CompanyAction">
+			<forward name="companyList" path="sysbasedata.companyList" />
+			<forward name="companyAdd" path="sysbasedata.companyAdd" />
+			<forward name="companyModify" path="sysbasedata.companyModify" />
+			<forward name="companyDisplay" path="sysbasedata.companyDisplay" />
+			<forward name="returnList" path="/companySearchAction.do?method=toSearchRecord" />
+			<forward name="returnAdd" path="/companyAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/companyAction.do?method=toPrepareUpdateRecord" />
+			<forward name="exportExcel" path="/main/report.jsp" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/companySearchAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.CompanyAction">
+			<forward name="companyList" path="sysbasedata.companyList" />
+		</action>
+		<action attribute="loginuserForm" parameter="method" name="loginuserForm"
+			path="/loginuserAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.LoginUserAction">
+			<forward name="loginuserList" path="sysbasedata.loginuserList" />
+			<forward name="loginuserAdd" path="sysbasedata.loginuserAdd" />
+			<forward name="loginuserModify" path="sysbasedata.loginuserModify" />
+			<forward name="loginuserDisplay" path="sysbasedata.loginuserDisplay" />
+			<forward name="returnList"	path="/loginuserSearchAction.do?method=toSearchRecord" />
+			<forward name="returnAdd" path="/loginuserAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/loginuserAction.do?method=toPrepareUpdateRecord" />
+			<forward name="exportExcel" path="/main/report.jsp" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/loginuserSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.LoginUserAction">
+			<forward name="loginuserList" path="sysbasedata.loginuserList" />
+		</action>
+		<action attribute="roleForm" name="roleForm" path="/roleAction"
+			scope="request" parameter="method" type="com.gzunicorn.struts.action.sysmanager.RoleAction">
+			<forward name="roleList" path="sysbasedata.rolelist" />
+			<forward name="roleAdd" path="sysbasedata.roleadd" />
+			<forward name="roleModify" path="sysbasedata.rolemodify" />
+			<forward name="roleDisplay" path="sysbasedata.roledisplay" />
+			<forward name="returnList" path="/roleSearchAction.do?method=toSearchRecord" />
+			<forward name="returnAdd" path="/roleAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/roleAction.do?method=toPrepareUpdateRecord" />
+			<forward name="exportExcel" path="/main/report.jsp" />
+		</action>
+		<action attribute="serveTableForm" parameter="method" name="serveTableForm"
+			path="/roleSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.RoleAction">
+			<forward name="roleList" path="sysbasedata.rolelist" />
+		</action>
+		<action attribute="nullForm" name="nullForm" parameter="method"
+			path="/roleNodeAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.RoleNodeAction">
+			<forward name="main" path="sysmanager.roleNodeMain" />
+			<forward name="leftFrm" path="/sysmanager/RoleNodeLeftFrm.jsp" />
+			<forward name="rightFrm" path="/sysmanager/RoleNodeRightFrm.jsp" />
+			<forward name="saveFrm" path="/sysmanager/RoleNodeInfo.jsp" />
+			<forward name="chooseRoleMain" path="sysmanager.chooseRoleMain" />
+			<forward name="assignMain" path="sysmanager.assignUserMain" />
+			<forward name="rightUserFrm" path="/sysmanager/RoleUserRightFrm.jsp" />
+			<forward name="rightUserFrm2" path="/roleNodeAction.do?method=toAssignUserRightFrm" />
+			<forward name="areaMain" path="sysmanager.areaUserMain" />
+			<forward name="rightAreaFrm" path="/sysmanager/RoleAreaRightFrm.jsp" />
+			<forward name="deckUserAreaMain" path="sysmanager.deckUserAreaMain" />
+			<forward name="deckUserAreaFrm" path="/sysmanager/RoleDeckUserAreaRightFrm.jsp" />
+		</action>
+		<!-- mytaskoa start -->
+	      <action
+	         attribute="nullForm"
+	         name="nullForm"
+	         parameter="method"
+	         path="/myTaskOaSearchAction"
+	         scope="request"
+	         type="com.gzunicorn.struts.action.MyTaskOAAction">
+	         <forward name="toMain" path="/mytask/MyTaskMain.jsp"/>
+	         <!-- forward name="ToDoList" path="/mytask/MyTaskIframe.jsp"/-->
+	         <forward name="ToDoList" path="/mytask/ToDoList.jsp"/>
+	         <forward name="ToDoList2" path="/mytask/ToDoList2.jsp"/>
+	         <forward name="ReToDoList" path="/myTaskOaSearchAction.do?method=toMyTask"/>
+	       </action>		
+		<action
+	         attribute="nullForm"
+	         name="nullForm"
+	         parameter="method"
+	         path="/viewProcessAction"
+	         scope="request"
+	         type="com.gzunicorn.struts.action.ViewProcessAction">
+         <forward name="toView" path="/process-img.jsp"/>
+       </action>
+		<!-- mytaskoa start -->
+		<action
+         attribute="serveTableForm"
+         name="serveTableForm"
+         parameter="method" 
+         path="/myWorkspaceAction"
+         scope="request"
+         type="com.gzunicorn.struts.action.MyWorkspaceAction">
+         <forward name="toIndex" path="/layout/myworkspace1.jsp"/>
+         <forward name="toIndexMain" path="/layout/myworkspace.jsp"/>
+      </action>
+      <action
+         attribute="serveTableForm"
+         name="serveTableForm"
+         parameter="method" 
+         path="/ajaxWorkspaceAction"
+         scope="request"
+         type="com.gzunicorn.struts.action.AjaxWorkspaceAction">
+         <forward name="ajax" path="/layout/ajax.jsp" />
+      </action>		
+		<!-- login start-->
+		<action name="logonForm" path="/Logon" input="/logon/logon.jsp"
+			type="com.gzunicorn.struts.action.LogonAction">
+			<forward name="success" redirect="true" path="/main/mainMenu.jsp" />
+			<forward name="success_2" redirect="true" path="/layoutAction.do?method=toFilterTree" />
+		</action>
+		<action name="nullForm" path="/layoutAction"
+			type="com.gzunicorn.struts.action.LayoutAction">
+			<forward name="tree" path="/layout/index.jsp" />
+			<forward name="toPortal" path="/layout/portal/IndexPortal.jsp" />
+		</action>
+		<action name="nullForm" path="/logoutAction"
+			type="com.gzunicorn.struts.action.LogoutAction">
+			<forward name="success" redirect="true" path="/logout/logout.jsp" />
+		</action>
+		<!--  -->
+			<action attribute="MaintManagerFollowForm" name="MaintManagerFollowForm" parameter="method"
+			path="/MaintManagerFollowAction" scope="request"
+			type="com.gzunicorn.struts.action.maintfollow.MaintManagerFollowAction">
+			<forward name="MaintManagerFollowList" path="MaintManagerFollowList" />
+			<forward name="MaintManagerFollowAdd" path="MaintManagerFollowAdd" />
+			<forward name="returnList" path="/MaintManagerFollowSearchAction.do?method=toSearchRecord" />
+			</action>
+			<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/MaintManagerFollowSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.maintfollow.MaintManagerFollowAction">
+			<forward name="MaintManagerFollowList" path="MaintManagerFollowList" />
+		</action>
+		
+			<action attribute="MaintFMinisterFollowForm" name="MaintFMinisterFollowForm" parameter="method"
+			path="/MaintFMinisterFollowAction" scope="request"
+			type="com.gzunicorn.struts.action.maintfollow.MaintFMinisterFollowAction">
+			<forward name="MaintFMinisterFollowList" path="MaintFMinisterFollowList" />
+			<forward name="MaintFMinisterFollowAdd" path="MaintFMinisterFollowAdd" />
+			<forward name="returnList" path="/MaintFMinisterFollowSearchAction.do?method=toSearchRecord" />
+			</action>
+			<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/MaintFMinisterFollowSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.maintfollow.MaintFMinisterFollowAction">
+			<forward name="MaintFMinisterFollowList" path="MaintFMinisterFollowList" />
+		</action>
+		
+		    <action attribute="MaintZMinisterFollowForm" name="MaintZMinisterFollowForm" parameter="method"
+			path="/MaintZMinisterFollowAction" scope="request"
+			type="com.gzunicorn.struts.action.maintfollow.MaintZMinisterFollowAction">
+			<forward name="MaintZMinisterFollowList" path="MaintZMinisterFollowList" />
+			<forward name="MaintZMinisterFollowAdd" path="MaintZMinisterFollowAdd" />
+			<forward name="returnList" path="/MaintZMinisterFollowSearchAction.do?method=toSearchRecord" />
+ 			 </action>
+             <action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/MaintZMinisterFollowSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.maintfollow.MaintZMinisterFollowAction">
+			<forward name="MaintZMinisterFollowList" path="MaintZMinisterFollowList" />
+		</action>
+		<!--  --> 
+		<!--lzh start--> 
+		<action attribute="loginuserauditForm" parameter="method" name="loginuserauditForm"
+			path="/loginUserAuditAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.LoginUserAuditAction">
+			<forward name="loginuserauditList" path="sysbasedata.loginuserauditList" />
+			<forward name="loginuserauditDisplay" path="sysbasedata.loginuserauditDisplay" />
+			<forward name="returnList"	path="/LoginUserAuditSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/LoginUserAuditSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.sysmanager.LoginUserAuditAction">
+			<forward name="loginuserauditList" path="sysbasedata.loginuserauditList" />
+		</action>
+		<!--lzh end-->
+		<!--hhc start--> 
+		<action attribute="ContractTransferAssignForm" parameter="method" name="ContractTransferAssignForm"
+			path="/ContractTransferAssignAction" scope="request"
+			type="com.gzunicorn.struts.action.contracttransfer.ContractTransferAssignAction">
+			<forward name="contracttransferassignList" path="contracttransferassign.List" />
+			<forward name="contracttransferassignAdd" path="contracttransferassign.Add" />
+			<forward name="contracttransferassignAjax" path="contracttransferassign.Ajax" />
+			<forward name="contracttransferassignUpdate" path="contracttransferassign.Update" />
+			<forward name="contracttransferassignView" path="contracttransferassign.View" />
+			<forward name="returnList" path="/ContractTransferAssignSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/ContractTransferAssignSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.contracttransfer.ContractTransferAssignAction">
+			<forward name="contracttransferassignList" path="contracttransferassign.List" />
+			<forward name="contracttransferassignAjax" path="contracttransferassign.Ajax" />
+		</action>
+		<action attribute="ContractTransferFeedBackForm" parameter="method" name="ContractTransferFeedBackForm"
+			path="/ContractTransferFeedBackAction" scope="request"
+			type="com.gzunicorn.struts.action.contracttransfer.ContractTransferFeedBackAction">
+			<forward name="contracttransferfeedbackList" path="contracttransferfeedback.List" />
+			<forward name="contracttransferfeedbackView" path="contracttransferfeedback.View" />
+			<forward name="returnList" path="/ContractTransferFeedBackSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/ContractTransferFeedBackSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.contracttransfer.ContractTransferFeedBackAction">
+			<forward name="contracttransferfeedbackList" path="contracttransferfeedback.List" />
+		</action>
+		<!--hhc end-->
+	</action-mappings>
+
+
+	<!--set upload file size -->
+	<controller maxFileSize="300M" bufferSize="4k"></controller>
+
+	<!--========== Message Resources Definitions =========================== -->
+	<message-resources	parameter="com.gzunicorn.common.resources.ApplicationResources" />
+	<!--========== Plug Ins Configuration ================================== -->
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"	value="/WEB-INF/xml/validator-rules.xml,/WEB-INF/xml/validation.xml" />
+	</plug-in>
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/xml/tiles-defs.xml" />
+	</plug-in>
+	<plug-in className="com.zubarev.htmltable.HTMLTablePlugIn">
+		<set-property property="config" value="/WEB-INF/xml/html-table.xml" />
+	</plug-in>
+
+</struts-config>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  xmlns=""  name="elevatortransfercaseregister">
+
+
+	<start-state name="填写维保交接电梯情况">
+		<task>
+			<assignment class="com.gzunicorn.workflow.assignment.ApplyActorsAssignment"></assignment>
+		</task>
+		<transition to="厂检是否合格" name="提交"></transition>
+	</start-state>
+
+
+	<task-node name="厂检部长审核">
+		<task name="厂检部长审核">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="安装部长审核" name="提交安装部长审核"></transition>
+		<transition to="修改维保交接电梯情况" name="驳回到厂检员"></transition>
+	</task-node>
+
+	<task-node name="安装部长审核">
+		<task name="安装部长审核">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="相关部长审核" name="提交相关部长审核"></transition>
+		<transition to="厂检部长审核" name="不通过"></transition>
+		<transition to="修改维保交接电梯情况" name="驳回到厂检员"></transition>
+	</task-node>
+
+	<task-node name="执行扣款">
+		<task name="执行扣款">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="关闭流程" name="提交关闭流程"></transition>
+	</task-node>
+
+	<task-node name="安装公司部长审核">
+		<task name="安装公司部长审核">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="是否扣款" name="通过"></transition>
+		<transition to="厂检部长审核" name="不通过"></transition>
+		<transition to="修改维保交接电梯情况" name="驳回到厂检员"></transition>
+	</task-node>
+
+	<decision name="是否迅达安装">
+		<handler class="com.gzunicorn.workflow.decision.AppointDecisionHandler"></handler>
+		<transition to="安装公司部长审核" name="是"></transition>
+		<transition to="流程通过" name="否、不扣款"></transition>
+		<transition to="执行扣款" name="否、扣款"></transition>
+	</decision>
+
+	<decision name="厂检是否合格">
+		<handler class="com.gzunicorn.workflow.decision.AppointDecisionHandler"></handler>
+		<transition to="厂检部长审核" name="不合格"></transition>
+		<transition to="关闭审核流程" name="合格"></transition>
+	</decision>
+
+	<task-node name="相关部长审核">
+		<task name="相关部长审核">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action class="com.gzunicorn.workflow.event.ApproveTacheEventHandler" name="ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="是否迅达安装" name="通过"></transition>
+		<transition to="厂检部长审核" name="不通过"></transition>
+		<transition to="修改维保交接电梯情况" name="驳回到厂检员"></transition>
+	</task-node>
+
+	<task-node name="关闭流程">
+		<task name="关闭流程">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="流程通过" name="关闭"></transition>
+	</task-node>
+
+	<task-node name="修改维保交接电梯情况">
+		<task name="修改维保交接电梯情况">
+			<assignment class="com.gzunicorn.workflow.assignment.ApplyActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApplyTacheEventHandler" class="com.gzunicorn.workflow.event.ApplyTacheEventHandler"></action>
+		</event>
+		<transition to="厂检是否合格" name="提交"></transition>
+	</task-node>
+
+	<decision name="是否扣款">
+		<handler class="com.gzunicorn.workflow.decision.AppointDecisionHandler"></handler>
+		<transition to="执行扣款" name="扣款"></transition>
+		<transition to="流程通过" name="不扣款"></transition>
+	</decision>
+
+	<task-node name="关闭审核流程">
+		<task name="关闭审核流程">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="流程通过" name="关闭"></transition>
+		<transition to="修改维保交接电梯情况" name="驳回到厂检员"></transition>
+	</task-node>
+
+
+	<end-state name="流程通过">
+		<event type="node-enter">
+			<action name="EndPassTacheEventHandler" class="com.gzunicorn.workflow.event.EndPassTacheEventHandler"></action>
+		</event>
+	</end-state>
+
+
+</process-definition>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Thu Nov 10 15:54:39 CST 2005                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.sysmanager">
+
+    <class name="Company" table="Company">
+        <id name="comid" column="ComID" type="string">
+            <generator class="assigned"/>
+        </id>
+ 
+        <property name="comname" column="ComName" type="string" />
+        <property name="comfullname" column="ComFullName" type="string" />
+        <property name="comtype" column="ComType" type="string"  not-null="true" />
+        <property name="comtel" column="ComTel" type="string" />
+        <property name="linkman" column="LinkMan" type="string" />
+        <property name="linkmantel" column="LinkManTel" type="string" />
+        <property name="fax" column="Fax" type="string" />
+        <property name="artperson" column="ArtPerson" type="string" />
+        <property name="bank" column="Bank" type="string" />
+        <property name="account" column="Account" type="string" />
+        <property name="address" column="Address" type="string" />
+        <property name="enabledflag" column="EnabledFlag" type="string"  not-null="true" />
+        <property name="rem" column="Rem" type="string" />
+
+    </class>
+    
+</hibernate-mapping>

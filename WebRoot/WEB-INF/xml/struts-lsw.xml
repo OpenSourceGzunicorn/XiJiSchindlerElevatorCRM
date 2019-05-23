@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!--
+	This is the Struts configuration file for the example application,
+	using the proposed new syntax.
+-->
+<struts-config>
+
+	<!--========== Data Source Configuration =============================== -->
+	<data-sources></data-sources>
+
+	<!--========== Form Bean Definitions =================================== -->
+	<form-beans>
+		<form-bean name="receivablesNameForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="recId" type="java.lang.String" />          
+	        <form-property name="recName" type="java.lang.String" />         
+	        <form-property name="enabledFlag" type="java.lang.String" />         
+	        <form-property name="rem" type="java.lang.String" />      
+	        <form-property name="operId" type="java.lang.String" />         
+	        <form-property name="operDate" type="java.lang.String" />          
+	        <form-property name="r1" type="java.lang.String" />          
+	        <form-property name="r2" type="java.lang.String" />          
+	        <form-property name="r3" type="java.lang.String" />         
+	        <form-property name="r4" type="java.lang.String" />         
+	        <form-property name="r5" type="java.lang.String" />          
+	        <form-property name="r6" type="java.lang.Double" />           
+	        <form-property name="r7" type="java.lang.Double" />           
+	        <form-property name="r8" type="java.lang.Double" />          
+	        <form-property name="r9" type="java.lang.Integer" />           
+	        <form-property name="r10" type="java.lang.Integer" />
+	        <form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />   
+		</form-bean>
+		
+		
+		<form-bean name="invoiceTypeForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="inTypeId" type="java.lang.String" />          
+	        <form-property name="inTypeName" type="java.lang.String" />         
+	        <form-property name="enabledFlag" type="java.lang.String" />         
+	        <form-property name="rem" type="java.lang.String" />      
+	        <form-property name="operId" type="java.lang.String" />         
+	        <form-property name="operDate" type="java.lang.String" />          
+	        <form-property name="r1" type="java.lang.String" />          
+	        <form-property name="r2" type="java.lang.String" />          
+	        <form-property name="r3" type="java.lang.String" />         
+	        <form-property name="r4" type="java.lang.String" />         
+	        <form-property name="r5" type="java.lang.String" />          
+	        <form-property name="r6" type="java.lang.Double" />           
+	        <form-property name="r7" type="java.lang.Double" />           
+	        <form-property name="r8" type="java.lang.Double" />          
+	        <form-property name="r9" type="java.lang.Integer" />           
+	        <form-property name="r10" type="java.lang.Integer" />
+	        <form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />   
+		</form-bean>
+		
+		<form-bean name="elevatorCoordinateLocationForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="elevatorNo" type="java.lang.String" />          
+	        <form-property name="elevatorLocation" type="java.lang.String" />
+	        <form-property name="beginLongitude" type="java.lang.Double" />
+	        <form-property name="endLongitude" type="java.lang.Double" /> 
+	        <form-property name="beginDimension" type="java.lang.Double" /> 
+	        <form-property name="endDimension" type="java.lang.Double" />           
+	        <form-property name="enabledFlag" type="java.lang.String" />         
+	        <form-property name="rem" type="java.lang.String" />      
+	        <form-property name="operId" type="java.lang.String" />         
+	        <form-property name="operDate" type="java.lang.String" />          
+	        <form-property name="r1" type="java.lang.String" />          
+	        <form-property name="r2" type="java.lang.String" />          
+	        <form-property name="r3" type="java.lang.String" />         
+	        <form-property name="r4" type="java.lang.String" />         
+	        <form-property name="r5" type="java.lang.String" />          
+	        <form-property name="r6" type="java.lang.Double" />           
+	        <form-property name="r7" type="java.lang.Double" />           
+	        <form-property name="r8" type="java.lang.Double" />          
+	        <form-property name="r9" type="java.lang.Integer" />           
+	        <form-property name="r10" type="java.lang.Integer" />
+	        
+	        <form-property name="file" type="org.apache.struts.upload.FormFile" />
+	        <form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />   
+		</form-bean>
+	</form-beans>
+
+	<!-- ========== Global Forward Definitions ============================== -->
+	<global-forwards></global-forwards>
+
+	<!-- ========== Action Mapping Definitions ============================== -->
+	<action-mappings>
+	<action attribute="receivablesNameForm" name="receivablesNameForm" parameter="method"
+		path="/receivablesNameAction" scope="request"
+		type="com.gzunicorn.struts.action.basedata.ReceivablesNameAction">
+		<forward name="receivablesNameList" path="basedata.receivablesNameList" />
+		<forward name="receivablesNameAdd" path="basedata.receivablesNameAdd" />
+		<forward name="receivablesNameModify" path="basedata.receivablesNameModify" />
+		<forward name="receivablesNameDisplay" path="basedata.receivablesNameDisplay" />
+		<forward name="returnList" path="/receivablesNameSearchAction.do?method=toSearchRecord" />
+		<forward name="returnAdd" path="/receivablesNameAction.do?method=toPrepareAddRecord" />
+		<forward name="returnModify" path="/receivablesNameAction.do?method=toPrepareUpdateRecord" />
+	</action>		
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/receivablesNameSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.basedata.ReceivablesNameAction">
+		<forward name="receivablesNameList" path="basedata.receivablesNameList" />
+		
+	</action>
+
+
+    <action attribute="invoiceTypeForm" name="invoiceTypeForm" parameter="method"
+		path="/invoiceTypeAction" scope="request"
+		type="com.gzunicorn.struts.action.basedata.InvoiceTypeAction">
+		<forward name="invoiceTypeList" path="basedata.invoiceTypeList" />
+		<forward name="invoiceTypeAdd" path="basedata.invoiceTypeAdd" />
+		<forward name="invoiceTypeModify" path="basedata.invoiceTypeModify" />
+		<forward name="invoiceTypeDisplay" path="basedata.invoiceTypeDisplay" />
+		<forward name="returnList" path="/invoiceTypeSearchAction.do?method=toSearchRecord" />
+		<forward name="returnAdd" path="/invoiceTypeAction.do?method=toPrepareAddRecord" />
+		<forward name="returnModify" path="/invoiceTypeAction.do?method=toPrepareUpdateRecord" />
+	</action>		
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/invoiceTypeSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.basedata.InvoiceTypeAction">
+		<forward name="invoiceTypeList" path="basedata.invoiceTypeList" /> 	
+	</action>
+	
+	
+    <action attribute="elevatorCoordinateLocationForm" name="elevatorCoordinateLocationForm" parameter="method"
+		path="/elevatorCoordinateLocationAction" scope="request"
+		type="com.gzunicorn.struts.action.basedata.ElevatorCoordinateLocationAction">
+		<forward name="elevatorCoordinateLocationList" path="basedata.elevatorCoordinateLocationList" />
+		<forward name="elevatorCoordinateLocationAdd" path="basedata.elevatorCoordinateLocationAdd" />
+		<forward name="elevatorCoordinateLocationModify" path="basedata.elevatorCoordinateLocationModify" />
+		<forward name="elevatorCoordinateLocationDisplay" path="basedata.elevatorCoordinateLocationDisplay" />
+		<forward name="elevatorCoordinateLocationImport" path="basedata.elevatorCoordinateLocationImport" />
+		<forward name="returnList" path="/elevatorCoordinateLocationSearchAction.do?method=toSearchRecord" />
+		<forward name="returnImport" path="/elevatorCoordinateLocationAction.do?method=toPrepareImportRecord" />
+		<forward name="returnAdd" path="/elevatorCoordinateLocationAction.do?method=toPrepareAddRecord" />
+		<forward name="returnModify" path="/elevatorCoordinateLocationAction.do?method=toPrepareUpdateRecord" />
+	</action>		
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/elevatorCoordinateLocationSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.basedata.ElevatorCoordinateLocationAction">
+		<forward name="elevatorCoordinateLocationList" path="basedata.elevatorCoordinateLocationList" /> 	
+	</action>
+
+	</action-mappings>
+ 
+
+</struts-config>

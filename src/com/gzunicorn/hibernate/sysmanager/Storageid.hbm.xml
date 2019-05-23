@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Fri Nov 11 09:38:54 CST 2005                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.sysmanager">
+
+    <class name="Storageid" table="StorageID">
+        <id name="storageid" column="StorageID" type="java.lang.String"> 		
+	 		<generator class="assigned" />
+ 		</id>
+        
+        <property name="storagename" column="StorageName" type="string"  not-null="true" />
+        <property name="comid" column="ComID" type="string"  not-null="true" />
+        <property name="parentstorageid" column="ParentStorageID" type="string"  not-null="true" />
+        <property name="storagehead" column="StorageHead" type="string" />
+        <property name="storagetype" column="Storagetype" type="string" />
+        <property name="phone" column="Phone" type="string" />
+        <property name="fax" column="Fax" type="string" />
+        <property name="email" column="Email" type="string" />
+        <property name="enabledflag" column="EnabledFlag" type="string"  not-null="true" />
+        <property name="rem" column="Rem" type="string" />
+ 
+    </class>
+    
+</hibernate-mapping>

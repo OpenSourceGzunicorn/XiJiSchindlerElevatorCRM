@@ -1,0 +1,108 @@
+INPUT.button
+{
+  BORDER-RIGHT: #80A6F6 1px solid;
+  BORDER-TOP: #80A6F6 1px solid;
+  BORDER-LEFT: #80A6F6 1px solid;
+  BORDER-BOTTOM: #80A6F6 1px solid;
+  BACKGROUND-COLOR: #e9effd;
+}
+
+.select
+{
+  BORDER-RIGHT: #80A6F6 1px solid;
+  BORDER-TOP: #80A6F6 1px solid;
+  BORDER-LEFT: #80A6F6 1px solid;
+  BORDER-BOTTOM: #80A6F6 1px solid;
+  BACKGROUND-COLOR: #e9effd;
+}
+
+
+TD
+{
+  FONT-SIZE: 9pt;
+}
+
+.outtable
+{
+  background-color:#80A6F6;
+  width:142px;
+}
+
+.yearandmonthtable
+{
+  width:140px;
+  height:23px;
+}
+
+.nexttd
+{
+  width:16px;
+  height:23px;
+  background-color:#80A6F6;
+  cursor:hand;
+  color:#ffffff;
+  font-weight:bold;
+  font-size:9pt;
+  font-family: Arial;
+}
+
+.yeartd
+{
+  width:60px;
+  height:23px;
+  background-color:#fdfde7;
+  cursor:hand;
+}
+
+.monthtd
+{
+  width:48px;
+  height:23px;
+  background-color:#fdfde7;
+  cursor:hand;
+}
+
+.weektable
+{
+  width:140px;
+  height:20px;
+  background-color:#80A6F6;
+}
+
+.weektd
+{
+  color:#ffffff;
+}
+
+.31table
+{
+  width:140px;
+  height:120px;
+  background-color:#e9effd;
+}
+
+.31td
+{
+  width:20px;
+  height:20px;
+}
+
+.closestyle
+{
+  cursor:hand;
+}
+
+.timetable
+{
+  width:140px;
+  height:20px;
+  background-color:#e9effd;
+}
+
+.timetd
+{
+  width:40px;
+  height:20px;
+  font-family: 宋体;
+}
+/*另外在CalenderAndTime.js文件中还写死了border、bordercolorlight、bordercolordark和函数meizzSetDay*/

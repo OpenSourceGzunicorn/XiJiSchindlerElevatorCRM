@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Wed Nov 14 09:48:19 CST 2007                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.sysmanager">
+
+    <class name="Wsroleconfig" table="WsRoleConfig">
+        <composite-id name="id" class="WsroleconfigKey">
+        	<key-property name="roleid" column="RoleID" type="string"/>
+        	<key-property name="wsid" column="WsId" type="string"/>
+        </composite-id>
+    </class>
+    
+</hibernate-mapping>

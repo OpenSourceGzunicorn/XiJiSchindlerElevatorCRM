@@ -1,0 +1,155 @@
+<%@ page contentType="text/html; charset=GBK"%>
+<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
+<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
+<%@ taglib uri="/WEB-INF/TreeShow.tld" prefix="TreeShow" %>
+<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ taglib uri="/WEB-INF/html-table.tld" prefix="table" %>
+<link rel="stylesheet" type="text/css" href="<html:rewrite forward='formCSS'/>">
+<script language="javascript" src="<html:rewrite forward='calendarJS'/>"></script>
+<script language="javascript" src="<html:rewrite forward='AJAX'/>"></script>
+<html:html locale="true">
+<html:base/>
+<head>
+<title><bean:message key="app.title"/>
+</title>
+<link rel="stylesheet" type="text/css" href="<html:rewrite forward='dTreeCSS'/>">
+<link rel="stylesheet" type="text/css" href="<html:rewrite forward='publicCSS'/>">
+<link rel="stylesheet" type="text/css" href="<html:rewrite forward='queryCSS'/>">
+<SCRIPT LANGUAGE=javascript src="<html:rewrite forward='dTreeJS'/>"></SCRIPT>
+
+<SCRIPT LANGUAGE=javascript>
+
+
+function hidden(){
+  window.parent.main.cols="15,0,*,15";
+}
+function hidden1(){
+  //alert("hi");
+  window.parent.rmain.rows="20,0,*";
+}
+
+//window.attachEvent("onload",window_onload);
+
+</SCRIPT>
+<style>
+.tree_body{border-bottom:black 1px solid;}
+.tree_header{cursor:hand;width:100%;height:18;padding-top:2px;background :#b8c4f4;BORDER: #646c94 1px solid;}
+.node{background-color:white;}
+.tree_div{padding-left:8px;}
+</style>
+</head>
+<body leftmargin="0" topmargin="0" class="tree_body">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  <td>
+    <div class="tree_header" align="center">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+     <tr>
+      <td width="100%">
+      <div width="100%" align="center" onclick="javascript:hidden1();">
+		   展开/闭合↑
+      </div>
+      </td>
+     
+     </tr>
+    </table>
+    </div>
+    <br>
+  </td>
+  </tr>
+  
+  <tr>
+  <td>
+   <div id="divdutylist" name="divdutylist">
+    <div align="center"> 
+    <table width="90%" border="0" cellspacing="0" cellpadding="0">
+    <tr><td valign="top">
+    <table width="45%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td nowrap>任务列表:</td>
+    </tr>
+    <tr>
+      <td nowrap><div align="center">序号</div></td>
+      <td nowrap><div align="center">任务名称</div></td>
+      <td nowrap><div align="center">任务数量(个)</div></td>
+      <td nowrap><div align="center">位置</div></td>
+    </tr>
+  
+    <%int i=1;%>
+    <logic:iterate id="duty" name="dutyList">
+    
+    <tr bgcolor="#FFFFFF" class="title_h3">
+    <td nowrap><div align="center"><%=i%></div></td>
+    <td nowrap><div align="center"><bean:write name="duty" property="nodename"/></div></td>
+    <td nowrap><div align="center"><bean:write name="duty" property="dutycount"/></div></td>
+    <td nowrap><div align="center"><a href="<bean:write name="duty" property="nodeurl"/>" target="rightFrame">跳转</a></div></td>
+    </tr>	
+    
+    <%i++;%>
+    </logic:iterate>
+  </table>
+  </td>
+  
+  <td  valign="top">
+  <table width="45%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  	  <td nowrap>信息发布:</td>
+  </tr>
+  <tr>
+      <td nowrap>1,<a href="#">060417合同已通过审核。</a></td>
+  </tr>
+  <tr>
+  	  <td nowrap>2,<a href="#">060418合同已通过审核。</a></td>
+  </tr>
+  </table>
+  </td>  
+  </table>
+  </div>
+  </div>
+  </td>
+  </tr>
+</table> 
+</body>
+
+</html:html>
+
+<script>
+
+function getDetailInfo()
+{
+	    var detailRequest = new AjaxRequest();
+
+		var url = "<html:rewrite page='/dutysearchAction.do'/>?method=toGetDetailMehtod";
+		
+		detailRequest.url = url;
+		detailRequest.mehod="POST";
+		detailRequest.onComplete = setDetailInfo;
+		detailRequest.process();
+
+}
+
+setDetailInfo = function(req)
+{
+
+	var duty=req.responseText;
+	//alert("duty="+duty);
+	var di=document.getElementById("divdutylist");
+	//alert(di.id);
+	di.innerHTML="<div align=center><table width=90% border=0 cellspacing=0 cellpadding=0>"
+    +"<tr><td valign=top>"
+    +"<table width=45% border=0 cellspacing=0 cellpadding=0>"
+    +"<tr>"
+      +"<td nowrap>任务列表:</td>"
+    +"</tr>"
+    +"<tr>"
+      +"<td nowrap><div align=center>序号</div></td>"
+      +"<td nowrap><div align=center>任务名称</div></td>"
+      +"<td nowrap><div align=center>任务数量(个)</div></td>"
+      +"<td nowrap><div align=center>位置</div></td>"
+    +"</tr>"
+    +duty+"</table></td></tr></table></div>";
+	//alert(di.innerHTML);
+}
+var time = 5000;
+var timename=setInterval("getDetailInfo();",time);
+</script>

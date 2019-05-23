@@ -1,0 +1,110 @@
+.list_table
+{
+    BORDER: black 1px solid;
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: ËÎÌו;
+    BACKGROUND-COLOR: white;
+}
+.meta_td
+{
+  font-size:10pt;
+  height:25px;
+  background-color:#b8c4f4;
+  border-right:1px #646c94 solid;
+  border-bottom:1px #646c94 solid;
+  border-left:1px while solid;
+  text-align:center;
+  vertical-align:middle;
+}
+.data_tr
+{
+    HEIGHT: 16px;
+    BACKGROUND-COLOR: white
+}
+.data_td
+{
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: ËÎÌו;
+    PADDING-LEFT: 3px;
+    padding-right:3px;
+    HEIGHT: 20px;
+    BORDER-BOTTOM: gray 1px solid;
+    word-wrap:break-word;
+}
+
+.navi_table
+{
+    BORDER: black 1px solid;
+    FONT-SIZE: 10pt;
+    FONT-FAMILY: ËÎÌו;
+    BACKGROUND-COLOR: #CCCCCC;
+    height:25px;
+    padding-left:4px;
+}
+.navi_jump_td{
+	padding-right:4px;
+  vertical-align:middle;
+	text-align:right;
+}
+
+.navi_jump_input{
+  width:30px;
+  height:18px;
+  border:1px #859bb5 solid;
+}
+.navi_jump_out{
+  width:27px;
+  height:18px;
+  border:1px #bc8815 solid;
+}
+.navi_jump_in{
+  width:25px;
+  height:16px;
+  border-top:2px white solid;
+  border-right:2px #e3d65f solid;
+  border-bottom:2px #e3d65f solid;
+  border-left:2px white solid;
+  background-color:#faeb6d;
+  text-align:center;
+  cursor:hand;
+}
+.navi_link_td{
+  font-size:10pt;
+  padding-top:4px;
+  padding-bottom:4px;
+  padding-left:4px;
+  padding-right:4px;
+  height:25px;
+  background-color:#b8c4f4;
+  vertical-align:middle;
+  color:#192C74;
+  text-decoration:none;
+}
+.navi_jump_td{
+  font-size:10pt;
+  padding-top:4px;
+  padding-bottom:4px;
+  padding-left:4px;
+  padding-right:4px;
+  height:25px;
+  background-color:#b8c4f4;
+  vertical-align:middle;
+  color:#192C74;
+  text-decoration:none;
+}
+.navi_jump_out{
+  width:27px;
+  height:18px;
+  border:1px #bc8815 solid;
+}
+.navi_jump_in{
+  width:25px;
+  height:16px;
+  border-top:2px white solid;
+  border-right:2px #e3d65f solid;
+  border-bottom:2px #e3d65f solid;
+  border-left:2px white solid;
+  background-color:#faeb6d;
+  text-align:center;
+  cursor:hand;
+}

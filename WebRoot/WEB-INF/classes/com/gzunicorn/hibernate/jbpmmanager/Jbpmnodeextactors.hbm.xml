@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Sun Jan 18 15:21:58 CST 2009                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.jbpmmanager">
+
+    <class name="Jbpmnodeextactors" table="JBPM_NodeExtActors">
+        <id name="id" column="Id_" type="long">
+            <generator class="native"/>
+        </id>
+ 		<property name="nodeid" column="NodeId" type="long"  not-null="true" />
+        <property name="actors" column="Actors" type="string"  not-null="true" />
+        <property name="typeid" column="TypeId" type="integer"  not-null="true" />
+        <property name="tableid" column="TableId" type="integer"  not-null="true" />
+        <property name="ext1" column="Ext1" type="string" />
+        <property name="ext2" column="Ext2" type="string" />
+        <property name="ext3" column="Ext3" type="string" />
+        <property name="ext4" column="Ext4" type="string" />
+        <property name="ext5" column="Ext5" type="string" />
+ 
+        
+    </class>
+    
+</hibernate-mapping>

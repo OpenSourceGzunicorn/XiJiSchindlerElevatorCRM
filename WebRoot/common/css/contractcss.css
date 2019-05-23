@@ -1,0 +1,157 @@
+body {
+	font-family: Arial, Helvetica, sans-serif, "宋体";
+	font-size: 9pt;
+	margin-top:0px;
+	margin-left:0px;
+	SCROLLBAR-FACE-COLOR: #f3f3f3;SCROLLBAR-HIGHLIGHT-COLOR: #f3f3f3; SCROLLBAR-SHADOW-COLOR: #ACACAC; SCROLLBAR-3DLIGHT-COLOR: #ACACAC; LINE-HEIGHT: 20px; SCROLLBAR-ARROW-COLOR: #ACACAC; SCROLLBAR-TRACK-COLOR: #f3f3f3; SCROLLBAR-DARKSHADOW-COLOR: #f3f3f3; SCROLLBAR-BASE-COLOR: #f3f3f3;
+}
+.botton{font-size:9pt; font-family:Arial,"宋体"; padding-top:2px;}
+.text{font-size:9pt;}
+.td{background-color:#EEF1FD;}
+.td1{background-color:#B8C4F4; text-align:center; font-weight:bold;}
+.td2{line-height:22px; text-align:center; background-color:#F6F6F6;}
+.td3{background-color:#B8D3F4; text-align:center; line-height:20px;}
+.td3_1{background-color:#ADC6E7; text-align:center; line-height:20px;}
+.td4{background-color:#F6F6F6;line-height:20px;}
+.td5{border:#000000 solid;
+       border-right-width:0px;
+	   border-left-width:0px;
+	   border-top-width:0px;
+	   border-bottom-width:1px;}
+.td6{background-color:#2A5285; text-align:right; line-height:20px; color:#ffffff;}
+.title{font-weight:bold;font-size:10pt;color:#333333;}
+.table{border:#000000 solid;
+       border-right-width:0px;
+	   border-left-width:1px;
+	   border-top-width:1px;
+	   border-bottom-width:0px;}
+.table1{border:#000000 solid;
+       border-right-width:0px;
+	   border-left-width:0px;
+	   border-top-width:1px;
+	   border-bottom-width:0px;}
+.table_td{border:#000000 solid;
+       border-right-width:1px;
+	   border-left-width:0px;
+	   border-top-width:0px;
+	   border-bottom-width:1px;
+	   font-family: "宋体";
+	   font-size: 9pt;
+	   color: #000000;
+	   text-align:center;}
+.textarea {
+	font-family: Arial, Helvetica, sans-serif, "宋体";
+	font-size: 9pt;
+	color: #000000;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #000000;
+}
+.textarea1 {
+	font-family: Arial, Helvetica, sans-serif, "宋体";
+	font-size: 9pt;
+	border: none;
+}
+.textarea2 {
+	font-family: Arial, Helvetica, sans-serif, "宋体";
+	font-size: 9pt;
+	border: none;
+	text-align:center;
+}
+.textarea3{overflow:hidden; border:none;font-family: Arial, Helvetica, sans-serif, "宋体";font-size: 9pt; text-align:center;}
+.textarea4 {
+	font-family: Arial, Helvetica, sans-serif, "宋体";
+	font-size: 9pt;
+	color: #000000;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #000000;
+	background-color:#F4F2F2;
+	width:25px;
+	text-align:center;
+}
+.textarea4_1 {
+	font-family: Arial, Helvetica, sans-serif, "??";
+	font-size: 9pt;
+	color: #000000;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-bottom-color: #000000;
+	background-color:transparent;
+	text-align:center;
+}
+.pageEnd {page-break-after:always} 
+
+
+
+
+
+
+.titlebar {font-family:宋体; font-size:9pt;color:#003300;background-color:#99CC99}
+  BODY {font-family:宋体;font-size:9pt; background-color:#F5F0E6;}
+
+    .TabActive {
+color: #ffff00;
+font-family:宋体;font-size:9pt;
+font-weight: bold;
+background-color: #6699CC;
+cursor: default;
+
+border-top: 2px outset #99ccff;
+border-right: 2px outset #336699;
+    }
+    .TabInactive {
+color: #FFFFFF;
+font-family:宋体;font-size:9pt;
+font-weight: normal;
+background-color: #003366;
+cursor: hand;
+
+border-right: 1px solid #99ccff;
+border-bottom: 1px solid #99ccff;
+    }
+    .TabInactiveOver {
+color: #FFFFFF;
+font-family:宋体;font-size:9pt;
+font-weight: normal;
+background-color: #003366;
+cursor: hand;
+
+border-right: 1px solid #99ccff;
+border-bottom: 1px solid #99ccff;
+    }
+    .TabInactiveEmpty {
+color: #FFFFFF;
+font-family:宋体;font-size:9pt;
+font-weight: normal;
+
+cursor: hand;
+
+border-right: 1px solid #99ccff;
+border-bottom: 1px solid #99ccff;
+    }   
+    
+
+    .TabBarNT {background-color:#EEEEEE;
+
+        width:96%;height:21px;}
+    .PageNT {
+background-color:#F5F0E6;
+
+        width:100%;height:508px;
+        padding-left:0px;padding-top:2px;
+      }
+      
+      
+.inputTableData {
+BACKGROUND: white; BORDER-BOTTOM: white 1px dashed; BORDER-LEFT: white 1px dashed; BORDER-RIGHT: white 1px dashed; BORDER-TOP: white 1px dashed; COLOR: black; CURSOR: hand; FONT-FAMILY: verdana,arial,helvetica; FONT-SIZE: 12px;width:100%;
+}      

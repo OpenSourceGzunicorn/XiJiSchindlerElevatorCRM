@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root-container name="elevatortransfercaseregister" width="839" height="758">
+  <node name="填写维保交接电梯情况" x="401" y="32" width="171" height="36">
+    <edge>
+      <label x="-9" y="-11"/>
+    </edge>
+  </node>
+  <node name="厂检部长审核" x="422" y="171" width="132" height="36">
+    <edge>
+      <label x="-48" y="-12"/>
+    </edge>
+    <edge>
+      <label x="12" y="-19"/>
+      <bendpoint w1="-218" h1="-2" w2="0" h2="69"/>
+    </edge>
+  </node>
+  <node name="安装部长审核" x="423" y="245" width="132" height="36">
+    <edge>
+      <label x="-48" y="-10"/>
+    </edge>
+    <edge>
+      <label x="7" y="16"/>
+      <bendpoint w1="-118" h1="-1" w2="-117" h2="73"/>
+      <bendpoint w1="-118" h1="-75" w2="-117" h2="-1"/>
+    </edge>
+    <edge>
+      <label x="13" y="-21"/>
+      <bendpoint w1="-219" h1="-1" w2="0" h2="144"/>
+    </edge>
+  </node>
+  <node name="执行扣款" x="431" y="587" width="136" height="36">
+    <edge>
+      <label x="-35" y="-11"/>
+    </edge>
+  </node>
+  <node name="安装公司部长审核" x="425" y="449" width="132" height="36">
+    <edge>
+      <label x="-15" y="-13"/>
+    </edge>
+    <edge>
+      <label x="8" y="120"/>
+      <bendpoint w1="-121" h1="0" w2="-118" h2="278"/>
+      <bendpoint w1="-120" h1="-278" w2="-117" h2="0"/>
+    </edge>
+    <edge>
+      <label x="8" y="-22"/>
+      <bendpoint w1="-221" h1="0" w2="0" h2="349"/>
+    </edge>
+  </node>
+  <node name="是否迅达安装" x="426" y="381" width="132" height="36">
+    <edge>
+      <label x="-4" y="-11"/>
+    </edge>
+    <edge>
+      <label x="-27" y="-98"/>
+      <bendpoint w1="158" h1="-1" w2="152" h2="-341"/>
+      <bendpoint w1="156" h1="339" w2="150" h2="-1"/>
+    </edge>
+    <edge>
+      <label x="-23" y="-74"/>
+      <bendpoint w1="103" h1="-1" w2="96" h2="-207"/>
+      <bendpoint w1="103" h1="203" w2="96" h2="-3"/>
+    </edge>
+  </node>
+  <node name="厂检是否合格" x="422" y="103" width="132" height="36">
+    <edge>
+      <label x="-17" y="-10"/>
+    </edge>
+    <edge>
+      <label x="-13" y="23"/>
+      <bendpoint w1="200" h1="0" w2="-1" h2="-139"/>
+    </edge>
+  </node>
+  <node name="相关部长审核" x="426" y="315" width="132" height="36">
+    <edge>
+      <label x="-7" y="-11"/>
+    </edge>
+    <edge>
+      <label x="7" y="51"/>
+      <bendpoint w1="-121" h1="-1" w2="-117" h2="143"/>
+      <bendpoint w1="-120" h1="-145" w2="-116" h2="-1"/>
+    </edge>
+    <edge>
+      <label x="8" y="-21"/>
+      <bendpoint w1="-222" h1="-2" w2="0" h2="213"/>
+    </edge>
+  </node>
+  <node name="关闭流程" x="434" y="657" width="132" height="36">
+    <edge>
+      <label x="-13" y="-12"/>
+    </edge>
+  </node>
+  <node name="修改维保交接电梯情况" x="187" y="100" width="166" height="36">
+    <edge>
+      <label x="-11" y="-17"/>
+    </edge>
+  </node>
+  <node name="是否扣款" x="430" y="518" width="132" height="36">
+    <edge>
+      <label x="-9" y="-12"/>
+    </edge>
+    <edge>
+      <label x="-17" y="-75"/>
+      <bendpoint w1="-116" h1="0" w2="-118" h2="-203"/>
+      <bendpoint w1="-115" h1="203" w2="-117" h2="0"/>
+    </edge>
+  </node>
+  <node name="关闭审核流程" x="623" y="242" width="132" height="36">
+    <edge>
+      <label x="-11" y="-385"/>
+      <bendpoint w1="1" h1="478" w2="192" h2="-1"/>
+    </edge>
+    <edge>
+      <label x="123" y="-19"/>
+      <bendpoint w1="-21" h1="110" w2="398" h2="252"/>
+      <bendpoint w1="-419" h1="109" w2="0" h2="251"/>
+    </edge>
+  </node>
+  <node name="流程通过" x="432" y="721" width="132" height="36"/>
+</root-container>

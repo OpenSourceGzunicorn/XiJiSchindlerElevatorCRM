@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Sun Jul 10 19:12:47 CST 2005                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.viewmanager">
+
+    <class name="ViewLoginUserInfo" table="ViewLoginUserInfo">
+ 
+ 		<id name="userID" column="UserID" type="java.lang.String">
+ 			<generator class="assigned" />
+ 		</id>
+
+        <property name="userName" column="UserName" type="java.lang.String"  not-null="true" />
+        <property name="passwd" column="Passwd" type="java.lang.String"  not-null="true" />
+        <property name="roleID" column="RoleID" type="java.lang.String"  not-null="true" />
+        <property name="roleName" column="RoleName" type="java.lang.String"  not-null="true" />
+        <property name="moduleID" column="ModuleID" type="java.lang.String"  not-null="true" />
+        <property name="moduleName" column="ModuleName" type="java.lang.String"  not-null="true" />
+        <property name="enabledFlag" column="EnabledFlag" type="java.lang.String"  not-null="true" />
+        <property name="storageId" column="StorageId" type="java.lang.String" />
+        <property name="storageName" column="StorageName" type="java.lang.String" />
+        <property name="rem1" column="Rem1" type="java.lang.String" />
+        <property name="class1" column="Class1" type="java.lang.String" />
+        <property name="comID" column="ComID" type="java.lang.String" />
+        <property name="comName" column="ComName" type="java.lang.String" />
+        <property name="phoneimei" column="phoneimei" type="java.lang.String" />
+        <property name="phone" column="phone" type="java.lang.String" />
+    </class>
+    
+</hibernate-mapping>

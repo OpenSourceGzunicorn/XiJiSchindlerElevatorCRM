@@ -1,0 +1,46 @@
+.tableclass { background-color: #000000 }
+
+.tableclass1 { background-color: #FFFFFF; border : 1px solid green }
+
+.tableclass2 { background-color: #FFFFFF; border-bottom: thin solid black }
+
+.tableclass3 { background-color: #FFFFFF }
+
+.evenRow { background-color: #FFFFFF }
+
+.oddRow { background-color: #FFFFFF }
+
+.headerRow { background-color: #FFFFFF }
+
+.evenRow2 { background-color: #FFFFF9 }
+
+.oddRow2 { background-color: #00CCDD }
+
+.headerRow2 { background-color: #00CCFF }
+
+.evenRow3 { background-color: #FFFFFF }
+
+.oddRow3 { background-color: #EEF1FD }
+
+.headerRow3 {
+	 background-color: #b8c4f4;
+	 font-size: 10pt;
+	 font-style: normal;
+	 font-weight: bold;}
+
+.noItems { font-size: 12pt; text-align: center; background-color: #FFFFFF ; font-style: normal}
+
+.navbar { margin-top: 10px; }
+
+.special1 { background-color: #ccffcc; font-weight: bold }
+
+.special2 { background-color: #ffccff; font-weight: bold }
+
+.special3 { background-color: #55aa55; font-weight: bold }
+
+.special4 { background-color: #DDDDFF; font-weight: bold }
+
+.special5 { background-color: #FFFFCC; font-weight: bold }
+
+.special6 { background-color: #66FF99; font-weight: bold }
+.checkboxCell { background-color: #88AA55 }

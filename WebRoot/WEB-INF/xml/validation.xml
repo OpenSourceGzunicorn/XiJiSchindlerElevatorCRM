@@ -1,0 +1,4015 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.0//EN" "http://jakarta.apache.org/commons/dtds/validator_1_0.dtd">
+<form-validation>
+	<global>
+		<constant>
+			<!--判断主键是否合法-->
+			<constant-name>PK</constant-name>
+			<constant-value>^[a-zA-Z0-9-_ .Ⅱ()（）]*$</constant-value>
+		</constant>
+
+		<constant>
+			<constant-name>phone</constant-name>
+			<constant-value>
+				^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$
+			</constant-value>
+		</constant>
+		<constant>
+			<constant-name>zip</constant-name>
+			<constant-value>^\d{5}\d*$</constant-value>
+		</constant>
+		<constant>
+			<!--判断不带符号的小数点数字 -->
+			<constant-name>integerdefine</constant-name>
+			<constant-value>^\d+(\.\d+)?$</constant-value>
+		</constant>
+		<!-- 判断没有符号的整数,只能够为5位数-->
+		<constant>
+			<constant-name>noSignInteger</constant-name>
+			<constant-value>^\d{5}$</constant-value>
+		</constant>
+	</global>
+	<formset>
+		<constant>
+			<constant-name>zip</constant-name>
+			<constant-value>^\d{5}(-\d{4})?$</constant-value>
+		</constant>
+
+		<constant>
+			<constant-name>zhz</constant-name>
+			<constant-value>(^\d+$)|(^\d+.\d+$)</constant-value>
+		</constant>
+
+
+		<form name="FeeAppInfoForm">
+			<field property="times" depends="required">
+				<msg name="required" key="check.error.primarykey"
+					resource="true" />
+				<arg0 key="FeeAppInfo.times" resource="true" />
+			</field>
+		</form>
+
+		<form name="MugMaTypeForm">
+			<field property="maid" depends="required,mask">
+				<msg name="required" key="check.error.primarykey"
+					resource="true" />
+				<msg name="mask" key="check.error.primarykey"
+					resource="true" />
+				<arg0 key="MugMaType.maid" resource="true" />
+				<arg1 key="${var:mask}" name="mask" resource="false" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="maname" depends="required">
+				<msg name="required" key="error.field.empty"
+					resource="true" />
+				<arg0 key="MugMaType.maname" resource="true" />
+			</field>
+		</form>
+
+
+
+		<form name="mugStanTaskForm">
+			<field property="serviceno" depends="required">
+				<msg name="required" key="error.field.empty"
+					resource="true" />
+				<arg0 key="mugStanTask.serviceno" resource="true" />
+			</field>
+			<field property="domainname" depends="required">
+				<msg name="required" key="error.field.empty"
+					resource="true" />
+				<arg0 key="mugStanTask.domainname" resource="true" />
+			</field>
+			<field property="times" depends="required">
+				<msg name="required" key="error.field.empty"
+					resource="true" />
+				<arg0 key="mugStanTask.times" resource="true" />
+			</field>
+			<field property="serviceno" depends="required">
+				<msg name="required" key="error.field.empty"
+					resource="true" />
+				<arg0 key="mugStanTask.serviceno" resource="true" />
+			</field>
+		</form>
+
+		<form name="mugContractDetailForm">
+			<field property="facid" depends="required">
+				<msg name="required" key="error.field.empty"
+					resource="true" />
+				<arg0 key="mugContractDetail.facid" resource="true" />
+			</field>
+			<field property="pordid" depends="required">
+				<msg name="required" key="error.field.empty"
+					resource="true" />
+				<arg0 key="mugContractDetail.pordid" resource="true" />
+			</field>
+		</form>
+
+
+		<form name="mugContractForm">
+			<field property="contractid" depends="required,mask">
+				<msg name="required" key="check.error.primarykey"
+					resource="true" />
+				<msg name="mask" key="check.error.primarykey"
+					resource="true" />
+				<arg0 key="mugContract.ContractID" resource="true" />
+				<arg1 key="${var:mask}" name="mask" resource="false" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="mugmatype" depends="required">
+				<msg name="required" key="error.field.empty"
+					resource="true" />
+				<arg0 key="mugContract.MaID" resource="true" />
+			</field>
+			<field property="mugstartdate" depends="required">
+				<msg name="required" key="error.field.empty"
+					resource="true" />
+				<msg name="date" key="error.field.date" resource="true" />
+				<arg0 key="mugContract.MugStartDate" resource="true" />
+			</field>
+			<field property="mugenddate" depends="required">
+				<msg name="required" key="error.field.empty"
+					resource="true" />
+				<msg name="date" key="error.field.date" resource="true" />
+				<arg0 key="mugContract.MugEndDate" resource="true" />
+			</field>
+		</form>
+
+		<form name="mugCustomerForm">
+			<field property="custid" depends="required,mask">
+				<msg name="required" key="error.username.required"
+					resource="true" />
+				<msg name="mask" key="logon.username.maskmsg"
+					resource="true" />
+				<arg0 key="logon.username.displayname" resource="true" />
+				<arg1 key="${var:mask}" name="mask" resource="false" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="logonForm">
+			<field property="userCode" depends="required,mask">
+				<msg name="required" key="error.username.required"
+					resource="true" />
+				<msg name="mask" key="logon.username.maskmsg"
+					resource="true" />
+				<arg0 key="logon.username.displayname" resource="true" />
+				<arg1 key="${var:mask}" name="mask" resource="false" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value></var-value>
+				</var>
+			</field>
+			<field property="password" depends="required,minlength">
+				<msg name="required" key="error.password.required"
+					resource="true" />
+				<arg0 key="${var:minlength}" name="minlength"
+					resource="false" />
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>5</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="roleForm">
+			<field property="roleid" depends="required,mask">
+				<msg name="required"
+					key="role.check.error.roleid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="role.roleid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="rolename" depends="required">
+				<msg name="required"
+					key="role.check.error.rolename.required" />
+			</field>
+			<!--  
+			<field property="moduleid" depends="required">
+				<msg name="required"
+					key="role.check.error.moduleid.required" />
+			</field>
+			<field property="allowflag" depends="required">
+				<msg name="required"
+					key="role.check.error.allowflag.required" />
+			</field>
+			-->			
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="role.check.error.enabledflag.required" />
+			</field>
+
+		</form>
+
+		<form name="loginuserForm">
+			<field property="userid" depends="required,mask">
+				<msg name="required"
+					key="loginuser.check.error.userid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="loginuser.userid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="username" depends="required">
+				<msg name="required"
+					key="loginuser.check.error.username.required" />
+			</field>
+			<field property="passwd" depends="required">
+				<msg name="required"
+					key="loginuser.check.error.passwd.required" />
+			</field>
+			<field property="storageid" depends="required">
+				<msg name="required"
+					key="loginuser.check.error.storageid.required" />
+			</field>
+			<field property="roleid" depends="required">
+				<msg name="required"
+					key="loginuser.check.error.roleid.required" />
+			</field>
+
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="loginuser.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="factoryForm">
+			<field property="facid" depends="required,mask">
+				<msg name="required"
+					key="factory.check.error.facid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="factory.facid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="facname" depends="required">
+				<msg name="required"
+					key="factory.check.error.facname.required" />
+			</field>
+		</form>
+
+		<form name="unittypeForm">
+			<field property="typeid" depends="required,mask">
+				<msg name="required"
+					key="unittype.check.error.typeid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="unittype.typeid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="typename" depends="required">
+				<msg name="required"
+					key="unittype.check.error.typename.required" />
+			</field>
+		</form>
+
+		<form name="boxForm">
+			<field property="boxcode" depends="required,mask">
+				<msg name="required"
+					key="box.check.error.boxcode.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="box.boxcode" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="boxname" depends="required">
+				<msg name="required"
+					key="box.check.error.boxname.required" />
+			</field>
+		</form>
+
+		<form name="elevatorflagForm">
+			<field property="flagid" depends="required,mask">
+				<msg name="required"
+					key="elevatorflag.check.error.falgid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorflag.flagid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="flagname" depends="required">
+				<msg name="required"
+					key="elevatorflag.check.error.flagname.required" />
+			</field>
+		</form>
+
+		<form name="areaForm">
+
+			<field property="areaname" depends="required">
+				<msg name="required"
+					key="area.check.error.areaname.required" />
+			</field>
+			<field property="areaidref" depends="required">
+				<msg name="required"
+					key="area.check.error.areaidref.required" />
+			</field>
+		</form>
+
+
+
+		<form name="elevatorfuncForm">
+			<field property="funcid" depends="required,mask">
+				<msg name="required"
+					key="elevatorfunc.check.error.funcid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorfunc.funcid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="funcname" depends="required">
+				<msg name="required"
+					key="elevatorfunc.check.error.funcname.required" />
+			</field>
+		</form>
+
+		<form name="customerForm">
+			<field property="custname" depends="required">
+				<msg name="required"
+					key="customer.check.error.custname.required" />
+			</field>
+			<field property="areaid" depends="required">
+				<msg name="required"
+					key="customer.check.error.areaid.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="customer.check.error.enabledflag.required" />
+			</field>
+			<field property="operationid" depends="required">
+				<msg name="required"
+					key="customer.check.error.operationid.required" />
+			</field>
+			<field property="linkman" depends="required">
+				<msg name="required"
+					key="customer.check.error.linkman.required" />
+			</field>
+			<field property="linkmanphone" depends="required">
+				<msg name="required"
+					key="customer.check.error.linkmanphone.required" />
+			</field>
+			<field property="address" depends="required">
+				<msg name="required"
+					key="customer.check.error.address.required" />
+			</field>
+			<field property="indueflag" depends="required">
+				<msg name="required"
+					key="customer.check.error.indueflag.required" />
+			</field>
+		</form>
+
+		<form name="elevatortypeForm">
+			<field property="typeid" depends="required">
+				<msg name="required"
+					key="elevatortype.check.error.typeid.required" />
+			</field>
+
+			<field property="typename" depends="required">
+				<msg name="required"
+					key="elevatortype.check.error.typename.required" />
+			</field>
+			<field property="flagid" depends="required">
+				<msg name="required"
+					key="elevatortype.check.error.flagid.required" />
+			</field>
+			<field property="noflag" depends="required">
+				<msg name="required"
+					key="elevatortype.check.error.noflag.required" />
+			</field>
+		</form>
+
+		<form name="elevatorfuncpriceForm">
+			<field property="typeid" depends="required">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.typeid.required" />
+			</field>
+			<field property="funcid" depends="required,mask">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.funcid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorfuncprice.funcid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="funcprice" depends="required">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.funcprice.required" />
+			</field>
+			<field property="price2" depends="required">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.price2.required" />
+			</field>
+		</form>
+
+		<form name="ftechparaForm">
+			<field property="elevatorid" depends="required">
+				<msg name="required"
+					key="ftechpara.check.error.elevatorid.required" />
+
+			</field>
+			<field property="kjkd" depends="required,mask">
+				<msg name="required"
+					key="ftechpara.check.error.kjkd.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="ftechpara.kjkd" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="high" depends="required,mask">
+				<msg name="required"
+					key="ftechpara.check.error.high.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="ftechpara.high" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="fwlc" depends="required,mask">
+				<msg name="required"
+					key="ftechpara.check.error.fwlc.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="ftechpara.fwlc" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+		</form>
+
+
+		<form name="elevatorinfoForm">
+			<field property="elevatorid" depends="required">
+				<msg name="required"
+					key="elevatorinfo.check.error.elevatorid.required" />
+			</field>
+
+			<field property="elevatorname" depends="required">
+				<msg name="required"
+					key="elevatorinfo.check.error.elevatorname.required" />
+			</field>
+			<field property="typeid" depends="required">
+				<msg name="required"
+					key="elevatorinfo.check.error.typeid.required" />
+			</field>
+			<field property="areaid" depends="required">
+				<msg name="required"
+					key="elevatorinfo.check.error.areaid.required" />
+			</field>
+			<field property="facid" depends="required">
+				<msg name="required"
+					key="elevatorinfo.check.error.facid.required" />
+			</field>
+			<field property="procflag" depends="required">
+				<msg name="required"
+					key="elevatorinfo.check.error.procflag.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="elevatorinfo.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="elevatorpriceForm">
+			<field property="elevatorid" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.elevatorid.required" />
+
+			</field>
+			<field property="floor" depends="required,mask">
+				<msg name="required"
+					key="elevatorprice.check.error.floor.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorprice.floor" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="stage" depends="required,mask">
+				<msg name="required"
+					key="elevatorprice.check.error.stage.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorprice.stage" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="door" depends="required,mask">
+				<msg name="required"
+					key="elevatorprice.check.error.door.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorprice.door" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="high" depends="required,mask">
+				<msg name="required"
+					key="elevatorprice.check.error.high.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorprice.high" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="unitprice" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.unitprice.required" />
+			</field>
+			<field property="fixturefee" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.fixturefee.required" />
+			</field>
+			<field property="fittingfee" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.fittingfee.required" />
+			</field>
+			<field property="installfee" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.installfee.required" />
+			</field>
+			<field property="condolefee" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.condolefee.required" />
+			</field>
+			<field property="buildfee" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.buildfee.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.enabledflag.required" />
+			</field>
+			<field property="debugfee" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.debugfee.required" />
+			</field>
+		</form>
+
+
+		<form name="paymenttypeForm">
+			<field property="payid" depends="required,mask">
+				<msg name="required"
+					key="paymenttype.check.error.payid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="paymenttype.payid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="payname" depends="required">
+				<msg name="required"
+					key="paymenttype.check.error.payname.required" />
+			</field>
+		</form>
+
+		<form name="quotecgpriceForm">
+			<field property="cgprice" depends="required,mask">
+				<msg name="required" key="quotecgprice.float" />
+				<msg name="mask"
+					key="quotecgprice.check.error.cgprice.required" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${integerdefine}</var-value>
+				</var>
+			</field>
+			<field property="typeid" depends="required">
+				<msg name="required"
+					key="quotecgprice.check.error.typeid.required" />
+			</field>
+			<field property="zzid" depends="required">
+				<msg name="required"
+					key="quotecgprice.check.error.zzid.required" />
+			</field>
+		</form>
+
+		<form name="quotecgpriceupdateForm">
+			<field property="cgPrice" depends="required,mask">
+				<msg name="required" key="quotecgprice.float" />
+				<msg name="mask"
+					key="quotecgprice.check.error.cgprice.required" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${integerdefine}</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="unitinfomasterForm">
+			<!-- field property="shopid" depends="required,mask">
+				<msg name="required" key="unitinfo.check.error.shopid.required"/>
+				<msg name="mask" key="check.error.primarykey"/>
+				<arg0 name="mask" key="unitinfo.shopid"/>
+				<var>
+				<var-name>mask</var-name>
+				<var-value>${PK}</var-value>
+				</var>
+				</field-->
+
+			<field property="shopfullname" depends="required">
+				<msg name="required"
+					key="unitinfo.check.error.shopfullname.required" />
+			</field>
+			<field property="areaid" depends="required">
+				<msg name="required"
+					key="unitinfo.check.error.areaid.required" />
+			</field>
+			<field property="typeid" depends="required">
+				<msg name="required"
+					key="unitinfo.check.error.typeid.required" />
+			</field>
+			<field property="equipment" depends="required">
+				<msg name="required"
+					key="unitinfo.check.error.equipment.required" />
+			</field>
+
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="unitinfo.check.error.enabledflag.required" />
+			</field>
+			<field property="rem1" depends="maxlength">
+				<msg name="maxlength"
+					key="unitinfo.check.error.rem1.length" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>127</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="unitinfoForm">
+			<field property="shopname" depends="required">
+				<msg name="required"
+					key="unitinfo.check.error.shopname.required" />
+			</field>
+			<field property="shopfullname" depends="required">
+				<msg name="required"
+					key="unitinfo.check.error.shopfullname.required" />
+			</field>
+			<field property="areaid" depends="required">
+				<msg name="required"
+					key="unitinfo.check.error.areaid.required" />
+			</field>
+			<field property="typeid" depends="required">
+				<msg name="required"
+					key="unitinfo.check.error.typeid.required" />
+			</field>
+			<field property="equipment" depends="required">
+				<msg name="required"
+					key="unitinfo.check.error.equipment.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="unitinfo.check.error.enabledflag.required" />
+			</field>
+			<field property="rem1" depends="maxlength">
+				<msg name="maxlength"
+					key="unitinfo.check.error.rem1.length" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>127</var-value>
+				</var>
+			</field>
+		</form>
+
+
+		<form name="WaiBaoDanWeiForm">
+			<field property="custid" depends="required">
+				<msg name="required"
+					key="mainten.check.error.custIdd.required" />
+			</field>
+			<field property="custname" depends="required">
+				<msg name="required"
+					key="mainten.check.error.custId.required" />
+			</field>
+			<field property="principal" depends="required">
+				<msg name="required"
+					key="mainten.check.error.fuzeren.required" />
+			</field>
+			<field property="address" depends="required">
+				<msg name="required"
+					key="mainten.check.error.address.required" />
+			</field>
+			<field property="phone" depends="required">
+				<msg name="required"
+					key="mainten.check.error.phone.required" />
+			</field>
+			<field property="rem1" depends="maxlength">
+				<msg name="maxlength"
+					key="mainten.check.error.rem.lenght" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>127</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="WaiBaoPayMoneyForm">
+			<field property="payment" depends="required">
+				<msg name="required"
+					key="waibao.paymoney.check.error.payment.required" />
+			</field>
+		</form>
+
+		<form name="unitdetailForm">
+			<field property="shopid" depends="required">
+				<msg name="required"
+					key="unitdetail.check.error.shopid.required" />
+			</field>
+			<field property="year1" depends="required">
+				<msg name="required"
+					key="unitdetail.check.error.year1.required" />
+			</field>
+			<field property="procflag" depends="required">
+				<msg name="required"
+					key="unitdetail.check.error.procflag.required" />
+			</field>
+		</form>
+
+		<form name="iteminfoForm">
+			<field property="itemname" depends="required">
+				<msg name="required"
+					key="iteminfo.check.error.itemname.required" />
+			</field>
+			<field property="speerunit" depends="required">
+				<msg name="required"
+					key="iteminfo.check.error.speerunit.required" />
+			</field>
+			<field property="shopid" depends="required">
+				<msg name="required"
+					key="iteminfo.check.error.shopid.required" />
+			</field>
+			<field property="username" depends="required">
+				<msg name="required"
+					key="iteminfo.check.error.username.required" />
+			</field>
+			<field property="itemstatus" depends="required">
+				<msg name="required"
+					key="iteminfo.check.error.itemstatus.required" />
+			</field>
+			<field property="operationid" depends="required">
+				<msg name="required"
+					key="iteminfo.check.error.operationid.required" />
+			</field>
+			<field property="operdate" depends="required">
+				<msg name="required"
+					key="iteminfo.check.error.operdate.required" />
+			</field>
+			<field property="areaid" depends="required">
+				<msg name="required"
+					key="iteminfo.check.error.areaid.required" />
+			</field>
+			<field property="procflag" depends="required">
+				<msg name="required"
+					key="iteminfo.check.error.procflag.required" />
+			</field>
+			<field property="itemaddress" depends="required">
+				<msg name="required"
+					key="iteminfo.check.error.itemaddress.required" />
+			</field>
+		</form>
+
+		<form name="operationForm">
+			<field property="operid" depends="required,mask">
+				<msg name="required"
+					key="operation.check.error.operid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="operation.operid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="opername" depends="required">
+				<msg name="required"
+					key="operation.check.error.opername.required" />
+			</field>
+			<field property="shopid" depends="required">
+				<msg name="required"
+					key="operation.check.error.shopid.required" />
+			</field>
+		</form>
+
+		<form name="companyForm">
+			<field property="comid" depends="required,mask">
+				<msg name="required"
+					key="company.check.error.comid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="company.comid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="comtype" depends="required">
+				<msg name="required"
+					key="company.check.error.comtype.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="company.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="AppUseMaintainForm">
+			<field property="appid" depends="required,mask">
+				<msg name="required"
+					key="appusemaintain.check.error.appid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="appusemaintain.appid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="title" depends="required">
+				<msg name="required"
+					key="appusemaintain.check.error.title.required" />
+			</field>
+		</form>
+
+		<form name="CustomerClassForm">
+			<field property="cclassid" depends="required,mask">
+				<msg name="required"
+					key="customerclass.check.error.cclassid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="customerclass.cclassid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="title" depends="required">
+				<msg name="required"
+					key="customerclass.check.error.title.required" />
+			</field>
+		</form>
+
+		<form name="StockModeForm">
+			<field property="stoctid" depends="required,mask">
+				<msg name="required"
+					key="stockmode.check.error.stoctid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="stockmode.stoctid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="title" depends="required">
+				<msg name="required"
+					key="stockmode.check.error.title.required" />
+			</field>
+		</form>
+
+		<form name="SendMaterielModeForm">
+			<field property="sendid" depends="required,mask">
+				<msg name="required"
+					key="sendmaterielmode.check.error.sendid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="sendmaterielmode.sendid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="title" depends="required">
+				<msg name="required"
+					key="sendmaterielmode.check.error.title.required" />
+			</field>
+		</form>
+
+		<form name="StorageSetupForm">
+			<field property="storageid" depends="required,mask">
+				<msg name="required"
+					key="storagesetup.check.error.storageid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="storagesetup.storageid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="title" depends="required">
+				<msg name="required"
+					key="storagesetup.check.error.title.required" />
+			</field>
+		</form>
+
+		<form name="PurveyModulusForm">
+			<field property="modusid" depends="required,mask">
+				<msg name="required"
+					key="purveymodulus.check.error.modusid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="purveymodulus.modusid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="mvalues" depends="required">
+				<msg name="required"
+					key="purveymodulus.check.error.mvalues.required" />
+			</field>
+		</form>
+
+		<form name="PJProvideForm">
+			<field property="supply_simple_name" depends="required">
+				<msg name="required"
+					key="pjprovide.check.error.supply_simple_name.required" />
+			</field>
+			<field property="supplyunitname" depends="required">
+				<msg name="required"
+					key="pjprovide.check.error.supplyunitname.required" />
+			</field>
+		</form>
+
+		<form name="MaterielClassForm">
+			<field property="classid" depends="required,mask">
+				<msg name="required"
+					key="materielclass.check.error.classid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="materielclass.classid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="title" depends="required">
+				<msg name="required"
+					key="materielclass.check.error.title.required" />
+			</field>
+		</form>
+
+		<form name="storageidForm">
+			<field property="storagename" depends="required">
+				<msg name="required"
+					key="storageid.check.error.storagename.required" />
+			</field>
+			<field property="comid" depends="required">
+				<msg name="required"
+					key="storageid.check.error.comid.required" />
+			</field>
+			<field property="parentstorageid" depends="required">
+				<msg name="required"
+					key="storageid.check.error.parentstorageid.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="storageid.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="lfttecparmForm">
+			<field property="elevatorid" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.elevatorid.required" />
+			</field>
+
+			<field property="zzl" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.zzl.required" />
+			</field>
+			<field property="czrs" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.czrs.required" />
+			</field>
+			<field property="kmfs" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.kmfs.required" />
+			</field>
+			<field property="dcwz" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.dcwz.required" />
+			</field>
+			<field property="zzbz" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.zzbz.required" />
+			</field>
+			<field property="dyyw" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.dyyw.required" />
+			</field>
+
+			<field property="topid" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.topid.required" />
+			</field>
+			<field property="bridoorid" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.bridoorid.required" />
+			</field>
+			<field property="doorid" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.doorid.required" />
+			</field>
+			<field property="opendooridfirst" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.opendooridfirst.required" />
+			</field>
+			<field property="opendooridother" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.opendooridother.required" />
+			</field>
+			<field property="dooridfirst" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.dooridfirst.required" />
+			</field>
+			<field property="dooridother" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.dooridother.required" />
+			</field>
+			<field property="contid" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.contid.required" />
+			</field>
+			<field property="outid" depends="required">
+				<msg name="required"
+					key="lfttecparm.check.error.outid.required " />
+			</field>
+
+
+		</form>
+
+		<form name="lineiteminfoForm">
+			<field property="lineitemid" depends="required,mask">
+				<msg name="required"
+					key="lineiteminfo.check.error.lineitemid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="lineiteminfo.lineitemid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="lineitemname" depends="required">
+				<msg name="required"
+					key="lineiteminfo.check.error.lineitemname.required" />
+			</field>
+		</form>
+
+		<form name="linediscretionForm">
+			<field property="discretionid" depends="required,mask">
+				<msg name="required"
+					key="linediscretion.check.error.discretionid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="linediscretion.discretionid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="discretiondesc" depends="required">
+				<msg name="required"
+					key="linediscretion.check.error.discretiondesc.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="linediscretion.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="linedignifyForm">
+			<field property="dignifyid" depends="required,mask">
+				<msg name="required"
+					key="linedignify.check.error.dignifyid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="linedignify.dignifyid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="dignifydesc" depends="required">
+				<msg name="required"
+					key="linedignify.check.error.dignifydesc.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="linedignify.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="lineinfoForm">
+
+			<field property="operdate" depends="required">
+				<msg name="required"
+					key="lineinfo.check.error.operdate.required" />
+			</field>
+			<field property="times" depends="required">
+				<msg name="required"
+					key="lineinfo.check.error.times.required" />
+			</field>
+			<field property="unitname" depends="required">
+				<msg name="required"
+					key="lineinfo.check.error.unitname.required" />
+			</field>
+			<field property="lineitemid" depends="required">
+				<msg name="required"
+					key="lineinfo.check.error.lineitemid.required" />
+			</field>
+		</form>
+
+		<form name="lineinfodetailForm">
+			<field property="storageid" depends="required,mask">
+				<msg name="required"
+					key="lineinfodetail.check.error.storageid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="lineinfodetail.storageid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+		</form>
+
+
+
+		<form name="saleContractForm">
+			<field property="contractid" depends="required,mask">
+				<msg name="required"
+					key="saleelevatorcontractmaster.input.contractid.required.check.error" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask"
+					key="table.saleelevatorcontractmaster.primarykey.contractid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="custid" depends="required">
+				<msg name="required"
+					key="saleelevatorcontractmaster.input.custid.required.check.error" />
+			</field>
+			<field property="itemid" depends="required">
+				<msg name="required"
+					key="saleelevatorcontractmaster.input.itemid.required.check.error" />
+			</field>
+		</form>
+
+		<form name="quoteConnectForm">
+			<field property="elevatorid" depends="required,mask">
+				<msg name="required"
+					key="quote.input.elevatorid.required.check.error" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask"
+					key="table.quote.primarykey.elevatorid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="filesdotForm">
+			<field property="year1" depends="required,mask">
+				<msg name="required"
+					key="filesdot.check.error.year1.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="filesdot.year1" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="flagid" depends="required,mask">
+				<msg name="required"
+					key="filesdot.check.error.flagid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="filesdot.flagid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="files" depends="required">
+				<msg name="required"
+					key="filesdot.check.error.files.required" />
+			</field>
+		</form>
+
+		<form name="rankweekForm">
+			<field property="weekid" depends="required,mask">
+				<msg name="required"
+					key="rankweek.check.error.weekid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="rankweek.weekid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="weekdesc" depends="required">
+				<msg name="required"
+					key="rankweek.check.error.weekdesc.required" />
+			</field>
+		</form>
+
+		<form name="parttypeForm">
+			<field property="parttypeid" depends="required,mask">
+				<msg name="required"
+					key="parttype.check.error.parttypeid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="parttype.parttypeid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="parttypename" depends="required">
+				<msg name="required"
+					key="parttype.check.error.parttypename.required" />
+			</field>
+		</form>
+
+		<form name="quotationfunctionForm">
+			<field property="typeid" depends="required">
+				<msg name="required"
+					key="quotationfunction.check.error.typeid.required" />
+			</field>
+			<field property="parttypeid" depends="required,mask">
+				<msg name="required"
+					key="quotationfunction.check.error.parttypeid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="quotationfunction.parttypeid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="funid" depends="required,mask">
+				<msg name="required"
+					key="quotationfunction.check.error.funid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="quotationfunction.funid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+		</form>
+
+
+
+		<form name="quoteBookForm">
+			<field property="custid" depends="required">
+				<msg name="required"
+					key="quotebook.input.custid.required.check.error" />
+			</field>
+
+			<field property="itemid" depends="required">
+				<msg name="required"
+					key="quotebook.input.itemid.required.check.error" />
+			</field>
+		</form>
+
+		<form name="feetypeinfoForm">
+
+			<field property="feename" depends="required">
+				<msg name="required"
+					key="feetypeinfo.check.error.feename.required" />
+			</field>
+			<field property="feeidref" depends="required">
+				<msg name="required"
+					key="feetypeinfo.check.error.feeidref.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="feetypeinfo.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="contractfeeappinfoForm">
+			<field property="contractid" depends="required,mask">
+				<msg name="required"
+					key="contractfeeappinfo.check.error.contractid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="contractfeeappinfo.contractid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="feeid" depends="required,mask">
+				<msg name="required"
+					key="contractfeeappinfo.check.error.feeid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="contractfeeappinfo.feeid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="times" depends="required,mask">
+				<msg name="required"
+					key="contractfeeappinfo.check.error.times.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="contractfeeappinfo.times" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="account1" depends="required">
+				<msg name="required"
+					key="contractfeeappinfo.check.error.account1.required" />
+			</field>
+			<field property="term" depends="required">
+				<msg name="required"
+					key="contractfeeappinfo.check.error.term.required" />
+			</field>
+		</form>
+
+		<form name="rankinfoForm">
+			<field property="contractid" depends="required,mask">
+				<msg name="required"
+					key="rankinfo.check.error.contractid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="rankinfo.contractid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="instrcode" depends="required,mask">
+				<msg name="required"
+					key="rankinfo.check.error.instrcode.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="rankinfo.instrcode" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="elevatorid" depends="required">
+				<msg name="required"
+					key="rankinfo.check.error.elevatorid.required" />
+			</field>
+			<field property="elevatorrowid" depends="required">
+				<msg name="required"
+					key="rankinfo.check.error.elevatorrowid.required" />
+			</field>
+		</form>
+
+		<form name="cartypeForm">
+			<field property="cartypeid" depends="required,mask">
+				<msg name="required"
+					key="cartype.check.error.cartypeid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="cartype.cartypeid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="cartypename" depends="required">
+				<msg name="required"
+					key="cartype.check.error.cartypename.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="cartype.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="changePasswordForm">
+			<field property="oldpasswd" depends="required">
+				<msg name="required"
+					key="changepassword.check.error.oldpasswd.required" />
+			</field>
+			<field property="passwd" depends="required">
+				<msg name="required"
+					key="changepassword.check.error.passwd.required" />
+			</field>
+			<field property="repeatpasswd" depends="required">
+				<msg name="required"
+					key="changepassword.check.error.repeatpasswd.required" />
+			</field>
+
+			<field property="passwd" depends="required,twofields">
+				<msg name="required"
+					key="changepassword.check.error.passwd.required" />
+				<msg name="twofields" key="errors.twofields" />
+				<arg0 key="changepassword.passwd" />
+				<arg1 key="changepassword.repeatpasswd" />
+				<var>
+					<var-name>secondProperty</var-name>
+					<var-value>repeatpasswd</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="bridoorForm">
+			<field property="doorid" depends="required,mask">
+				<msg name="required"
+					key="bridoor.check.error.doorid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="bridoor.doorid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="doordesc" depends="required">
+				<msg name="required"
+					key="bridoor.check.error.doordesc.required" />
+			</field>
+			<field property="britype" depends="required">
+				<msg name="required"
+					key="bridoor.check.error.britype.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="bridoor.check.error.enableflag.required" />
+			</field>
+		</form>
+
+		<form name="feeconfigForm">
+			<field property="feeid" depends="required,mask">
+				<msg name="required"
+					key="feeconfig.check.error.feeid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="feeconfig.feeid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="feename" depends="required">
+				<msg name="required"
+					key="feeconfig.check.error.feename.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="feeconfig.check.error.enabledflag.required" />
+			</field>
+		</form>
+		<form name="feeboundForm">
+			<field property="feeid" depends="required,mask">
+				<msg name="required"
+					key="feebound.check.error.feeboundid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="feebound.feeboundid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="feeboundname" depends="required">
+				<msg name="required"
+					key="feebound.check.error.feeboundname.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="feebound.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="projectserunitForm">
+			<field property="shopid" depends="required,mask">
+				<msg name="required"
+					key="projectserunit.check.error.shopid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="projectserunit.shopid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="shopname" depends="required">
+				<msg name="required"
+					key="projectserunit.check.error.shopname.required" />
+			</field>
+			<field property="shopfullname" depends="required">
+				<msg name="required"
+					key="projectserunit.check.error.shopfullname.required" />
+			</field>
+			<field property="typeid" depends="required">
+				<msg name="required"
+					key="projectserunit.check.error.typeid.required" />
+			</field>
+			<field property="areaid" depends="required">
+				<msg name="required"
+					key="projectserunit.check.error.areaid.required" />
+			</field>
+		</form>
+
+		<form name="britopForm">
+			<field property="topid" depends="required,mask">
+				<msg name="required"
+					key="britop.check.error.topid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="britop.topid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="topname" depends="required">
+				<msg name="required"
+					key="britop.check.error.topname.required" />
+			</field>
+			<field property="britype" depends="required">
+				<msg name="required"
+					key="britop.check.error.britype.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="britop.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="controlinfoForm">
+			<field property="contid" depends="required,mask">
+				<msg name="required"
+					key="controlinfo.check.error.contid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="controlinfo.contid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="contname" depends="required">
+				<msg name="required"
+					key="controlinfo.check.error.contname.required" />
+			</field>
+			<field property="britype" depends="required">
+				<msg name="required"
+					key="controlinfo.check.error.britype.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="controlinfo.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+
+		<form name="bridoorinfoForm">
+			<field property="bridoorid" depends="required,mask">
+				<msg name="required"
+					key="bridoorinfo.check.error.bridoorid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="bridoorinfo.bridoorid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="bridoorname" depends="required">
+				<msg name="required"
+					key="bridoorinfo.check.error.bridoorname.required" />
+			</field>
+			<field property="britype" depends="required">
+				<msg name="required"
+					key="bridoorinfo.check.error.britype.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="bridoorinfo.check.error.enabledflag.required" />
+			</field>
+		</form>
+		<!-- feeitemconfigForm 的验证 -->
+		<form name="feeitemconfigForm">
+			<field property="feeitemid" depends="required,mask">
+				<msg name="required"
+					key="feeitemconfig.check.error.feeitemid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="feeitemconfig.feeitemid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="feeitemname" depends="required">
+				<msg name="required"
+					key="feeitemconfig.check.error.feeitemname.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="feeitemconfig.check.error.enabledflag.required" />
+			</field>
+			<field property="feeid" depends="required">
+				<msg name="required"
+					key="feeitemconfig.check.error.feeid.required" />
+			</field>
+			<field property="feeboundid" depends="required">
+				<msg name="required"
+					key="feeitemconfig.check.error.feeboundid.required" />
+			</field>
+		</form>
+
+		<!-- netappraiseForm 的验证-->
+		<form name="netappraiseForm">
+			<field property="netappraiseid" depends="required,mask">
+				<msg name="required"
+					key="netappraise.check.error.netappraiseid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="netappraise.netappraiseid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="netappraisename" depends="required">
+				<msg name="required"
+					key="netappraise.check.error.netappraisename.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="netappraise.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<!-- sellpaymentsortForm 的验证-->
+		<form name="sellpaymentsortForm">
+			<field property="billno" depends="required,mask">
+				<msg name="required"
+					key="sellpaymentsort.check.error.billno.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="sellpaymentsort.billno" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="sellname" depends="required">
+				<msg name="required"
+					key="sellpaymentsort.check.error.sellname.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="netappraise.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<!-- colorForm 的验证-->
+		<form name="colorForm">
+			<field property="colorid" depends="required,mask">
+				<msg name="required"
+					key="color.check.error.colorid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="color.colorid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="colorname" depends="required">
+				<msg name="required"
+					key="color.check.error.colorname.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="color.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<!-- projectAnalyseForm 的验证 -->
+		<form name="projectAnalyseForm">
+			<field property="billno" depends="required">
+				<msg name="required"
+					key="commercemaster.check.error.billno.required" />
+			</field>
+			<field property="comno" depends="required">
+				<msg name="required"
+					key="commercemaster.check.error.comno.required" />
+			</field>
+			<field property="custid" depends="required">
+				<msg name="required"
+					key="commercemaster.check.error.custid.required" />
+			</field>
+			<field property="itemid" depends="required">
+				<msg name="required"
+					key="commercemaster.check.error.itemid.required" />
+			</field>
+			<field property="elevatorid" depends="required">
+				<msg name="required"
+					key="commercemaster.check.error.elevatorid.required" />
+			</field>
+			<field property="elevatorrowid" depends="required">
+				<msg name="required"
+					key="commercemaster.check.error.elevatorrowid.required" />
+			</field>
+		</form>
+		<form name="feeconfigForm">
+			<field property="feeid" depends="required,mask">
+				<msg name="required"
+					key="feeconfig.check.error.feeid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="feeconfig.feeid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="feename" depends="required">
+				<msg name="required"
+					key="feeconfig.check.error.feename.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="feeconfig.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="feeboundForm">
+			<field property="feeboundid" depends="required,mask">
+				<msg name="required"
+					key="feebound.check.error.feeboundid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="feebound.feeboundid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="feeboundname" depends="required">
+				<msg name="required"
+					key="feebound.check.error.feeboundname.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="feebound.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="doorinfoForm">
+			<field property="doorid" depends="required,mask">
+				<msg name="required"
+					key="doorinfo.check.error.doorid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="doorinfo.doorid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="doorname" depends="required">
+				<msg name="required"
+					key="doorinfo.check.error.doorname.required" />
+			</field>
+			<field property="britype" depends="required">
+				<msg name="required"
+					key="doorinfo.check.error.britype.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="doorinfo.check.error.enableflag.required" />
+			</field>
+		</form>
+
+
+		<form name="briwallForm">
+			<field property="wallid" depends="required,mask">
+				<msg name="required"
+					key="briwall.check.error.doorid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="briwall.wallid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="walldesc" depends="required">
+				<msg name="required"
+					key="briwall.check.error.walldesc.required" />
+			</field>
+			<field property="britype" depends="required">
+				<msg name="required"
+					key="briwall.check.error.britype.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="briwall.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<form name="opendoorForm">
+			<field property="opendoorid" depends="required,mask">
+				<msg name="required"
+					key="opendoor.check.error.opendoorid.required " />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="opendoor.opendoorid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="opendoorname" depends="required">
+				<msg name="required"
+					key="opendoor.check.error.opendoorname.required" />
+			</field>
+			<field property="britype" depends="required">
+				<msg name="required"
+					key="opendoor.check.error.britype.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="opendoor.check.error.enabledflag.required" />
+			</field>
+
+		</form>
+
+		<form name="briOutForm">
+			<field property="outid" depends="required,mask">
+				<msg name="required"
+					key="opendoor.check.error.doorid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="briout.outid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="outname" depends="required">
+				<msg name="required"
+					key="opendoor.check.error.doorname.required" />
+			</field>
+			<field property="britype" depends="required">
+				<msg name="required"
+					key="opendoor.check.error.britype.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="opendoor.check.error.enableflag.required" />
+			</field>
+		</form>
+
+
+		<form name="briTopForm">
+			<field property="topid" depends="required,mask">
+				<msg name="required"
+					key="opendoor.check.error.doorid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="britop.topid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="topname" depends="required">
+				<msg name="required"
+					key="opendoor.check.error.doorname.required" />
+			</field>
+			<field property="britype" depends="required">
+				<msg name="required"
+					key="opendoor.check.error.britype.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="opendoor.check.error.enableflag.required" />
+			</field>
+		</form>
+
+
+
+
+
+		<form name="insexitcontractForm">
+
+			<field property="custid" depends="required">
+				<msg name="required"
+					key="customer.check.error.custid.required" />
+			</field>
+
+		</form>
+
+		<form name="projectepibolyForm">
+			<field property="custid" depends="required">
+				<msg name="required" key="epiboly.add.check.custid" />
+			</field>
+			<field property="contractid" depends="required">
+				<msg name="required" key="epiboly.add.check.contractid" />
+			</field>
+			<field property="installaddress" depends="required">
+				<msg name="required" key="epiboly.add.check.locaddr" />
+			</field>
+			<field property="rem" depends="maxlength">
+				<msg name="maxlength"
+					key="project.modify.add.rem_input" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>255</var-value>
+				</var>
+			</field>
+			<field property="otherrem" depends="maxlength">
+				<msg name="maxlength"
+					key="project.modify.add.otherrem.check.length" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>255</var-value>
+				</var>
+			</field>
+			<field property="installrem" depends="maxlength">
+				<msg name="maxlength"
+					key="project.modify.add.installrem.check.length" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>255</var-value>
+				</var>
+			</field>
+			<field property="payrem" depends="maxlength">
+				<msg name="maxlength"
+					key="project.modify.add.payrem.check.length" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>255</var-value>
+				</var>
+			</field>
+			<field property="rem" depends="maxlength">
+				<msg name="maxlength"
+					key="project.modify.add.rem.check.length" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>255</var-value>
+				</var>
+			</field>
+			<field property="finishdays" depends="mask">
+				<msg name="mask"
+					key="project.modify.add.finishdays.check.day" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${integerdefine}</var-value>
+				</var>
+			</field>
+			<field property="notifydays" depends="mask">
+				<msg name="mask"
+					key="project.modify.add.notifydays.check.Data" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${integerdefine}</var-value>
+				</var>
+			</field>
+			<field property="installfee" depends="mask">
+				<msg name="mask"
+					key="project.modify.add.installfee.check.data" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${integerdefine}</var-value>
+				</var>
+			</field>
+			<field property="buildfee" depends="mask">
+				<msg name="mask"
+					key="project.modify.add.buildfee.check.data" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${integerdefine}</var-value>
+				</var>
+			</field>
+			<field property="condolefee" depends="mask">
+				<msg name="mask"
+					key="project.modify.add.condolefee.check.data" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${integerdefine}</var-value>
+				</var>
+			</field>
+			<field property="testfee" depends="mask">
+				<msg name="mask"
+					key="project.modify.add.testfee.check.data" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${integerdefine}</var-value>
+				</var>
+			</field>
+			<field property="installpercent" depends="mask">
+				<msg name="mask"
+					key="project.modify.add.installpercent.check.data" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${integerdefine}</var-value>
+				</var>
+			</field>
+
+			<!-- 判断从表数据是否符合数据库中的内容-->
+			<!-- <field property="floor" depends="mask">
+				<msg name="mask" key="project.modify.add.floor.check.data"></msg>
+				<var>
+				<var-name>mask</var-name>
+				<var-value>${noSignInteger}</var-value>
+				</var>
+				</field>
+				
+				<field property="stage" depends="mask">
+				<msg name="mask" key="project.modify.add.stage.check.data"></msg>
+				<var>
+				<var-name>mask</var-name>
+				<var-value>${integerdefine}</var-value>
+				</var>
+				</field>
+				
+				<field property="hight" depends="mask">
+				<msg name="mask" key="project.modify.add.hight.check.data"></msg>
+				<var>
+				<var-name>mask</var-name>
+				<var-value>${integerdefine}</var-value>
+				</var>
+				</field>
+				
+				<field property="fwlc" depends="mask">
+				<msg name="mask" key="project.modify.add.fwlc.check.data"></msg>
+				<var>
+				<var-name>mask</var-name>
+				<var-value>${integerdefine}</var-value>
+				</var>
+				</field>
+				
+				<field property="LitterInWidth" depends="mask">
+				<msg name="mask" key="project.modify.add.LitterInWidth.check.data"></msg>
+				<var>
+				<var-name>mask</var-name>
+				<var-value>${integerdefine}</var-value>
+				</var>
+				</field>
+				
+				<field property="LitterInHeight" depends="mask">
+				<msg name="mask" key="project.modify.add.LitterInHeight.check.data"></msg>
+				<var>
+				<var-name>mask</var-name>
+				<var-value>${integerdefine}</var-value>
+				</var>
+				</field>
+				
+				<field property="WellHeight" depends="mask">
+				<msg name="mask" key="project.modify.add.WellHeight.check.data"></msg>
+				<var>
+				<var-name>mask</var-name>
+				<var-value>${integerdefine}</var-value>
+				</var>
+				</field>-->
+
+		</form>
+		<!-- elevatorcodeForm 的验证 -->
+		<form name="elevatorcodeForm">
+			<field property="elevatorNo" depends="required">
+				<msg name="required"
+					key="elevatorcode.check.error.elevatorno.required" />
+			</field>
+			<field property="parmRowId" depends="required">
+				<msg name="required"
+					key="elevatorcode.check.error.rowtypeid.required" />
+			</field>
+			<field property="enabledFlag" depends="required">
+				<msg name="required"
+					key="feeitemconfig.check.error.enabledflag.required" />
+			</field>
+
+		</form>
+		<!-- MaintainProjectquoteSortForm 的验证(Him) -->
+		<form name="MaintainProjectquoteSortForm">
+			<field property="billno" depends="required">
+				<msg name="required"
+					key="MaintainProjectquoteSort.check.error.billno.required" />
+			</field>
+			<field property="sortname" depends="required">
+				<msg name="required"
+					key="MaintainProjectquoteSort.check.error.sortname.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="MaintainProjectquoteSort.check.error.enabledflag.required" />
+			</field>
+			<field property="flag" depends="required">
+				<msg name="required"
+					key="MaintainProjectquoteSort.check.error.flag.required" />
+			</field>
+			<field property="sortrems" depends="required">
+				<msg name="required"
+					key="MaintainProjectquoteSort.check.error.sortrems.required" />
+			</field>
+
+		</form>
+		<form name="badreasondetailForm">
+			<field property="badreasondetailid"
+				depends="required,mask">
+				<msg name="required"
+					key="badreasondetail.check.error.badreasondetailid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask"
+					key="badreasondetail.badreasondetailid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="badreasondetailname" depends="required">
+				<msg name="required"
+					key="badreasondetail.check.error.badreasondetailname.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="badreasondetail.check.error.enabledflag.required" />
+			</field>
+			<field property="flagsort" depends="required">
+				<msg name="required"
+					key="badreasondetail.check.error.flagsort.required" />
+			</field>
+		</form>
+		<form name="coininfoForm">
+			<field property="coinid" depends="required,mask">
+				<msg name="required"
+					key="coininfo.check.error.coinid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="coininfo.coinid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="coinname" depends="required">
+				<msg name="required"
+					key="coininfo.check.error.coinname.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="coininfo.check.error.enabledflag.required" />
+			</field>
+
+		</form>
+
+		<form name="installForm">
+			<field property="elevatorid" depends="required,mask">
+				<msg name="required"
+					key="install.check.error.elevatorid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="install.elevatorid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="contractid" depends="required">
+				<msg name="required"
+					key="install.check.error.contractid.required" />
+			</field>
+			<field property="procode" depends="required">
+				<msg name="required"
+					key="install.check.error.procode.required" />
+			</field>
+		</form>
+		<form name="CommerceAssayForm">
+			<field property="itemname" depends="required">
+				<msg name="required"
+					key="CommerceAssayMaster.ItemID.requeid" />
+			</field>
+			<field property="contractno" depends="required">
+				<msg name="required"
+					key="CommerceAssayMaster.ContractNo.requeid" />
+			</field>
+			<field property="installunit" depends="required">
+				<msg name="required"
+					key="CommerceAssayMaster.InstallUnit.requeid" />
+			</field>
+			<field property="makesellname" depends="required">
+				<msg name="required"
+					key="CommerceAssayMaster.MakeShell.requeid" />
+			</field>
+			<field property="sellformid" depends="required">
+				<msg name="required"
+					key="CommerceAssayMaster.SellForm.requeid" />
+			</field>
+			<field property="lotunitname" depends="required">
+				<msg name="required"
+					key="CommerceAssayMaster.LotUnit.requeid" />
+			</field>
+			<field property="installaddress" depends="required">
+				<msg name="required"
+					key="CommerceAssayMaster.InstallAddress.requeid" />
+			</field>
+
+			<field property="quotano" depends="required">
+				<msg name="required"
+					key="CommerceAssayMaster.quotajnlno.requeid" />
+			</field>
+			<field property="useunitname" depends="required">
+				<msg name="required"
+					key="CommerceAssayMaster.UseUnit.requeid" />
+			</field>
+			<field property="producecyc" depends="required">
+				<msg name="required"
+					key="CommerceAssayMaster.ProduceCyc.requeid" />
+			</field>
+			<field property="opername" depends="required">
+				<msg name="required"
+					key="CommerceAssayMaster.OperId.requeid" />
+			</field>
+
+
+
+		</form>
+		<form name="elevatorbusinesspriceForm">
+			<field property="elevatorid" depends="required,mask">
+				<msg name="required"
+					key="elevatorprice.check.error.elevatorid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorprice.elevatorid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="floor" depends="required,mask">
+				<msg name="required"
+					key="elevatorprice.check.error.floor.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorprice.floor" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="stage" depends="required,mask">
+				<msg name="required"
+					key="elevatorprice.check.error.stage.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorprice.stage" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="door" depends="required,mask">
+				<msg name="required"
+					key="elevatorprice.check.error.door.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorprice.door" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="high" depends="required,mask">
+				<msg name="required"
+					key="elevatorprice.check.error.high.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorprice.high" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="unitprice" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.unitprice.required" />
+			</field>
+			<field property="installfee" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.installfee.required" />
+			</field>
+			<field property="condolefee" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.condolefee.required" />
+			</field>
+			<field property="buildfee" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.buildfee.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.enabledflag.required" />
+			</field>
+			<field property="debugfee" depends="required">
+				<msg name="required"
+					key="elevatorprice.check.error.debugfee.required" />
+			</field>
+
+		</form>
+		<!-- areamanagerform start-->
+		<form name="areaManagerForm">
+			<field property="areamrcode" depends="required,mask">
+				<msg name="required"
+					key="AreaManager.check.error.code.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="AreaManager.code" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="areamrname" depends="required">
+				<msg name="required"
+					key="AreaManager.check.error.name.required" />
+			</field>
+		</form>
+		<!-- areamanagerform end-->
+		<!-- zhz -->
+		<form name="class1Form">
+			<field property="class1id" depends="required,mask">
+				<msg name="required"
+					key="class1.check.error.class1id.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="class1.class1id" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+
+			<field property="class1name" depends="required">
+				<msg name="required"
+					key="class1.check.error.class1name.required" />
+			</field>
+			<field property="levelid" depends="required">
+				<msg name="required"
+					key="class1.check.error.levelid.required" />
+			</field>
+			<field property="enabledflag" depends="required">
+				<msg name="required"
+					key="class1.check.error.enabledflag.required" />
+			</field>
+		</form>
+		<!-- zhz dtzz -->
+		<form name="elevatorloadForm">
+			<field property="typeID" depends="required">
+				<msg name="required"
+					key="elevatorload.check.error.typeid.required" />
+			</field>
+			<field property="loadKg" depends="required">
+				<msg name="required"
+					key="elevatorload.check.error.loadkg.required" />
+			</field>
+			<field property="enabledFlag" depends="required">
+				<msg name="required"
+					key="elevatorload.check.error.enabledflag.required" />
+			</field>
+		</form>
+
+		<!-- zhz dtsd -->
+		<form name="elevatorspeedForm">
+			<field property="typeID" depends="required">
+				<msg name="required"
+					key="elevatorspeed.check.error.typeid.required" />
+			</field>
+			<field property="speed" depends="required">
+				<msg name="required"
+					key="elevatorspeed.check.error.speed.required" />
+			</field>
+			<field property="enabledFlag" depends="required">
+				<msg name="required"
+					key="elevatorspeed.check.error.enabledflag.required" />
+			</field>
+		</form>
+		<!-- zhz dtqj -->
+		<form name="elevatorobliquityForm">
+			<field property="typeID" depends="required">
+				<msg name="required"
+					key="elevatorobliquity.check.error.typeid.required" />
+			</field>
+			<field property="obliquity" depends="required">
+				<msg name="required"
+					key="elevatorobliquity.check.error.obliquity.required" />
+			</field>
+			<field property="enabledFlag" depends="required">
+				<msg name="required"
+					key="elevatorobliquity.check.error.enabledflag.required" />
+			</field>
+		</form>
+		<!-- zhz dtkmfs -->
+		<form name="elevatoropentypeForm">
+			<field property="openTypeName" depends="required">
+				<msg name="required"
+					key="elevatoropentype.check.error.opentypename.required" />
+			</field>
+			<field property="enabledFlag" depends="required">
+				<msg name="required"
+					key="elevatoropentype.check.error.enabledflag.required" />
+			</field>
+		</form>
+		<!-- zhz dttjk -->
+		<form name="elevatorstepForm">
+			<!--field property="tjkId" depends="required,mask">
+				<msg name="required" key="elevatorstep.check.error.tjkid.required"/>
+				<msg name="mask" key="check.error.primarykey"/>
+				<arg0 name="mask" key="elevatorstep.tjkid"/>
+				<var>
+				<var-name>mask</var-name>
+				<var-value>${PK}</var-value>
+				</var>
+				</field-->
+			<field property="tjk" depends="required">
+				<msg name="required"
+					key="elevatorstep.check.error.tjk.required" />
+			</field>
+			<field property="enabledFlag" depends="required">
+				<msg name="required"
+					key="elevatorstep.check.error.enabledflag.required" />
+			</field>
+		</form>
+		<!-- zhz dtzyx -->
+		<form name="elevatorfreeitemForm">
+			<field property="freeName" depends="required">
+				<msg name="required"
+					key="elevatorfreeitem.check.error.freeName.required" />
+			</field>
+			<field property="enabledFlag" depends="required">
+				<msg name="required"
+					key="elevatorfreeitem.check.error.enabledflag.required" />
+			</field>
+		</form>
+		<!-- zhz zzzyx -->
+		<form name="zzfreeitemForm">
+			<field property="zzFreeItemName" depends="required">
+				<msg name="required"
+					key="zzfreeitem.check.error.zzFreeItemName.required" />
+			</field>
+			<field property="enabledFlag" depends="required">
+				<msg name="required"
+					key="zzfreeitem.check.error.enabledflag.required" />
+			</field>
+		</form>
+		<!-- zhz ztjs -->
+		<form name="lifttparmForm">
+			<field property="typeID" depends="required">
+				<msg name="required"
+					key="lifttparm.check.error.typeID.required" />
+			</field>
+			<field property="zzId" depends="required">
+				<msg name="required"
+					key="lifttparm.check.error.zzId.required" />
+			</field>
+			<field property="czrs" depends="required">
+				<msg name="required"
+					key="lifttparm.check.error.czrs.required" />
+			</field>
+			<field property="dcwz" depends="required">
+				<msg name="required"
+					key="lifttparm.check.error.dcwz.required" />
+			</field>
+			<field property="zzbz" depends="required">
+				<msg name="required"
+					key="lifttparm.check.error.zzbz.required" />
+			</field>
+			<field property="dyyw" depends="required">
+				<msg name="required"
+					key="lifttparm.check.error.dyyw.required" />
+			</field>
+			<field property="sdId" depends="required">
+				<msg name="required"
+					key="lifttparm.check.error.sdId.required" />
+			</field>
+		</form>
+
+		<!-- zhz ftjs -->
+		<form name="liftfparmForm">
+			<field property="high" depends="required">
+				<msg name="required"
+					key="lifttparm.check.error.high.required" />
+			</field>
+			<field property="typeId" depends="required">
+				<msg name="required"
+					key="liftfparm.check.error.typeId.required" />
+			</field>
+			<field property="qjId" depends="required">
+				<msg name="required"
+					key="liftfparm.check.error.qjId.required" />
+			</field>
+			<field property="tjkId" depends="required">
+				<msg name="required"
+					key="liftfparm.check.error.tjkId.required" />
+			</field>
+			<field property="speed" depends="required">
+				<msg name="required"
+					key="liftfparm.check.error.speed.required" />
+			</field>
+			<field property="exim" depends="required">
+				<msg name="required"
+					key="liftfparm.check.error.exim.required" />
+			</field>
+			<field property="ladder" depends="required">
+				<msg name="required"
+					key="liftfparm.check.error.ladder.required" />
+			</field>
+			<field property="conType" depends="required">
+				<msg name="required"
+					key="liftfparm.check.error.conType.required" />
+			</field>
+		</form>
+
+
+		<!-- zhz ftjg -->
+		<form name="elevatorfpriceForm">
+			<field property="typeId" depends="required">
+				<msg name="required"
+					key="elevatorfprice.check.error.typeId.required" />
+			</field>
+			<field property="qjId" depends="required">
+				<msg name="required"
+					key="elevatorfprice.check.error.qjId.required" />
+			</field>
+			<field property="tjkId" depends="required">
+				<msg name="required"
+					key="elevatorfprice.check.error.tjkId.required" />
+			</field>
+			<field property="floor" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.floor.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="stage" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.stage.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="door" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.door.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="high" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.high.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="unitPrice" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.unitprice.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="installFee" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.installfee.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="condoleFee" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.condolefee.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="buildFee" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.buildfee.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="trafficFee" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.trafficfee.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="selfFee" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.selffee.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="enabledFlag" depends="required">
+				<msg name="required"
+					key="elevatorfprice.check.error.enabledflag.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+			</field>
+
+			<field property="fixtureFee" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.fixturefee.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="fittingFee" depends="required,mask">
+				<msg name="required"
+					key="elevatorfprice.check.error.fittingfee.required" />
+				<msg name="mask"
+					key="elevatorfprice.check.error.fprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+		</form>
+
+
+
+		<!-- zhz ztjg -->
+		<form name="elevatortpriceForm">
+			<field property="typeId" depends="required">
+				<msg name="required"
+					key="elevatortprice.check.error.typeid.required" />
+			</field>
+			<field property="zzId" depends="required">
+				<msg name="required"
+					key="elevatortprice.check.error.zzid.required" />
+			</field>
+			<field property="opentypeId" depends="required">
+				<msg name="required"
+					key="elevatortprice.check.error.opentypeid.required" />
+			</field>
+			<field property="sdId" depends="required">
+				<msg name="required"
+					key="elevatortprice.check.error.sdid.required" />
+			</field>
+			<field property="floor" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.floor.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="stage" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.stage.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="door" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.door.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="high" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.high.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="unitPrice" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.unitprice.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="installFee" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.installfee.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="condoleFee" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.condolefee.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="buildFee" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.buildfee.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="trafficFee" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.trafficfee.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="selfFee" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.selffee.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="enabledFlag" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.enabledflag.required" />
+			</field>
+
+			<field property="fixtureFee" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.fixturefee.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+			<field property="fittingFee" depends="required,mask">
+				<msg name="required"
+					key="elevatortprice.check.error.fittingfee.required" />
+				<msg name="mask"
+					key="elevatortprice.check.error.tprice.mask" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zhz}</var-value>
+				</var>
+			</field>
+		</form>
+
+		<!-- zhz  -->
+		<form name="workSpaceBaseFitForm">
+			<field property="wskey" depends="required">
+				<msg name="required"
+					key="workspacebasefit.check.error.wskey.required" />
+			</field>
+			<field property="title" depends="required">
+				<msg name="required"
+					key="workspacebasefit.check.error.title.required" />
+			</field>
+			<field property="link" depends="required">
+				<msg name="required"
+					key="workspacebasefit.check.error.link.required" />
+			</field>
+			<field property="tip" depends="required">
+				<msg name="required"
+					key="workspacebasefit.check.error.tip.required" />
+			</field>
+			<field property="divid" depends="required">
+				<msg name="required"
+					key="workspacebasefit.check.error.divid.required" />
+			</field>
+			<field property="jsfuname" depends="required">
+				<msg name="required"
+					key="workspacebasefit.check.error.jsfuname.required" />
+			</field>
+
+		</form>
+
+		<form name="grbankinfoForm">
+			<field property="bankcode" depends="required">
+				<msg name="required"
+					key="grbankinfo.check.error.bankcode.required" />
+			</field>
+			<field property="bankname" depends="required">
+				<msg name="required"
+					key="grbankinfo.check.error.bankname.required" />
+			</field>
+		</form>
+
+
+		<form name="engineelevatortypeForm">
+			<field property="typeId" depends="required">
+				<msg name="required"
+					key="enginetype.check.error.typeid.required" />
+			</field>
+			<field property="typeName" depends="required">
+				<msg name="required"
+					key="enginetype.check.error.typename.required" />
+			</field>
+			<field property="flagId" depends="required">
+				<msg name="required"
+					key="enginetype.check.error.flagid.required" />
+			</field>
+		</form>
+		<form name="engineelevatorfacinfoForm">
+			<field property="facId" depends="required">
+				<msg name="required"
+					key="engfacinfo.check.error.facid.required" />
+			</field>
+			<field property="facName" depends="required">
+				<msg name="required"
+					key="engfacinfo.check.error.facname.required" />
+			</field>
+		</form>
+		<form name="enginecostsetForm">
+			<field property="quoteType" depends="required">
+				<msg name="required"
+					key="engset.check.error.quotetype.required" />
+			</field>
+			<field property="costPercent" depends="required">
+				<msg name="required"
+					key="engset.check.error.costpercent.required" />
+			</field>
+		</form>
+		<form name="engineelevatorinfoForm">
+			<field property="elevatorId" depends="required">
+				<msg name="required"
+					key="enginfo.check.error.elevatorid.required" />
+			</field>
+			<field property="elevatorName" depends="required">
+				<msg name="required"
+					key="enginfo.check.error.elevatorname.required" />
+			</field>
+			<field property="facId" depends="required">
+				<msg name="required"
+					key="enginfo.check.error.facid.required" />
+			</field>
+			<field property="typeId" depends="required">
+				<msg name="required"
+					key="enginfo.check.error.typeid.required" />
+			</field>
+		</form>
+
+		<form name="maintenancecontractForm">
+			<field property="billNo" depends="required">
+				<msg name="required"
+					key="mainten.check.error.billNo.required" />
+			</field>
+			<field property="budgetid" depends="required">
+				<msg name="required"
+					key="mainten.check.error.budgetid.required" />
+			</field>
+			<field property="custId" depends="required">
+				<msg name="required"
+					key="mainten.check.error.custId.required" />
+			</field>
+			<field property="lotdate" depends="required">
+				<msg name="required"
+					key="mainten.check.error.lotdate.required" />
+			</field>
+			<field property="operationId" depends="required">
+				<msg name="required"
+					key="mainten.check.error.operationId.required" />
+			</field>
+		</form>
+
+		<form name="rebuildcontractForm">
+			<field property="billNo" depends="required">
+				<msg name="required"
+					key="rebuild.check.error.billNo.required" />
+			</field>
+			<field property="budgetid" depends="required">
+				<msg name="required"
+					key="rebuild.check.error.budgetid.required" />
+			</field>
+			<field property="custId" depends="required">
+				<msg name="required"
+					key="rebuild.check.error.custId.required" />
+			</field>
+			<field property="lotdate" depends="required">
+				<msg name="required"
+					key="rebuild.check.error.lotdate.required" />
+			</field>
+			<field property="operationId" depends="required">
+				<msg name="required"
+					key="rebuild.check.error.operationId.required" />
+			</field>
+			<field property="startdate" depends="required">
+				<msg name="required"
+					key="rebuild.check.error.startdate.required" />
+			</field>
+			<field property="reports" depends="required">
+				<msg name="required"
+					key="rebuild.check.error.Reports.required" />
+			</field>
+			<!--  field property="payId" depends="required">
+				<msg name="required" key="rebuild.check.error.PayID.required"/>
+				</field-->
+		</form>
+
+		<form name="oldbuildingaddForm">
+			<field property="billNo" depends="required">
+				<msg name="required"
+					key="Old.check.error.billNo.required" />
+			</field>
+			<field property="availDay" depends="required">
+				<msg name="required"
+					key="Old.check.error.availDay.required" />
+			</field>
+			<field property="custId" depends="required">
+				<msg name="required"
+					key="Old.check.error.custId.required" />
+			</field>
+			<field property="lotdate" depends="required">
+				<msg name="required"
+					key="Old.check.error.lotdate.required" />
+			</field>
+			<field property="operationId" depends="required">
+				<msg name="required"
+					key="Old.check.error.operationId.required" />
+			</field>
+			<field property="azAdress" depends="required">
+				<msg name="required"
+					key="Old.check.error.azAdress.required" />
+			</field>
+			<field property="payRem" depends="required">
+				<msg name="required"
+					key="Old.check.error.payRem.required" />
+			</field>
+		</form>
+
+		<form name="MainMugContractForm">
+			<field property="lotdate" depends="required">
+				<msg name="required"
+					key="baoyang.check.error.lotdate.required" />
+			</field>
+			<field property="operationId" depends="required">
+				<msg name="required"
+					key="baoyang.check.error.operationId.required" />
+			</field>
+			<field property="contractId" depends="required">
+				<msg name="required"
+					key="baoyang.check.error.contractId.required" />
+			</field>
+			<!-- 
+			<field property="principal" depends="required">
+				<msg name="required"
+					key="baoyang.check.error.principal.required" />
+			</field>
+			<field property="address" depends="required">
+				<msg name="required"
+					key="baoyang.check.error.address.required" />
+			</field>
+			<field property="phone" depends="required">
+				<msg name="required"
+					key="baoyang.check.error.phone.required" />
+			</field>	
+			 -->
+			<field property="mugStartDate" depends="required">
+				<msg name="required"
+					key="baoyang.check.error.mugStartDate.required" />
+			</field>
+			<field property="mugEndDate" depends="required">
+				<msg name="required"
+					key="baoyang.check.error.mugEndDate.required" />
+			</field>
+			<field property="payRem" depends="required">
+				<msg name="required"
+					key="baoyang.check.error.payRem.required" />
+			</field>		
+		</form>
+
+		<!-- zhz end -->
+		<!-- zhz
+			<form name="WorkSpaceRoleConfigForm">
+			<field property="title" depends="required">
+			<msg name="required" key="workspaceroleconfigfit.check.error.wsid.required"/>
+			</field>
+			</form>
+			zhz end -->
+
+		<!-- hotline start -->
+
+		<form name="priorityForm">
+			<field property="priorityId" depends="required">
+				<msg name="required"
+					key="priority.check.error.priorityId.required" />
+			</field>
+			<field property="priorityName" depends="required">
+				<msg name="required"
+					key="priority.check.error.priorityName.required" />
+			</field>
+		</form>
+		<form name="countryForm">
+			<field property="countryName" depends="required">
+				<msg name="required"
+					key="country.check.error.countryName.required" />
+			</field>
+		</form>
+		<form name="provinceForm">
+			<field property="provinceName" depends="required">
+				<msg name="required"
+					key="province.check.error.provinceName.required" />
+			</field>
+			<field property="countryId" depends="required">
+				<msg name="required"
+					key="province.check.error.countryId.required" />
+			</field>
+		</form>
+		<form name="cityForm">
+			<field property="cityName" depends="required">
+				<msg name="required"
+					key="city.check.error.cityName.required" />
+			</field>
+			<field property="provinceId" depends="required">
+				<msg name="required"
+					key="city.check.error.provinceId.required" />
+			</field>
+		</form>
+		<form name="stationStructForm">
+			<field property="storageId" depends="required">
+				<msg name="required"
+					key="stationStruct.check.error.storageId.required" />
+			</field>
+			<field property="userId" depends="required">
+				<msg name="required"
+					key="stationStruct.check.error.userId.required" />
+			</field>
+		</form>
+		<form name="regionForm">
+			<field property="regionName" depends="required">
+				<msg name="required"
+					key="region.check.error.regionName.required" />
+			</field>
+			<field property="cityId" depends="required">
+				<msg name="required"
+					key="region.check.error.cityId.required" />
+			</field>
+		</form>
+		<form name="materialCatForm">
+			<field property="materialCatId" depends="required">
+				<msg name="required"
+					key="materialCat.check.error.materialCatId.required" />
+			</field>
+			<field property="materialCatName" depends="required">
+				<msg name="required"
+					key="materialCat.check.error.materialCatName.required" />
+			</field>
+		</form>
+		<form name="materialForm">
+			<field property="materialId" depends="required">
+				<msg name="required"
+					key="material.check.error.materialId.required" />
+			</field>
+			<field property="materialName" depends="required">
+				<msg name="required"
+					key="material.check.error.materialName.required" />
+			</field>
+			<field property="materialNumber" depends="required">
+				<msg name="required"
+					key="material.check.error.materialNumber.required" />
+			</field>
+			<field property="materialCatId" depends="required">
+				<msg name="required"
+					key="material.check.error.materialCatId.required" />
+			</field>
+			<field property="materialQuality" depends="required">
+				<msg name="required"
+					key="material.check.error.materialQuality.required" />
+			</field>
+		</form>
+		<form name="complaintFaultTypeForm">
+			<field property="faultTypeId" depends="required">
+				<msg name="required"
+					key="faultType.check.error.faultTypeId.required" />
+			</field>
+			<field property="faultTypeName" depends="required">
+				<msg name="required"
+					key="faultType.check.error.faultTypeName.required" />
+			</field>
+		</form>
+		<form name="calloutFaultTypeForm">
+			<field property="faultTypeId" depends="required">
+				<msg name="required"
+					key="faultType.check.error.faultTypeId.required" />
+			</field>
+			<field property="faultTypeName" depends="required">
+				<msg name="required"
+					key="faultType.check.error.faultTypeName.required" />
+			</field>
+		</form>
+		<form name="materialTypeForm">
+			<field property="materialTypeId" depends="required">
+				<msg name="required"
+					key="materialType.check.error.materialTypeId.required" />
+			</field>
+			<field property="materialTypeName" depends="required">
+				<msg name="required"
+					key="materialType.check.error.materialTypeName.required" />
+			</field>
+		</form>
+
+		<form name="complaintMasterForm">
+			<field property="priorityId" depends="required">
+				<msg name="required"
+					key="complaintMaster.check.error.priorityId.required" />
+			</field>
+			<!--<field property="deliverDateLayout" depends="required">
+				<msg name="required" key="complaintMaster.check.error.deliverDateLayout.required"/>
+				</field>
+				<field property="guaranteeReportDateLayout" depends="required">
+				<msg name="required" key="complaintMaster.check.error.guaranteeReportDateLayout.required"/>
+				</field>
+				<field property="signCompany" depends="required">
+				<msg name="required" key="complaintMaster.check.error.signCompany.required"/>
+				</field>
+				<field property="constructNo" depends="required">
+				<msg name="required" key="complaintMaster.check.error.constructNo.required"/>
+				</field>
+				<field property="specTableNo" depends="required">
+				<msg name="required" key="complaintMaster.check.error.specTableNo.required"/>
+				</field>
+				<field property="guaranteeSpecialAgreement" depends="required">
+				<msg name="required" key="complaintMaster.check.error.guaranteeSpecialAgreement.required"/>
+				</field>
+				<field property="installCompany" depends="required">
+				<msg name="required" key="complaintMaster.check.error.installCompany.required"/>
+				</field>
+				<field property="linkMan" depends="required">
+				<msg name="required" key="complaintMaster.check.error.linkMan.required"/>
+				</field>
+				<field property="linkManTel" depends="required">
+				<msg name="required" key="complaintMaster.check.error.linkManTel.required"/>
+				</field>
+				<field property="receiverAddr" depends="required">
+				<msg name="required" key="complaintMaster.check.error.receiverAddr.required"/>
+				</field>
+				<field property="receiverTel" depends="required">
+				<msg name="required" key="complaintMaster.check.error.receiverTel.required"/>
+				</field>
+				<field property="cooperateMode" depends="required">
+				<msg name="required" key="complaintMaster.check.error.cooperateMode.required"/>
+				</field>-->
+		</form>
+
+		<form name="calloutDutyMasterForm">
+
+		</form>
+
+		<form name="qualityHistoryForm">
+			<field property="qualityHistoryId" depends="required">
+				<msg name="required"
+					key="qualityHistory.check.error.qualityHistoryId.required" />
+			</field>
+			<field property="funDetermine" depends="required">
+				<msg name="required"
+					key="qualityHistory.check.error.funDetermine.required" />
+			</field>
+			<field property="elevatorNo" depends="required">
+				<msg name="required"
+					key="qualityHistory.check.error.elevatorNo.required" />
+			</field>
+			<field property="fConverstionNo" depends="required">
+				<msg name="required"
+					key="qualityHistory.check.error.fConverstionNo.required" />
+			</field>
+			<field property="mPole" depends="required">
+				<msg name="required"
+					key="qualityHistory.check.error.mPole.required" />
+			</field>
+			<field property="mainboradNo" depends="required">
+				<msg name="required"
+					key="qualityHistory.check.error.mainboradNo.required" />
+			</field>
+			<field property="version" depends="required">
+				<msg name="required"
+					key="qualityHistory.check.error.version.required" />
+			</field>
+			<field property="weight" depends="required">
+				<msg name="required"
+					key="qualityHistory.check.error.weight.required" />
+			</field>
+			<field property="microFloor" depends="required">
+				<msg name="required"
+					key="qualityHistory.check.error.microFloor.required" />
+			</field>
+			<field property="announce" depends="required">
+				<msg name="required"
+					key="qualityHistory.check.error.announce.required" />
+			</field>
+		</form>
+
+		<form name="complaintExpireManageForm">
+
+		</form>
+
+		<form name="consultExpireManageForm">
+
+		</form>
+
+		<form name="calloutExpireManageForm">
+
+		</form>
+
+		<form name="workTimeForm">
+			<!--
+				<field property="perDate" depends="required">
+				<msg name="required" key="workTime.check.error.perDate.required"/>
+				</field>-->
+		</form>
+
+		<form name="complaintNotifyManageForm">
+
+		</form>
+
+		<form name="consultNotifyManageForm">
+
+		</form>
+
+		<form name="calloutNotifyManageForm">
+
+		</form>
+
+		<form name="theEmailForm">
+			<field property="account" depends="required">
+				<msg name="required"
+					key="theEmail.check.error.account.required" />
+			</field>
+			<field property="password" depends="required">
+				<msg name="required"
+					key="theEmail.check.error.password.required" />
+			</field>
+		</form>
+
+		<form name="complaintFlowInfoReaderManageForm">
+
+		</form>
+		<form name="consultFlowInfoReaderManageForm">
+
+		</form>
+		<form name="calloutFlowInfoReaderManageForm">
+
+		</form>
+		<form name="consultMasterForm">
+			<field property="reportor" depends="required">
+				<msg name="required"
+					key="consultMaster.check.error.reportor.required" />
+			</field>
+			<field property="reportorTel" depends="required">
+				<msg name="required"
+					key="consultMaster.check.error.reportorTel.required" />
+			</field>
+			<field property="reportorFrom" depends="required">
+				<msg name="required"
+					key="consultMaster.check.error.reportorFrom.required" />
+			</field>
+		</form>
+
+		<form name="calloutMasterForm">
+
+		</form>
+
+		<form name="quoteexpresscollectForm">
+			<field property="expname" depends="required">
+				<msg name="required"
+					key="quoteexpresscollect.check.error.expname.required" />
+			</field>
+			<field property="expdesc" depends="required">
+				<msg name="required"
+					key="quoteexpresscollect.check.error.expdesc.required" />
+			</field>
+		</form>
+
+		<form name="mafittinginfoForm">
+			<field property="fitname" depends="required">
+				<msg name="required"
+					key="mafittinginfo.check.error.fitname.required" />
+			</field>
+			<field property="spec" depends="required">
+				<msg name="required"
+					key="mafittinginfo.check.error.spec.required" />
+			</field>
+			<field property="charno" depends="required">
+				<msg name="required"
+					key="mafittinginfo.check.error.charno.required" />
+			</field>
+			<field property="workno" depends="required">
+				<msg name="required"
+					key="mafittinginfo.check.error.workno.required" />
+			</field>
+		</form>
+
+		<form name="eleuseareainfoForm">
+			<field property="useareaname" depends="required">
+				<msg name="required"
+					key="mafittinginfo.check.error.useareaname.required" />
+			</field>
+		</form>
+
+		<form name="masupplierinfoForm">
+			<field property="masupname" depends="required">
+				<msg name="required"
+					key="masupplierinfo.check.error.masupname.required" />
+			</field>
+			<field property="yearstockmoney" depends="required">
+				<msg name="required"
+					key="masupplierinfo.check.error.yearstockmoney.required" />
+			</field>
+		</form>
+
+		<form name="elevatorearthpriceForm">
+			<field property="typeid" depends="required">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.typeid.required" />
+			</field>
+			<field property="funcid" depends="required,mask">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.funcid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorfuncprice.funcid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="funcprice" depends="required">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.funcprice.required" />
+			</field>
+			<field property="price2" depends="required">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.price2.required" />
+			</field>
+		</form>
+		
+		<form name="elevatordemesionpriceForm">
+			<field property="typeid" depends="required">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.typeid.required" />
+			</field>
+			<field property="funcid" depends="required,mask">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.funcid.required" />
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="elevatorfuncprice.funcid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+			<field property="funcprice" depends="required">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.funcprice.required" />
+			</field>
+			<field property="price2" depends="required">
+				<msg name="required"
+					key="elevatorfuncprice.check.error.price2.required" />
+			</field>
+		</form>
+		
+		<form name="yearmasupplierForm">
+			<field property="unityear" depends="required">
+				<msg name="required"
+					key="yearmasupplier.check.error.unityear.required" />
+			</field>
+		</form>
+		
+		<form name="littersidemodeinfoForm">
+			<field property="lsmname" depends="required">
+				<msg name="required"
+					key="check.error.typename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="littersidecomdeckinfoForm">
+			<field property="lsmdname" depends="required">
+				<msg name="required"
+					key="check.error.typename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>	
+		
+		<form name="littertopmodeinfoForm">
+			<field property="ltmname" depends="required">
+				<msg name="required"
+					key="check.error.typename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>	
+		
+		<form name="handrailmodeForm">
+			<field property="handmname" depends="required">
+				<msg name="required"
+					key="check.error.typename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="controlboxfacemodeinfoForm">
+			<field property="cbfmname" depends="required">
+				<msg name="required"
+					key="check.error.typename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="beckonboxfacemodeinfoForm">
+			<field property="bbfmname" depends="required">
+				<msg name="required"
+					key="check.error.typename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>	
+		
+		<form name="handcontrolboxfacemodeForm">
+			<field property="hcbfmname" depends="required">
+				<msg name="required"
+					key="check.error.typename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>	
+		
+		<form name="handbeckonboxfacemodeinfoForm">
+			<field property="hbbfmname" depends="required">
+				<msg name="required"
+					key="check.error.typename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="halloutsidereportlightmodeinfoForm">
+			<field property="hosrlmname" depends="required">
+				<msg name="required"
+					key="check.error.typename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="controlboxcodeinfoForm">
+			<field property="cbcname" depends="required">
+				<msg name="required"
+					key="check.error.codename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>	
+		
+		<form name="asscontrolboxcodeinfoForm">
+			<field property="acbcname" depends="required">
+				<msg name="required"
+					key="check.error.codename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="handcontrolboxcodeinfoForm">
+			<field property="hcbcname" depends="required">
+				<msg name="required"
+					key="check.error.codename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>				
+		
+		<form name="beckonboxcodeinfoForm">
+			<field property="bbcname" depends="required">
+				<msg name="required"
+					key="check.error.codename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="handbeckonboxcodeinfoForm">
+			<field property="hbbcname" depends="required">
+				<msg name="required"
+					key="check.error.codename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>	
+		
+		<form name="doorhoofboardmacinfoForm">
+			<field property="dhbmname" depends="required">
+				<msg name="required"
+					key="check.error.macname.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>	
+		
+		<form name="boxwallfloordoormacinfoForm">
+			<field property="bwfdmname" depends="required">
+				<msg name="required"
+					key="check.error.macname.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>	
+		
+		<form name="brifloordeckinfoForm">
+			<field property="bfdname" depends="required">
+				<msg name="required"
+					key="check.error.deckname.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="boxwallfloordoordeckinfoForm">
+			<field property="bwfddname" depends="required">
+				<msg name="required"
+					key="check.error.deckname.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="boxbuttonsernoinfoForm">
+			<field property="bbsnname" depends="required">
+				<msg name="required"
+					key="check.error.noname.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="handboxbuttonsernoinfoForm">
+			<field property="hbbsnname" depends="required">
+				<msg name="required"
+					key="check.error.noname.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="otherfaithtypeinfoForm">
+			<field property="oftypename" depends="required">
+				<msg name="required"
+					key="otherfaithtypeinfo.check.error.oftypename.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="otherfaithtypeinfo.check.error.orderno.required" />
+			</field>
+		</form>		
+		
+		<form name="otherfaithchooseinfoForm">
+			<field property="ofcname" depends="required">
+				<msg name="required"
+					key="otherfaithchooseinfo.check.error.ofcname.required" />
+			</field>
+			<field property="orderno" depends="required">
+				<msg name="required"
+					key="otherfaithchooseinfo.check.error.orderno.required" />
+			</field>
+		</form>
+		
+		<form name="engunitinfoForm">
+			<field property="engunitname" depends="required">
+				<msg name="required"
+					key="engunitinfo.check.error.engunitname.required" />
+			</field>
+			<field property="refareaid" depends="required">
+				<msg name="required"
+					key="engunitinfo.check.error.refareaid.required" />
+			</field>
+			<field property="areaid" depends="required">
+				<msg name="required"
+					key="engunitinfo.check.error.areaid.required" />
+			</field>
+			<field property="prearea" depends="required">
+				<msg name="required"
+					key="engunitinfo.check.error.prearea.required" />
+			</field>
+		</form>											
+		<!-- hotline end -->
+		
+		<form name="companytypeForm">
+			<field property="grcid" depends="mask">
+				<msg name="mask" key="check.error.primarykey" />
+				<arg0 name="mask" key="companytype.grcid" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${PK}</var-value>
+				</var>
+			</field>
+		</form>
+		
+		<form name="baseDataListForm">
+			<field property="bdes" depends="required">
+				<msg name="required"
+					key="area.check.error.orderno.required" />
+			</field>
+			<field property="rem1" depends="required">
+				<msg name="required"
+					key="area.check.error.orderno.required" />
+			</field>
+		</form>
+		
+		 <form name="pulldownForm">
+		     <field property="pullid" depends="required">
+		        <msg name="required" key="pull.check.error.pullid.required"/>
+		    </field>
+		    <field property="pullname" depends="required">
+		        <msg name="required" key="pull.check.error.pullnane.required"/>
+		    </field>
+		     <field property="typeflag" depends="required">
+		        <msg name="required" key="pull.check.error.typeflag.required"/>
+		    </field>
+		     <field property="pullrem" depends="required">
+		        <msg name="required" key="pull.check.error.pullrem.required"/>
+		    </field>
+  		</form>
+  		
+  		<form name="customerForm">
+		    <field property="companyId" depends="required">
+		        <msg name="required" key="customer.check.error.companyId.required"/>
+		    </field>
+		    <field property="companyName" depends="required">
+		        <msg name="required" key="customer.check.error.companyName.required"/>
+		    </field>		    
+		    <field property="address" depends="required">
+		        <msg name="required" key="customer.check.error.address.required"/>
+		    </field>
+		    <field property="legalPerson" depends="required">
+		        <msg name="required" key="customer.check.error.legalPerson.required"/>
+		    </field>  		
+ 		    <field property="client" depends="required">
+		        <msg name="required" key="customer.check.error.client.required"/>
+		    </field> 		
+		    <field property="contacts" depends="required">
+		        <msg name="required" key="customer.check.error.contacts.required"/>
+		    </field>  		
+		    <field property="contactPhone" depends="required">
+		        <msg name="required" key="customer.check.error.contactPhone.required"/>
+		    </field>  		
+		    <field property="principalName" depends="required">
+		        <msg name="required" key="customer.check.error.principalName.required"/>
+		    </field>  		
+		    <field property="principalPhone" depends="required">
+		        <msg name="required" key="customer.check.error.principalPhone.required"/>
+		    </field>  				  		
+		    <field property="invoiceName" depends="required">
+		        <msg name="required" key="customer.check.error.invoiceName.required"/>
+		    </field>  				  		
+  		</form>
+  		
+  		<!--cgw start -->
+  		<form name="hotlineFaultTypeForm">
+			<field property="hftId" depends="required">
+				<msg name="required"
+					key="hotlinefaulttype.check.error.hftId.required" />
+			</field>
+			<field property="hftDesc" depends="required">
+				<msg name="required"
+					key="hotlinefaulttype.check.error.hftDesc.required" />
+			</field>
+		</form>
+		
+		<form name="hotlineFaultClassificationForm">
+			<field property="hfcId" depends="required">
+				<msg name="required"
+					key="hotlinefaultclassification.check.error.hfcId.required" />
+			</field>
+			<field property="hfcName" depends="required">
+				<msg name="required"
+					key="hotlinefaultclassification.check.error.hfcName.required" />
+			</field>
+		</form>
+		
+		<form name="hotlineMotherboardTypeForm">
+			<field property="hmtId" depends="required">
+				<msg name="required"
+					key="hotlinemotherboardtype.check.error.hmtId.required" />
+			</field>
+			<field property="hmtName" depends="required">
+				<msg name="required"
+					key="hotlinemotherboardtype.check.error.hmtName.required" />
+			</field>
+		</form>
+		
+		<form name="handoverElevatorCheckItemForm">
+			<field property="examType" depends="required">
+				<msg name="required"
+					key="handoverelevatorcheckitem.check.error.ExamType.required" />
+			</field>
+			<field property="checkItem" depends="required">
+				<msg name="required"
+					key="handoverelevatorcheckitem.check.error.CheckItem.required" />
+			</field>
+			<field property="issueCoding" depends="required">
+				<msg name="required"
+					key="handoverelevatorcheckitem.check.error.IssueCoding.required" />
+			</field>
+			<field property="issueContents" depends="required">
+				<msg name="required"
+					key="handoverelevatorcheckitem.check.error.IssueContents.required" />
+			</field>
+		</form>
+		
+		<form name="qualityCheckManagementForm">
+			<field property="r1" depends="required">
+				<msg name="required"
+					key="qualitycheckmanagement.check.error.elevatorNo.required" />
+			</field>
+			
+		</form>
+  		<!--cgw end -->
+  		
+  		<!--lyg start -->
+  		<form name="markingScoresForm">
+			<field property="msId" depends="required">
+				<msg name="required"
+					key="markingitems.check.error.mtId.required" />
+			</field>
+			<field property="msName" depends="required">
+				<msg name="required"
+					key="markingitems.check.error.mtName.required" />
+			</field>
+			<field property="fraction" depends="required">
+				<msg name="required"
+					key="markingitems.check.error.fraction.required" />
+			</field>
+			<field property="elevatorType" depends="required">
+			<msg name="required"
+					key="markingitems.check.error.elevatortype.required" />
+			</field>
+		</form>
+		
+		<form name="termSecurityRisksForm">
+			<field property="tsrId" depends="required">
+				<msg name="required"
+					key="termsecurityrisks.check.error.tsrId.required" />
+			</field>
+			<field property="tsrDetail" depends="required">
+				<msg name="required"
+					key="termsecurityrisks.check.error.tsrDetail.required" />
+			</field>
+		</form>
+		
+		<form name="shouldExamineItemsForm">
+			<field property="seiid" depends="required">
+				<msg name="required"
+					key="shouldexamineitems.check.error.seiid.required" />
+			</field>
+			<field property="seiDetail" depends="required">
+				<msg name="required"
+					key="shouldexamineitems.check.error.seiDetail.required" />
+			</field>
+		</form>
+
+		<form name="officeComplaintCategoryForm">
+			<field property="occId" depends="required">
+				<msg name="required"
+					key="officecomplaintcategory.check.error.occId.required" />
+			</field>
+			<field property="occName" depends="required">
+				<msg name="required"
+					key="officecomplaintcategory.check.error.occName.required" />
+			</field>
+		</form>
+		
+		<form name="officeContractTypesForm">
+			<field property="octId" depends="required">
+				<msg name="required"
+					key="officecontracttypes.check.error.octId.required" />
+			</field>
+			<field property="octName" depends="required">
+				<msg name="required"
+					key="officecontracttypes.check.error.octName.required" />
+			</field>
+		</form>
+		
+		<form name="officeCauseAnalysisForm">
+			<field property="ocaId" depends="required">
+				<msg name="required"
+					key="officecauseanalysis.check.error.ocaId.required" />
+			</field>
+			<field property="ocaName" depends="required">
+				<msg name="required"
+					key="officecauseanalysis.check.error.ocaName.required" />
+			</field>
+		</form>
+		
+		<form name="maintenanceWorkingHoursForm">
+			<field property="elevatorType" depends="required">
+				<msg name="required"
+					key="maintenanceworkinghours.check.error.elevatorType.required" />
+			</field>
+			<field property="floor" depends="required">
+				<msg name="required"
+					key="maintenanceworkinghours.check.error.floor.required" />
+			</field>
+			<field property="halfMonth" depends="required">
+				<msg name="required"
+					key="maintenanceworkinghours.check.error.halfMonth.required" />
+			</field>
+			<field property="quarter" depends="required">
+				<msg name="required"
+					key="maintenanceworkinghours.check.error.quarter.required" />
+			</field>
+			<field property="halfYear" depends="required">
+				<msg name="required"
+					key="maintenanceworkinghours.check.error.halfYear.required" />
+			</field>
+			<field property="yearDegree" depends="required">
+				<msg name="required"
+					key="maintenanceworkinghours.check.error.yearDegree.required" />
+			</field>
+		</form>
+		
+		<form name="returningMaintainForm">
+			<field property="r1" depends="required">
+				<msg name="required"
+					key="returningmaintain.check.error.companyName.required" />
+			</field>
+			<field property="reOrder" depends="required">
+				<msg name="required"
+					key="returningmaintain.check.error.reOrder.required" />
+			</field>
+			
+		</form>
+  		<!--lyg end -->
+  		
+  		
+       <!--lsw start -->
+  		<form name="receivablesNameForm">
+			<field property="recId" depends="required">
+				<msg name="required"
+					key="ReceivablesName.check.error.recId.required" />
+			</field>
+			<field property="recName" depends="required">
+				<msg name="required"
+					key="ReceivablesName.check.error.recName.required" />
+			</field>
+		</form>
+		
+		<form name="invoiceTypeForm">
+			<field property="inTypeId" depends="required">
+				<msg name="required"
+					key="InvoiceType.check.error.inTypeId.required" />
+			</field>
+			<field property="inTypeName" depends="required">
+				<msg name="required"
+					key="InvoiceType.check.error.inTypeName.required" />
+			</field>
+		</form>
+		
+		<form name="elevatorCoordinateLocationForm">
+			<field property="elevatorNo" depends="required">
+				<msg name="required"
+					key="ElevatorCoordinateLocation.check.error.elevatorNo.required" />
+			</field>
+			<field property="elevatorLocation" depends="required">
+				<msg name="required"
+					key="ElevatorCoordinateLocation.check.error.elevatorLocation.required" />
+			</field>
+			<field property="beginLongitude" depends="required">
+				<msg name="required"
+					key="ElevatorCoordinateLocation.check.error.beginLongitude.required" />
+			</field>
+			<field property="endLongitude" depends="required">
+				<msg name="required"
+					key="ElevatorCoordinateLocation.check.error.endLongitude.required" />
+			</field>
+			<field property="beginDimension" depends="required">
+				<msg name="required"
+					key="ElevatorCoordinateLocation.check.error.beginDimension.required" />
+			</field>
+			<field property="endDimension" depends="required">
+				<msg name="required"
+					key="ElevatorCoordinateLocation.check.error.endDimension.required" />
+			</field>
+		</form>
+       <!--lsw end -->
+      <form name="MaintainProjectInfoForm">
+      </form>
+	</formset>
+</form-validation>

@@ -1,0 +1,2474 @@
+﻿<?xml version="1.0"?>
+<htmltable xsi:schemaLocation="http://sourceforge.net/projects/htmltable html-table.xsd" 
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <tables>  
+
+   <table id="guiRole" width="100%" border="0" cellspacing="1" cellpadding="1" styleClass="tableclass">
+      <area align="bottom">
+        <region align="left">
+          <tag type="com.zubarev.htmltable.taglib.TableNavigator3Tag" htmltableAware="true"/>
+        </region>
+        <region align="right">
+          <tag type="com.zubarev.htmltable.taglib.TableInfoTag" htmltableAware="true"/>
+          <tag type="com.gzunicorn.common.taglib.htmltable.TableNavigator4Tag" htmltableAware="true"/>
+          
+        </region> 
+      </area> 
+      <rows evenStyleClass="evenRow3" oddStyleClass="oddRow3" headerStyleClass="headerRow3"/>
+      <columns useTH="true">
+        <column id="c_cb" width="25"/> 
+        <column id="c_roleid" field="roleid">编号</column>
+        <column id="c_rolename"  field="rolename">名称</column>
+        <column id="c_moduleid" field="moduleid">所属模块</column>
+        <column id="c_allowflag" field="allowflag">查看权根</column>
+        <column id="c_enabledflag" field="enabledflag">启用标志</column>
+      </columns>
+    </table>
+
+	<table id="guiLoginUser" parent="guiRole">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+        <column id="c_cb" width="25"/>
+        <column id="c_userid" field="userid">用户编号</column>
+        <column id="c_username" field="username">用户名称</column>
+        <column id="c_class1id" field="class1id">职位</column>
+        <column id="c_storageid" field="storageid">所属部门</column>
+        <column id="c_roleid" field="roleid">用户角色</column>
+        <!--column id="c_dutyid" field="dutyid">职务</column-->
+        <column id="c_grcid" field="grcid">所属分部</column>
+        <column id="c_enabledflag" field="enabledflag">启用标志</column>
+      </columns>
+    </table>
+	<table id="guiCompany" parent="guiRole">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+        <column id="c_cb" width="25"/>
+        <column id="c_comid" field="comid">分部编号</column>
+        <column id="c_comfullname" field="comfullname">分部全称</column>
+        <column id="c_comtype" field="comtype">分部类别</column>
+        <column id="c_linkman" field="linkman">联系人</column>
+        <column id="c_linkmantel" field="linkmantel">联系人电话</column>
+        <column id="c_enabledflag" field="enabledflag">启用标志</column>
+      </columns>
+    </table>
+	<table id="guiStorageID" parent="guiRole" styleClass="tableclass">
+      <rows evenStyleClass="oddRow3" oddStyleClass="oddRow3" headerStyleClass="headerRow3">
+        <row styleClass="special4">
+          <bean>
+            <property-name>parentstorageid</property-name>
+            <property-value>0</property-value>
+          </bean>
+        </row>
+      </rows>
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+        <column id="c_cb" width="25"/>
+        <column id="c_storageid" field="storageid">部门编号</column>
+        <column id="c_storagename" field="storagename">部门名称</column>
+        <column id="c_storagehead" field="storagehead">部门主管</column>
+        <column id="c_phone" field="phone">联系电话</column>
+        <column id="c_comname" field="comname">所属分部</column>
+        <column id="c_enabledflag" field="enabledflag">启用标志</column>
+      </columns>
+    </table>
+<table id="guiTaskExamplesSet" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_taskid" 		>任务编号</column>
+			<column id="c_taskname" 	>任务名称</column>
+			<column id="c_actorid" 		>当前操作人编号</column>
+			<column id="c_actorname" 	>当前操作人名称</column>
+			<column id="c_token" 		>流程令牌</column>
+			<column id="c_creatdate" 	>开始日期</column>
+			<column id="c_enddate" 		>结束日期</column>
+			<column id="c_nodename" 	>审批环节</column>
+			<column id="c_isopen" 		>是否关闭</column>
+		</columns>
+	</table>
+	<table id="guiTaskExamplesSet" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_taskid" 		>任务编号</column>
+			<column id="c_taskname" 	>任务名称</column>
+			<column id="c_actorid" 		>当前操作人编号</column>
+			<column id="c_actorname" 	>当前操作人名称</column>
+			<column id="c_token" 		>流程令牌</column>
+			<column id="c_creatdate" 	>开始日期</column>
+			<column id="c_enddate" 		>结束日期</column>
+			<column id="c_nodename" 	>审批环节</column>
+			<column id="c_isopen" 		>是否关闭</column>
+		</columns>
+	</table>
+	<table id="guiFaultProcess" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_repairName" field="a.repairName">报修人</column>
+			<column id="c_repairPhone" field="a.repairPhone">报修电话</column>
+			<column id="c_projectName" field="a.projectName">项目名称</column>
+			<column id="c_projectAddress" field="a.projectAddress">项目地址</column>
+			<column id="c_isTiring" field="a.isTiring">是否困人</column>
+			<column id="c_operId" field="a.operId">录入人</column>
+			<column id="c_operDate" field="a.operDate">录入时间</column>
+			<column id="c_isProcess" field="a.isProcess">是否处理</column>
+		</columns>
+	</table>
+	<table id="guiFlowList" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_flowid" 		>流程Id</column>
+			<column id="c_flowname" 	>流程名称</column>
+			<column id="c_version" 		>版本号</column>
+		</columns>
+	</table>
+	<table id="guiMainShr" parent="guiRole">
+	    <noContent styleClass="noItems">没记录显示</noContent>
+	    <columns>
+	            <column id="c_cb" width="25">
+	            	<set-property property="globalCheckbox" value="ids"/>
+	            </column>
+	            <column id="c_userid" field="userid">用户编号</column>
+	            <column id="c_username" field="username">用户名称</column>
+	            <column id="c_grcname" field="grcname">所属分部</column>
+	    </columns>
+	</table>
+	<table id="guiworkspacebasefitList" parent="guiRole">
+			<noContent styleClass="noItems">没有任何记录！</noContent>
+			<columns>
+				<column id="c_cb" width="25" />
+				<column id="c_wsid" field="wsid">流水号</column>
+				<column id="c_wskey" field="wskey">工作区代码</column>
+				<column id="c_title" field="title">标题</column>
+				<column id="c_link" field="link">连接</column>
+				<column id="c_tip" field="tip">顶层代码</column>
+				<column id="c_divid" field="divid">层代码</column>
+				<column id="c_jsfuname" field="jsfuname">JSfuName</column>
+				<column id="c_numno" field="numno">排序号</column>
+				<column id="c_enabledflag" field="enabledflag">代码状态</column>
+			</columns>
+		</table>
+
+    	  <!-- 查找登录用户信息 -->
+      <table id="guiSearchViewLoginUserInfoList" parent="guiRole">
+			<noContent styleClass="noItems">没记录显示!</noContent>
+			<columns>
+				<column id="c_cb" width="25" />
+				<column id="c_userid" field="a.userID" filter="false">
+					用户ID
+				</column>
+				<column id="c_username" field="a.userName" filter="false">
+					用户名
+				</column>
+				<column id="c_rolename" field="a.roleName" filter="false">
+					角色名称	
+				</column>
+				<column id="rem1" field="a.rem1" filter="false">
+					备注
+				</column>
+			</columns>
+	</table>
+	
+	
+    <table id="guiCountry" parent="guiRole" styleClass="tableclass">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+        <column id="c_cb" width="25"/>
+        <!-- column id="c_cb" width="25">
+			<set-property property="globalCheckbox" value="ids"/>
+		</column-->
+        <column id="c_countryId" field="countryId">国家编号</column>
+        <column id="c_countryName" field="countryName">国家名称</column>
+        <column id="c_enabledflag" field="enabledflag">启用标志</column>
+      </columns>
+    </table>
+    
+    <table id="guiProvince" parent="guiRole" styleClass="tableclass">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+        <column id="c_cb" width="25"/>
+        <!-- column id="c_cb" width="25">
+			<set-property property="globalCheckbox" value="ids"/>
+		</column-->
+        <column id="c_provinceId" field="provinceId">省份编号</column>
+        <column id="c_provinceName" field="provinceName">省份名称</column>
+        <column id="c_country" field="country">所属国家</column>
+        <column id="c_enabledflag" field="enabledflag">启用标志</column>
+      </columns>
+    </table>
+    
+    <table id="guiCity" parent="guiRole" styleClass="tableclass">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+        <column id="c_cb" width="25"/>
+        <!-- column id="c_cb" width="25">
+			<set-property property="globalCheckbox" value="ids"/>
+		</column-->
+        <column id="c_cityId" field="cityId">城市编号</column>
+        <column id="c_cityName" field="cityName">城市名称</column>
+        <column id="c_province" field="province">所属省份</column>
+        <column id="c_enabledflag" field="enabledflag">启用标志</column>
+      </columns>
+    </table>
+    
+    <table id="guiRegion" parent="guiRole" styleClass="tableclass">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+        <column id="c_cb" width="25"/>
+        <!-- column id="c_cb" width="25">
+			<set-property property="globalCheckbox" value="ids"/>
+		</column-->
+        <column id="c_regionId" field="regionId">地区编号</column>
+        <column id="c_regionName" field="regionName">地区名称</column>
+        <column id="c_city" field="city">所属城市</column>
+        <column id="c_enabledflag" field="enabledflag">启用标志</column>
+      </columns>
+    </table>
+    
+    <table id="guiPullDown" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_pullid" field="pullid">代码</column>
+			<column id="c_pullname" field="pullname">名称</column>
+			<column id="c_orderby" field="orderby">排序号</column>
+			<column id="c_typeflag" field="typeflag">类型</column>
+			<column id="c_enabledflag" field="enabledflag">启用标志</column>
+			<column id="c_pullrem" field="pullrem">描述</column>
+		</columns>
+	</table>
+	
+	<table id="guiClass1" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25"/>
+			<column id="c_Class1ID" field="class1id">职位编号</column>
+			<column id="c_Class1Name" field="class1name">职位名称</column>
+			<column id="c_levelid" field="levelid">职位级别</column>
+			<column id="c_Reml" field="rem1">职位备注</column>
+			<column id="c_EnabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table>	
+	<!-- hqs start -->
+	<table id="guiPrincipal" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_principalId" field="principalId">负责人代码</column>
+			<column id="c_principalName" field="principalName">负责人名称</column>
+			<column id="c_phone" field="phone">负责人电话</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table>
+	
+	<table id="guiCustomerM" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_companyId" field="companyId">单位代码</column>
+			<column id="c_companyName" field="companyName">单位名称</column>
+			<column id="c_contacts" field="contacts">联系人</column>
+			<column id="c_contactPhone" field="contactPhone">联系人电话</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table>
+	<table id="guiCustomer" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_companyId" field="companyId">单位代码</column>
+			<column id="c_companyName" field="companyName">单位名称</column>
+			<column id="c_contacts" field="contacts">联系人</column>
+			<column id="c_contactPhone" field="contactPhone">联系人电话</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table>
+	
+	<table id="guiElevatorSale" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />	
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>		
+			<column id="c_salesContractNo" field="salesContractNo">合同编号</column>
+			<column id="c_salesContractName" field="salesContractName">合同名称</column>
+			<column id="c_inspectDate" field="inspectDate">签订日期</column>			
+			<column id="c_weight" field="weight">载重</column>
+			<column id="c_speed" field="speed">速度</column>
+			<column id="c_seriesName" field="seriesName">电梯系列</column>
+			<column id="c_elevatorType" field="elevatorType">电梯类型</column>
+			<column id="c_floor" field="floor">层</column>
+			<column id="c_stage" field="stage">站</column>
+			<column id="c_door" field="door">门</column>
+			<column id="c_high" field="high">提升高度</column>
+			<column id="c_elevatorParam" field="elevatorParam">规格型号</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+			<column id="c_eler1" field="eler1">是否在保</column>
+		</columns>
+	</table>
+	
+	<table id="guiPersonnelManage" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<!-- column id="c_billno" field="billno">流水号</column> -->
+			<column id="c_ygid" field="ygid">员工代码</column>
+			<column id="c_name" field="name">员工名称</column>
+			<column id="c_sex" field="sex">性别</column>
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_education" field="education">学历</column>
+			<column id="c_idCardNo" field="idCardNo">身份证号码</column>
+			<column id="c_familyAddress" field="familyAddress">家庭所在地</column>
+			<column id="c_phone" field="phone">联系电话</column>		
+			<column id="c_startDate" field="startDate">入厂时间</column>		
+			<column id="c_sector" field="sector">所属分部</column>		
+			<column id="c_maintStation" field="maintStation">所属部门</column>		
+			<column id="c_r1" field="r1">劳保鞋</column>		
+			<column id="c_r2" field="r2">工装号</column>		
+			<column id="c_r3" field="r3">领取安全帽日期</column>		
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table>
+	
+	<table id="guiMaintContractQuote" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billNo">报价流水号</column>		
+			<column id="c_attnName" field="username">经办人</column>
+			<column id="c_applyDate" field="applyDate">申请日期</column>			
+			<column id="c_companyName" field="companyName">甲方单位名称</column>							
+			<column id="c_statusName" field="typename">流程状态</column>
+			<column id="c_processName" field="processName">环节名称</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_maintDivisionName" field="comname">所属维保分部</column>	
+			<column id="c_storagename" field="storagename">所属维保站</column>			
+			<column id="c_iscontract">生成合同</column>		
+		</columns>
+	</table>
+	
+	<table id="guiSearchElevatorSale" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />		
+			<column id="c_salesContractNo" field="salesContractNo">合同编号</column>
+			<column id="c_salesContractName" field="salesContractName">合同名称</column>
+			<column id="c_deliveryAddress" field="deliveryAddress">发货地址</column>		
+		</columns>
+	</table>
+	
+	<table id="guiSearchCustomer" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_companyId" field="companyId">单位代码</column>
+			<column id="c_companyName" field="companyName">单位名称</column>
+			<column id="c_contacts" field="contacts">联系人</column>
+			<column id="c_contactPhone" field="contactPhone">联系人电话</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchLostCustomer" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_companyName" field="companyName">单位名称</column>
+			<column id="c_contacts" field="contacts">合同联系人</column>
+			<column id="c_contactPhone" field="contactPhone">合同联系人电话</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchLostElevatorReport" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_lostElevatorDate" field="lostElevatorDate">丢梯日期</column>
+			<column id="c_causeAnalysis" field="causeAnalysis">原因分析</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchElevator" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>	
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_salesContractNo" field="salesContractNo">合同编号</column>
+            <column id="c_salesContractName" field="salesContractName">合同名称</column>		
+			<column id="c_elevatorType" field="elevatorType">电梯类型</column>
+			<column id="c_floor" field="floor">层</column>
+			<column id="c_stage" field="stage">站</column>
+			<column id="c_door" field="door">门</column>
+			<column id="c_high" field="high">提升高度</column>
+			<column id="c_weight" field="weight">载重</column>
+			<column id="c_speed" field="speed">速度</column>
+			<column id="c_elevatorParam" field="elevatorParam">规格型号</column>
+			<column id="c_isOutsideFootball" field="isOutsideFootball">是否外揽</column>
+		</columns>
+	</table>
+	
+	<table id="guiMaintContract" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="a.billNo">流水号</column>		
+			<column id="c_maintContractNo" field="a.maintContractNo">维保合同号</column>
+			<column id="c_companyName" field="d.companyName">甲方单位</column>
+			<column id="c_contractSdate" field="a.contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="a.contractEdate">合同结束日期</column>
+			<column id="c_connum">台量</column>
+			<column id="c_attn" field="b.username">经办人</column>
+			<column id="c_contractStatus" field="a.contractStatus">合同状态</column>
+			<column id="c_warningStatus" field="a.warningStatus">提醒状态</column>				
+			<column id="c_submitType" field="a.submitType">提交标志</column>			
+			<column id="c_auditStatus" field="a.auditStatus">审核状态</column>									
+			<column id="c_taskSubFlag" field="a.taskSubFlag">任务下达标志</column>
+			<column id="c_maintDivision" field="a.maintDivision">所属维保分部</column>
+			<column id="c_maintStation" field="a.maintStation">所属维保站</column>
+			<column id="c_isEntrust">是否委托</column>
+		</columns>
+	</table>
+	
+	<table id="guiMaintContractAudit" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="a.billNo">流水号</column>		
+			<column id="c_maintContractNo" field="a.maintContractNo">维保合同号</column>
+			<column id="c_companyName" field="a.companyName">甲方单位</column>
+			<column id="c_contractSdate" field="a.contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="a.contractEdate">合同结束日期</column>
+			<column id="c_attn" field="a.attn">经办人</column>
+			<column id="c_contractStatus" field="a.contractStatus">合同状态</column>
+			<column id="c_warningStatus" field="a.warningStatus">提醒状态</column>				
+			<column id="c_submitType" field="a.submitType">提交标志</column>			
+			<column id="c_auditStatus" field="a.auditStatus">审核状态</column>									
+			<column id="c_taskSubFlag" field="a.taskSubFlag">任务下达标志</column>
+			<column id="c_maintDivision" field="a.maintDivision">所属维保分部</column>
+			<column id="c_maintStation" field="a.maintStation">所属维保站</column>
+		</columns>
+	</table>
+	
+	<table id="guiMaintContractModify" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="a.billNo">流水号</column>		
+			<column id="c_maintContractNo" field="a.maintContractNo">维保合同号</column>
+			<column id="c_companyName" field="a.companyName">甲方单位</column>
+			<column id="c_contractSdate" field="a.contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="a.contractEdate">合同结束日期</column>
+			<column id="c_attn" field="a.attn">经办人</column>
+			<column id="c_contractStatus" field="a.contractStatus">合同状态</column>	
+			<column id="c_auditStatus" field="a.auditStatus">审核状态</column>
+			<column id="c_maintDivision" field="a.maintDivision">所属维保分部</column>
+			<column id="c_maintStation" field="a.maintStation">所属维保站</column>
+		</columns>
+	</table>
+		
+	<table id="guiMaintContractNext" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billNo">报价流水号</column>		
+			<column id="c_attnName" field="attnName">经办人</column>
+			<column id="c_applyDate" field="applyDate">申请日期</column>			
+			<column id="c_companyName" field="companyName">甲方单位名称</column>							
+			<column id="c_maintDivisionName" field="maintDivisionName">所属维保分部</column>			
+		</columns>
+	</table>
+	
+	<table id="guiMaintContractDelay" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_jnlno" field="jnlno">流水号</column>		
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_companyName" field="companyName">甲方单位</column>
+			<column id="c_contractSdate" field="contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="contractEdate">合同结束日期</column>					
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+			<!-- <column id="c_statusName" field="statusName">流程状态</column>	
+			<column id="c_processName" field="processName">环节名称</column> -->
+			<column id="c_maintStationName" field="maintStationName">所属维保站</column>
+			<column id="c_maintDivisionName" field="maintDivisionName">所属维保分部</column>
+		</columns>
+	</table>
+	<table id="guiMaintContractDelayAudit" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_jnlno" field="jnlno">流水号</column>		
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_companyName" field="companyName">甲方单位</column>
+			<column id="c_contractSdate" field="contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="contractEdate">合同结束日期</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+			<column id="c_maintStationName" field="maintStationName">所属维保站</column>
+			<column id="c_maintDivisionName" field="maintDivisionName">所属维保分部</column>
+		</columns>
+	</table>
+	
+	<table id="guiMaintContractDelayNext" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billNo">流水号</column>		
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_companyName" field="companyId">甲方单位</column>
+			<column id="c_contractSdate" field="contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="contractEdate">合同结束日期</column>
+			<column id="c_attn" field="attn">经办人</column>
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+		</columns>
+	</table>	
+	<!-- hqs end -->
+	
+    <!-- cb start -->
+	<table id="guiContractQuoteMaster" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="a.billNo">报价流水号</column>			
+			<column id="c_attn" field="a.attn">经办人</column>
+			<column id="c_bustype" field="a.busType">业务类别</column>
+			<column id="c_applyDate" field="a.applyDate">申请日期</column>			
+			<column id="c_companyId" field="a.companyId">甲方单位名称</column>							
+			<column id="c_status" field="a.status">流程状态</column>
+			<column id="c_processName" field="a.processName">环节名称</column>
+			<column id="c_submitType" field="a.submitType">提交标志</column>
+			<column id="c_maintDivision" field="a.maintDivision">所属维保分部</column>			
+		</columns>
+	</table>
+	
+	<table id="guiSevycingContractMaster" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="a.billNo">报价流水号</column>			
+			<column id="c_attn" field="a.attn">经办人</column>
+			<column id="c_applyDate" field="a.applyDate">申请日期</column>			
+			<column id="c_companyId" field="a.companyId">甲方单位名称</column>							
+			<column id="c_maintDivision" field="a.maintDivision">所属维保分部</column>			
+		</columns>
+	</table>
+    
+	<table id="guiServicingContract" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="a.wgBillno">流水号</column>		
+			<column id="c_maintContractNo" field="a.maintContractNo">维改合同号</column>	
+			<column id="c_companyId" field="a.companyId">甲方单位名称</column>	
+			<column id="c_busType" field="a.busType">业务类别</column>		
+			<column id="c_signingDate" field="a.signingDate">签订日期</column>
+			<column id="c_attn" field="a.attn">经办人</column>				
+			<column id="c_submitType" field="a.submitType">提交标志</column>			
+			<column id="c_auditStatus" field="a.auditStatus">审核状态</column>									
+			<column id="c_taskSubFlag" field="a.taskSubFlag">任务下达标志</column>
+			<column id="c_maintDivision" field="a.maintDivision">所属维保分部</column>
+		</columns>
+	</table> 
+	
+	<table id="guihotphone" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_salesContractNo" field="a.salesContractNo">销售合同号</column>		
+			<column id="c_elevatorNo" field="a.elevatorNo">电梯编号</column>	
+			<column id="c_elevatorParam" field="a.elevatorParam">规格型号</column>
+			<column id="c_salesContractName" field="salesContractName">项目名称</column>	
+			<column id="c_companyId" field="companyId">报修单位</column>		
+			<column id="c_address" field="address">项目地址</column>
+			<column id="c_storageId" field="b.maintStation">维保站</column>				
+			<column id="c_userid" field="b.maintPersonnel">派工对象</column>			
+			<column id="c_phone" field="b.phone">电话</column>
+			<column id="c_isOutsideFootball" field="isOutsideFootball">是否外揽</column>									
+		</columns>
+	</table> 
+	<table id="guihotphone2" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_salesContractNo" field="salesContractNo">销售合同号</column>		
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>	
+			<column id="c_elevatorParam" field="elevatorParam">规格型号</column>	
+			<column id="c_useUnit" field="useUnit">报修单位</column>		
+			<column id="c_deliveryAddress" field="deliveryAddress">项目地址</column>								
+		</columns>
+	</table>
+	
+	<table id="guiCalloutMaster" parent="guiRole" styleClass="tableclass">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+      	<column id="c_cb" width="25"></column>
+        <column id="c_calloutMasterNo" field="calloutMasterNo">急修编号</column>
+        <column id="c_companyId" field="companyname">报修单位名称</column>
+        <column id="c_elevatorNo" field="elevatorNo">报修电梯编号</column>
+        <column id="c_operDateLayout" field="operDate">起草时间</column>
+        <column id="c_operName" field="operId">起草人</column>
+		<column id="c_handleStatus" field="handleStatus">处理状态</column>
+        <column id="c_isTrap" field="isTrap">困人</column>
+        <column id="c_repairMode" field="repairMode">报修方式</column>
+        <column id="c_serviceObjects" field="serviceObjects">服务对象</column>
+        <column id="c_maintStation" field="maintStation">维保站</column>
+        <column id="c_completeTime" field="completeTime">完工时间</column>
+        <column id="c_isStop" field="isStop">是否停梯</column>
+        <column id="c_submitType" field="submitType">提交标志</column>
+        <column id="c_R5" field="r5">维修人员</column>
+      </columns>
+    </table> 
+    
+    <table id="guiHotCalloutModify" parent="guiRole" styleClass="tableclass">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+      	<column id="c_cb" width="25">
+		</column>
+        <column id="c_calloutMasterNo" field="calloutMasterNo">急修编号</column>
+        <column id="c_companyId" field="companyname">报修单位名称</column>
+        <column id="c_elevatorNo" field="elevatorNo">报修电梯编号</column>
+        <column id="c_operDateLayout" field="operDate">起草时间</column>
+        <column id="c_operName" field="operId">起草人</column>
+		<column id="c_handleStatus" field="handleStatus">处理状态</column>
+        <column id="c_isTrap" field="isTrap">困人</column>
+        <column id="c_repairMode" field="repairMode">报修方式</column>
+        <column id="c_serviceObjects" field="serviceObjects">服务对象</column>
+        <column id="c_maintStation" field="maintStation">维保站</column>
+        <column id="c_completeTime" field="completeTime">完工时间</column>
+        <column id="c_isStop" field="isStop">是否停梯</column>
+        <column id="c_submitType" field="submitType">提交标志</column>
+      </columns>
+    </table> 		
+    <!-- cb end -->
+        
+    <!-- lyg start -->	
+    <table id="guiMarkingScore" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_msId" field="msId">评分代码</column>
+			<column id="c_msName" field="msName">评分名称</column>
+			<column id="c_fraction" field="fraction">分值</column>
+			<column id="c_elevatorType" field="elevatorType">电梯类型</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+     </table>
+     
+     <table id="guiTermSecurityRisks" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_tsrId" field="tsrId">安全隐患项</column>
+			<column id="c_tsrDetail" field="tsrDetail">安全隐患项详情</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+     </table>
+     
+     <table id="guiShouldExamineItems" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_seiid" field="seiid">考核项</column>
+			<column id="c_seiDetail" field="seiDetail">考核项详情</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+     </table>
+     
+      <table id="guiOfficeComplaintCategory" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_occId" field="occId">分类代码</column>
+			<column id="c_occName" field="occName">分类名称</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+     </table>
+     
+     <table id="guiOfficeContractTypes" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_octId" field="octId">类型代码</column>
+			<column id="c_octName" field="octName">类型名称</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+     </table>
+    
+     <table id="guiOfficeCauseAnalysis" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_ocaId" field="ocaId">原因代码</column>
+			<column id="c_ocaName" field="ocaName">原因名称</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+     </table>
+     
+     <table id="guiMaintenanceWorkingHours" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_elevatorType" field="elevatorType">电梯类型</column>
+			<column id="c_floor" field="floor">层站</column>
+			<column id="c_halfMonth" field="halfMonth">半月保养</column>
+			<column id="c_quarter" field="quarter">季度保养</column>
+			<column id="c_halfYear" field="halfYear">半年保养</column>
+			<column id="c_yearDegree" field="yearDegree">年度保养</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+     </table>
+     
+     <table id="guiReturningMaintain" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_contacts" field="contacts">联系人</column> 
+			<column id="c_contactPhone" field="contactPhone">联系人电话</column>
+			<column id="c_reOrder" field="reOrder">回访顺序</column>
+			<column id="c_reMark" field="reMark">回访标记</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+			<column id="c_rem" field="rem">备注</column>
+		</columns>
+     </table>
+     
+     <table id="guiLostElevatorMaintain" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_companyName" field="companyName">单位名称</column>
+			<column id="c_contacts" field="contacts">联系人</column> 
+			<column id="c_contactPhone" field="contactPhone">联系人电话</column>
+			<column id="c_reOrder" field="reOrder">回访顺序</column>
+			<column id="c_reMark" field="reMark">回访标记</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+     </table>
+     
+     <table id="guiCustomerLevel" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_companyName" field="companyName">单位名称</column>
+			<column id="c_principalName" field="principalName">负责人</column> 
+			<column id="c_principalPhone" field="principalPhone">联系电话</column>
+			<column id="c_orderby" field="orderby">客户等级</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_assignedMainStation" field="assignedMainStation">维保站</column>
+			<column id="c_operDate" field="operDate">更新日期</column>
+		</columns>
+     </table>
+     
+    <table id="guiCustomerVisitPlan" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_custLevel" field="custLevel">客户等级</column>
+			<column id="c_companyName" field="companyName">单位名称</column> 
+			<column id="c_principalName" field="principalName">负责人</column>
+			<column id="c_principalPhone" field="principalPhone">联系电话</column>		
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_visitDate" field="visitDate">预计拜访日期</column>
+			<column id="c_visitPosition" field="visitPosition">拜访职位</column>
+			<column id="c_visitStaff" field="visitStaff">拜访人员</column>
+			<column id="c_rem" field="cvpd.rem">备注</column>
+			<column id="c_isVisit" field="isVisit">是否拜访</column>
+			
+		</columns>
+     </table>
+    
+     <table id="guiCustomerVisitFeedback" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_custLevel" field="custLevel">客户等级</column>
+			<column id="c_companyName" field="companyName">单位名称</column> 
+			<column id="c_principalName" field="principalName">负责人</column>
+			<column id="c_principalPhone" field="principalPhone">联系电话</column>		
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_visitDate" field="visitDate">预计拜访日期</column>
+			<column id="c_visitPosition" field="visitPosition">拜访职位</column>
+			<column id="c_visitStaff" field="visitStaff">拜访人员</column>
+			<column id="c_rem" field="cvpd.rem">备注</column>
+			<column id="c_submitType" field="submitType">是否提交</column>
+			<column id="c_isVisit" field="isVisit">是否拜访</column>
+			
+		</columns>
+     </table>
+     
+     <table id="guiProjectName" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>	
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_projectAddress" field="projectAddress">项目地址</column>
+			<column id="c_contractSdate" field="contractSdate">项目开始日期</column>
+			<column id="c_contractEdate" field="contractEdate">项目结束日期</column>
+			
+		</columns>
+     </table>
+     
+     <table id="guiTechnologySupport" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />	
+			<column id="c_singleNo" field="singleNo">急修编号</column>
+			<column id="c_assignUser" field="assignUser">申请人</column>
+			<column id="c_assignUserTel" field="assignUserTel">联系电话</column>
+			<column id="c_operDate" field="operDate">申请日期</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_proStatus" field="proStatus">处理状态</column>	
+		</columns>
+    
+     </table>
+     <table id="guiTechnologySupportMain" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />	
+			<column id="c_singleNo" field="singleNo">急修编号</column>
+			<column id="c_assignUser" field="assignUser">申请人</column>
+			<column id="c_assignUserTel" field="assignUserTel">联系电话</column>
+			<column id="c_operDate" field="operDate">申请日期</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_proStatus" field="proStatus">处理状态</column>
+			<column id="c_msprocessPeople" field="msprocessPeople">维保站长处理人</column>
+			<column id="c_mmprocessPeople" field="mmprocessPeople">维保经理处理人</column>
+			<column id="c_tsprocessPeople" field="tsprocessPeople">公司技术支持处理人</column>				
+		</columns>
+     </table>
+     <table id="guiAccessoriesRequisition" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />	
+			<column id="c_appNo" field="appNo">流水号</column>
+			<column id="c_singleNo" field="singleNo">急修/保养单号</column>
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_handleStatus" field="handleStatus">处理环节</column>
+			<column id="c_oldNo" field="oldNo">旧件编号</column>
+			<column id="c_newNo" field="newNo">新件编号</column>
+			<column id="c_operId" field="operId">申请人</column>
+			<column id="c_personInCharge" field="personInCharge">维保负责人</column>
+			<column id="c_warehouseManager" field="warehouseManager">配件库管理员</column>
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+		    <column id="c_operDate" field="operDate">申请日期</column>
+		</columns>
+     </table>
+     <table id="guiAccessoriesRequisitionCkbl" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />	
+			<column id="c_singleNo" field="singleNo">急修/保养单号</column>
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_handleStatus" field="handleStatus">处理环节</column>
+			<column id="c_oldNo" field="oldNo">旧件编号</column>
+			<column id="c_newNo" field="newNo">新件编号</column>
+			<column id="c_operId" field="operId">申请人</column>
+			<column id="c_personInCharge" field="personInCharge">维保负责人</column>
+			<column id="c_warehouseManager" field="warehouseManager">配件库管理员</column>
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+			<column id="c_ckiswc" field="ckiswc">是否完成</column>
+		    <column id="c_operDate" field="operDate">申请日期</column>
+		</columns>
+     </table>
+     <table id="guiLogManagement" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />	
+			<column id="c_operId" field="operId">录入人</column>
+			<column id="c_operDate" field="operDate">录入日期</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_salesContractNo" field="salesContractNo">销售合同号</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+		</columns>
+     </table>
+     
+      <table id="guiEtcLogManagement" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />	
+			<column id="c_operId" field="operId">录入人</column>
+			<column id="c_operDate" field="operDate">录入日期</column>
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_InsCompanyName" field="insCompanyName">安装单位</column>
+		</columns>
+     </table>
+      <table id="guiQcLogManagement" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />	
+			<column id="c_operId" field="operId">录入人</column>
+			<column id="c_operDate" field="operDate">录入日期</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_maintPersonnel" field="maintPersonnel">维保工</column>
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+		</columns>
+     </table>
+    
+    <table id="guiMaintenanceWorkPlanCustomize" parent="guiRole">
+    <noContent styleClass="noItems">没有可已定制的计划!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billNo">流水号</column>		
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_contractSdate" field="contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="contractEdate">合同结束日期</column>
+			<column id="c_attn" field="attn">经办人</column>		
+			<column id="c_submitType" field="submitType">提交状态</column>	
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>									
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+			<column id="c_customizeRem" field="customizeRem">定制备注</column>
+		</columns>
+     </table>
+     
+     <table id="guiMaintenanceWorkPlanAudit" parent="guiRole">
+    <noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billNo">流水号</column>		
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_contractSdate" field="contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="contractEdate">合同结束日期</column>
+			<column id="c_attn" field="attn">经办人</column>					
+			<column id="c_submitType" field="submitType">提交状态</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>									
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+		</columns>
+     </table>
+     
+      <table id="guiMaintenanceWorkPlanCompletion" parent="guiRole">
+    <noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_singleno" field="singleno">保养单号</column>		
+			<column id="c_assignedMainStation" field="assignedMainStation">维保站</column>
+			<column id="c_maintPersonnel" field="maintPersonnel">维保工</column>
+			<column id="c_phone" field="phone">联系电话</column>		
+			<column id="c_projectName" field="projectName">项目名称</column>			
+			<column id="c_maintType" field="maintType">保养类型</column>			
+			<column id="c_maintDate" field="maintDate">保养计划日期</column>									
+			<column id="c_receivingTime" field="receivingTime">保养接收时间</column>
+			<column id="c_maintStartTime" field="maintStartTime">保养开始时间</column>
+			<column id="c_maintEndTime" field="maintEndTime">保养结束时间</column>
+			<column id="c_maintScore" field="maintScore">保养得分</column>		
+			<column id="c_byAuditOperid" field="byAuditOperid">审核状态</column>	
+			<column id="c_r5" field="r5">保养人员</column>		
+		</columns>
+     </table>
+     
+      <table id="guiAccountsPayableModify" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlNo" field="jnlNo">应付款流水号</column>		
+			<column id="c_entrustContractNo" field="entrustContractNo">委托合同号</column>
+			<column id="c_companyId" field="companyId">委托单位名称</column>
+			<column id="c_recName" field="recName">应付款名称</column>
+			<column id="c_preDate" field="preDate">应付款日期</column>
+			<column id="c_preMoney" field="preMoney">应付款金额</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	
+     <table id="guiAccountsPayableManage" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlNo" field="jnlNo">应付款流水号</column>		
+			<column id="c_entrustContractNo" field="entrustContractNo">委托合同号</column>
+			<column id="c_companyId" field="companyId">委托单位名称</column>
+			<column id="c_recName" field="recName">应付款名称</column>
+			<column id="c_preDate" field="preDate">应付款日期</column>
+			<column id="c_preMoney" field="preMoney">应付款金额</column>			
+			<column id="c_rem" field="rem">备注</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+     <table id="guiAccountsPayableManageNext" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_billno" field="billno">流水号</column>		
+			<column id="c_entrustContractNo" field="contractNo">合同号</column>
+			<column id="c_num" field="num">台数</column>
+			<column id="c_maintDivision" field="maintDivision">分部</column>
+			<column id="c_companyID2" field="companyID2">乙方单位</column>
+		</columns>
+	</table>
+     <table id="guiInvoiceManage" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlNo" field="jnlNo">收票流水号</column>		
+			<column id="c_entrustContractNo" field="entrustContractNo">委托合同号</column>
+			<column id="c_companyId" field="companyId">委托单位名称</column>
+			<column id="c_invoiceNo" field="invoiceNo">发票号</column>
+			<column id="c_invoiceDate" field="invoiceDate">收票日期</column>
+			<column id="c_invoiceType" field="invoiceType">发票类型</column>	
+			<column id="c_invoiceMoney" field="invoiceMoney">发票金额</column>			
+			<column id="c_rem" field="rem">备注</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiPaymentManage" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>
+			<column id="c_jnlNo" field="jnlNo">付款流水号</column>
+			<column id="c_tcjnlNo" field="ctJnlNo">收票流水号</column>		
+			<column id="c_entrustContractNo" field="entrustContractNo">委托合同号</column>
+			<column id="c_companyId" field="companyId">委托单位名称</column>
+			<column id="c_paragraphNo" field="paragraphNo">凭证号</column>
+			<column id="c_paragraphMoney" field="paragraphMoney">付款金额</column>
+			<column id="c_debitMoney" field="debitMoney">扣款金额</column>
+			<column id="c_paragraphDate" field="paragraphDate">付款日期</column>							
+			<column id="c_rem" field="rem">备注</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_status" field="status">流程状态</column>
+			<column id="c_processName" field="processName">环节名称</column>
+		</columns>
+	</table>
+	
+	<table id="guiPaymentAudit" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>
+			<column id="c_jnlNo" field="jnlNo">付款流水号</column>
+			<column id="c_tcjnlNo" field="CT_JnlNo">收票流水号</column>		
+			<column id="c_entrustContractNo" field="entrustContractNo">委托合同号</column>
+			<column id="c_companyId" field="companyId">委托单位名称</column>
+			<column id="c_paragraphNo" field="paragraphNo">凭证号</column>
+			<column id="c_paragraphMoney" field="paragraphMoney">付款金额</column>
+			<column id="c_debitMoney" field="debitMoney">扣款金额</column>
+			<column id="c_paragraphDate" field="paragraphDate">付款日期</column>							
+			<column id="c_rem" field="rem">备注</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_status" field="status">流程状态</column>
+			<column id="c_processName" field="processName">环节名称</column>
+		</columns>
+	</table>
+	
+	<table id="guiPaymentManageNext" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlNo" field="jnlNo">收票流水号</column>	
+			<column id="c_entrustContractNo" field="entrustContractNo">委托合同号</column>
+			<column id="c_invoiceMoney" field="invoiceMoney">发票金额</column>			
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_companyId" field="companyId">委托单位名称</column>
+		</columns>
+	</table>
+	
+	<table id="guiContractPaymentEnquiry" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_entrustContractNo" field="entrustContractNo">委托合同号</column>	
+			<column id="c_companyName" field="companyName">委托单位</column>
+			<column id="c_contractTotal" field="contractTotal">合同金额</column>			
+			<column id="c_accountsPayable" field="accountsPayable">应付款金额</column>
+			<column id="c_invoice" field="invoice">收票金额</column>
+			<column id="c_payment" field="payment">付款金额</column>
+			<column id="c_debitMoney" field="debitMoney">扣款金额</column>
+			<column id="c_noPayment" field="noPayment">已收票欠款金额</column>
+			<column id="c_contractnoPayment" field="contractnoPayment">合同欠款金额</column>
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>
+		</columns>
+	</table>
+	<table id="guiHandoverElevatorSpecialClaim" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_scId" field="scId">特殊要求代码</column>
+			<column id="c_scName" field="scName">特殊要求名称</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table>
+	<table id="guiSpecialRegister" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_scId" field="scId">特殊要求代码</column>
+			<column id="c_scName" field="scName">特殊要求名称</column>
+			<column id="c_rem" field="rem">备注</column>
+		</columns>
+	</table>
+	
+	<table id="guiMaintenanceRegistration" parent="guiRole">
+    <noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_singleno" field="singleno">保养单号</column>		
+			<column id="c_projectName" field="projectName">项目名称</column>			
+			<column id="c_maintType" field="maintType">保养类型</column>			
+			<column id="c_maintDate" field="maintDate">保养日期</column>										
+			<column id="c_handleStatus" field="handleStatus">处理状态</column>					
+		    
+		</columns>
+     </table>
+	
+	<table id="guiRepairTasksRegistration" parent="guiRole" styleClass="tableclass">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+      	<column id="c_cb" width="25">
+		</column>
+        <column id="c_calloutMasterNo" field="cm.calloutMasterNo">急修编号</column>
+        <column id="c_companyId" field="c.companyName">报修单位名称</column>
+        <column id="c_isTrap" field="cm.isTrap">困人</column>
+        <column id="c_repairMode" field="cm.repairMode">报修方式</column>
+        <column id="c_serviceObjects" field="cm.serviceObjects">服务对象</column>
+        <column id="c_handleStatus" field="cm.handleStatus">处理状态</column>
+      </columns>
+    </table> 
+	
+	
+	<table id="guiReimbursPeopleation" parent="guiRole" styleClass="tableclass">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+      	<column id="c_cb" width="25">
+		</column>
+        <column id="c_comId" field="comId">维保分部</column>
+        <column id="c_storageId" field="storageId">维保部门</column>
+        <column id="c_userId" field="userId">报销人</column>
+      </columns>
+    </table> 
+    
+    <table id="guiSearchMaintDivisionBX" parent="guiRole" styleClass="tableclass">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+      	<column id="c_cb" width="25">
+		</column>
+        <column id="c_comId" field="comId">维保分部</column>
+        <column id="c_storageId" field="storageId">维保站</column>
+      </columns>
+    </table> 
+    
+    <table id="guiSearchCompany_kk2" parent="guiRole">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+        <column id="c_cb" width="25"></column>
+        <column id="c_comid" field="comid">分部编号</column>
+        <column id="c_comfullname" field="comfullname">分部全称</column>
+        <column id="c_comtype" field="comtype">分部类别</column>
+        <column id="c_linkman" field="linkman">联系人</column>
+        <column id="c_linkmantel" field="linkmantel">联系人电话</column>
+      </columns>
+    </table>
+    
+     <table id="guiCustomerVisitFeedbackAudit" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_custLevel" field="custLevel">客户等级</column>
+			<column id="c_companyName" field="companyName">单位名称</column> 
+			<column id="c_principalName" field="principalName">负责人</column>
+			<column id="c_principalPhone" field="principalPhone">联系电话</column>		
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_visitDate" field="visitDate">预计拜访日期</column>
+			<column id="c_visitPosition" field="visitPosition">拜访职位</column>
+			<column id="c_visitStaff" field="visitStaff">拜访人员</column>
+			<column id="c_rem" field="cvpd.rem">备注</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+			<column id="c_submitType" field="submitType">是否提交</column>
+			<column id="c_isVisit" field="isVisit">是否拜访</column>
+			
+		</columns>
+     </table>
+
+     <table id="guiOutsourcingContractList2" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billNo">流水号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维改合同号</column>
+			<column id="c_companyId" field="companyId">委托单位</column>
+			<column id="c_operId" field="operId">录入人</column>
+			<column id="c_maintDivision" field="maintDivision">所属维保部</column>
+		</columns>
+     </table>
+    
+    <table id="guiOutsourcingContract" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billno">流水号</column>		
+			<column id="c_outContractNo" field="outContractNo">外包合同号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维改合同号</column>	
+			<column id="c_companyId" field="companyId2">乙方单位名称</column>	
+			<column id="c_busType" field="busType">业务类别</column>		
+			<column id="c_signingDate" field="signingDate">签订日期</column>
+			<column id="c_attn" field="attn">经办人</column>				
+			<column id="c_submitType" field="submitType">提交标志</column>			
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>									
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>
+		</columns>
+	</table> 
+    
+    <table id="guiElevatorTransferCaseRegisterManage" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billno" field="billno">流水号</column>
+			<column id="c_checkTime" field="checkTime">提交厂检时间</column>
+			<column id="c_checkNum" field="checkNum">厂检次数</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_insCompanyName" field="insCompanyName">安装公司名称</column>
+			<column id="c_salesContractNo" field="salesContractNo">销售合同号</column>
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_staffName" field="staffName">厂检人员名称</column>
+			<column id="c_department" field="department">所属部门</column>
+			<column id="c_factoryCheckResult" field="factoryCheckResult">厂检结果</column>
+			<column id="c_isDeductions" field="isDeductions">是否扣款</column>	
+			<column id="c_status" field="status">流程状态</column>
+			<column id="c_processName" field="processName">环节名称</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_processStatus" field="processStatus">处理状态</column>
+			<column id="c_isClose" field="isClose">关闭厂检</column>
+		</columns>
+	</table>
+    
+     <!-- lyg end -->
+     
+     <!-- cgw start -->
+     <table id="guiCalloutEleno" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>	
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_companyId" field="companyId">报修单位名称</column>
+		</columns>
+	</table> 
+	
+     <table id="guiHotlineFaultType" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>	
+			<column id="c_hftId" field="hftId">故障代码</column>
+			<column id="c_hftDesc" field="hftDesc">问题描述</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table> 
+	
+	<table id="guiHotlineFaultClassification" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_hfcId" field="hfcId">分类编号</column>
+			<column id="c_hfcName" field="hfcName">分类名称</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table>
+	
+	<table id="guiHotlineMotherboardType" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_hmtId" field="hmtId">主板代码</column>
+			<column id="c_hmtName" field="hmtName">主板名称</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table>
+	
+	<table id="guiHandoverElevatorCheckItem" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_examType" field="id.examType">检查类型</column>
+			<column id="c_checkItem" field="id.checkItem">检查项目</column>
+			<column id="c_issueCoding" field="id.issueCoding">问题编码</column>
+			<column id="c_issueContents" field="issueContents">问题内容</column>
+			<column id="c_elevatorType" field="elevatorType">电梯类型</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table>
+	
+	<table id="guiElevatorArchivesInfo" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_elevatorType" field="elevatorType">电梯类型</column>
+			<column id="c_salesContractNo" field="salesContractNo">销售合同号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_projectName" field="projectName">购买单位名称</column>
+			<column id="c_projectAddress" field="projectAddress">使用单位名称</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+		</columns>
+	</table>
+	
+	<table id="guiQualityCheckManagement" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billno" field="billno">流水号</column>
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_maintPersonnel" field="maintPersonnel">维保工</column>
+			<column id="c_superviseId" field="superviseId">督查人员</column>
+			<column id="c_status" field="status">流程状态</column>
+			<column id="c_processName" field="processName">环节名称</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_processStatus" field="processStatus">处理状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchMarkingScoreRegisterDetail" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_detailId" field="detailId">评分明细代码</column>
+			<column id="c_detailName" field="detailName">评分明细名称</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchMarkingScoreRegister" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_msId" field="msId">评分代码</column>
+			<column id="c_msName" field="msName">评分名称</column>
+			<column id="c_elevatorType" field="elevatorType">电梯类型</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchMarkingItems" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_mtId" field="mtId">扣分项</column>
+			<column id="c_mtName" field="mtName">扣分项名称</column>
+			<column id="c_fraction" field="fraction">分数</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchShouldExamineItems" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_seiid" field="seiid">考核项</column>
+			<column id="c_seiDetail" field="seiDetail">考核详情</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchTermSecurityRisks" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_tsrId" field="tsrId">安全隐患项</column>
+			<column id="c_tsrDetail" field="tsrDetail">安全隐患详情</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchMaintContractMaster" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_elevatorType" field="elevatorType">电梯类型</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_salesContractNo" field="salesContractNo">销售合同号</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_maintPersonnel" field="maintPersonnel">维保工</column>
+			<column id="c_personnelPhone" field="personnelPhone">联系电话</column>
+			<column id="c_checksDateTime">上次督查日期</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchMaintContractMaster2" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_elevatorType" field="elevatorType">电梯类型</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_salesContractNo" field="salesContractNo">销售合同号</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_maintPersonnel" field="maintPersonnel">维保工</column>
+			<column id="c_personnelPhone" field="personnelPhone">联系电话</column>
+			<column id="c_checksDateTime">上次督查日期</column>
+		</columns>
+	</table>
+	
+	<table id="guiQualityCheckRegistration" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billno" field="billno">流水号</column>
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_maintPersonnel" field="maintPersonnel">维保工</column>
+			<column id="c_superviseId" field="superviseId">督查人员</column>
+			<column id="c_status" field="status">流程状态</column>
+			<column id="c_processName" field="processName">环节名称</column>
+			<column id="c_processStatus" field="processStatus">处理状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiQualityCheckAudit" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billno" field="billno">流水号</column>
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_maintPersonnel" field="maintPersonnel">维保工</column>
+			<column id="c_superviseId" field="superviseId">督查人员</column>
+			<column id="c_status" field="status">流程状态</column>
+			<column id="c_processName" field="processName">环节名称</column>
+			<column id="c_processStatus" field="processStatus">处理状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiAdvisoryComplaintsManage" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_processSingleNo" field="processSingleNo">处理单编号</column>
+			<column id="c_messageSource" field="messageSource">信息来源</column>
+			<column id="c_receivePer" field="receivePer">问题接收人</column>
+			<column id="c_receiveDate" field="receiveDate">问题接收日期</column>
+			<column id="c_feedbackPer" field="feedbackPer">问题反馈人姓名</column>
+			<column id="c_feedbackTel" field="feedbackTel">问题反馈人电话</column>
+			<column id="c_isEntrust" field="isEntrust">委托处理</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_dispatchType" field="dispatchType">派工标志</column>
+			<column id="c_processType" field="processType">处理状态</column>
+			<column id="c_auditType" field="auditType">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiAdvisoryComplaintsDispose" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_processSingleNo" field="processSingleNo">处理单编号</column>
+			<column id="c_messageSource" field="messageSource">信息来源</column>
+			<column id="c_receivePer" field="receivePer">问题接收人</column>
+			<column id="c_receiveDate" field="receiveDate">问题接收日期</column>
+			<column id="c_feedbackPer" field="feedbackPer">问题反馈人姓名</column>
+			<column id="c_feedbackTel" field="feedbackTel">问题反馈人电话</column>
+			<column id="c_processType" field="processType">处理状态</column>
+			<column id="c_auditType" field="auditType">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiAdvisoryComplaintsAudit" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_processSingleNo" field="processSingleNo">处理单编号</column>
+			<column id="c_messageSource" field="messageSource">信息来源</column>
+			<column id="c_receivePer" field="receivePer">问题处理人</column>
+			<column id="c_receiveDate" field="receiveDate">问题处理日期</column>
+			<column id="c_feedbackPer" field="feedbackPer">问题反馈人姓名</column>
+			<column id="c_feedbackTel" field="feedbackTel">问题反馈人电话</column>
+			<column id="c_auditType" field="auditType">审核状态</column>
+			<column id="c_isClose" field="isClose">是否关闭</column>
+		</columns>
+	</table>
+	
+	<table id="guiAdvisoryComplaintsDispatch" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_processSingleNo" field="processSingleNo">处理单编号</column>
+			<column id="c_messageSource" field="messageSource">信息来源</column>
+			<column id="c_receivePer" field="receivePer">问题接收人</column>
+			<column id="c_receiveDate" field="receiveDate">问题接收日期</column>
+			<column id="c_feedbackPer" field="feedbackPer">问题反馈人姓名</column>
+			<column id="c_feedbackTel" field="feedbackTel">问题反馈人电话</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_dispatchType" field="dispatchType">派工标志</column>
+			<column id="c_processType" field="processType">处理状态</column>
+			<column id="c_auditType" field="auditType">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiEntrustContractMaster" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billNo">流水号</column>
+			<column id="c_r1" field="r1">合同状态</column>
+			<column id="c_entrustContractNo" field="entrustContractNo">委托合同号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_contractNatureOf" field="contractNatureOf">合同性质</column>
+			<column id="c_companyName" field="companyName">乙方单位</column>
+			<column id="c_contractSdate" field="contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="contractEdate">合同结束日期</column>
+			<column id="c_attn" field="attn">经办人</column>
+			<column id="c_maintDivision" field="maintDivision">所属部门</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiEntrustContractModify" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billNo">流水号</column>
+			<column id="c_r1" field="r1">合同状态</column>
+			<column id="c_entrustContractNo" field="entrustContractNo">委托合同号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_contractNatureOf" field="contractNatureOf">合同性质</column>
+			<column id="c_companyName" field="companyName">乙方单位</column>
+			<column id="c_contractSdate" field="contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="contractEdate">合同结束日期</column>
+			<column id="c_attn" field="attn">经办人</column>
+			<column id="c_maintDivision" field="maintDivision">所属部门</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiEntrustContractMasterAudit" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billNo">流水号</column>
+			<column id="c_r1" field="r1">合同状态</column>
+			<column id="c_entrustContractNo" field="entrustContractNo">委托合同号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_contractNatureOf" field="contractNatureOf">合同性质</column>
+			<column id="c_companyName" field="companyName">乙方单位</column>
+			<column id="c_contractSdate" field="contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="contractEdate">合同结束日期</column>
+			<column id="c_attn" field="attn">经办人</column>
+			<column id="c_maintDivision" field="maintDivision">所属部门</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiEntrustContractMasterNext" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billNo">流水号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_companyId" field="companyId">委托单位</column>
+			<column id="c_assLevel" field="assLevel">评定级别</column>
+			<column id="c_operId" field="operId">录入人</column>
+			<column id="c_maintDivision" field="maintDivision">所属维保部</column>			
+		</columns>
+	</table>
+	<table id="guiElevatorTransferCaseRegisterDisplay" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billno" field="billno">流水号</column>
+			<column id="c_checkTime" field="checkTime">提交厂检时间</column>
+			<column id="c_checkNum" field="checkNum">厂检次数</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_insCompanyName" field="insCompanyName">安装公司名称</column>
+			<column id="c_salesContractNo" field="salesContractNo">销售合同号</column>
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_staffName" field="staffName">厂检人员名称</column>
+			<column id="c_department" field="department">所属部门</column>
+			<column id="c_factoryCheckResult" field="factoryCheckResult">厂检结果</column>
+			<column id="c_projectManager" field="projectManager">项目经理</column>
+			<column id="c_status" field="status">流程状态</column>
+			<column id="c_processName" field="processName">环节名称</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_processStatus" field="processStatus">处理状态</column>
+			<column id="c_isClose" field="isClose">关闭厂检</column>
+		</columns>
+	</table>
+	<table id="guiElevatorTransferCaseRegister" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billno" field="billno">流水号</column>
+			<column id="c_checkTime" field="checkTime">提交厂检时间</column>
+			<column id="c_checkNum" field="checkNum">厂检次数</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_insCompanyName" field="insCompanyName">安装公司名称</column>
+			<column id="c_salesContractNo" field="salesContractNo">销售合同号</column>
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_staffName" field="staffName">厂检人员名称</column>
+			<column id="c_department" field="department">所属部门</column>
+			<column id="c_factoryCheckResult" field="factoryCheckResult">厂检结果</column>
+			<column id="c_status" field="status">流程状态</column>
+			<column id="c_processName" field="processName">环节名称</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_processStatus" field="processStatus">处理状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiElevatorTransferCaseRegisterDA" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billno" field="billno">流水号</column>
+			<column id="c_checkTime" field="checkTime">提交厂检时间</column>
+			<column id="c_checkNum" field="checkNum">厂检次数</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_insCompanyName" field="insCompanyName">安装公司名称</column>
+			<column id="c_salesContractNo" field="salesContractNo">销售合同号</column>
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_staffName" field="staffName">厂检人员名称</column>
+			<column id="c_department" field="department">所属部门</column>
+			<column id="c_factoryCheckResult" field="factoryCheckResult">厂检结果</column>
+			<column id="c_status" field="status">流程状态</column>
+			<column id="c_processName" field="processName">环节名称</column>
+			<column id="c_processStatus" field="processStatus">处理状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchHandoverElevatorCheckItem" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_examType" >检查类型</column>
+			<column id="c_checkItem" >检查项目</column>
+			<column id="c_issueCoding" >问题编码</column>
+			<column id="c_elevatorType" >电梯类型</column>
+			<column id="c_issueContents" width="50%">问题内容</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchElevatorTransferCaseRegister" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>	
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>		
+			<column id="c_elevatorType" field="elevatorType">电梯类型</column>
+			<column id="c_salesContractNo" field="salesContractNo">合同号</column>
+			<column id="c_floor" field="floor">层</column>
+			<column id="c_stage" field="stage">站</column>
+			<column id="c_door" field="door">门</column>
+			<column id="c_high" field="high">提升高度</column>
+			<column id="c_weight" field="weight">载重</column>
+			<column id="c_speed" field="speed">额定速度</column>
+			<column id="c_elevatorParam" field="elevatorParam">规格型号</column>
+			<column id="c_contractType" field="contractType">合同性质</column>
+			<column id="c_isOutsideFootball" field="isOutsideFootball">是否外揽</column>
+			<column id="c_deliveryAddress" field="deliveryAddress">项目地址</column>
+		</columns>
+	</table>
+	
+	<table id="guiReimbursExpenseManag" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_billno" field="billno">流水号</column>		
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_reimbursPeople" field="reimbursPeople">报销人</column>
+			<column id="c_reimbursDate" field="reimbursDate">报销时间</column>
+			<column id="c_totalAmount" field="totalAmount">报销总额</column>
+		</columns>
+	</table>
+	
+	<table id="guiSalaryBonusManage" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_billno" field="billno">流水号</column>		
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_costsDate" field="costsDate">产生成本时间</column>
+			<column id="c_totalAmount" field="totalAmount">工资奖金总额</column>
+		</columns>
+	</table>
+	
+	<table id="guiFreeFittingCostsManage" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_billno" field="billno">流水号</column>		
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_costsDate" field="costsDate">产生成本时间</column>
+			<column id="c_fittingTotal" field="fittingTotal">配件总成本</column>
+		</columns>
+	</table>
+	<table id="guiMaintContractListMin" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>	
+			<column id="c_billno" field="billno">流水号</column>		
+			<column id="c_maintContractNo" field="maintContractNo">合同号</column>
+			<column id="c_companyId" field="companyId">甲方名称</column>
+			<column id="c_num">台数</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_contractStatus" field="contractStatus">合同状态</column>
+		</columns>
+	</table>
+	<table id="guiProjectReimbursement" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>	
+			<column id="c_billno" field="billno">流水号</column>		
+			<column id="c_maintContractNo" field="maintContractNo">合同号</column>
+			<column id="c_busType" field="busType">合同类型</column>
+			<column id="c_num" field="num">台数</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_contractStatus" field="contractStatus">合同状态</column>
+		</columns>
+	</table>
+		<table id="guiProjectReimbursement2" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>	
+			<column id="c_billno" field="billno">流水号</column>		
+			<column id="c_maintContractNo" field="maintContractNo">合同号</column>
+			<column id="c_busType" field="busType">合同类型</column>
+			<column id="c_num" field="num">台数</column>
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+		</columns>
+	</table>
+	
+	<table id="guiProContractARFeeMaster" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlNo" field="jnlNo">应收款流水号</column>		
+			<column id="c_contractType" field="contractType">合同类型</column>
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_companyId" field="companyName">甲方单位</column>
+			<column id="c_preDate" field="preDate">应收款日期</column>
+			<column id="c_preMoney" field="preMoney">应收款金额</column>
+			<column id="c_isInvoice" field="isInvoice ">是否开票</column>
+			<column id="c_notInvoice" field="notInvoice">未开票金额</column>
+			<column id="c_isParagraph" field="isParagraph ">是否来款</column>
+			<column id="c_notParagraph" field="notParagraph">未来款金额</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+			<column id="c_warnRem" field="warnRem">提醒备注</column>
+		</columns>
+	</table>
+	
+	<table id="guiProContractARFeeMasterNext" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_billno" field="billno">流水号</column>		
+			<column id="c_maintContractNo" field="maintContractNo">合同号</column>
+			<column id="c_busType" field="busType">合同类型</column>
+			<column id="c_num" field="num">台数</column>
+			<column id="c_maintDivision" field="maintDivision">分部</column>
+			<column id="c_companyID" field="companyID">甲方单位</column>
+		</columns>
+	</table>
+	
+	<table id="guiContractInvoiceManage" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlNo" field="jnlNo">开票流水号</column>
+			<column id="c_ARF_JnlNo" field="ARF_JnlNo">应收款流水号</column>
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_contractType" field="contractType">合同类型</column>
+			<column id="c_invoiceNo" field="invoiceNo">发票号</column>
+			<column id="c_invoiceDate" field="invoiceDate">开票日期</column>
+			<column id="c_invoiceType" field="invoiceType">发票类型</column>
+			<column id="c_invoiceMoney" field="invoiceMoney">开票金额</column>
+			<column id="c_rem" field="rem">备注</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_istbp" field="istbp">是否退补票</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiContractInvoiceManageNext" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlNo" field="jnlNo">应收款流水号</column>		
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_contractType" field="contractType">合同类型</column>
+			<column id="c_companyId" field="companyId">开票名称</column>
+			<column id="c_recName" field="recName">应收款名称</column>
+			<column id="c_preDate" field="preDate">应收款日期</column>
+			<column id="c_preMoney" field="preMoney">应收款金额</column>
+			<column id="c_notPreMoney">未开票金额</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_warnRem" field="warnRem">提醒备注</column>
+		</columns>
+	</table>
+	
+	<table id="guiContractInvoiceManageNext2" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlNo" field="jnlNo">应收款流水号</column>		
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_contractType" field="contractType">合同类型</column>
+			<column id="c_companyId" field="companyId">开票名称</column>
+			<column id="c_recName" field="recName">应收款名称</column>
+			<column id="c_preDate" field="preDate">应收款日期</column>
+			<column id="c_preMoney" field="preMoney">应收款金额</column>
+			<column id="c_notParMoney">未来款金额</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_warnRem" field="warnRem">提醒备注</column>
+		</columns>
+	</table>
+	
+	<table id="guiContractInvoiceAudit" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>
+			<column id="c_jnlNo" field="jnlNo">开票流水号</column>
+			<column id="c_ARF_JnlNo" field="ARF_JnlNo">应收款流水号</column>
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_contractType" field="contractType">合同类型</column>
+			<column id="c_invoiceNo" field="invoiceNo">发票号</column>
+			<column id="c_invoiceDate" field="invoiceDate">开票日期</column>
+			<column id="c_invoiceType" field="invoiceType">发票类型</column>
+			<column id="c_invoiceMoney" field="invoiceMoney">开票金额</column>
+			<column id="c_rem" field="rem">备注</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_istbp" field="istbp">是否退补票</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchStaff" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+	        <column id="c_userid" field="userid">用户编号</column>
+	        <column id="c_username" field="username">用户名称</column>
+	        <column id="c_phone" field="phone">用户电话</column>
+	        <column id="c_class1id" field="class1id">职位</column>
+	        <column id="c_storageid" field="storageid">所属部门</column>
+	        <column id="c_roleid" field="roleid">用户角色</column>
+	        <column id="c_grcid" field="grcid">所属分部</column>
+		</columns>
+	</table>
+	
+	<table id="guiProContractARFeeModify" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlNo" field="jnlNo">应收款流水号</column>		
+			<column id="c_contractType" field="contractType">合同类型</column>
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_companyId" field="companyName">甲方单位</column>
+			<column id="c_preDate" field="preDate">应收款日期</column>
+			<column id="c_preMoney" field="preMoney">应收款金额</column>
+			<column id="c_isInvoice" field="isInvoice ">是否开票</column>
+			<column id="c_notInvoice" field="notInvoice">未开票金额</column>
+			<column id="c_isParagraph" field="isParagraph ">是否来款</column>
+			<column id="c_notParagraph" field="notParagraph">未来款金额</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiProContractARFeeMasterAudit" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlNo" field="jnlNo">应收款流水号</column>		
+			<column id="c_contractType" field="contractType">合同类型</column>
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_companyId" field="companyName">甲方单位</column>
+			<column id="c_preDate" field="preDate">应收款日期</column>
+			<column id="c_preMoney" field="preMoney">应收款金额</column>
+			<column id="c_isInvoice" field="isInvoice ">是否开票</column>
+			<column id="c_notInvoice" field="notInvoice">未开票金额</column>
+			<column id="c_isParagraph" field="isParagraph ">是否来款</column>
+			<column id="c_notParagraph" field="notParagraph">未来款金额</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+			<column id="c_warnRem" field="warnRem">提醒备注</column>
+		</columns>
+	</table>
+	
+	<table id="guiContractParagraphManage" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_ARF_JnlNo" field="ARF_JnlNo">应收款流水号</column>
+			<column id="c_preDate" field="preDate">应收款日期</column>
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_contractType" field="contractType">合同类型</column>
+			<column id="c_paragraphNo" field="paragraphNo">凭证号</column>
+			<column id="c_paragraphMoney" field="paragraphMoney">来款金额</column>
+			<column id="c_paragraphDate" field="paragraphDate">来款日期</column>
+			<column id="c_rem" field="rem">备注</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiContractParagraphAudit" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_ARF_JnlNo" field="ARF_JnlNo">应收款流水号</column>
+			<column id="c_preDate" field="preDate">应收款日期</column>
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_contractType" field="contractType">合同类型</column>		
+			<column id="c_paragraphNo" field="paragraphNo">凭证号</column>
+			<column id="c_paragraphMoney" field="paragraphMoney">来款金额</column>
+			<column id="c_paragraphDate" field="paragraphDate">来款日期</column>
+			<column id="c_rem" field="rem">备注</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiContractPaymentQuery" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_contractNo" field="contractNo">合同号</column>
+			<column id="c_contractType" field="contractType">合同类型</column>
+			<column id="c_companyId" field="companyId">甲方单位</column>
+			<column id="c_contractTotal" field="contractTotal">合同金额</column>
+			<column id="c_preMoney" field="preMoney">应收款金额</column>
+			<column id="c_invoiceMoney" field="invoiceMoney">开票金额</column>
+			<column id="c_paragraphMoney" field="paragraphMoney">来款金额</column>
+			<column id="c_arrearsMoney" field="arrearsMoney">欠款金额</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+		</columns>
+	</table>
+	
+	<table id="guiSearchCompany" parent="guiRole">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+        <column id="c_cb" width="25"><set-property property="globalCheckbox" value="ids"/></column>
+        <column id="c_comid" field="comid">分部编号</column>
+        <column id="c_comfullname" field="comfullname">分部全称</column>
+        <column id="c_comtype" field="comtype">分部类别</column>
+        <column id="c_linkman" field="linkman">联系人</column>
+        <column id="c_linkmantel" field="linkmantel">联系人电话</column>
+        <column id="c_enabledflag" field="enabledflag">启用标志</column>
+      </columns>
+    </table>
+	<table id="guiSearchCompany_kk" parent="guiRole">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+        <column id="c_cb" width="25"><set-property property="globalCheckbox" value="ids"/></column>
+        <column id="c_comid" field="comid">分部编号</column>
+        <column id="c_comfullname" field="comfullname">分部全称</column>
+        <column id="c_comtype" field="comtype">分部类别</column>
+        <column id="c_linkman" field="linkman">联系人</column>
+        <column id="c_linkmantel" field="linkmantel">联系人电话</column>
+      </columns>
+    </table>
+    
+    <table id="guiLostElevatorReport" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlno" field="jnlno">流水号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_projectName" field="projectName">项目 名称</column>
+			<column id="c_contractNatureOf" field="contractNatureOf">合同性质</column>
+			<column id="c_lostElevatorDate" field="lostElevatorDate">丢梯日期</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	
+	 <table id="guiLostElevatorReportAudit" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlno" field="jnlno">流水号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_contractNatureOf" field="contractNatureOf">合同性质</column>
+			<column id="c_lostElevatorDate" field="lostElevatorDate">丢梯日期</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+			<column id="c_auditStatus" field="auditStatus">审核状态</column>
+		</columns>
+	</table>
+	<table id="guiLostElevatorReportHf" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_jnlno" field="jnlno">流水号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_projectName" field="projectName">项目名称</column>
+			<column id="c_contractNatureOf" field="contractNatureOf">合同性质</column>
+			<column id="c_lostElevatorDate" field="lostElevatorDate">丢梯日期</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+			<column id="c_maintStation" field="maintStation">所属维保站</column>
+			<column id="c_fhRem" field="fhRem">回访状态</column>
+		</columns>
+	</table>
+	
+	<table id="guiLostElevatorReportNext" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_billNo" field="billNo">流水号</column>
+			<column id="c_attn" field="attn">经办人</column>
+			<column id="c_contractSdate" field="contractSdate">合同开始日期</column>
+			<column id="c_contractEdate" field="contractEdate">合同结束日期</column>
+			<column id="c_maintDivision" field="maintDivision">所属分部</column>
+		</columns>
+	</table>
+    
+    <table id="guiReturningMaintainDetail" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25"><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_contracttype" field="contracttype">合同类型</column>
+			<column id="c_billNo" field="billNo">流水号</column>
+	        <column id="c_maintContractNo" field="maintContractNo">合同号</column>
+			<column id="c_attn" field="attn">经办人</column>
+			<column id="c_contractSdate" field="contractSdate">合同开始日期</column>			
+			<column id="c_contractEdate" field="contractEdate">合同结束日期</column>							
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>			
+		</columns>
+	</table>
+    
+    <table id="guiSmsHistory" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<!-- <column id="c_cb" width="25"></column> -->
+			<column id="c_smsTel" field="smsTel">短信发送号码</column>
+	        <column id="c_smsContent" field="smsContent">短信内容</column>
+			<column id="c_smsSendTime" field="smsSendTime">短信发送时间</column>
+			<column id="c_flag" field="flag">是否发送成功</column>			
+		</columns>
+	</table>
+    
+    <table id="guiEntrustContractQuote" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_billNo" field="billNo">流水号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_companyId" field="companyId">委托单位</column>
+			<column id="c_assLevel" field="assLevel">评定级别</column>
+			<column id="c_operId" field="operId">录入人</column>
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>
+			<column id="c_processName" field="processName">环节名称</column>
+			<column id="c_status" field="status">流程状态</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+			<column id="c_iscontract">生成合同</column>
+		</columns>
+	</table>
+	
+	<table id="guiOutsourceContractQuote" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>	
+			<column id="c_billNo" field="billNo">流水号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维改合同号</column>
+			<column id="c_companyId" field="companyId">委托单位</column>
+			<column id="c_operId" field="operId">录入人</column>
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>
+			<column id="c_processName" field="processName">环节名称</column>
+			<column id="c_status" field="status">流程状态</column>
+			<column id="c_submitType" field="submitType">提交标志</column>
+		</columns>
+	</table>
+	
+	<table id="guiOutsourcingContractQuoteNext" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_wgBillno" field="wgBillno">维改流水号</column>
+			<column id="c_maintContractNo" field="maintContractNo">维改合同号</column> 
+			<column id="c_attn" field="attn">经办人</column>
+			<column id="c_busType" field="busType">业务类别</column>		
+			<column id="c_signingDate" field="signingDate">签订日期</column>
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>
+		</columns>
+     </table>
+     
+     <table id="guiEntrustContractMasterQuoteNext" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_billNo" field="billNo">维保流水号</column>
+	        <column id="c_maintContractNo" field="maintContractNo">维保合同号</column>
+			<column id="c_attn" field="attn">经办人</column>
+			<column id="c_contractSdate" field="contractSdate">合同开始日期</column>			
+			<column id="c_contractEdate" field="contractEdate">合同结束日期</column>							
+			<column id="c_maintDivision" field="maintDivision">所属维保分部</column>			
+		</columns>
+	</table>
+	
+	<table id="guiEffectiveElevatorMaintain" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_companyId" field="companyId">单位名称</column>
+			<column id="c_contacts" field="contacts">联系人</column> 
+			<column id="c_contactPhone" field="contactPhone">联系人电话</column>
+			<column id="c_reOrder" field="reOrder">回访顺序</column>
+			<column id="c_reMark" field="reMark">回访标记</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+     </table>
+    
+	 <!-- cgw end -->
+	 
+	 <!-- lsw start -->
+     <table id="guiReceivablesName" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_recId" field="recId">代码</column>
+			<column id="c_recName" field="recName">名称</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table> 
+	
+	<table id="guiInvoiceType" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_inTypeId" field="inTypeId">代码</column>
+			<column id="c_inTypeName" field="inTypeName">名称</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+	   </columns>
+	</table>
+	
+	<table id="guiElevatorCoordinateLocation" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_elevatorNo" field="elevatorNo">电梯编号</column>
+			<column id="c_elevatorLocation" field="elevatorLocation">电梯位置</column>
+			<column id="c_beginLongitude" field="beginLongitude">开始经度</column>
+			<column id="c_endLongitude" field="endLongitude">结束经度</column>
+			<column id="c_beginDimension" field="beginDimension">开始纬度</column>
+			<column id="c_endDimension" field="endDimension">结束纬度</column>
+			<column id="c_rem" field="rem">项目名称及楼栋号</column>
+	   </columns>
+	</table>
+    <!-- lsw end -->
+    
+	<table id="guiMaintContractOther" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_r9" field="a.r9">序号</column>
+			<column id="c_billNo" field="a.billNo">流水号</column>
+			<column id="c_maintDivision" field="a.maintDivision">维保分部</column>
+			<column id="c_maintStation" field="a.maintStation">维保站</column>
+			<column id="c_maintContractNo" field="a.maintContractNo">维保合同号</column>
+			<column id="c_companyName" field="a.companyId">开票名称</column>
+			<column id="c_otherfee">业务费总额</column>
+			<column id="c_nototherfee">未支出金额</column>
+		</columns>
+	</table>
+	<!-- lzh start -->
+	<table id="guiMaintManagerFollow" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_custLevel" field="custLevel">客户等级</column>
+			<column id="c_companyName" field="companyName">单位名称</column> 
+			<column id="c_principalName" field="principalName">负责人</column>
+			<column id="c_principalPhone" field="principalPhone">联系电话</column>		
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_visitDate" field="visitDate">预计拜访日期</column>
+			<column id="c_visitPosition" field="visitPosition">拜访职位</column>
+			<column id="c_visitStaff" field="visitStaff">拜访人员</column>
+			<column id="c_rem" field="cvpd.rem">备注</column>
+		</columns>
+     </table>
+     
+     <table id="guiMaintFMinisterFollow" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_custLevel" field="custLevel">客户等级</column>
+			<column id="c_companyName" field="companyName">单位名称</column> 
+			<column id="c_principalName" field="principalName">负责人</column>
+			<column id="c_principalPhone" field="principalPhone">联系电话</column>		
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_visitDate" field="visitDate">预计拜访日期</column>
+			<column id="c_visitPosition" field="visitPosition">拜访职位</column>
+			<column id="c_visitStaff" field="visitStaff">拜访人员</column>
+			<column id="c_rem" field="cvpd.rem">备注</column>
+			
+		</columns>
+     </table>
+     
+     <table id="guiMaintZMinisterFollow" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_custLevel" field="custLevel">客户等级</column>
+			<column id="c_companyName" field="companyName">单位名称</column> 
+			<column id="c_principalName" field="principalName">负责人</column>
+			<column id="c_principalPhone" field="principalPhone">联系电话</column>		
+			<column id="c_maintDivision" field="maintDivision">维保分部</column>
+			<column id="c_maintStation" field="maintStation">维保站</column>
+			<column id="c_visitDate" field="visitDate">预计拜访日期</column>
+			<column id="c_visitPosition" field="visitPosition">拜访职位</column>
+			<column id="c_visitStaff" field="visitStaff">拜访人员</column>
+			<column id="c_rem" field="cvpd.rem">备注</column>
+			
+		</columns>
+     </table>
+     
+     <table id="guiMaintainProjectInfo" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_orderby" field="orderby">排序号</column>
+			<column id="c_elevatorType" field="elevatorType">电梯类型</column>
+			<column id="c_MaintType" field="MaintType">保养类型</column>
+			<column id="c_MaintItem" field="MaintItem">维保项目</column>
+			<column id="c_MaintContents" field="MaintContents">维保基本要求</column>
+			<column id="c_enabledFlag" field="enabledFlag">启用标志</column>
+		</columns>
+	</table>
+     <!-- lzh end -->
+     	<!-- lzh start -->
+	<table id="guiLoginUserAudit" parent="guiRole">
+      <noContent styleClass="noItems">没有任何记录!</noContent>
+      <columns>
+        <column id="c_cb" width="25"/>
+        <column id="c_userid" field="userid">用户编号</column>
+        <column id="c_username" field="username">用户名称</column>
+        <column id="c_class1id" field="class1id">职位</column>
+        <column id="c_storageid" field="storageid">所属部门</column>
+        <column id="c_roleid" field="roleid">用户角色</column>
+        <!--column id="c_dutyid" field="dutyid">职务</column-->
+        <column id="c_grcid" field="grcid">所属分部</column>
+        <column id="c_enabledflag" field="enabledflag">启用标志</column>
+      </columns>
+    </table>
+		<!-- lzh start -->
+		
+	<table id="guigzImport" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_maintDivision" field="a.maintDivision">维保分部</column>
+			<column id="c_maintStation" field="a.maintStation">维保站</column>
+			<column id="c_yearMonth" field="a.yearMonth">月份</column>		
+			<column id="c_gzMoney" field="a.gzMoney">工资金额</column>
+			<column id="c_dayMoney" field="a.dayMoney">平均每日工资</column>	
+			<column id="c_OperId" field="a.OperId">录入人</column>
+			<column id="c_OperDate" field="a.OperDate">录入日期</column>
+		</columns>
+	</table>
+	<table id="guiNzjImport" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_maintDivision" field="a.maintDivision">维保分部</column>
+			<column id="c_maintStation" field="a.maintStation">维保站</column>
+			<column id="c_years" field="a.years">年份</column>		
+			<column id="c_nzjMoney" field="a.nzjMoney">金额</column>
+			<column id="c_dayMoney" field="a.dayMoney">平均每日年终奖</column>	
+			<column id="c_OperId" field="a.OperId">录入人</column>
+			<column id="c_OperDate" field="a.OperDate">录入日期</column>
+		</columns>
+	</table>
+	<table id="guiMbfImport" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_maintDivision" field="a.maintDivision">维保分部</column>
+			<column id="c_maintStation" field="a.maintStation">维保站</column>
+			<column id="c_years" field="a.years">年份</column>		
+			<column id="c_mbfMoney" field="a.mbfMoney">单台免保金额</column>
+			<column id="c_dayMoney" field="a.dayMoney">单台平均每日免保金额</column>	
+			<column id="c_OperId" field="a.OperId">录入人</column>
+			<column id="c_OperDate" field="a.OperDate">录入日期</column>
+		</columns>
+	</table>
+	<table id="guiSbzcImport" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_maintDivision" field="a.maintDivision">维保分部</column>
+			<column id="c_maintStation" field="a.maintStation">维保站</column>
+			<column id="c_yearMonth" field="a.yearMonth">月份</column>		
+			<column id="c_sbzcMoney" field="a.sbzcMoney">社保支出金额</column>
+			<column id="c_dayMoney" field="a.dayMoney">平均每日社保金额</column>	
+			<column id="c_OperId" field="a.OperId">录入人</column>
+			<column id="c_OperDate" field="a.OperDate">录入日期</column>
+		</columns>
+	</table>
+	<table id="guiZbtlydImport" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_maintDivision" field="a.maintDivision">维保分部</column>
+			<column id="c_maintStation" field="a.maintStation">维保站</column>
+			<column id="c_yearMonth" field="a.yearMonth">月份</column>		
+			<column id="c_totalnum" field="a.totalnum">台量</column>
+			<column id="c_daynum" field="a.daynum">平均每日在保台量</column>	
+			<column id="c_OperId" field="a.OperId">录入人</column>
+			<column id="c_OperDate" field="a.OperDate">录入日期</column>
+		</columns>
+	</table>
+	<!-- lwj start -->
+	 <table id="guiMaintPersonnel" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>	
+			<column id="c_userName" field="userName">姓名</column>
+			<column id="c_phone" field="phone">电话</column>
+		</columns>
+	</table> 
+	
+	<table id="guiContractTransferUploadList" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25"><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_BillNo" field="cm.billNo">流水号</column>
+			<column id="c_CompanyName" field="cm.companyId">甲方单位名称</column>
+			<column id="c_MaintContractNo" field="cm.maintContractNo">维保合同号</column>
+			<column id="c_SalesContractNo" field="cm.salesContractNo">销售合同号</column>		
+			<column id="c_ElevatorNo" field="cm.elevatorNo">电梯编号</column>
+			<column id="c_MaintDivision" field="cm.maintDivision">所属维保分部</column>	
+			<column id="c_MaintStation" field="cm.maintStation">所属维保站</column>
+			<column id="c_ContractSDate" field="cm.contractSdate">合同开始日期</column>
+			<column id="c_ContractEDate" field="cm.contractEdate">合同结束日期</column>
+			<column id="c_TransfeSubmitType" field="cm.transfeSubmitType">提交标志</column>
+			<column id="c_IsCheck">厂检通知单</column>
+			<column id="c_OperDate" field="cb.OperDate">最新反馈日期</column>
+			<column id="c_debugfile">调试单</column>
+		</columns>
+	</table>
+	
+	<table id="guiContractTransferAuditList" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_BillNo" field="cm.billNo">流水号</column>
+			<column id="c_CompanyName" field="cm.companyId">甲方单位名称</column>
+			<column id="c_MaintContractNo" field="cm.maintContractNo">维保合同号</column>
+			<column id="c_SalesContractNo" field="cm.salesContractNo">销售合同号</column>		
+			<column id="c_ElevatorNo" field="cm.elevatorNo">电梯编号</column>
+			<column id="c_MaintDivision" field="cm.maintDivision">所属维保分部</column>	
+			<column id="c_MaintStation" field="cm.maintStation">所属维保站</column>
+			<column id="c_ContractSDate" field="cm.contractSdate">合同开始日期</column>
+			<column id="c_ContractEDate" field="cm.contractEdate">合同结束日期</column>
+			<column id="c_auditStatus" field="cm.auditStatus">审核状态</column>
+			<column id="c_IsCheck">厂检通知单</column>
+		</columns>
+	</table>
+	
+	<table id="guiCustReturnRegister" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" />
+			<column id="c_reOrder">回访顺序</column>
+			<column id="c_reMark">回访标记</column>
+			<column id="c_contacts">联系人</column>
+			<column id="c_contactPhone">联系人号码</column>		
+			<column id="c_maxoperDate">上次回访时间</column>
+			<column id="c_isProblem">是否有问题</column>	
+			<column id="c_isHandleResult">是否解决</column>
+			<column id="c_isHandle">是否处理</column>
+			<column id="c_ministerHandle">是否分部长处理</column>
+			<column id="c_maintDivision">所属维保分部</column>
+			<column id="c_rem">备注</column>
+		</columns>
+	</table>
+	
+	<!-- lwj end -->
+	
+	<table id="guiContractTransferAssignList" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>
+			<column id="c_BillNo" field="BillNo">流水号</column>
+			<column id="c_CompanyName" field="CompanyName">甲方单位名称</column>
+			<column id="c_MaintContractNo" field="MaintContractNo">维保合同号</column>
+			<column id="c_SalesContractNo" field="SalesContractNo">销售合同号</column>		
+			<column id="c_ElevatorNo" field="ElevatorNo">电梯编号</column>
+			<column id="c_MaintDivision" field="MaintDivision">所属维保分部</column>	
+			<column id="c_MaintStation" field="MaintStation">所属维保站</column>
+			<column id="c_ContractSDate" field="ContractSDate">合同开始日期</column>
+			<column id="c_ContractEDate" field="ContractEDate">合同结束日期</column>
+			<column id="c_SubmitType" field="SubmitType">提交标志</column>
+		</columns>
+	</table>
+	<table id="guiContractTransferAssigAjax" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ><set-property property="globalCheckbox" value="ids"/></column>
+			<column id="c_BillNo" field="BillNo">流水号</column>
+			<column id="c_CompanyName" field="CompanyName">甲方单位名称</column>
+			<column id="c_MaintContractNo" field="MaintContractNo">维保合同号</column>
+			<column id="c_SalesContractNo" field="SalesContractNo">销售合同号</column>		
+			<column id="c_ElevatorNo" field="ElevatorNo">电梯编号</column>
+			<column id="c_MaintDivision" field="MaintDivision">所属维保分部</column>	
+			<column id="c_MaintStation" field="MaintStation">所属维保站</column>
+			<column id="c_ContractSDate" field="ContractSDate">合同开始日期</column>
+			<column id="c_ContractEDate" field="ContractEDate">合同结束日期</column>
+		</columns>
+	</table>
+	<table id="guiContractTransferFeedBackList" parent="guiRole">
+		<noContent styleClass="noItems">没记录显示!</noContent>
+		<columns>
+			<column id="c_cb" width="25" ></column>
+			<column id="c_BillNo" field="BillNo">流水号</column>
+			<column id="c_MaintContractNo" field="MaintContractNo">维保合同号</column>
+			<column id="c_MaintDivision" field="MaintDivision">所属维保分部</column>	
+			<column id="c_MaintStation" field="MaintStation">所属维保站</column>
+			<column id="c_CompanyName" field="CompanyName">甲方单位名称</column>
+			<column id="c_ContractSDate" field="ContractSDate">合同开始日期</column>
+			<column id="c_ContractEDate" field="ContractEDate">合同结束日期</column>
+			<column id="c_SalesContractNo" field="SalesContractNo">销售合同号</column>		
+			<column id="c_ElevatorNo" field="ElevatorNo">电梯编号</column>
+			<column id="c_OperDate" field="OperDate">最新反馈日期</column>
+			<column id="c_FeedbackTypeName" field="FeedbackTypeName">反馈类型</column>
+			<column id="c_AuditStatus" field="AuditStatus">状态</column>
+		</columns>
+	</table>
+	
+  </tables>
+    
+</htmltable>

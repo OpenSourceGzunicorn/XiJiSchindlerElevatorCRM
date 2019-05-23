@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Fri Oct 21 15:17:00 CST 2005                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.sysmanager">
+
+    <class name="Modulenode" table="modulenode">
+        <id name="nodeid" column="NodeID" type="string">
+            <generator class="assigned"/>
+        </id>
+ 		
+ 		<property name="moduleid" column="ModuleID" type="string"  not-null="true" />
+        <property name="nodename" column="NodeName" type="string"  not-null="true" />
+        <property name="nodeurl" column="NodeURL" type="string"  not-null="true" />
+        <property name="nodetarget" column="NodeTarget" type="string" />
+        <property name="level" column="Level" type="integer"  not-null="true" />
+        <property name="allowflag" column="AllowFlag" type="string"  not-null="true" />
+        <property name="nodeimage" column="NodeImage" type="string"  not-null="true" />
+        <property name="nodesort" column="NodeSort" type="integer"  not-null="true" />
+        <property name="nodedata" column="NodeData" type="string" />
+        <property name="rem1" column="Rem1" type="string" />
+        <property name="r1" column="R1" type="java.lang.String" />
+        <property name="r2" column="R2" type="java.lang.String" />
+        <property name="r3" column="R3" type="java.lang.String" />
+        <property name="r4" column="R4" type="java.lang.String" />
+        <property name="r5" column="R5" type="java.lang.String" />
+        
+    </class>
+    
+</hibernate-mapping>

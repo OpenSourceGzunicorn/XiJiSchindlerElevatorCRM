@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Tue Jun 20 14:13:27 CST 2006                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.viewmanager">
+
+    <class name="Viewreportinfo" table="viewreportinfo">
+        <id name="storageid" column="storageid" type="java.lang.String">
+        	<generator class="assigned"></generator>
+        </id>
+        <property name="storagename" column="storagename" type="java.lang.String" />
+    </class>
+    
+</hibernate-mapping>

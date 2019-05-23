@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<process-definition  xmlns=""  name="qualitycheckmanagement">
+
+
+	<start-state name="填写维保质量检查结果">
+		<task>
+			<assignment class="com.gzunicorn.workflow.assignment.ApplyActorsAssignment"></assignment>
+		</task>
+		<transition to="督查组长审核" name="提交"></transition>
+	</start-state>
+
+
+	<task-node name="督查组长审核">
+		<task name="督查组长审核">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="是否合格" name="提交"></transition>
+		<transition to="修改维保质量检查结果" name="驳回到督查员"></transition>
+		<transition to="流程终止" name="终止流程"></transition>
+	</task-node>
+
+	<decision name="是否合格">
+		<handler class="com.gzunicorn.workflow.decision.AppointDecisionHandler"></handler>
+		<transition to="流程通过" name="是，流程通过"></transition>
+		<transition to="维保经理审核" name="否，维保经理审核"></transition>
+	</decision>
+
+	<task-node name="维保经理审核">
+		<task name="维保经理审核">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="维保分部长审核" name="提交维保分部长审核"></transition>
+	</task-node>
+
+	<task-node name="维保分部长审核">
+		<task name="维保分部长审核">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="督查组长审核2" name="提交督查组长审核2"></transition>
+	</task-node>
+
+	<task-node name="督查组长审核2">
+		<task name="督查组长审核2">
+			<assignment class="com.gzunicorn.workflow.assignment.AppointActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApproveTacheEventHandler" class="com.gzunicorn.workflow.event.ApproveTacheEventHandler"></action>
+		</event>
+		<transition to="流程通过" name="通过"></transition>
+	</task-node>
+
+	<task-node name="修改维保质量检查结果">
+		<task name="修改维保质量检查结果">
+			<assignment class="com.gzunicorn.workflow.assignment.ApplyActorsAssignment"></assignment>
+		</task>
+		<event type="node-enter">
+			<action name="ApplyTacheEventHandler" class="com.gzunicorn.workflow.event.ApplyTacheEventHandler"></action>
+		</event>
+		<transition to="督查组长审核" name="提交"></transition>
+	</task-node>
+
+
+	<end-state name="流程通过">
+		<event type="node-enter">
+			<action name="EndPassTacheEventHandler" class="com.gzunicorn.workflow.event.EndPassTacheEventHandler"></action>
+		</event>
+	</end-state>
+
+	<end-state name="流程终止">
+		<event type="node-enter">
+			<action name="EndNoPassTacheEventHandler" class="com.gzunicorn.workflow.event.EndNoPassTacheEventHandler"></action>
+		</event>
+	</end-state>
+
+
+</process-definition>

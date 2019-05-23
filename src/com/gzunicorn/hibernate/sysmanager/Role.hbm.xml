@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Wed Nov 16 14:20:06 CST 2005                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.sysmanager">
+
+    <class name="Role" table="Role">
+        <id name="roleid" column="RoleID" type="string">
+            <generator class="assigned"/>
+        </id>
+ 
+        <property name="rolename" column="RoleNAME" type="string"  not-null="true" />
+        <property name="moduleid" column="ModuleID" type="string"  not-null="true" />
+        <property name="allowflag" column="AllowFlag" type="string"  not-null="true" />
+        <property name="enabledflag" column="EnabledFlag" type="string"  not-null="true" />
+        <property name="rem1" column="Rem1" type="string" />
+ 
+    </class>
+    
+</hibernate-mapping>

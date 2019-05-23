@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Fri Oct 21 13:28:59 CST 2005                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.sysmanager">
+
+    <class name="Getnum" table="GetNum">
+        <composite-id name="id" class="GetnumKey">
+            <key-property name="deptflag" column="DeptFlag" type="java.lang.String"/>
+            <key-property name="year1" column="Year1" type="java.lang.String"/>
+        </composite-id>
+ 
+        <property name="nextno" column="NextNO" type="integer"  not-null="true" />
+    </class>
+    
+</hibernate-mapping>

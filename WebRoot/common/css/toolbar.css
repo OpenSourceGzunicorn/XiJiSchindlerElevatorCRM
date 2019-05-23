@@ -1,0 +1,98 @@
+.TabToolBar_ByType_back
+{
+  background-color:#CBDAF7;
+  font-size:9pt;
+  BORDER-BOTTOM: #B4C5EE 1px solid;
+  BORDER-LEFT: #ffffff 1px solid;
+  BORDER-RIGHT: #B4C5EE 1px solid;
+  BORDER-TOP: #ffffff 1px solid;
+}
+.TabToolBar_ByType
+{
+  font-size:9pt;
+	background-color:#E0E9FB;
+	border-left:1px solid #FFFFFF;
+	border-top:1px solid #FFFFFF;
+	border-right:1px solid #839DC6;
+	border-bottom:1px solid #839DC6;
+}
+.TabToolBar_Manage
+{
+  font-size:9pt;
+	background-color:#CBDAF7;
+	border-left:1px solid #E4ECFC;
+	border-top:1px solid #E4ECFC;
+	border-right:1px solid #839DC6;
+	border-bottom:1px solid #839DC6;
+}
+.TabToolBar_Three
+{
+  font-size:9pt;
+	background-color:#F2F6FF;
+	border-left:1px solid #FFFFFF;
+	border-top:1px solid #FFFFFF;
+	border-right:1px solid #BDCDE5;
+	border-bottom:1px solid #BDCDE5;
+}
+.TabToolBar_Manage_back
+{
+  background-color:#CFD8F5;
+  font-size:9pt;
+  BORDER-BOTTOM: #B4C5EE 1px solid;
+  BORDER-LEFT: #ffffff 1px solid;
+  BORDER-RIGHT: #B4C5EE 1px solid;
+  BORDER-TOP: #ffffff 1px solid;
+}
+.TabToolBar_SelectUser
+{
+  background-color:#E8EEFD;
+  font-size:9pt;
+  BORDER-BOTTOM: #808080 1px solid;
+  BORDER-LEFT: #ffffff 1px solid;
+  BORDER-RIGHT: #808080 1px solid;
+  BORDER-TOP: #ffffff 1px solid;
+}
+.TextToolBar_White
+{
+  MARGIN-RIGHT: 5px;
+  MARGIN-TOP: 2px;
+  color:white;
+}
+.TextToolBar_Black
+{
+  MARGIN-RIGHT: 5px;
+  MARGIN-TOP: 2px;
+  color:black;
+}
+.Style_Over
+{
+    BORDER-BOTTOM: #808080 1px solid;
+    BORDER-LEFT: #ffffff 1px solid;
+    BORDER-RIGHT: #808080 1px solid;
+    BORDER-TOP: #ffffff 1px solid;
+    CURSOR:hand;
+}
+.Style_Out
+{
+    BORDER-BOTTOM: 0px solid;
+    BORDER-LEFT: 0px solid;
+    BORDER-RIGHT: 0px solid;
+    BORDER-TOP: 0px solid;
+}
+.Style_Down
+{
+    BORDER-BOTTOM: #ffffff 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #ffffff 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    PADDING-LEFT: 2px;
+    PADDING-TOP: 2px;
+}
+.Style_Check
+{
+    BORDER-BOTTOM: #ffffff 1px solid;
+    BORDER-LEFT: #808080 1px solid;
+    BORDER-RIGHT: #ffffff 1px solid;
+    BORDER-TOP: #808080 1px solid;
+    CURSOR:hand;
+}

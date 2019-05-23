@@ -1,0 +1,31 @@
+.tableclass { background-color: #000000 }
+
+.tableclass1 { background-color: #FFFFFF; border : 1px solid green }
+
+.tableclass2 { background-color: #FFFFFF; border-bottom: thin solid black }
+
+.tableclass3 { background-color: #FFFFFF }
+
+.evenRow { background-color: #FFFFFF }
+
+.oddRow { background-color: #E1F5CE }
+
+.headerRow { background-color: #66CC00 }
+
+.evenRow2 { background-color: #FFFFF9 }
+
+.oddRow2 { background-color: #00CCDD }
+
+.headerRow2 { background-color: #00CCFF }
+
+.noItems { font-size: 12pt; text-align: center; background-color: #FFFFFF ; font-style: normal}
+
+.navbar { margin-top: 10px; }
+
+.special1 { background-color: #ccffcc; font-weight: bold }
+
+.special2 { background-color: #ffccff; font-weight: bold }
+
+.special3 { background-color: #55aa55; font-weight: bold }
+
+.checkboxCell { background-color: #88AA55 }

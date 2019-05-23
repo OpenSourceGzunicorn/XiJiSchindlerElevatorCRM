@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root-container name="enginequotemaster" width="856" height="399">
+  <node name="填写维保报价申请表" x="391" y="12" width="152" height="36">
+    <edge>
+      <label x="-11" y="-10"/>
+    </edge>
+  </node>
+  <node name="修改维保报价申请表" x="143" y="88" width="173" height="36">
+    <edge>
+      <label x="-17" y="-15"/>
+    </edge>
+    <edge>
+      <label x="-14" y="-10"/>
+    </edge>
+  </node>
+  <node name="维保分部长审核" x="399" y="87" width="132" height="36">
+    <edge>
+      <label x="-10" y="-12"/>
+    </edge>
+    <edge>
+      <label x="-11" y="-20"/>
+      <bendpoint w1="-87" h1="39" w2="149" h2="38"/>
+      <bendpoint w1="-114" h1="39" w2="119" h2="45"/>
+    </edge>
+  </node>
+  <node name="维保总部长审核" x="402" y="233" width="132" height="36">
+    <edge>
+      <label x="-9" y="-11"/>
+    </edge>
+    <edge>
+      <label x="-9" y="-16"/>
+      <bendpoint w1="-107" h1="1" w2="131" h2="223"/>
+    </edge>
+  </node>
+  <node name="是否有业务费" x="401" y="161" width="132" height="36">
+    <edge>
+      <label x="-4" y="-11"/>
+    </edge>
+    <edge>
+      <label x="-5" y="-49"/>
+      <bendpoint w1="96" h1="-1" w2="95" h2="-150"/>
+      <bendpoint w1="97" h1="164" w2="97" h2="-2"/>
+    </edge>
+  </node>
+  <node name="流程通过" x="401" y="327" width="132" height="36"/>
+  <node name="流程终止" x="164" y="333" width="132" height="36"/>
+</root-container>

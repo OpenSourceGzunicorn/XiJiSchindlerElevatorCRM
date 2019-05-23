@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!--
+	This is the Struts configuration file for the example application,
+	using the proposed new syntax.
+-->
+<struts-config>
+
+	<!--========== Data Source Configuration =============================== -->
+	<data-sources></data-sources>
+
+	<!--========== Form Bean Definitions =================================== -->
+	<form-beans>
+        <form-bean name="FaultProcessForm"
+			 type="org.apache.struts.validator.DynaValidatorActionForm">
+			   <form-property name="appNo"  type="java.lang.String"/>
+			   <form-property name="repairName"  type="java.lang.String"/>
+			   <form-property name="repairPhone"  type="java.lang.String"/>
+			   <form-property name="repairDesc"  type="java.lang.String"/>
+			   <form-property name="projectName"  type="java.lang.String"/>
+			   <form-property name="projectAddress"  type="java.lang.String"/>
+			   <form-property name="isTiring"  type="java.lang.String"/>
+			   <form-property name="operId"  type="java.lang.String"/>
+			   <form-property name="operDate"  type="java.lang.String"/>
+			   <form-property name="isProcess"  type="java.lang.String"/>
+			   <form-property name="dealId"  type="java.lang.String"/>
+			   <form-property name="dealDate"  type="java.lang.String"/>
+			   <form-property name="rem"  type="java.lang.String"/>
+			   <form-property name="r1"  type="java.lang.String"/>
+			   <form-property name="r2"  type="java.lang.String"/>
+			   <form-property name="r3"  type="java.lang.String"/>
+			   <form-property name="r4"  type="java.lang.String"/>
+			   <form-property name="r5"  type="java.lang.String"/>
+			   <form-property name="r6"  type="java.lang.String"/>
+			   <form-property name="r7"  type="java.lang.String"/>
+			   <form-property name="r8"  type="java.lang.String"/>
+			   <form-property name="r9"  type="java.lang.String"/>
+			   <form-property name="r10"  type="java.lang.String"/>
+			   
+			   <form-property name="id" type="java.lang.String" />
+			   <form-property name="ids" type="java.lang.String[]" />
+			   <form-property name="isreturn" type="java.lang.String" />
+			 </form-bean>
+			 
+			<form-bean name="lostElevatorMaintainDetailForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="numno" type="java.lang.Integer" />          
+	        <form-property name="billno" type="java.lang.String" />         
+	        <form-property name="jnlno" type="java.lang.String" />         
+	        <form-property name="wb_billno" type="java.lang.String" />         
+	        <form-property name="maintContractNo" type="java.lang.String" />      
+	        <form-property name="LostElevatorDate" type="java.lang.String" />         
+	        <form-property name="causeAnalysis" type="java.lang.String" />
+	        <form-property name="r1" type="java.lang.Double"/>
+	        <form-property name="r2" type="java.lang.String"/>
+	        <form-property name="r3" type="java.lang.String"/>
+	        <form-property name="r4" type="java.lang.Double"/>
+	        <form-property name="r5" type="java.lang.String"/>
+	        <form-property name="r6" type="java.lang.Double"/>
+	        <form-property name="r7" type="java.lang.Integer"/>
+	        <form-property name="r8" type="java.lang.Integer"/>
+	        <form-property name="r9" type="java.lang.Double"/>
+	        <form-property name="r10" type="java.lang.Double"/>
+	        <form-property name="id" type="java.lang.String"/>
+		    </form-bean>
+			 
+			 
+			 <form-bean name="WeiGchangeForm"
+			 type="org.apache.struts.validator.DynaValidatorActionForm">
+			   <form-property name="billNo"  type="java.lang.String"/>
+			   <form-property name="status"  type="java.lang.Integer"/>		   
+			   <form-property name="processName"  type="java.lang.String"/>
+			   <form-property name="taskType"  type="java.lang.String"/>
+			   <form-property name="taskName"  type="java.lang.String"/>
+			   <form-property name="flowname"  type="java.lang.String"/>
+			   <form-property name="tokenid" type="java.lang.Long" />
+			   <form-property name="taskid" type="java.lang.Long" />
+			   <form-property name="taskname" type="java.lang.String" />
+			   <form-property name="tasktype" type="java.lang.String" />
+			   <form-property name="submitType"  type="java.lang.String"/>
+			   <form-property name="attn"  type="java.lang.String"/>
+			   <form-property name="applyDate"  type="java.lang.String"/>
+			   <form-property name="maintDivision"  type="java.lang.String"/>
+			   <form-property name="maintStation"  type="java.lang.String"/>
+			   <form-property name="busType"  type="java.lang.String"/>
+			   <form-property name="budgetId"  type="java.lang.String"/>
+			   <form-property name="projectName"  type="java.lang.String"/>
+			   <form-property name="projectAddress"  type="java.lang.String"/>
+			   <form-property name="salesContractNo"  type="java.lang.String"/>
+			   <form-property name="maintContractNo"  type="java.lang.String"/>
+			   <form-property name="companyId"  type="java.lang.String"/>
+			   <form-property name="standardQuoteTotal"  type="java.lang.String"/>
+			   <form-property name="finallyQuoteTotal"  type="java.lang.String"/>
+			   <form-property name="businessCosts"  type="java.lang.String"/>
+			   <form-property name="priceFluctuaApply"  type="java.lang.String"/>
+			   <form-property name="businessCostsApply"  type="java.lang.String"/>
+			   <form-property name="paymentMethodApply"  type="java.lang.String"/>
+			   <form-property name="specialApplication"  type="java.lang.String"/>
+			   <form-property name="otherCustomer"  type="java.lang.String"/>
+			   <form-property name="contractContentApply"  type="java.lang.String"/>
+			   <form-property name="isPass"  type="java.lang.String"/>
+			   <form-property name="operId"  type="java.lang.String"/>
+			   <form-property name="operDate"  type="java.lang.String"/>
+			   <form-property name="rem"  type="java.lang.String"/>
+			   <form-property name="r1"  type="java.lang.String"/>
+			   <form-property name="r2"  type="java.lang.String"/>
+			   <form-property name="r3"  type="java.lang.String"/>
+			   <form-property name="r4"  type="java.lang.String"/>
+			   <form-property name="r5"  type="java.lang.String"/>
+			   <form-property name="r6"  type="java.lang.Double"/>
+			   <form-property name="r7"  type="java.lang.Double"/>
+			   <form-property name="r8"  type="java.lang.Double"/>
+			   <form-property name="r9"  type="java.lang.Integer"/>
+			   <form-property name="r10"  type="java.lang.Integer"/>
+			   <form-property name="approveresult" type="java.lang.String" />		
+			   <form-property name="approverem" type="java.lang.String" />	
+			 
+			   <form-property name="id" type="java.lang.String" />
+			   <form-property name="isreturn" type="java.lang.String" />
+			 </form-bean>
+			 
+			 <form-bean name="wgchangeContractForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+			 <form-property name="wgBillno" type="java.lang.String"></form-property>
+			 <form-property name="billNo" type="java.lang.String"></form-property>
+			 <form-property name="companyId" type="java.lang.String"></form-property>
+			 <form-property name="companyId2" type="java.lang.String"></form-property>
+			 <form-property name="maintContractNo" type="java.lang.String"></form-property>
+			 <form-property name="busType" type="java.lang.String"></form-property>
+			 <form-property name="submitType" type="java.lang.String"></form-property>
+			 <form-property name="signingDate" type="java.lang.String"></form-property>
+			 <form-property name="salesContractNo" type="java.lang.String"></form-property>
+			 <form-property name="projectName" type="java.lang.String"></form-property>
+			 <form-property name="projectAddress" type="java.lang.String"></form-property>
+			 <form-property name="contractTerms" type="java.lang.String"></form-property>
+			 <form-property name="paymentMethod" type="java.lang.String"></form-property>
+			 <form-property name="contractTotal" type="java.lang.Double"></form-property>
+			 <form-property name="otherFee" type="java.lang.Double"></form-property>
+			 <form-property name="attn" type="java.lang.String"></form-property>
+			 <form-property name="maintDivision" type="java.lang.String"></form-property>
+			 <form-property name="maintStation" type="java.lang.String"></form-property>
+			 <form-property name="auditOperid" type="java.lang.String"></form-property>
+			 <form-property name="auditStatus" type="java.lang.String"></form-property>
+			 <form-property name="auditDate" type="java.lang.String"></form-property>
+			 <form-property name="auditRem" type="java.lang.String"></form-property>
+			 <form-property name="operId" type="java.lang.String"></form-property>
+			 <form-property name="operDate" type="java.lang.String"></form-property>
+			 <form-property name="taskUserId" type="java.lang.String"></form-property>
+			 <form-property name="taskSubFlag" type="java.lang.String"></form-property>
+			 <form-property name="taskSubDate" type="java.lang.String"></form-property>
+			 <form-property name="taskRem" type="java.lang.String"></form-property>
+			 <form-property name="forecastDate" type="java.lang.String"></form-property>
+			 <form-property name="comfirmDate" type="java.lang.String"></form-property>
+			 <form-property name="itemUserId" type="java.lang.String"></form-property>
+			 <form-property name="appWorkDate" type="java.lang.String"></form-property>
+			 <form-property name="enterArenaDate" type="java.lang.String"></form-property>
+			 <form-property name="epibolyFlag" type="java.lang.String"></form-property>
+			 <form-property name="finishFlag" type="java.lang.String"></form-property>
+			 <form-property name="finishDate" type="java.lang.String"></form-property>
+			 <form-property name="finishId" type="java.lang.String"></form-property>
+			 <form-property name="finishRem" type="java.lang.String"></form-property>
+			 <form-property name="r1" type="java.lang.String"></form-property>
+			 <form-property name="r2" type="java.lang.String"></form-property>
+			 <form-property name="r3" type="java.lang.String"></form-property>
+			 <form-property name="r4" type="java.lang.String"></form-property>
+			 <form-property name="r5" type="java.lang.String"></form-property>
+			 <form-property name="r6" type="java.lang.Double"></form-property>
+			 <form-property name="r7" type="java.lang.Double"></form-property>
+			 <form-property name="r8" type="java.lang.Double"></form-property>
+			 <form-property name="r9" type="java.lang.Integer"></form-property>
+			 <form-property name="r10" type="java.lang.Integer"></form-property>
+			 <form-property name="elevatorNo" type="java.lang.String"></form-property>
+			 <form-property name="contents" type="java.lang.String"></form-property>
+			 <form-property name="id" type="java.lang.String"></form-property>
+			 <form-property name="isreturn" type="java.lang.String"></form-property>
+			 <form-property name="typejsp" type="java.lang.String"></form-property>
+			 <form-property name="basePrice" type="java.lang.String"></form-property>
+			 
+			 </form-bean>
+			 
+			 <form-bean name="CalloutMasterjxForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+			 <form-property name="calloutMasterNo" type="java.lang.String"/>			 
+             <form-property name="handleStatus" type="java.lang.String"/>
+             <form-property name="operId" type="java.lang.String"/>
+             <form-property name="operDate" type="java.lang.String"/>
+             <form-property name="repairTime" type="java.lang.String"/>
+             <form-property name="repairMode" type="java.lang.String"/>
+             <form-property name="repairUser" type="java.lang.String"/>
+             <form-property name="repairTel" type="java.lang.String"/>
+             <form-property name="serviceObjects" type="java.lang.String"/>
+             <form-property name="companyId" type="java.lang.String"/>
+             <form-property name="projectAddress" type="java.lang.String"/>
+             <form-property name="salesContractNo" type="java.lang.String"/>
+             <form-property name="elevatorNo" type="java.lang.String"/>
+             <form-property name="elevatorParam" type="java.lang.String"/>
+             <form-property name="maintDivision" type="java.lang.String"/>
+             <form-property name="maintStation" type="java.lang.String"/>
+             <form-property name="assignMaintStation" type="java.lang.String"/>
+             <form-property name="assignObject" type="java.lang.String"/>
+             <form-property name="phone" type="java.lang.String"/>
+             <form-property name="isTrap" type="java.lang.String"/>
+             <form-property name="repairDesc" type="java.lang.String"/>
+             <form-property name="auditOperid" type="java.lang.String"/>
+             <form-property name="auditDate" type="java.lang.String"/>
+             <form-property name="isSendSms" type="java.lang.String"/>
+             <form-property name="hfcId" type="java.lang.String"/>
+             <form-property name="serviceAppraisal" type="java.lang.String"/>
+             <form-property name="fittingSituation" type="java.lang.String"/>
+             <form-property name="tollSituation" type="java.lang.String"/>
+             <form-property name="visitRem" type="java.lang.String"/>
+             <form-property name="isColse" type="java.lang.String"/>
+             <form-property name="r1" type="java.lang.String"/>
+             <form-property name="r2" type="java.lang.String"/>
+             <form-property name="r3" type="java.lang.String"/>
+             <form-property name="r4" type="java.lang.String"/>
+             <form-property name="r5" type="java.lang.String"/>
+             <form-property name="r6" type="java.lang.Double"/>
+			 <form-property name="r7" type="java.lang.Integer"/>
+			 <form-property name="r8" type="java.lang.Integer"/>
+			 <form-property name="r9" type="java.lang.Double"/>
+			 <form-property name="r10" type="java.lang.Double"/>
+			 <form-property name="isSendSms2" type="java.lang.String"/>
+			 <form-property name="stophfOperid" type="java.lang.String"/>
+			 <form-property name="stophfDate" type="java.lang.String"/>
+			 <form-property name="stophfRem" type="java.lang.String"/>
+			 <form-property name="bhAuditRem" type="java.lang.String"/>
+			 
+			 <form-property name="id" type="java.lang.String"></form-property>
+			 <form-property name="isreturn" type="java.lang.String"></form-property>
+			 <form-property name="typejsp" type="java.lang.String"></form-property>
+			 </form-bean>
+	</form-beans>
+
+	<!-- ========== Global Forward Definitions ============================== -->
+	<global-forwards>
+	<forward name="jq.js" path="/common/javascript/jq-1.8.js"></forward>
+	</global-forwards>
+
+	<!-- ========== Action Mapping Definitions ============================== -->
+	<action-mappings>
+       <action
+	      	 attribute="FaultProcessForm"
+	      	 parameter="method"
+	      	 name="FaultProcessForm"
+	      	 path="/FaultProcessAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.MobileOfficing.FaultProcessing.FaultProcessAction">
+	      		
+	      		<forward name="returnList" path="/FaultProcessSearchAction.do?method=toSearchRecord"></forward>
+	      		<forward name="returnModify" path="/FaultProcessAction.do?method=toPrepareUpdateRecord"></forward>
+	      		<forward name="toFaultProcessModify" path="FaultProcess.Modify"></forward>
+	      		<forward name="exportExcel" path="/main/report.jsp" />	      	
+	      </action>
+	      <action attribute="serveTableForm" name="serveTableForm"
+				parameter="method" path="/FaultProcessSearchAction" scope="request"
+				type="com.gzunicorn.struts.action.MobileOfficing.FaultProcessing.FaultProcessAction">
+					<forward name="FaultProcessList" path="FaultProcess.list" />
+		</action>
+		
+		<!-- weigaibaojia -->
+		
+		<action
+	      	 attribute="WeiGchangeForm"
+	      	 parameter="method"
+	      	 name="WeiGchangeForm"
+	      	 path="/wgchangeAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.engcontractmanager.ServicingContractQuoteMaster.ServicingContractQuoteMasterAction">	      		
+	      		<forward name="returnList" path="/wgchangeSearchAction.do?method=toSearchRecord"></forward>
+	      		<forward name="returnAdd" path="/wgchangeAction.do?method=toPrepareAddRecord"></forward>
+	      		<forward name="returnModify" path="/wgchangeAction.do?method=toPrepareUpdateRecord"></forward>
+	      		<forward name="toWGchangeModifyAddDisplay" path="ServicingContractQuote.ModifyAddDisplay"></forward>     	
+	      </action>
+	      <action attribute="serveTableForm" name="serveTableForm"
+				parameter="method" path="/wgchangeSearchAction" scope="request"
+				type="com.gzunicorn.struts.action.engcontractmanager.ServicingContractQuoteMaster.ServicingContractQuoteMasterAction">
+					<forward name="toWGchangeList" path="ServicingContractQuote.list" />
+		</action>
+		
+		<action
+	      	 attribute="WeiGchangeForm"
+	      	 parameter="method"
+	      	 name="WeiGchangeForm"
+	      	 path="/wgchangeAuditAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.engcontractmanager.ServicingContractQuoteMaster.ServicingContractQuoteMasterAuditAction">	      		
+	      		<forward name="returnList" path="/wgchangeAuditSearchAction.do?method=toSearchRecord"></forward>
+	      		<forward name="toWGchangeAuditDisplay" path="ServicingContractQuoteAudit.Display"></forward>     	
+	      </action>
+	      <action attribute="serveTableForm" name="serveTableForm"
+				parameter="method" path="/wgchangeAuditSearchAction" scope="request"
+				type="com.gzunicorn.struts.action.engcontractmanager.ServicingContractQuoteMaster.ServicingContractQuoteMasterAuditAction">
+					<forward name="toWGchangeList" path="ServicingContractQuoteAudit.list" />
+		</action>
+		
+		<action
+	      	 attribute="WeiGchangeForm"
+	      	 parameter="method"
+	      	 name="WeiGchangeForm"
+	      	 path="/wgchangeJbpmAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.engcontractmanager.ServicingContractQuoteMaster.ServicingContractQuoteMasterJbpmAction">	      		
+	      		<forward name="returnApprove" path="/wgchangeJbpmAction.do?method=toPrepareApprove"></forward> 
+	      		<forward name="toWGchangeJbpmDisplay" path="ServicingContractQuoteJbpm.MondityDisplay"></forward>    	
+	      </action>
+	      
+	      <action
+	      	 attribute="serveTableForm"
+	      	 parameter="method"
+	      	 name="serveTableForm"
+	      	 path="/wgchangeContractSearchAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.engcontractmanager.servicingcontract.ServicingContractAction">	      		
+	      		<forward name="toServicingContractList" path="toServicingContract.List"></forward> 
+	      		<forward name="tonextList" path="toServicingContract.nextList"></forward>    	
+	      </action>
+	      
+	      <action
+	      	 attribute="wgchangeContractForm"
+	      	 parameter="method"
+	      	 name="wgchangeContractForm"
+	      	 path="/wgchangeContractAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.engcontractmanager.servicingcontract.ServicingContractAction">	      		
+	      		<forward name="returnList" path="/wgchangeContractSearchAction.do?method=toSearchRecord"></forward> 
+	      		<forward name="returnAdd" path="/wgchangeContractAction.do?method=toPrepareAddRecord"></forward>
+	      		<forward name="returnMondity" path="/wgchangeContractAction.do?method=toPrepareUpdateRecord"></forward>
+	      		<forward name="returntotask" path="/wgchangeContractAction.do?method=totask"></forward>
+	      		<forward name="toContractDisplayAddMondity" path="toContract.DisplayAddMondity"></forward>    	
+	      </action>
+		<!-- weigaibaojia-->
+		<!-- weigaihetongsh -->
+		 <action
+	      	 attribute="serveTableForm"
+	      	 parameter="method"
+	      	 name="serveTableForm"
+	      	 path="/wgchangeContractAuditSearchAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.engcontractmanager.servicingcontract.ServicingContractAuditAction">	      		
+	      		<forward name="toList" path="toServicingContractAudit.List"></forward>   	
+	      </action>
+	      
+	      <action
+	      	 attribute="wgchangeContractForm"
+	      	 parameter="method"
+	      	 name="wgchangeContractForm"
+	      	 path="/wgchangeContractAuditAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.engcontractmanager.servicingcontract.ServicingContractAuditAction">	      		
+	      		<forward name="returnList" path="/wgchangeContractAuditSearchAction.do?method=toSearchRecord"></forward> 
+	      		<forward name="returnAudit" path="/wgchangeContractAuditAction.do?method=toDisplayRecord"></forward>
+                <forward name="toContractDisplayAudit" path="toContract.DisplayAudit"></forward>    	
+	      </action>
+		
+		
+		<!-- weigaihetongsh -->
+		<!-- weigairenwuxiadaguali -->
+		<action
+	      	 attribute="wgchangeContractForm"
+	      	 parameter="method"
+	      	 name="wgchangeContractForm"
+	      	 path="/ServicingContractMasterTaskSearchAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.infomanager.servicingcontractmaster.ServicingContractMasterTaskAction">	      		
+	      		<forward name="returnList" path="/ServicingContractMasterTaskSearchAction.do?method=toSearchRecord"></forward> 
+	      		<forward name="returnArrivalList" path="/ServicingContractMasterTaskSearchAction.do?typejsp=arrival"></forward>
+	      		<forward name="returnCompleteList" path="/ServicingContractMasterTaskSearchAction.do?typejsp=complete"></forward>
+                <forward name="toArrivalComplete" path="toArrivalComplete.ArrivalCompleteList"></forward>    	
+	      </action>
+		<!-- weigairenwuxiadaguali -->
+		
+		<!-- jixiu -->
+		<action
+	      	 attribute="serveTableForm"
+	      	 parameter="method"
+	      	 name="serveTableForm"
+	      	 path="/hotphoneSearchAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.hotlinemanagement.hotcalloutmaster.hotCalloutMasterjx">	      		
+	      		<forward name="toList" path="tohotCalloutMasterjx.List"></forward>  
+	      		<forward name="exportExcel" path="/main/report.jsp" /> 	
+	      </action>
+	      
+	      <action
+	      	 attribute="serveTableForm"
+	      	 parameter="method"
+	      	 name="serveTableForm"
+	      	 path="/hotphonexdwSearchAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.hotlinemanagement.hotcalloutmaster.hotphonexdwjx">	      		
+	      		<forward name="toList" path="tohotphonexdwjx.List"></forward>
+	      		<forward name="toList2" path="tohotphonexdwjx.List2"></forward>   	
+	      </action>
+	      
+	      <action
+	      	 attribute="CalloutMasterjxForm"
+	      	 parameter="method"
+	      	 name="CalloutMasterjxForm"
+	      	 path="/hotphoneAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.hotlinemanagement.hotcalloutmaster.hotCalloutMasterjx">	      		
+	      		<forward name="returnList" path="/hotphoneSearchAction.do?typejsp=toSearchRecord"></forward>   	
+	            <forward name="returnMondity" path="/hotphoneAction.do?method=toPrepareUpdateRecord"></forward>
+	      		<forward name="returnAdd" path="/hotphoneAction.do?method=toPrepareAddRecord"></forward>
+	      		<forward name="returndisplay" path="/hotphoneAction.do?typejsp=display"></forward>
+                <forward name="tohotphone" path="tohotphone.mondityAddDisplay"></forward>   
+                <forward name="toStophf" path="tohotCalloutStophf.Stophf"></forward>
+	      </action>
+	      
+	      <action
+	      	 attribute="serveTableForm"
+	      	 parameter="method"
+	      	 name="serveTableForm"
+	      	 path="/hotCalloutModifySearchAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.hotlinemanagement.hotcalloutmaster.hotCalloutModify">	      		
+	      		<forward name="toList" path="tohotCalloutModify.List"/>  
+	      		<forward name="exportExcel" path="/main/report.jsp" /> 	
+	      </action>
+	      <action
+	      	 attribute="CalloutMasterjxForm"
+	      	 parameter="method"
+	      	 name="CalloutMasterjxForm"
+	      	 path="/hotCalloutModifyAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.hotlinemanagement.hotcalloutmaster.hotCalloutModify">	
+	      	 	<forward name="toModify" path="hotCalloutModify.mondityAddDisplay"/>         		
+	      		<forward name="returnList" path="/hotCalloutModifySearchAction.do?method=toSearchRecord"/>	
+	      </action>
+	      
+	       <action
+	      	 attribute="serveTableForm"
+	      	 parameter="method"
+	      	 name="serveTableForm"
+	      	 path="/hotCalloutAuditSearchAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.hotlinemanagement.hotcalloutmaster.hotCalloutAudit">	      		
+	      		<forward name="toList" path="tohotCalloutAudit.List"></forward>  
+	      		<forward name="exportExcel" path="/main/report.jsp" /> 	
+	      </action>
+	      <action
+	      	 attribute="CalloutMasterjxForm"
+	      	 parameter="method"
+	      	 name="CalloutMasterjxForm"
+	      	 path="/hotCalloutAuditAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.struts.action.hotlinemanagement.hotcalloutmaster.hotCalloutAudit">
+	      	 	<forward name="toAudit" path="tohotCalloutAudit.Audit"></forward>  
+	      		<forward name="returnList" path="/hotCalloutAuditSearchAction.do?method=toSearchRecord"></forward>	
+	      </action>
+		<!-- jixiu -->
+		<!-- jiazhuangbaobiao strart -->
+		 <action 
+		    attribute="serveTableForm" 
+		    parameter="method"
+			name="serveTableForm" 
+			path="/ContractWGJBlanceFeeQeurySearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.wgjcontractqeury.wgexcel.ContractWGJBlanceFeeQeuryAction">
+			<forward name="toCondition" path="ContractWGJBlanceFeeQeury.toCondition" />
+			<forward name="toList" path="/report/wgjcontractqeury/contractwgjblancefeeqeury/List.jsp" />			
+		  </action>
+		  <action 
+		    attribute="serveTableForm" 
+		    parameter="method"
+			name="serveTableForm" 
+			path="/ReceivablesMaterialReportSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.wgjcontractqeury.wgexcel.ReceivablesMaterialReportAction">
+			<forward name="toCondition" path="ReceivablesMaterialRreport.toCondition" />
+			<forward name="toList" path="/report/wgjcontractqeury/receivablesmaterialReport/List.jsp" />			
+		  </action>
+		  <action 
+		    attribute="serveTableForm" 
+		    parameter="method"
+			name="serveTableForm" 
+			path="/NewSignBusinessSummaryTableReportSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.wgjcontractqeury.wgexcel.NewSignBusinessSummaryTableReportAction">
+			<forward name="toCondition" path="NewSignBusinessSummaryTable.toCondition" />
+			<forward name="toList" path="/report/wgjcontractqeury/newsignbusinesssummarytable/List.jsp" />			
+		  </action>
+		  <action 
+		    attribute="serveTableForm" 
+		    parameter="method"
+			name="serveTableForm" 
+			path="/ServiceWGJDataLookupTableSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.wgjcontractqeury.wgexcel.ServiceWGJDataLookupTableAction">
+			<forward name="toCondition" path="ServiceWGJDataLookupTable.toCondition" />
+			<forward name="toList" path="/report/wgjcontractqeury/servicewgjdatalookuptable/List.jsp" />			
+		  </action>
+		  <action 
+		    attribute="serveTableForm" 
+		    parameter="method"
+			name="serveTableForm" 
+			path="/CurrentCollectionInquiresReportSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.wgjcontractqeury.wgexcel.CurrentCollectionInquiresReportAction">
+			<forward name="toCondition" path="CurrentCollectionInquires.toCondition" />
+			<forward name="toList" path="/report/wgjcontractqeury/currentcollectioninquires/List.jsp" />			
+		  </action>
+		  <action 
+		    attribute="serveTableForm" 
+		    parameter="method"
+			name="serveTableForm" 
+			path="/CollectionInquiresTableSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.wgjcontractqeury.wgexcel.CollectionInquiresTableAction">
+			<forward name="toCondition" path="CollectionInquiresTable.toCondition" />
+			<forward name="toList" path="/report/wgjcontractqeury/collectioninquirestable/List.jsp" />			
+		  </action>
+		  <action 
+		    attribute="serveTableForm" 
+		    parameter="method"
+			name="serveTableForm" 
+			path="/WGJNewSigningSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.wgjcontractqeury.wgexcel.WGJNewSigningAction">
+			<forward name="toCondition" path="WGJNewSigning.toCondition" />
+			<forward name="toList" path="/report/wgjcontractqeury/wgjnewsigning/List.jsp" />			
+		  </action>
+		  <action 
+		    attribute="serveTableForm" 
+		    parameter="method"
+			name="serveTableForm" 
+			path="/completeStatementSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.wgjcontractqeury.wgexcel.CompleteStatementAction">
+			<forward name="toCondition" path="completeStatement.toCondition" />
+			<forward name="toList" path="/report/wgjcontractqeury/wgbb/List.jsp" />			
+		  </action>
+		<!-- jiazhuangbaobiao end -->
+        <!-- fuj -->
+        <action
+	      	 attribute="WeiGchangeForm"
+	      	 parameter="method"
+	      	 name="WeiGchangeForm"
+	      	 path="/xifujAction"
+	      	 scope="request"
+	      	 type="com.gzunicorn.file.xjfile">	      		
+	      </action>
+	      
+        <!-- fuj -->
+        <!-- hyc start -->
+        <action attribute="lostElevatorMaintainDetailForm" name="lostElevatorMaintainDetailForm" parameter="method" path="/lostElevatorMaintainDetailAction" scope="request"
+		type="com.gzunicorn.struts.action.query.SearchLostElevatorReportAction">
+		<forward name="searchLostElevatorMaintainDetailDisplay" path="query.searchLostElevatorMaintainDetailDisplay" />
+	</action>
+        <!-- hyc end -->
+	</action-mappings>
+ 
+
+</struts-config>

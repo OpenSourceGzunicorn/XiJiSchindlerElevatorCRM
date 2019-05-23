@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Sun Jan 18 15:21:12 CST 2009                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.jbpmmanager">
+
+    <class name="Jbpmnodeext" table="JBPM_NodeExt">
+        <id name="nodeid" column="NodeId" type="long">
+            <generator class="assigned"/>
+        </id>
+ 
+        <property name="nodeclass" column="NodeClass" type="string"  not-null="true" />
+        <property name="nodename" column="NodeName" type="string"  not-null="true" />
+        <property name="processdefineid" column="ProcessDefineId" type="long"  not-null="true" />
+        <property name="processdefinename" column="ProcessDefineName" type="string"  not-null="true" />
+        <property name="version" column="VERSION" type="integer"  not-null="true" />
+        <property name="des" column="Des" type="string" />
+        <property name="orgfilter" column="OrgFilter" type="integer"  not-null="true" />
+        <property name="indfilter" column="IndFilter" type="integer"  not-null="true" />
+        <property name="areafilter" column="AreaFilter" type="integer"  not-null="true" />
+        <property name="jumpflag" column="JumpFlag" type="integer"  not-null="true" />
+        <property name="rem1" column="Rem1" type="string" />
+        <property name="ext1" column="Ext1" type="string" />
+        <property name="ext2" column="Ext2" type="string" />
+        <property name="ext3" column="Ext3" type="string" />
+        <property name="ext4" column="Ext4" type="string" />
+        <property name="ext5" column="Ext5" type="string" />
+ 
+        
+    </class>
+    
+</hibernate-mapping>

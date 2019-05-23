@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Tue Nov 29 15:12:51 CST 2005                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.viewmanager">
+
+    <class name="Viewuserallowflagy" table="ViewUserAllowFlagY">        
+        <id name="userid" column="UserID" type="java.lang.String"> 		
+	 		<generator class="assigned" />
+ 		</id>
+        <property name="username" column="UserName" type="string"  not-null="true" />
+        <property name="storageid" column="StorageID" type="string"  not-null="true" />
+        <property name="userref" column="UserRef" type="string"  not-null="true" />
+        <property name="roleid" column="RoleID" type="string"  not-null="true" />
+        <property name="rolename" column="RoleName" type="string"  not-null="true" />
+    </class>
+    
+</hibernate-mapping>

@@ -1,0 +1,2681 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!-- This is the Struts configuration file for the example application, using 
+	the proposed new syntax. -->
+<struts-config>
+
+	<!--========== Data Source Configuration =============================== -->
+	<data-sources></data-sources>
+
+	<!--========== Form Bean Definitions =================================== -->
+	<form-beans>
+
+		<form-bean name="markingItemsForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="mtId" type="java.lang.String" />
+			<form-property name="mtName" type="java.lang.String" />
+			<form-property name="fraction" type="java.lang.Double" />
+			<form-property name="enabledFlag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="detailId" type="java.lang.String" />
+			<form-property name="detailName" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Double" />
+			<form-property name="r8" type="java.lang.Double" />
+			<form-property name="r9" type="java.lang.Integer" />
+			<form-property name="r10" type="java.lang.Integer" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+		</form-bean>
+		
+		
+
+		<form-bean name="termSecurityRisksForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="tsrId" type="java.lang.String" />
+			<form-property name="tsrDetail" type="java.lang.String" />
+			<form-property name="enabledFlag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Double" />
+			<form-property name="r8" type="java.lang.Double" />
+			<form-property name="r9" type="java.lang.Integer" />
+			<form-property name="r10" type="java.lang.Integer" />
+
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="shouldExamineItemsForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="seiid" type="java.lang.String" />
+			<form-property name="seiDetail" type="java.lang.String" />
+			<form-property name="enabledFlag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Double" />
+			<form-property name="r8" type="java.lang.Double" />
+			<form-property name="r9" type="java.lang.Integer" />
+			<form-property name="r10" type="java.lang.Integer" />
+
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="officeComplaintCategoryForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="occId" type="java.lang.String" />
+			<form-property name="occName" type="java.lang.String" />
+			<form-property name="enabledFlag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Double" />
+			<form-property name="r8" type="java.lang.Double" />
+			<form-property name="r9" type="java.lang.Integer" />
+			<form-property name="r10" type="java.lang.Integer" />
+
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="officeContractTypesForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="octId" type="java.lang.String" />
+			<form-property name="octName" type="java.lang.String" />
+			<form-property name="enabledFlag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Double" />
+			<form-property name="r8" type="java.lang.Double" />
+			<form-property name="r9" type="java.lang.Integer" />
+			<form-property name="r10" type="java.lang.Integer" />
+
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="officeCauseAnalysisForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="ocaId" type="java.lang.String" />
+			<form-property name="ocaName" type="java.lang.String" />
+			<form-property name="enabledFlag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Double" />
+			<form-property name="r8" type="java.lang.Double" />
+			<form-property name="r9" type="java.lang.Integer" />
+			<form-property name="r10" type="java.lang.Integer" />
+
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="maintenanceWorkingHoursForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="elevatorType" type="java.lang.String" />
+			<form-property name="floor" type="java.lang.Integer" />
+			<form-property name="halfMonth" type="java.lang.Integer" />
+			<form-property name="quarter" type="java.lang.Integer" />
+			<form-property name="halfYear" type="java.lang.Integer" />
+			<form-property name="yearDegree" type="java.lang.Integer" />
+			<form-property name="enabledFlag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Double" />
+			<form-property name="r8" type="java.lang.Double" />
+			<form-property name="r9" type="java.lang.Integer" />
+			<form-property name="r10" type="java.lang.Integer" />
+            <form-property name="file" type="org.apache.struts.upload.FormFile" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="returningMaintainForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="companyId" type="java.lang.String" />
+			<form-property name="contacts" type="java.lang.String" />
+			<form-property name="contactPhone" type="java.lang.String" />
+			<form-property name="reOrder" type="java.lang.Integer" />
+			<form-property name="reMark" type="java.lang.String" />
+			<form-property name="enabledFlag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+
+			<form-property name="companyName" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String"/>
+			<form-property name="numno" type="java.lang.Integer" />
+			<form-property name="billno" type="java.lang.String" />
+			<form-property name="wbBillno" type="java.lang.String" />
+			<form-property name="maintContractNo" type="java.lang.String" />
+			<form-property name="contractSdate" type="java.lang.String" />
+			<form-property name="contractEdate" type="java.lang.String" />
+			<form-property name="contracts" type="java.lang.String" />
+
+		</form-bean>
+		<form-bean name="lostElevatorMaintainForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="billno" type="java.lang.String"></form-property>
+			<form-property name="contacts" type="java.lang.String"></form-property>
+			<form-property name="contactPhone" type="java.lang.String"></form-property>
+			<form-property name="companyId" type="java.lang.String"></form-property>
+			<form-property name="reOrder" type="java.lang.Integer"></form-property>
+			<form-property name="reMark" type="java.lang.String"></form-property>
+			<form-property name="enabledFlag" type="java.lang.String"></form-property>
+			<form-property name="rem" type="java.lang.String"></form-property>
+			<form-property name="operId" type="java.lang.String"></form-property>
+			<form-property name="operDate" type="java.lang.String"></form-property>
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+			<form-property name="isreturn" type="java.lang.String" />	
+			<form-property name="lostElevatorMaintainDetails" type="java.util.Set" />
+			<form-property name="numno" type="java.lang.Integer" />	
+			<form-property name="jnlno" type="java.lang.String" />				
+			<form-property name="wb_billno" type="java.lang.String" />				
+			<form-property name="maintContractNo" type="java.lang.String" />				
+			<form-property name="lostElevatorDate" type="java.lang.String" />				
+			<form-property name="causeAnalysis" type="java.lang.String" />	
+			<form-property name="contracts" type="java.lang.String" />			
+		</form-bean>
+
+		<form-bean name="custReturnRegisterForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="billno" type="java.lang.String" />
+			<form-property name="companyId" type="java.lang.String" />
+			<form-property name="contacts" type="java.lang.String" />
+			<form-property name="contactPhone" type="java.lang.String" />
+			<form-property name="ministerHandle" type="java.lang.String" />
+			<form-property name="isProblem" type="java.lang.String" />
+			<form-property name="handleId" type="java.lang.String" />
+			<form-property name="handleDate" type="java.lang.String" />
+			<form-property name="handleResult" type="java.lang.String" />
+			<form-property name="returnResult" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+			<form-property name="custReturnRegisterDetails" type="java.util.Set" />
+
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="companyName" type="java.lang.String" />
+			<form-property name="reOrder" type="java.lang.Integer" />
+			<form-property name="reMark" type="java.lang.String" />
+			<form-property name="maintContractNo" type="java.lang.String" />
+			<form-property name="contractSdate" type="java.lang.String" />
+			<form-property name="contractEdate" type="java.lang.String" />
+			<form-property name="selmaintContractNo" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="custReturnRegisterHandleForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="billno" type="java.lang.String" />
+			<form-property name="companyId" type="java.lang.String" />
+			<form-property name="contacts" type="java.lang.String" />
+			<form-property name="contactPhone" type="java.lang.String" />
+			<form-property name="ministerHandle" type="java.lang.String" />
+			<form-property name="isProblem" type="java.lang.String" />
+			<form-property name="handleId" type="java.lang.String" />
+			<form-property name="handleDate" type="java.lang.String" />
+			<form-property name="handleResult" type="java.lang.String" />
+			<form-property name="returnResult" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+			<form-property name="custReturnRegisterDetails" type="java.util.Set" />
+
+
+
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="companyName" type="java.lang.String" />
+			<form-property name="reOrder" type="java.lang.Integer" />
+			<form-property name="reMark" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="custReturnRegisterMinisterHandleForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="billno" type="java.lang.String" />
+			<form-property name="companyId" type="java.lang.String" />
+			<form-property name="contacts" type="java.lang.String" />
+			<form-property name="contactPhone" type="java.lang.String" />
+			<form-property name="ministerHandle" type="java.lang.String" />
+			<form-property name="isProblem" type="java.lang.String" />
+			<form-property name="handleId" type="java.lang.String" />
+			<form-property name="handleDate" type="java.lang.String" />
+			<form-property name="handleResult" type="java.lang.String" />
+			<form-property name="returnRem" type="java.lang.String"/>
+			<form-property name="returnResult" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+			<form-property name="custReturnRegisterDetails" type="java.util.Set" />
+
+
+
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="companyName" type="java.lang.String" />
+			<form-property name="reOrder" type="java.lang.Integer" />
+			<form-property name="reMark" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="customerLevelForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="companyId" type="java.lang.String" />
+			<form-property name="companyName" type="java.lang.String" />
+			<form-property name="address" type="java.lang.String" />
+			<form-property name="legalPerson" type="java.lang.String" />
+			<form-property name="client" type="java.lang.String" />
+			<form-property name="contacts" type="java.lang.String" />
+			<form-property name="contactPhone" type="java.lang.String" />
+			<form-property name="principalId" type="java.lang.String" />
+			<form-property name="principalName" type="java.lang.String" />
+			<form-property name="principalPhone" type="java.lang.String" />
+			<form-property name="fax" type="java.lang.String" />
+			<form-property name="postCode" type="java.lang.String" />
+			<form-property name="bank" type="java.lang.String" />
+			<form-property name="accountHolder" type="java.lang.String" />
+			<form-property name="account" type="java.lang.String" />
+			<form-property name="taxId" type="java.lang.String" />
+			<form-property name="custLevel" type="java.lang.String" />
+			<form-property name="enabledFlag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+
+
+
+		<form-bean name="customerVisitPlanForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+			<form-property name="billno" type="java.lang.String" />
+			<form-property name="companyId" type="java.lang.String" />
+			<form-property name="companyName" type="java.lang.String" />
+			<form-property name="principalName" type="java.lang.String" />
+			<form-property name="principalPhone" type="java.lang.String" />
+			<form-property name="custLevel" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="maintStation" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+
+			<form-property name="jnlno" type="java.lang.String" />
+			<form-property name="visitDate" type="java.lang.String" />
+			<form-property name="visitStaff" type="java.lang.String" />
+			<form-property name="visitPosition" type="java.lang.String" />
+
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="customerVisitFeedbackForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+			<form-property name="numno" type="java.lang.Integer" />
+			<form-property name="visitProject" type="java.lang.String" />
+			<form-property name="realVisitDate" type="java.lang.String" />
+			<form-property name="visitContent" type="java.lang.String" />
+			<form-property name="billno" type="java.lang.String" />
+			<form-property name="companyId" type="java.lang.String" />
+			<form-property name="companyName" type="java.lang.String" />
+			<form-property name="principalName" type="java.lang.String" />
+			<form-property name="principalPhone" type="java.lang.String" />
+			<form-property name="custLevel" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="maintStation" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+
+			<form-property name="jnlno" type="java.lang.String" />
+			<form-property name="visitDate" type="java.lang.String" />
+			<form-property name="visitStaff" type="java.lang.String" />
+			<form-property name="visitPosition" type="java.lang.String" />
+			<form-property name="visitPeople" type="java.lang.String" />
+			<form-property name="visitPeoplePhone" type="java.lang.String" />
+
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+
+        <form-bean name="customerVisitFeedbackAuditForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+
+		<form-bean name="technologySupportForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+			<form-property name="billno" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="maintStation" type="java.lang.String" />
+			<form-property name="assignUser" type="java.lang.String" />
+			<form-property name="assignUserTel" type="java.lang.String" />
+			<form-property name="hmtId" type="java.lang.String" />
+			<form-property name="faultCode" type="java.lang.String" />
+			<form-property name="faultStatus" type="java.lang.String" />
+			<form-property name="msprocessPeople" type="java.lang.String" />
+			<form-property name="msprocessDate" type="java.lang.String" />
+			<form-property name="msprocessRem" type="java.lang.String" />
+			<form-property name="msisResolve" type="java.lang.String" />
+			<form-property name="mmprocessPeople" type="java.lang.String" />
+			<form-property name="mmprocessDate" type="java.lang.String" />
+			<form-property name="mmprocessRem" type="java.lang.String" />
+			<form-property name="mmisResolve" type="java.lang.String" />
+			<form-property name="tsprocessPeople" type="java.lang.String" />
+			<form-property name="tsprocessDate" type="java.lang.String" />
+			<form-property name="tsprocessRem" type="java.lang.String" />
+			<form-property name="proStatus" type="java.lang.String" />
+
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="technologySupportMaintStationForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+			<form-property name="billno" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="maintStation" type="java.lang.String" />
+			<form-property name="assignUser" type="java.lang.String" />
+			<form-property name="assignUserTel" type="java.lang.String" />
+			<form-property name="hmtId" type="java.lang.String" />
+			<form-property name="faultCode" type="java.lang.String" />
+			<form-property name="faultStatus" type="java.lang.String" />
+			<form-property name="msprocessPeople" type="java.lang.String" />
+			<form-property name="msprocessDate" type="java.lang.String" />
+			<form-property name="msprocessRem" type="java.lang.String" />
+			<form-property name="msisResolve" type="java.lang.String" />
+			<form-property name="mmprocessPeople" type="java.lang.String" />
+			<form-property name="mmprocessDate" type="java.lang.String" />
+			<form-property name="mmprocessRem" type="java.lang.String" />
+			<form-property name="mmisResolve" type="java.lang.String" />
+			<form-property name="tsprocessPeople" type="java.lang.String" />
+			<form-property name="tsprocessDate" type="java.lang.String" />
+			<form-property name="tsprocessRem" type="java.lang.String" />
+			<form-property name="proStatus" type="java.lang.String" />
+
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="technologySupportMaintMinisterForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+			<form-property name="billno" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="maintStation" type="java.lang.String" />
+			<form-property name="assignUser" type="java.lang.String" />
+			<form-property name="assignUserTel" type="java.lang.String" />
+			<form-property name="hmtId" type="java.lang.String" />
+			<form-property name="faultCode" type="java.lang.String" />
+			<form-property name="faultStatus" type="java.lang.String" />
+			<form-property name="msprocessPeople" type="java.lang.String" />
+			<form-property name="msprocessDate" type="java.lang.String" />
+			<form-property name="msprocessRem" type="java.lang.String" />
+			<form-property name="msisResolve" type="java.lang.String" />
+			<form-property name="mmprocessPeople" type="java.lang.String" />
+			<form-property name="mmprocessDate" type="java.lang.String" />
+			<form-property name="mmprocessRem" type="java.lang.String" />
+			<form-property name="mmisResolve" type="java.lang.String" />
+			<form-property name="tsprocessPeople" type="java.lang.String" />
+			<form-property name="tsprocessDate" type="java.lang.String" />
+			<form-property name="tsprocessRem" type="java.lang.String" />
+			<form-property name="proStatus" type="java.lang.String" />
+
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="technologySupportTechnicalSupportForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+
+			<form-property name="billno" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="maintStation" type="java.lang.String" />
+			<form-property name="assignUser" type="java.lang.String" />
+			<form-property name="assignUserTel" type="java.lang.String" />
+			<form-property name="hmtId" type="java.lang.String" />
+			<form-property name="faultCode" type="java.lang.String" />
+			<form-property name="faultStatus" type="java.lang.String" />
+			<form-property name="msprocessPeople" type="java.lang.String" />
+			<form-property name="msprocessDate" type="java.lang.String" />
+			<form-property name="msprocessRem" type="java.lang.String" />
+			<form-property name="msisResolve" type="java.lang.String" />
+			<form-property name="mmprocessPeople" type="java.lang.String" />
+			<form-property name="mmprocessDate" type="java.lang.String" />
+			<form-property name="mmprocessRem" type="java.lang.String" />
+			<form-property name="mmisResolve" type="java.lang.String" />
+			<form-property name="tsprocessPeople" type="java.lang.String" />
+			<form-property name="tsprocessDate" type="java.lang.String" />
+			<form-property name="tsprocessRem" type="java.lang.String" />
+			<form-property name="proStatus" type="java.lang.String" />
+
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="accessoriesRequisitionForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="appNo" type="java.lang.String" />
+			<form-property name="singleNo" type="java.lang.String" />
+			<form-property name="oldNo" type="java.lang.String" />
+			<form-property name="oldImage" type="java.lang.String" />
+			<form-property name="newNo" type="java.lang.String" />
+			<form-property name="newImage" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="maintStation" type="java.lang.String" />
+			<form-property name="personInCharge" type="java.lang.String" />
+			<form-property name="picauditRem" type="java.lang.String" />
+			<form-property name="picauditDate" type="java.lang.String" />
+			<form-property name="isAgree" type="java.lang.String" />
+			<form-property name="warehouseManager" type="java.lang.String" />
+			<form-property name="wmdate" type="java.lang.String" />
+			
+			<form-property name="elevatorNo" type="java.lang.String" />
+			<form-property name="isCharges" type="java.lang.String" />
+			<form-property name="money1" type="java.lang.String" />
+			<form-property name="wmRem" type="java.lang.String" />
+			<form-property name="wmIsAgree" type="java.lang.String" />
+			<form-property name="wmIsCharges" type="java.lang.String" />
+			<form-property name="wmPayment" type="java.lang.String" />
+			<form-property name="money2" type="java.lang.String" />
+			<form-property name="expressNo" type="java.lang.String" />
+			<form-property name="expressName" type="java.lang.String" />
+			<form-property name="isConfirm" type="java.lang.String" />
+			<form-property name="ghImage" type="java.lang.String" />
+			<form-property name="jjReturn" type="java.lang.String" />
+			<form-property name="jjResult" type="java.lang.String" />
+			<form-property name="jjOperId" type="java.lang.String" />
+			<form-property name="jjOperDate" type="java.lang.String" />
+			<form-property name="handleStatus" type="java.lang.String" />
+			<form-property name="wmuserId" type="java.lang.String" />
+			<form-property name="ckoperid" type="java.lang.String" />
+			<form-property name="ckdate" type="java.lang.String" />
+			<form-property name="ckrem" type="java.lang.String" />
+			<form-property name="ckiswc" type="java.lang.String" />
+
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+            <form-property name="newfile" type="org.apache.struts.upload.FormFile" />
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+		<form-bean name="accessoriesRequisitionMForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="appNo" type="java.lang.String" />
+			<form-property name="singleNo" type="java.lang.String" />
+			<form-property name="oldNo" type="java.lang.String" />
+			<form-property name="oldImage" type="java.lang.String" />
+			<form-property name="newNo" type="java.lang.String" />
+			<form-property name="newImage" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="maintStation" type="java.lang.String" />
+			<form-property name="personInCharge" type="java.lang.String" />
+			<form-property name="picauditRem" type="java.lang.String" />
+			<form-property name="picauditDate" type="java.lang.String" />
+			<form-property name="isAgree" type="java.lang.String" />
+			<form-property name="warehouseManager" type="java.lang.String" />
+			<form-property name="wmdate" type="java.lang.String" />
+			
+			<form-property name="elevatorNo" type="java.lang.String" />
+			<form-property name="isCharges" type="java.lang.String" />
+			<form-property name="money1" type="java.lang.String" />
+			<form-property name="wmRem" type="java.lang.String" />
+			<form-property name="wmIsAgree" type="java.lang.String" />
+			<form-property name="wmIsCharges" type="java.lang.String" />
+			<form-property name="wmPayment" type="java.lang.String" />
+			<form-property name="money2" type="java.lang.String" />
+			<form-property name="expressNo" type="java.lang.String" />
+			<form-property name="expressName" type="java.lang.String" />
+			<form-property name="isConfirm" type="java.lang.String" />
+			<form-property name="ghImage" type="java.lang.String" />
+			<form-property name="jjReturn" type="java.lang.String" />
+			<form-property name="jjResult" type="java.lang.String" />
+			<form-property name="jjOperId" type="java.lang.String" />
+			<form-property name="jjOperDate" type="java.lang.String" />
+			<form-property name="handleStatus" type="java.lang.String" />
+			<form-property name="wmuserId" type="java.lang.String" />
+			<form-property name="ckoperid" type="java.lang.String" />
+			<form-property name="ckdate" type="java.lang.String" />
+			<form-property name="ckrem" type="java.lang.String" />
+			<form-property name="ckiswc" type="java.lang.String" />
+
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+
+		<form-bean name="accessoriesRequisitionSForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="appNo" type="java.lang.String" />
+			<form-property name="singleNo" type="java.lang.String" />
+			<form-property name="oldNo" type="java.lang.String" />
+			<form-property name="oldImage" type="java.lang.String" />
+			<form-property name="newNo" type="java.lang.String" />
+			<form-property name="newImage" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="maintStation" type="java.lang.String" />
+			<form-property name="personInCharge" type="java.lang.String" />
+			<form-property name="picauditRem" type="java.lang.String" />
+			<form-property name="picauditDate" type="java.lang.String" />
+			<form-property name="isAgree" type="java.lang.String" />
+			<form-property name="warehouseManager" type="java.lang.String" />
+			<form-property name="wmdate" type="java.lang.String" />
+			
+			<form-property name="elevatorNo" type="java.lang.String" />
+			<form-property name="isCharges" type="java.lang.String" />
+			<form-property name="money1" type="java.lang.String" />
+			<form-property name="wmRem" type="java.lang.String" />
+			<form-property name="wmIsAgree" type="java.lang.String" />
+			<form-property name="wmIsCharges" type="java.lang.String" />
+			<form-property name="wmPayment" type="java.lang.String" />
+			<form-property name="money2" type="java.lang.String" />
+			<form-property name="expressNo" type="java.lang.String" />
+			<form-property name="expressName" type="java.lang.String" />
+			<form-property name="isConfirm" type="java.lang.String" />
+			<form-property name="ghImage" type="java.lang.String" />
+			<form-property name="jjReturn" type="java.lang.String" />
+			<form-property name="jjResult" type="java.lang.String" />
+			<form-property name="jjOperId" type="java.lang.String" />
+			<form-property name="jjOperDate" type="java.lang.String" />
+			<form-property name="handleStatus" type="java.lang.String" />
+			<form-property name="wmuserId" type="java.lang.String" />
+			<form-property name="ckoperid" type="java.lang.String" />
+			<form-property name="ckdate" type="java.lang.String" />
+			<form-property name="ckrem" type="java.lang.String" />
+			<form-property name="ckiswc" type="java.lang.String" />
+
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+		
+		<form-bean name="accessoriesRequisitionRForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="appNo" type="java.lang.String" />
+			<form-property name="singleNo" type="java.lang.String" />
+			<form-property name="oldNo" type="java.lang.String" />
+			<form-property name="oldImage" type="java.lang.String" />
+			<form-property name="newNo" type="java.lang.String" />
+			<form-property name="newImage" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="maintStation" type="java.lang.String" />
+			<form-property name="personInCharge" type="java.lang.String" />
+			<form-property name="picauditRem" type="java.lang.String" />
+			<form-property name="picauditDate" type="java.lang.String" />
+			<form-property name="isAgree" type="java.lang.String" />
+			<form-property name="warehouseManager" type="java.lang.String" />
+			<form-property name="wmdate" type="java.lang.String" />
+			
+			<form-property name="elevatorNo" type="java.lang.String" />
+			<form-property name="isCharges" type="java.lang.String" />
+			<form-property name="money1" type="java.lang.String" />
+			<form-property name="wmRem" type="java.lang.String" />
+			<form-property name="wmIsAgree" type="java.lang.String" />
+			<form-property name="wmIsCharges" type="java.lang.String" />
+			<form-property name="wmPayment" type="java.lang.String" />
+			<form-property name="money2" type="java.lang.String" />
+			<form-property name="expressNo" type="java.lang.String" />
+			<form-property name="expressName" type="java.lang.String" />
+			<form-property name="isConfirm" type="java.lang.String" />
+			<form-property name="ghImage" type="java.lang.String" />
+			<form-property name="jjReturn" type="java.lang.String" />
+			<form-property name="jjResult" type="java.lang.String" />
+			<form-property name="jjOperId" type="java.lang.String" />
+			<form-property name="jjOperDate" type="java.lang.String" />
+			<form-property name="handleStatus" type="java.lang.String" />
+			<form-property name="wmuserId" type="java.lang.String" />
+			<form-property name="ckoperid" type="java.lang.String" />
+			<form-property name="ckdate" type="java.lang.String" />
+			<form-property name="ckrem" type="java.lang.String" />
+			<form-property name="ckiswc" type="java.lang.String" />
+
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+		<form-bean name="accessoriesRequisitionCForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="appNo" type="java.lang.String" />
+			<form-property name="singleNo" type="java.lang.String" />
+			<form-property name="oldNo" type="java.lang.String" />
+			<form-property name="oldImage" type="java.lang.String" />
+			<form-property name="newNo" type="java.lang.String" />
+			<form-property name="newImage" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="maintDivision" type="java.lang.String" />
+			<form-property name="maintStation" type="java.lang.String" />
+			<form-property name="personInCharge" type="java.lang.String" />
+			<form-property name="picauditRem" type="java.lang.String" />
+			<form-property name="picauditDate" type="java.lang.String" />
+			<form-property name="isAgree" type="java.lang.String" />
+			<form-property name="warehouseManager" type="java.lang.String" />
+			<form-property name="wmdate" type="java.lang.String" />
+			
+			<form-property name="elevatorNo" type="java.lang.String" />
+			<form-property name="isCharges" type="java.lang.String" />
+			<form-property name="money1" type="java.lang.String" />
+			<form-property name="wmRem" type="java.lang.String" />
+			<form-property name="wmIsAgree" type="java.lang.String" />
+			<form-property name="wmIsCharges" type="java.lang.String" />
+			<form-property name="wmPayment" type="java.lang.String" />
+			<form-property name="money2" type="java.lang.String" />
+			<form-property name="expressNo" type="java.lang.String" />
+			<form-property name="expressName" type="java.lang.String" />
+			<form-property name="isConfirm" type="java.lang.String" />
+			<form-property name="ghImage" type="java.lang.String" />
+			<form-property name="jjReturn" type="java.lang.String" />
+			<form-property name="jjResult" type="java.lang.String" />
+			<form-property name="jjOperId" type="java.lang.String" />
+			<form-property name="jjOperDate" type="java.lang.String" />
+			<form-property name="handleStatus" type="java.lang.String" />
+			<form-property name="wmuserId" type="java.lang.String" />
+			<form-property name="ckoperid" type="java.lang.String" />
+			<form-property name="ckdate" type="java.lang.String" />
+			<form-property name="ckrem" type="java.lang.String" />
+			<form-property name="ckiswc" type="java.lang.String" />
+
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+
+			<form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+
+		</form-bean>
+		
+        <form-bean name="logManagementForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+	        <form-property name="rowid" type="java.lang.Integer"></form-property>
+	        <form-property name="maintDivision" type="java.lang.String"></form-property>
+	        <form-property name="maintStation" type="java.lang.String"></form-property>
+	        <form-property name="operId" type="java.lang.String"></form-property>
+	        <form-property name="operDate" type="java.lang.String"></form-property>
+	        
+	        <form-property name="salesContractNo" type="java.lang.String"></form-property>
+	        <form-property name="projectName" type="java.lang.String"></form-property>
+	        <form-property name="workContent" type="java.lang.String"></form-property>
+        
+            <form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+            <form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+        </form-bean>
+         <form-bean name="etcLogManagementForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+	        <form-property name="rowid" type="java.lang.Integer"/>
+	        <form-property name="operId" type="java.lang.String"/>
+			<form-property name="operDate" type="java.lang.String"/>
+			<form-property name="contractNo" type="java.lang.String"/>
+			<form-property name="projectName" type="java.lang.String"/>
+			<form-property name="insCompanyName" type="java.lang.String"/>
+			<form-property name="phnum" type="java.lang.String"/>
+			<form-property name="iscjwx" type="java.lang.String"/>
+			<form-property name="iszj" type="java.lang.String"/>
+			<form-property name="xcfkwt" type="java.lang.String"/>
+			<form-property name="workContent" type="java.lang.String"/>
+			<form-property name="rem" type="java.lang.String"/>
+        
+            <form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+			
+            <form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+        </form-bean>
+         <form-bean name="qcLogManagementForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+	        <form-property name="rowid" type="java.lang.Integer"/>
+	        <form-property name="operId" type="java.lang.String"/>
+	        <form-property name="operDate" type="java.lang.String"/>
+			<form-property name="maintStation" type="java.lang.String"/>
+			<form-property name="maintPersonnel" type="java.lang.String"/>
+			<form-property name="elevatorNo" type="java.lang.String"/>
+			<form-property name="ydlh" type="java.lang.String"/>
+			<form-property name="isgzfz" type="java.lang.String"/>
+			<form-property name="iszfwt" type="java.lang.String"/>
+			<form-property name="jffkwt" type="java.lang.String"/>
+			<form-property name="ycjkwt" type="java.lang.String"/>
+			<form-property name="rem" type="java.lang.String"/>
+        
+            <form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+			
+            <form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+        </form-bean>
+	
+	<form-bean name="maintenanceReceiptForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+        <form-property name="signWay" type="java.lang.String" />
+        <form-property name="elevatorNo" type="java.lang.String" />
+        <form-property name="elevatorType" type="java.lang.String" />
+        <form-property name="floor" type="java.lang.Integer" />
+        <form-property name="stage" type="java.lang.Integer" />
+        <form-property name="door" type="java.lang.Integer" />
+        <form-property name="high" type="java.lang.Double" />
+        <form-property name="elevatorParam" type="java.lang.String" />
+        <form-property name="annualInspectionDate" type="java.lang.String" />
+        <form-property name="salesContractNo" type="java.lang.String" />
+        <form-property name="projectName" type="java.lang.String" />
+        <form-property name="mainSdate" type="java.lang.String" />
+        <form-property name="mainEdate" type="java.lang.String" />
+        <form-property name="realityEdate" type="java.lang.String" />
+        <form-property name="shippedDate" type="java.lang.String" />
+        <form-property name="issueDate" type="java.lang.String" />            
+        <form-property name="tranCustDate" type="java.lang.String" />  
+        <form-property name="mainConfirmDate" type="java.lang.String" />
+        <form-property name="assignedMainStation" type="java.lang.String" />  
+        <form-property name="assignedSignFlag" type="java.lang.String" />  
+        <form-property name="assignedSign" type="java.lang.String" />  
+        <form-property name="assignedSignDate" type="java.lang.String" /> 
+        <form-property name="returnReason" type="java.lang.String" />      
+        <form-property name="maintPersonnel" type="java.lang.String" />
+        <form-property name="maintContractNo" type="java.lang.String" />
+        <form-property name="isAssignedSign" type="java.lang.String" />
+        <form-property name="mainStation" type="java.lang.String" />
+        <form-property name="maintDivision" type="java.lang.String" />
+            
+            <form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Integer" />
+			<form-property name="r8" type="java.lang.Integer" />
+			<form-property name="r9" type="java.lang.Double" />
+			<form-property name="r10" type="java.lang.Double" />
+        
+            <form-property name="sdate1" type="java.lang.String" />
+            <form-property name="edate1" type="java.lang.String" />
+            <form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+        </form-bean>
+	    
+	    <form-bean name="maintenanceWorkPlanCustomizeForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+	        <form-property name="billNo" type="java.lang.String" />
+	        <form-property name="quoteBillNo" type="java.lang.String" />
+	        <form-property name="companyId" type="java.lang.String" />
+	        <form-property name="companyId2" type="java.lang.String" />
+	        <form-property name="projectName" type="java.lang.String" />
+	        <form-property name="projectAddress" type="java.lang.String" />
+	        <form-property name="salesContractNo" type="java.lang.String" />
+	        <form-property name="maintContractNo" type="java.lang.String" />
+	        <form-property name="contractNatureOf" type="java.lang.String" />
+	        <form-property name="mainMode" type="java.lang.String" />
+	        <form-property name="contractPeriod" type="java.lang.String" />
+	        <form-property name="contractSdate" type="java.lang.String" />
+	        <form-property name="contractEdate" type="java.lang.String" />
+	        <form-property name="contractTotal" type="java.lang.Double" />
+	        <form-property name="otherFee" type="java.lang.Double" />
+	        <form-property name="contractTerms" type="java.lang.String" />
+	        <form-property name="paymentMethod" type="java.lang.String" />
+	        <form-property name="attn" type="java.lang.String" />
+	        <form-property name="maintDivision" type="java.lang.String" />
+	        <form-property name="operId" type="java.lang.String" />
+	        <form-property name="operDate" type="java.lang.String" />
+	        <form-property name="taskUserId" type="java.lang.String" />
+	        <form-property name="taskSubDate" type="java.lang.String" />
+	        <form-property name="taskRem" type="java.lang.String" />  	        
+	        <form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />  
+			<form-property name="isSelectAdd" type="java.lang.String" />
+			<form-property name="maintContractDetails" type="java.lang.String" />
+			<form-property name="assignedMainStation" type="java.lang.String" />
+			<form-property name="mainSdate" type="java.lang.String" />
+			<form-property name="mainEdate" type="java.lang.String" />	
+			<form-property name="customizeRem" type="java.lang.String" />		
+		    
+		</form-bean>
+	
+	<form-bean name="maintenanceWorkPlanAuditForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+	        <form-property name="billNo" type="java.lang.String" />
+	        <form-property name="quoteBillNo" type="java.lang.String" />
+	        <form-property name="companyId" type="java.lang.String" />
+	        <form-property name="companyId2" type="java.lang.String" />
+	        <form-property name="projectName" type="java.lang.String" />
+	        <form-property name="projectAddress" type="java.lang.String" />
+	        <form-property name="salesContractNo" type="java.lang.String" />
+	        <form-property name="maintContractNo" type="java.lang.String" />
+	        <form-property name="contractNatureOf" type="java.lang.String" />
+	        <form-property name="mainMode" type="java.lang.String" />
+	        <form-property name="contractPeriod" type="java.lang.String" />
+	        <form-property name="contractSdate" type="java.lang.String" />
+	        <form-property name="contractEdate" type="java.lang.String" />
+	        <form-property name="contractTotal" type="java.lang.Double" />
+	        <form-property name="otherFee" type="java.lang.Double" />
+	        <form-property name="contractTerms" type="java.lang.String" />
+	        <form-property name="paymentMethod" type="java.lang.String" />
+	        <form-property name="attn" type="java.lang.String" />
+	        <form-property name="maintDivision" type="java.lang.String" />
+	        <form-property name="operId" type="java.lang.String" />
+	        <form-property name="operDate" type="java.lang.String" />
+	        <form-property name="taskUserId" type="java.lang.String" />
+	        <form-property name="taskSubDate" type="java.lang.String" />
+	        <form-property name="taskRem" type="java.lang.String" />  	        
+	        <form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />  
+			<form-property name="isSelectAdd" type="java.lang.String" />
+			<form-property name="maintContractDetails" type="java.lang.String" />
+			<form-property name="assignedMainStation" type="java.lang.String" />
+			<form-property name="mainSdate" type="java.lang.String" />
+			<form-property name="mainEdate" type="java.lang.String" />			
+		    <form-property name="checkoperid" type="java.lang.String" />
+			<form-property name="checkdate" type="java.lang.String" />
+		</form-bean>
+	
+	<form-bean name="maintenanceWorkPlanCompletionForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+	        <form-property name="singleno" type="java.lang.String" />	        
+			<form-property name="elevatorNo" type="java.lang.String" />
+	        <form-property name="assignedMainStation" type="java.lang.String" />
+	        <form-property name="maintPersonnel" type="java.lang.String" />
+	        <form-property name="phone" type="java.lang.String" />
+	        <form-property name="projectName" type="java.lang.String" />
+	        <form-property name="elevatorType" type="java.lang.String" />
+	        <form-property name="releasedTime" type="java.lang.String" />
+	        <form-property name="receivingTime" type="java.lang.String" />
+	        <form-property name="isTransfer" type="java.lang.String" />
+	        <form-property name="receivingPerson" type="java.lang.String" />
+	        <form-property name="receivingPhone" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+		</form-bean>
+	<form-bean name="maintenanceReportForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+	        <form-property name="rowid" type="java.lang.Integer" />
+	        <form-property name="billNo" type="java.lang.String" />	        
+			<form-property name="signWay" type="java.lang.String" />
+	        <form-property name="elevatorNo" type="java.lang.String" />
+	        <form-property name="elevatorType" type="java.lang.String" />
+	        <form-property name="floor" type="java.lang.Integer" />
+	        <form-property name="stage" type="java.lang.Integer" />
+	        <form-property name="door" type="java.lang.Integer" />
+	        <form-property name="high" type="java.lang.Double" />
+	        <form-property name="elevatorParam" type="java.lang.String" />
+	        <form-property name="annualInspectionDate" type="java.lang.String" />	        
+	        <form-property name="salesContractNo" type="java.lang.String" />
+	        <form-property name="projectName" type="java.lang.String" />
+	        <form-property name="mainSdate" type="java.lang.String" />
+	        <form-property name="mainEdate" type="java.lang.String" />        
+	        <form-property name="realityEdate" type="java.lang.String" />
+	        <form-property name="shippedDate" type="java.lang.String" />
+	        <form-property name="issueDate" type="java.lang.String" />
+	        <form-property name="tranCustDate" type="java.lang.String" />	  
+	        <form-property name="mainConfirmDate" type="java.lang.String" />
+	        <form-property name="assignedMainStation" type="java.lang.String" />
+	        <form-property name="assignedSignFlag" type="java.lang.String" />	        
+	        <form-property name="assignedSign" type="java.lang.String" />
+	        <form-property name="assignedSignDate" type="java.lang.String" />
+	        <form-property name="returnReason" type="java.lang.String" />
+	        <form-property name="maintPersonnel" type="java.lang.String" />	
+	       
+	       <form-property name="maintDivision" type="java.lang.String" />
+            <form-property name="sdate1" type="java.lang.String" />
+            <form-property name="edate1" type="java.lang.String" />
+	        <form-property name="genReport" type="java.lang.String" />
+     	        
+		</form-bean>
+		
+		<form-bean name="elevatorTransferCaseRegisterManageForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="billno" type="java.lang.String" />          
+	        <form-property name="status" type="java.lang.Integer" />         
+	        <form-property name="tokenId" type="java.lang.Long" />         
+	        <form-property name="processName" type="java.lang.String" />
+	        <form-property name="processStatus" type="java.lang.String" />      
+	        <form-property name="submitType" type="java.lang.String" />         
+	        <form-property name="checkTime" type="java.lang.String" />
+	        <form-property name="checkNum" type="java.lang.Integer"/>
+	        <form-property name="projectName" type="java.lang.String"/>
+	        <form-property name="projectAddress" type="java.lang.String"/>
+	        <form-property name="salesContractNo" type="java.lang.String"/>
+	        <form-property name="elevatorNo" type="java.lang.String"/>
+	        <form-property name="elevatorType" type="java.lang.String"/>
+	        <form-property name="elevatorParam" type="java.lang.String"/>
+	        <form-property name="insCompanyName" type="java.lang.String"/>
+	        <form-property name="insLinkPhone" type="java.lang.String"/>
+	        <form-property name="insEmail" type="java.lang.String"/>
+	        <form-property name="staffName" type="java.lang.String"/>
+	        <form-property name="staffLinkPhone" type="java.lang.String"/>
+	        <form-property name="department" type="java.lang.String"/>
+	        <form-property name="factoryCheckResult" type="java.lang.String"/>
+	        <form-property name="aopinion" type="java.lang.String"/>
+	        <form-property name="aopinionDate" type="java.lang.String"/>
+	        <form-property name="bopinion" type="java.lang.String"/>
+	        <form-property name="bopinionDate" type="java.lang.String"/>
+	        <form-property name="copinion" type="java.lang.String"/>
+	        <form-property name="copinionDate" type="java.lang.String"/>
+	        <form-property name="processResult" type="java.lang.String"/>
+	        <form-property name="isClose" type="java.lang.String"/>
+	        <form-property name="auditor" type="java.lang.String"/>
+	        <form-property name="operId" type="java.lang.String"/>
+	        <form-property name="operDate" type="java.lang.String"/>
+	        <form-property name="r1" type="java.lang.String" />          
+	        <form-property name="r2" type="java.lang.String" />          
+	        <form-property name="r3" type="java.lang.String" />         
+	        <form-property name="r4" type="java.lang.String" />         
+	        <form-property name="r5" type="java.lang.String" />          
+	        <form-property name="r6" type="java.lang.Double" />           
+	        <form-property name="r7" type="java.lang.Double" />           
+	        <form-property name="r8" type="java.lang.Double" />          
+	        <form-property name="r9" type="java.lang.Integer" />           
+	        <form-property name="r10" type="java.lang.Integer" />
+	        <form-property name="isxjs" type="java.lang.String"/>
+	        <form-property name="isreturn" type="java.lang.String" />
+	        <form-property name="returnMethod" type="java.lang.String" />
+	        <form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="hecirs" type="java.lang.String" />
+			<form-property name="dopinion" type="java.lang.String" />
+			<form-property name="dopinionDate" type="java.lang.String" />
+			<form-property name="bhRem" type="java.lang.String" />
+			<form-property name="bhDate" type="java.lang.String" />
+			<form-property name="transferId" type="java.lang.String" />
+			<form-property name="transferDate" type="java.lang.String" />
+			<form-property name="contractType" type="java.lang.String" />
+			<form-property name="salesContractType" type="java.lang.String" />
+			<form-property name="floor" type="java.lang.Integer" />
+			<form-property name="stage" type="java.lang.Integer" />
+			<form-property name="door" type="java.lang.Integer" />
+			<form-property name="high" type="java.lang.Double" />
+			<form-property name="weight" type="java.lang.String" />
+			<form-property name="speed" type="java.lang.String" />
+		    <form-property name="nextId" type="java.lang.String" />
+		    <form-property name="projectManager" type="java.lang.String" />
+			<form-property name="projectManagerPhone" type="java.lang.String" />
+			<form-property name="debugPers" type="java.lang.String" />
+			<form-property name="debugPersPhone" type="java.lang.String" />
+			<form-property name="bhType" type="java.lang.String" />
+			<form-property name="elevatorAddress" type="java.lang.String" />
+			<form-property name="projectProvince" type="java.lang.String" />
+			<form-property name="firstInstallation" type="java.lang.String" />
+			<form-property name="factoryCheckResult2" type="java.lang.String" />
+			
+		</form-bean>
+		
+		<form-bean name="elevatorTransferCaseRegisterAuditForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="billno" type="java.lang.String" />          
+	        <form-property name="status" type="java.lang.Integer" />         
+	        <form-property name="tokenId" type="java.lang.Long" />         
+	        <form-property name="processName" type="java.lang.String" />
+	        <form-property name="processStatus" type="java.lang.String" />      
+	        <form-property name="submitType" type="java.lang.String" />         
+	        <form-property name="checkTime" type="java.lang.String" />
+	        <form-property name="checkNum" type="java.lang.Integer"/>
+	        <form-property name="projectName" type="java.lang.String"/>
+	        <form-property name="projectAddress" type="java.lang.String"/>
+	        <form-property name="salesContractNo" type="java.lang.String"/>
+	        <form-property name="elevatorNo" type="java.lang.String"/>
+	        <form-property name="elevatorType" type="java.lang.String"/>
+	        <form-property name="elevatorParam" type="java.lang.String"/>
+	        <form-property name="insCompanyName" type="java.lang.String"/>
+	        <form-property name="insLinkPhone" type="java.lang.String"/>
+	        <form-property name="insEmail" type="java.lang.String"/>
+	        <form-property name="staffName" type="java.lang.String"/>
+	        <form-property name="staffLinkPhone" type="java.lang.String"/>
+	        <form-property name="department" type="java.lang.String"/>
+	        <form-property name="factoryCheckResult" type="java.lang.String"/>
+	        <form-property name="aopinion" type="java.lang.String"/>
+	        <form-property name="aopinionDate" type="java.lang.String"/>
+	        <form-property name="bopinion" type="java.lang.String"/>
+	        <form-property name="bopinionDate" type="java.lang.String"/>
+	        <form-property name="copinion" type="java.lang.String"/>
+	        <form-property name="copinionDate" type="java.lang.String"/>
+	        <form-property name="processResult" type="java.lang.String"/>
+	        <form-property name="isClose" type="java.lang.String"/>
+	        <form-property name="auditor" type="java.lang.String"/>
+	        <form-property name="operId" type="java.lang.String"/>
+	        <form-property name="operDate" type="java.lang.String"/>
+	        <form-property name="r1" type="java.lang.String" />          
+	        <form-property name="r2" type="java.lang.String" />          
+	        <form-property name="r3" type="java.lang.String" />         
+	        <form-property name="r4" type="java.lang.String" />         
+	        <form-property name="r5" type="java.lang.String" />          
+	        <form-property name="r6" type="java.lang.Double" />           
+	        <form-property name="r7" type="java.lang.Double" />           
+	        <form-property name="r8" type="java.lang.Double" />          
+	        <form-property name="r9" type="java.lang.Integer" />           
+	        <form-property name="r10" type="java.lang.Integer" />
+	        <form-property name="isxjs" type="java.lang.String"/>
+	        <form-property name="isreturn" type="java.lang.String" />
+	        <form-property name="returnMethod" type="java.lang.String" />
+	        <form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="hecirs" type="java.lang.String" />
+			<form-property name="dopinion" type="java.lang.String" />
+			<form-property name="dopinionDate" type="java.lang.String" />
+			<form-property name="bhRem" type="java.lang.String" />
+			<form-property name="bhDate" type="java.lang.String" />
+			<form-property name="transferId" type="java.lang.String" />
+			<form-property name="transferDate" type="java.lang.String" />
+			<form-property name="contractType" type="java.lang.String" />
+			<form-property name="salesContractType" type="java.lang.String" />
+			<form-property name="floor" type="java.lang.Integer" />
+			<form-property name="stage" type="java.lang.Integer" />
+			<form-property name="door" type="java.lang.Integer" />
+			<form-property name="high" type="java.lang.Double" />
+			<form-property name="weight" type="java.lang.String" />
+			<form-property name="speed" type="java.lang.String" />
+			<form-property name="projectManager" type="java.lang.String" />
+			<form-property name="projectManagerPhone" type="java.lang.String" />
+			<form-property name="debugPers" type="java.lang.String" />
+			<form-property name="debugPersPhone" type="java.lang.String" />
+			<form-property name="bhType" type="java.lang.String" />
+			<form-property name="firstInstallation" type="java.lang.String" />
+			<form-property name="factoryCheckResult2" type="java.lang.String" />
+		</form-bean>
+	
+	    <form-bean name="accountsPayableManageForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="jnlNo" type="java.lang.String" /> 
+			<form-property name="billNo" type="java.lang.String" /> 
+			<form-property name="entrustContractNo" type="java.lang.String" /> 
+			<form-property name="companyId" type="java.lang.String" /> 
+			<form-property name="recName" type="java.lang.String" /> 
+			<form-property name="preMoney" type="java.lang.Double" /> 
+			<form-property name="preDate" type="java.lang.String" /> 
+			<form-property name="maintDivision" type="java.lang.String" /> 
+			<form-property name="operId" type="java.lang.String" /> 
+			<form-property name="operDate" type="java.lang.String" /> 
+			<form-property name="rem" type="java.lang.String" /> 
+			<form-property name="auditOperid" type="java.lang.String" /> 
+			<form-property name="auditStatus" type="java.lang.String" /> 
+			<form-property name="auditDate" type="java.lang.String" /> 
+			<form-property name="auditRem" type="java.lang.String" /> 
+			<form-property name="submitType" type="java.lang.String" /> 
+	        <form-property name="r1" type="java.lang.String" />          
+	        <form-property name="r2" type="java.lang.String" />          
+	        <form-property name="r3" type="java.lang.String" />         
+	        <form-property name="r4" type="java.lang.String" />         
+	        <form-property name="r5" type="java.lang.String" />          
+	        <form-property name="r6" type="java.lang.Double" />           
+	        <form-property name="r7" type="java.lang.Double" />           
+	        <form-property name="r8" type="java.lang.Double" />          
+	        <form-property name="r9" type="java.lang.Integer" />           
+	        <form-property name="r10" type="java.lang.Integer" />
+	        <form-property name="isreturn" type="java.lang.String" />
+	        <form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+
+		
+		</form-bean>
+	
+	    <form-bean name="accountsPayableAuditForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="jnlNo" type="java.lang.String" /> 
+			<form-property name="billNo" type="java.lang.String" /> 
+			<form-property name="entrustContractNo" type="java.lang.String" /> 
+			<form-property name="companyId" type="java.lang.String" /> 
+			<form-property name="recName" type="java.lang.String" /> 
+			<form-property name="preMoney" type="java.lang.Double" /> 
+			<form-property name="preDate" type="java.lang.String" /> 
+			<form-property name="maintDivision" type="java.lang.String" /> 
+			<form-property name="operId" type="java.lang.String" /> 
+			<form-property name="operDate" type="java.lang.String" /> 
+			<form-property name="rem" type="java.lang.String" /> 
+			<form-property name="auditOperid" type="java.lang.String" /> 
+			<form-property name="auditStatus" type="java.lang.String" /> 
+			<form-property name="auditDate" type="java.lang.String" /> 
+			<form-property name="auditRem" type="java.lang.String" /> 
+			<form-property name="submitType" type="java.lang.String" /> 
+	        <form-property name="r1" type="java.lang.String" />          
+	        <form-property name="r2" type="java.lang.String" />          
+	        <form-property name="r3" type="java.lang.String" />         
+	        <form-property name="r4" type="java.lang.String" />         
+	        <form-property name="r5" type="java.lang.String" />          
+	        <form-property name="r6" type="java.lang.Double" />           
+	        <form-property name="r7" type="java.lang.Double" />           
+	        <form-property name="r8" type="java.lang.Double" />          
+	        <form-property name="r9" type="java.lang.Integer" />           
+	        <form-property name="r10" type="java.lang.Integer" />
+	        <form-property name="isreturn" type="java.lang.String" />
+	        <form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+	
+	<form-bean name="invoiceManageForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="jnlNo" type="java.lang.String" /> 
+			<form-property name="billNo" type="java.lang.String" /> 
+			<form-property name="entrustContractNo" type="java.lang.String" /> 
+			<form-property name="companyId" type="java.lang.String" /> 
+			<form-property name="invoiceNo" type="java.lang.String" /> 
+			<form-property name="invoiceType" type="java.lang.String" /> 
+			<form-property name="invoiceMoney" type="java.lang.Double" /> 
+			<form-property name="invoiceDate" type="java.lang.String" /> 
+			<form-property name="maintDivision" type="java.lang.String" /> 
+			<form-property name="operId" type="java.lang.String" /> 
+			<form-property name="operDate" type="java.lang.String" /> 
+			<form-property name="rem" type="java.lang.String" /> 
+			<form-property name="informDate" type="java.lang.String" />			
+			<form-property name="auditOperid" type="java.lang.String" /> 
+			<form-property name="auditStatus" type="java.lang.String" /> 
+			<form-property name="auditDate" type="java.lang.String" /> 
+			<form-property name="auditRem" type="java.lang.String" /> 
+			<form-property name="submitType" type="java.lang.String" /> 
+	        <form-property name="r1" type="java.lang.String" />          
+	        <form-property name="r2" type="java.lang.String" />          
+	        <form-property name="r3" type="java.lang.String" />         
+	        <form-property name="r4" type="java.lang.String" />         
+	        <form-property name="r5" type="java.lang.String" />          
+	        <form-property name="r6" type="java.lang.Double" />           
+	        <form-property name="r7" type="java.lang.Double" />           
+	        <form-property name="r8" type="java.lang.Double" />          
+	        <form-property name="r9" type="java.lang.Integer" />           
+	        <form-property name="r10" type="java.lang.Integer" />
+	        <form-property name="isreturn" type="java.lang.String" />
+	        <form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+	
+	<form-bean name="invoiceAuditForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="jnlNo" type="java.lang.String" /> 
+			<form-property name="billNo" type="java.lang.String" /> 
+			<form-property name="entrustContractNo" type="java.lang.String" /> 
+			<form-property name="companyId" type="java.lang.String" /> 
+			<form-property name="invoiceNo" type="java.lang.String" /> 
+			<form-property name="invoiceType" type="java.lang.String" /> 
+			<form-property name="invoiceMoney" type="java.lang.Double" /> 
+			<form-property name="invoiceDate" type="java.lang.String" /> 
+			<form-property name="maintDivision" type="java.lang.String" /> 
+			<form-property name="operId" type="java.lang.String" /> 
+			<form-property name="operDate" type="java.lang.String" /> 
+			<form-property name="rem" type="java.lang.String" /> 
+			<form-property name="informDate" type="java.lang.String" />			
+			<form-property name="auditOperid" type="java.lang.String" /> 
+			<form-property name="auditStatus" type="java.lang.String" /> 
+			<form-property name="auditDate" type="java.lang.String" /> 
+			<form-property name="auditRem" type="java.lang.String" /> 
+			<form-property name="submitType" type="java.lang.String" /> 
+	        <form-property name="r1" type="java.lang.String" />          
+	        <form-property name="r2" type="java.lang.String" />          
+	        <form-property name="r3" type="java.lang.String" />         
+	        <form-property name="r4" type="java.lang.String" />         
+	        <form-property name="r5" type="java.lang.String" />          
+	        <form-property name="r6" type="java.lang.Double" />           
+	        <form-property name="r7" type="java.lang.Double" />           
+	        <form-property name="r8" type="java.lang.Double" />          
+	        <form-property name="r9" type="java.lang.Integer" />           
+	        <form-property name="r10" type="java.lang.Integer" />
+	        <form-property name="isreturn" type="java.lang.String" />
+	        <form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+		
+		<form-bean name="paymentManageForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+				<form-property name="jnlNo" type="java.lang.String" /> 
+				<form-property name="billNo" type="java.lang.String" /> 
+				<form-property name="entrustContractNo" type="java.lang.String" /> 
+				<form-property name="companyId" type="java.lang.String" />
+				<form-property name="paragraphNo" type="java.lang.String" /> 
+				<form-property name="paragraphMoney" type="java.lang.Double" /> 
+				<form-property name="paragraphDate" type="java.lang.String" /> 
+				<form-property name="maintDivision" type="java.lang.String" /> 
+				<form-property name="operId" type="java.lang.String" /> 
+				<form-property name="operDate" type="java.lang.String" /> 
+				<form-property name="rem" type="java.lang.String" /> 
+				<form-property name="informDate" type="java.lang.String" />			
+				<form-property name="auditOperid" type="java.lang.String" /> 
+				<form-property name="auditStatus" type="java.lang.String" /> 
+				<form-property name="auditDate" type="java.lang.String" /> 
+				<form-property name="auditRem" type="java.lang.String" /> 
+				<form-property name="submitType" type="java.lang.String" /> 
+				<form-property name="ctJnlNo" type="java.lang.String" /> 		        
+		        <form-property name="r1" type="java.lang.String" />          
+		        <form-property name="r2" type="java.lang.String" />          
+		        <form-property name="r3" type="java.lang.String" />         
+		        <form-property name="r4" type="java.lang.String" />         
+		        <form-property name="r5" type="java.lang.String" />          
+		        <form-property name="r6" type="java.lang.Double" />           
+		        <form-property name="r7" type="java.lang.Double" />           
+		        <form-property name="r8" type="java.lang.Double" />          
+		        <form-property name="r9" type="java.lang.Integer" />           
+		        <form-property name="r10" type="java.lang.Integer" />
+		        <form-property name="isreturn" type="java.lang.String" />
+		        <form-property name="ids" type="java.lang.String[]" />
+				<form-property name="id" type="java.lang.String" />
+			</form-bean>
+		
+		<form-bean name="paymentAuditForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+				<form-property name="jnlNo" type="java.lang.String" /> 
+				<form-property name="billNo" type="java.lang.String" /> 
+				<form-property name="entrustContractNo" type="java.lang.String" /> 
+				<form-property name="companyId" type="java.lang.String" />
+				<form-property name="paragraphNo" type="java.lang.String" /> 
+				<form-property name="paragraphMoney" type="java.lang.Double" /> 
+				<form-property name="paragraphDate" type="java.lang.String" /> 
+				<form-property name="maintDivision" type="java.lang.String" /> 
+				<form-property name="operId" type="java.lang.String" /> 
+				<form-property name="operDate" type="java.lang.String" /> 
+				<form-property name="rem" type="java.lang.String" /> 
+				<form-property name="informDate" type="java.lang.String" />			
+				<form-property name="auditOperid" type="java.lang.String" /> 
+				<form-property name="auditStatus" type="java.lang.String" /> 
+				<form-property name="auditDate" type="java.lang.String" /> 
+				<form-property name="auditRem" type="java.lang.String" /> 
+				<form-property name="submitType" type="java.lang.String" /> 
+		        <form-property name="ctjnlNo" type="java.lang.String" /> 
+		        <form-property name="r1" type="java.lang.String" />          
+		        <form-property name="r2" type="java.lang.String" />          
+		        <form-property name="r3" type="java.lang.String" />         
+		        <form-property name="r4" type="java.lang.String" />         
+		        <form-property name="r5" type="java.lang.String" />          
+		        <form-property name="r6" type="java.lang.Double" />           
+		        <form-property name="r7" type="java.lang.Double" />           
+		        <form-property name="r8" type="java.lang.Double" />          
+		        <form-property name="r9" type="java.lang.Integer" />           
+		        <form-property name="r10" type="java.lang.Integer" />
+		        <form-property name="isreturn" type="java.lang.String" />
+		        <form-property name="ids" type="java.lang.String[]" />
+				<form-property name="id" type="java.lang.String" />
+			</form-bean>
+	
+	<form-bean name="contractPaymentEnquiryForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+		        <form-property name="isreturn" type="java.lang.String" />
+		        <form-property name="ids" type="java.lang.String[]" />
+				<form-property name="id" type="java.lang.String" />
+			</form-bean>
+	
+	 <form-bean name="markingScoresForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="msId" type="java.lang.String" />
+			<form-property name="msName" type="java.lang.String" />
+			<form-property name="fraction" type="java.lang.Double" />
+			<form-property name="enabledFlag" type="java.lang.String" />
+			<form-property name="rem" type="java.lang.String" />
+			<form-property name="operId" type="java.lang.String" />
+			<form-property name="operDate" type="java.lang.String" />
+			<form-property name="elevatorType" type="java.lang.String" />
+			<form-property name="orderby" type="java.lang.Integer" />
+			<form-property name="r1" type="java.lang.String" />
+			<form-property name="r2" type="java.lang.String" />
+			<form-property name="r3" type="java.lang.String" />
+			<form-property name="r4" type="java.lang.String" />
+			<form-property name="r5" type="java.lang.String" />
+			<form-property name="r6" type="java.lang.Double" />
+			<form-property name="r7" type="java.lang.Double" />
+			<form-property name="r8" type="java.lang.Double" />
+			<form-property name="r9" type="java.lang.Integer" />
+			<form-property name="r10" type="java.lang.Integer" />
+			<form-property name="msIds" type="java.lang.String" />
+			<form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+
+		</form-bean>
+	
+	<form-bean name="outsideFootballElevatorForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="elevatorNo" type="java.lang.String" />
+			<form-property name="enabledFlag" type="java.lang.String" />
+			<form-property name="seriesId" type="java.lang.String" />
+			<form-property name="outsideFootballElevatorBean" type="com.gzunicorn.hibernate.basedata.elevatorsales.ElevatorSalesInfo" />
+	        <form-property name="file" type="org.apache.struts.upload.FormFile" />
+	        <form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+		</form-bean>
+	
+	<form-bean name="entrustCustomerForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="companyId" type="java.lang.String" />          
+	        <form-property name="companyName" type="java.lang.String" />         
+	        <form-property name="address" type="java.lang.String" />         
+	        <form-property name="legalPerson" type="java.lang.String" />      
+	        <form-property name="client" type="java.lang.String" />         
+	        <form-property name="contacts" type="java.lang.String" />          
+	        <form-property name="contactPhone" type="java.lang.String" />          
+	        <form-property name="principalId" type="java.lang.String" />          
+	        <form-property name="principalName" type="java.lang.String" />         
+	        <form-property name="principalPhone" type="java.lang.String" />         
+	        <form-property name="fax" type="java.lang.String" />          
+	        <form-property name="postCode" type="java.lang.String" />           
+	        <form-property name="bank" type="java.lang.String" />           
+	        <form-property name="accountHolder" type="java.lang.String" />          
+	        <form-property name="account" type="java.lang.String" />           
+	        <form-property name="taxId" type="java.lang.String" />    
+	        <form-property name="custLevel" type="java.lang.String" />      
+	        <form-property name="enabledFlag" type="java.lang.String"/>          
+	        <form-property name="rem" type="java.lang.String" />           
+	        <form-property name="r1" type="java.lang.String" />           
+	        <form-property name="r2" type="java.lang.String" />          
+	        <form-property name="r3" type="java.lang.String" />           
+	        <form-property name="r4" type="java.lang.String" />          
+	        <form-property name="r5" type="java.lang.String" />          
+	        <form-property name="r6" type="java.lang.Double" />          
+	        <form-property name="r7" type="java.lang.Integer" />       
+	        <form-property name="r8" type="java.lang.Integer" />           
+	        <form-property name="r9" type="java.lang.Double" />         
+	        <form-property name="r10" type="java.lang.Double" />
+	        <form-property name="qualiLevelAz" type="java.lang.String" />
+	        <form-property name="qualiLevelWb" type="java.lang.String" />
+	        <form-property name="qualiLevelWg" type="java.lang.String" />    
+	        <form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />  
+			<form-property name="cusNature" type="java.lang.String" /> 
+			<form-property name="invoiceName" type="java.lang.String" /> 
+			<form-property name="file" type="org.apache.struts.upload.FormFile" /> 
+		</form-bean>
+	    
+	    <form-bean name="handoverElevatorSpecialClaimForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+			<form-property name="scId" type="java.lang.String" />          
+	        <form-property name="scName" type="java.lang.String" />         
+	        <form-property name="enabledFlag" type="java.lang.String" />         
+	        <form-property name="rem" type="java.lang.String" />      
+	        <form-property name="operId" type="java.lang.String" />         
+	        <form-property name="operDate" type="java.lang.String" />          
+	        <form-property name="isreturn" type="java.lang.String" />
+	        <form-property name="ids" type="java.lang.String[]" />
+			<form-property name="id" type="java.lang.String" />   
+		</form-bean>
+	<form-bean name="maintenanceRegistrationForm"
+			type="org.apache.struts.validator.DynaValidatorActionForm">
+	        <form-property name="singleno" type="java.lang.String" />	        
+			<form-property name="elevatorNo" type="java.lang.String" />
+	        <form-property name="assignedMainStation" type="java.lang.String" />
+	        <form-property name="maintPersonnel" type="java.lang.String" />
+	        <form-property name="phone" type="java.lang.String" />
+	        <form-property name="projectName" type="java.lang.String" />
+	        <form-property name="elevatorType" type="java.lang.String" />
+	        <form-property name="releasedTime" type="java.lang.String" />
+	        <form-property name="receivingTime" type="java.lang.String" />
+	        <form-property name="isTransfer" type="java.lang.String" />
+	        <form-property name="receivingPerson" type="java.lang.String" />
+	        <form-property name="receivingPhone" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="newfile" type="org.apache.struts.upload.FormFile" />
+			
+		</form-bean>
+	
+	<form-bean name="repairTasksRegistrationForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+		        <form-property name="isreturn" type="java.lang.String" />
+		        <form-property name="ids" type="java.lang.String[]" />
+				<form-property name="id" type="java.lang.String" />
+				<form-property name="hfcId" type="java.lang.String" />
+				<form-property name="stopRem" type="java.lang.String" />
+				<form-property name="newfile" type="org.apache.struts.upload.FormFile" />
+			</form-bean>
+	
+	  <form-bean name="outsourcingContractForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+	         <form-property name="wgBillno" type="java.lang.String"></form-property>
+			 <form-property name="billNo" type="java.lang.String"></form-property>
+			 <form-property name="companyId" type="java.lang.String"></form-property>
+			 <form-property name="companyId2" type="java.lang.String"></form-property>
+			 <form-property name="outContractNo" type="java.lang.String"></form-property>
+			 <form-property name="maintContractNo" type="java.lang.String"></form-property>
+			 <form-property name="busType" type="java.lang.String"></form-property>
+			 <form-property name="submitType" type="java.lang.String"></form-property>
+			 <form-property name="signingDate" type="java.lang.String"></form-property>
+			 <form-property name="salesContractNo" type="java.lang.String"></form-property>
+			 <form-property name="projectName" type="java.lang.String"></form-property>
+			 <form-property name="projectAddress" type="java.lang.String"></form-property>
+			 <form-property name="contractTerms" type="java.lang.String"></form-property>
+			 <form-property name="paymentMethod" type="java.lang.String"></form-property>
+			 <form-property name="contractTotal" type="java.lang.Double"></form-property>
+			 <form-property name="otherFee" type="java.lang.Double"></form-property>
+			 <form-property name="attn" type="java.lang.String"></form-property>
+			 <form-property name="maintDivision" type="java.lang.String"></form-property>
+			 <form-property name="maintStation" type="java.lang.String"></form-property>
+			 <form-property name="auditOperid" type="java.lang.String"></form-property>
+			 <form-property name="auditStatus" type="java.lang.String"></form-property>
+			 <form-property name="auditDate" type="java.lang.String"></form-property>
+			 <form-property name="auditRem" type="java.lang.String"></form-property>
+			 <form-property name="operId" type="java.lang.String"></form-property>
+			 <form-property name="operDate" type="java.lang.String"></form-property>
+			 <form-property name="taskUserId" type="java.lang.String"></form-property>
+			 <form-property name="taskSubFlag" type="java.lang.String"></form-property>
+			 <form-property name="taskSubDate" type="java.lang.String"></form-property>
+			 <form-property name="taskRem" type="java.lang.String"></form-property>
+			 <form-property name="forecastDate" type="java.lang.String"></form-property>
+			 <form-property name="comfirmDate" type="java.lang.String"></form-property>
+			 <form-property name="itemUserId" type="java.lang.String"></form-property>
+			 <form-property name="appWorkDate" type="java.lang.String"></form-property>
+			 <form-property name="enterArenaDate" type="java.lang.String"></form-property>
+			 <form-property name="epibolyFlag" type="java.lang.String"></form-property>
+			 <form-property name="finishFlag" type="java.lang.String"></form-property>
+			 <form-property name="finishDate" type="java.lang.String"></form-property>
+			 <form-property name="finishId" type="java.lang.String"></form-property>
+			 <form-property name="finishRem" type="java.lang.String"></form-property>
+			 <form-property name="quoteBillNo" type="java.lang.String"></form-property>
+			 <form-property name="r1" type="java.lang.String"></form-property>
+			 <form-property name="r2" type="java.lang.String"></form-property>
+			 <form-property name="r3" type="java.lang.String"></form-property>
+			 <form-property name="r4" type="java.lang.String"></form-property>
+			 <form-property name="r5" type="java.lang.String"></form-property>
+			 <form-property name="r6" type="java.lang.Double"></form-property>
+			 <form-property name="r7" type="java.lang.Double"></form-property>
+			 <form-property name="r8" type="java.lang.Double"></form-property>
+			 <form-property name="r9" type="java.lang.Integer"></form-property>
+			 <form-property name="r10" type="java.lang.Integer"></form-property>
+			 <form-property name="elevatorNo" type="java.lang.String"></form-property>
+			 <form-property name="contents" type="java.lang.String"></form-property>
+			 <form-property name="id" type="java.lang.String"></form-property>
+			 <form-property name="isreturn" type="java.lang.String"></form-property>
+			 <form-property name="typejsp" type="java.lang.String"></form-property>
+			 <form-property name="basePrice" type="java.lang.String"></form-property>
+			 
+			 </form-bean>
+	    <form-bean name="maintenanceWorkPlanTurnActionForm" type="org.apache.struts.validator.DynaValidatorActionForm">
+	        <form-property name="rowid" type="java.lang.Integer"></form-property>
+	        <form-property name="maintContractNo" type="java.lang.String"></form-property>
+	        <form-property name="salesContractNo" type="java.lang.String"></form-property>
+	        <form-property name="projectName" type="java.lang.String"></form-property>
+	        <form-property name="elevatorNo" type="java.lang.String"></form-property>
+	        <form-property name="mainSdate" type="java.lang.String"></form-property>
+	        <form-property name="mainEdate" type="java.lang.String"></form-property>
+	        <form-property name="taskSubDate" type="java.lang.String"></form-property>
+	        <form-property name="assignedMainStation" type="java.lang.String"></form-property>
+	        <form-property name="maintPersonnel" type="java.lang.String"></form-property>
+	        <form-property name="zpdate" type="java.lang.String"></form-property>
+	        <form-property name="zpoperid" type="java.lang.String"></form-property>
+	        <form-property name="mainStation" type="java.lang.String"></form-property>
+            <form-property name="sdate1" type="java.lang.String" />
+            <form-property name="edate1" type="java.lang.String" />
+            <form-property name="genReport" type="java.lang.String" />
+			<form-property name="isreturn" type="java.lang.String" />
+			<form-property name="id" type="java.lang.String" />
+	
+	   </form-bean>
+	</form-beans>
+
+
+           
+
+
+	<!-- ========== Global Forward Definitions ============================== -->
+	<global-forwards></global-forwards>
+
+	<!-- ========== Action Mapping Definitions ============================== -->
+	<action-mappings>
+
+		<!-- <action attribute="markingItemsForm" name="markingItemsForm"
+			parameter="method" path="/markingItemsAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.MarkingItemsAction">
+			<forward name="markingItemsList" path="basedata.markingItemsList" />
+			<forward name="markingItemsDisplay" path="basedata.markingItemsDisplay" />
+			<forward name="markingItemsAdd" path="basedata.markingItemsAdd" />
+			<forward name="markingItemsModify" path="basedata.markingItemsModify" />
+			<forward name="returnAdd" path="/markingItemsAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/markingItemsAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/markingItemsSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/markingItemsSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.MarkingItemsAction">
+			<forward name="markingItemsList" path="basedata.markingItemsList" />
+		</action> -->
+
+		<action attribute="termSecurityRisksForm" name="termSecurityRisksForm"
+			parameter="method" path="/termSecurityRisksAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.TermSecurityRisksAction">
+			<forward name="termSecurityRisksList" path="basedata.termSecurityRisksList" />
+			<forward name="termSecurityRisksDisplay" path="basedata.termSecurityRisksDisplay" />
+			<forward name="termSecurityRisksAdd" path="basedata.termSecurityRisksAdd" />
+			<forward name="termSecurityRisksModify" path="basedata.termSecurityRisksModify" />
+			<forward name="returnAdd" 	path="/termSecurityRisksAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" 	path="/termSecurityRisksAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/termSecurityRisksSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/termSecurityRisksSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.TermSecurityRisksAction">
+			<forward name="termSecurityRisksList" path="basedata.termSecurityRisksList" />
+		</action>
+
+		<action attribute="shouldExamineItemsForm" name="shouldExamineItemsForm"
+			parameter="method" path="/shouldExamineItemsAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.ShouldExamineItemsAction">
+			<forward name="shouldExamineItemsList" path="basedata.shouldExamineItemsList" />
+			<forward name="shouldExamineItemsDisplay" path="basedata.shouldExamineItemsDisplay" />
+			<forward name="shouldExamineItemsAdd" path="basedata.shouldExamineItemsAdd" />
+			<forward name="shouldExamineItemsModify" path="basedata.shouldExamineItemsModify" />
+			<forward name="returnAdd" path="/shouldExamineItemsAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/shouldExamineItemsAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/shouldExamineItemsSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/shouldExamineItemsSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.ShouldExamineItemsAction">
+			<forward name="shouldExamineItemsList" path="basedata.shouldExamineItemsList" />
+		</action>
+
+		<action attribute="officeComplaintCategoryForm" name="officeComplaintCategoryForm"
+			parameter="method" path="/officeComplaintCategoryAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.OfficeComplaintCategoryAction">
+			<forward name="officeComplaintCategoryList" path="basedata.officeComplaintCategoryList" />
+			<forward name="officeComplaintCategoryDisplay" path="basedata.officeComplaintCategoryDisplay" />
+			<forward name="officeComplaintCategoryAdd" path="basedata.officeComplaintCategoryAdd" />
+			<forward name="officeComplaintCategoryModify" path="basedata.officeComplaintCategoryModify" />
+			<forward name="returnAdd" path="/officeComplaintCategoryAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" 	path="/officeComplaintCategoryAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/officeComplaintCategorySearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/officeComplaintCategorySearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.OfficeComplaintCategoryAction">
+			<forward name="officeComplaintCategoryList" path="basedata.officeComplaintCategoryList" />
+		</action>
+
+		<action attribute="officeContractTypesForm" name="officeContractTypesForm"
+			parameter="method" path="/officeContractTypesAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.OfficeContractTypesAction">
+			<forward name="officeContractTypesList" path="basedata.officeContractTypesList" />
+			<forward name="officeContractTypesDisplay" path="basedata.officeContractTypesDisplay" />
+			<forward name="officeContractTypesAdd" path="basedata.officeContractTypesAdd" />
+			<forward name="officeContractTypesModify" path="basedata.officeContractTypesModify" />
+			<forward name="returnAdd" path="/officeContractTypesAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" 	path="/officeContractTypesAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/officeContractTypesSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/officeContractTypesSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.OfficeContractTypesAction">
+			<forward name="officeContractTypesList" path="basedata.officeContractTypesList" />
+		</action>
+
+		<action attribute="officeCauseAnalysisForm" name="officeCauseAnalysisForm"
+			parameter="method" path="/officeCauseAnalysisAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.OfficeCauseAnalysisAction">
+			<forward name="officeCauseAnalysisList" path="basedata.officeCauseAnalysisList" />
+			<forward name="officeCauseAnalysisDisplay" path="basedata.officeCauseAnalysisDisplay" />
+			<forward name="officeCauseAnalysisAdd" path="basedata.officeCauseAnalysisAdd" />
+			<forward name="officeCauseAnalysisModify" path="basedata.officeCauseAnalysisModify" />
+			<forward name="returnAdd" path="/officeCauseAnalysisAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" 	path="/officeCauseAnalysisAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/officeCauseAnalysisSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/officeCauseAnalysisSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.OfficeCauseAnalysisAction">
+			<forward name="officeCauseAnalysisList" path="basedata.officeCauseAnalysisList" />
+		</action>
+
+		<action attribute="maintenanceWorkingHoursForm" name="maintenanceWorkingHoursForm"
+			parameter="method" path="/maintenanceWorkingHoursAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.MaintenanceWorkingHoursAction">
+			<forward name="maintenanceWorkingHoursList" path="basedata.maintenanceWorkingHoursList" />
+			<forward name="maintenanceWorkingHoursDisplay" path="basedata.maintenanceWorkingHoursDisplay" />
+			<forward name="maintenanceWorkingHoursAdd" path="basedata.maintenanceWorkingHoursAdd" />
+			<forward name="maintenanceWorkingHoursModify" path="basedata.maintenanceWorkingHoursModify" />
+			<forward name="maintenanceWorkingHoursImport" path="basedata.maintenanceWorkingHoursImport" />
+			<forward name="returnImport" path="/maintenanceWorkingHoursAction.do?method=toPrepareImportRecord" />
+			<forward name="returnAdd"
+				path="/maintenanceWorkingHoursAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" 	path="/maintenanceWorkingHoursAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/maintenanceWorkingHoursSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/maintenanceWorkingHoursSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.MaintenanceWorkingHoursAction">
+			<forward name="maintenanceWorkingHoursList" path="basedata.maintenanceWorkingHoursList" />
+		</action>
+
+		<action attribute="returningMaintainForm" name="returningMaintainForm"
+			parameter="method" path="/returningMaintainAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.ReturningMaintainAction">
+			<forward name="returningMaintainList" path="custregistervisitplan.returningMaintainList" />
+			<forward name="returningMaintainDisplay" path="custregistervisitplan.returningMaintainDisplay" />
+			<forward name="returningMaintainAdd" path="custregistervisitplan.returningMaintainAdd" />
+			<forward name="returningMaintainModify" path="custregistervisitplan.returningMaintainModify" />
+			<forward name="returnAdd" 	path="/returningMaintainAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/returningMaintainAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/returningMaintainSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/returningMaintainSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.ReturningMaintainAction">
+			<forward name="returningMaintainList" path="custregistervisitplan.returningMaintainList" />
+		</action>
+		
+		<action attribute="lostElevatorMaintainForm" name="lostElevatorMaintainForm"
+			parameter="method" path="/lostElevatorMaintainAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.LostElevatorMaintainAction">
+			<forward name="lostElevatorMaintainList" path="custregistervisitplan.lostElevatorMaintainList" />
+			<forward name="lostElevatorMaintainDisplay" path="custregistervisitplan.lostElevatorMaintainDisplay" />
+			<forward name="lostElevatorMaintainAdd" path="custregistervisitplan.lostElevatorMaintainAdd" />
+			<forward name="lostElevatorMaintainModify" path="custregistervisitplan.lostElevatorMaintainModify" />
+			<forward name="returnModify" path="/lostElevatorMaintainAction.do?method=toPrepareUpdateRecord" />			
+			<forward name="returnAdd" 	path="/lostElevatorMaintainAction.do?method=toPrepareAddRecord" />
+			<forward name="returnList" path="/lostElevatorMaintainSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/lostElevatorMaintainSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.LostElevatorMaintainAction">
+			<forward name="lostElevatorMaintainList" path="custregistervisitplan.lostElevatorMaintainList" />
+		</action>
+		
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/custReturnRegisterSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustReturnRegisterAction">
+			<forward name="custReturnRegisterList" path="custregistervisitplan.custReturnRegisterList" />
+		</action>
+
+		<action attribute="custReturnRegisterForm" name="custReturnRegisterForm"
+			parameter="method" path="/custReturnRegisterAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustReturnRegisterAction">
+			<forward name="custReturnRegisterList" path="custregistervisitplan.custReturnRegisterList" />
+			<forward name="custReturnRegisterDisplay" 	path="custregistervisitplan.custReturnRegisterDisplay" />
+			<forward name="custReturnRegisterHistoryDisplay" 	path="custregistervisitplan.custReturnRegisterHistoryDisplay" />
+			<forward name="custReturnRegisterAdd" path="custregistervisitplan.custReturnRegisterAdd" />
+			<forward name="custReturnRegisterModify" 	path="custregistervisitplan.custReturnRegisterModify" />
+			<forward name="returnAdd" path="/custReturnRegisterAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" 	path="/custReturnRegisterAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/custReturnRegisterSearchAction.do?method=toSearchRecord" />
+		</action>
+
+		<action attribute="custReturnRegisterHandleForm" name="custReturnRegisterHandleForm"
+			parameter="method" path="/custReturnRegisterHandleAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustReturnRegisterHandleAction">
+			<forward name="custReturnRegisterHandleList" 	path="custregistervisitplan.custReturnRegisterHandleList" />
+			<forward name="custReturnRegisterHandleModify" path="custregistervisitplan.custReturnRegisterHandleModify" />
+			<forward name="returnModify" path="/custReturnRegisterHandleAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/custReturnRegisterHandleAction.do?method=toSearchRecord" />
+		</action>
+
+		<action attribute="custReturnRegisterMinisterHandleForm" name="custReturnRegisterMinisterHandleForm"
+			parameter="method" path="/custReturnRegisterMinisterHandleAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustReturnRegisterMinisterHandleAction">
+			<forward name="custReturnRegisterMinisterHandleList" path="custregistervisitplan.custReturnRegisterMinisterHandleList" />
+			<forward name="custReturnRegisterMinisterHandleModify" path="custregistervisitplan.custReturnRegisterMinisterHandleModify" />
+			<forward name="returnModify" path="/custReturnRegisterMinisterHandleAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/custReturnRegisterMinisterHandleAction.do?method=toSearchRecord" />
+		</action>
+
+		<action attribute="customerLevelForm" name="customerLevelForm"
+			parameter="method" path="/customerLevelAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustomerLevelAction">
+			<forward name="customerLevelList" path="custregistervisitplan.customerLevelList" />
+			<forward name="customerLevelModify" path="custregistervisitplan.customerLevelModify" />
+			<forward name="returnModify" path="/customerLevelAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/customerLevelSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/customerLevelSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustomerLevelAction">
+			<forward name="customerLevelList" path="custregistervisitplan.customerLevelList" />
+		</action>
+
+		<action attribute="customerVisitPlanForm" name="customerVisitPlanForm"
+			parameter="method" path="/customerVisitPlanAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustomerVisitPlanAction">
+			<forward name="customerVisitPlanList" path="custregistervisitplan.customerVisitPlanList" />
+			<forward name="customerVisitPlanAdd" path="custregistervisitplan.customerVisitPlanAdd" />
+			<forward name="customerVisitPlanModify" path="custregistervisitplan.customerVisitPlanModify" />
+			<forward name="customerVisitPlanDisplay" path="custregistervisitplan.customerVisitPlanDisplay" />
+			<forward name="returnAdd" path="/customerVisitPlanAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/customerVisitPlanAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/customerVisitPlanSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/customerVisitPlanSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustomerVisitPlanAction">
+			<forward name="customerVisitPlanList" path="custregistervisitplan.customerVisitPlanList" />
+		</action>
+
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/searchCustomerlevelAction" scope="request"
+			type="com.gzunicorn.struts.action.query.SearchCustomerlevelAction">
+			<forward name="searchCustomerlevelList" path="query.searchCustomerlevelList" />
+		</action>
+
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/searchReturningMaintainAction" scope="request"
+			type="com.gzunicorn.struts.action.query.SearchReturningMaintainAction">
+			<forward name="searchCustomerList" path="query.searchCustomerList" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/SearchLostElevatorMaintainAction" scope="request"
+			type="com.gzunicorn.struts.action.query.SearchLostElevatorMaintainAction">
+			<forward name="searchLostElevatorList" path="query.searchLostElevatorList" />
+		</action>
+		
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/SearchLostElevatorReportAction" scope="request"
+			type="com.gzunicorn.struts.action.query.SearchLostElevatorReportAction">
+			<forward name="searchLostElevatorReportList" path="query.searchLostElevatorReportList" />
+		</action>
+
+		<action attribute="customerVisitFeedbackForm" name="customerVisitFeedbackForm"
+			parameter="method" path="/customerVisitFeedbackAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustomerVisitFeedbackAction">
+			<forward name="customerVisitFeedbackList" path="custregistervisitplan.customerVisitFeedbackList" />
+			<forward name="customerVisitFeedbackAdd" path="custregistervisitplan.customerVisitFeedbackAdd" />
+			<forward name="customerVisitFeedbackDisplay" path="custregistervisitplan.customerVisitFeedbackDisplay" />
+			<forward name="customerVisitFeedbackModify" path="custregistervisitplan.customerVisitFeedbackModify" />
+			<forward name="returnAdd" path="/customerVisitFeedbackAction.do?method=toPrepareAddRecord" />
+			<forward name="returnList" path="/customerVisitFeedbackSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/customerVisitFeedbackSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustomerVisitFeedbackAction">
+			<forward name="customerVisitFeedbackList" path="custregistervisitplan.customerVisitFeedbackList" />
+		</action>
+
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/searchProjectNameAction" scope="request"
+			type="com.gzunicorn.struts.action.query.SearchProjectNameAction">
+			<forward name="projectNameList" path="query.searchProjectNameList" />
+		</action>
+
+		<action attribute="technologySupportForm" name="technologySupportForm"
+			parameter="method" path="/technologySupportAction" scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.technologysupport.TechnologySupportAction">
+			<forward name="technologySupportList" path="mobileofficing.technologySupportList" />
+			<forward name="technologySupportDisplay" path="mobileofficing.technologySupportDisplay" />
+			<forward name="returnList" path="/technologySupportSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/technologySupportSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.technologysupport.TechnologySupportAction">
+			<forward name="technologySupportList" path="mobileofficing.technologySupportList" />
+		</action>
+
+		<action attribute="technologySupportMaintStationForm" name="technologySupportMaintStationForm"
+			parameter="method" path="/technologySupportMaintStationAction" scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.technologysupport.TechnologySupportMaintStationAction">
+			<forward name="technologySupportMaintStationList" 	path="mobileofficing.technologySupportMaintStationList" />
+			<forward name="technologySupportMaintStationModify" path="mobileofficing.technologySupportMaintStationModify" />
+			<forward name="technologySupportMaintStationDisplay" path="mobileofficing.technologySupportMaintStationDisplay" />
+			<forward name="returnModify" path="/technologySupportMaintStationAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/technologySupportMaintStationSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/technologySupportMaintStationSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.technologysupport.TechnologySupportMaintStationAction">
+			<forward name="technologySupportMaintStationList" path="mobileofficing.technologySupportMaintStationList" />
+		</action>
+
+		<action attribute="technologySupportMaintMinisterForm" name="technologySupportMaintMinisterForm"
+			parameter="method" path="/technologySupportMaintMinisterAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.technologysupport.TechnologySupportMaintMinisterAction">
+			<forward name="technologySupportMaintMinisterList" path="mobileofficing.technologySupportMaintMinisterList" />
+			<forward name="technologySupportMaintMinisterModify" path="mobileofficing.technologySupportMaintMinisterModify" />
+			<forward name="technologySupportMaintMinisterDisplay" path="mobileofficing.technologySupportMaintMinisterDisplay" />
+			<forward name="returnModify"  path="/technologySupportMaintMinisterAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/technologySupportMaintMinisterSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/technologySupportMaintMinisterSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.technologysupport.TechnologySupportMaintMinisterAction">
+			<forward name="technologySupportMaintMinisterList" path="mobileofficing.technologySupportMaintMinisterList" />
+		</action>
+
+		<action attribute="technologySupportTechnicalSupportForm" name="technologySupportTechnicalSupportForm"
+			parameter="method" path="/technologySupportTechnicalSupportAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.technologysupport.TechnologySupportTechnicalSupportAction">
+			<forward name="technologySupportTechnicalSupportList" path="mobileofficing.technologySupportTechnicalSupportList" />
+			<forward name="technologySupportTechnicalSupportModify" path="mobileofficing.technologySupportTechnicalSupportModify" />
+			<forward name="technologySupportTechnicalSupportDisplay" path="mobileofficing.technologySupportTechnicalSupportDisplay" />
+			<forward name="returnModify" path="/technologySupportTechnicalSupportAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/technologySupportTechnicalSupportSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/technologySupportTechnicalSupportSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.technologysupport.TechnologySupportTechnicalSupportAction">
+			<forward name="technologySupportTechnicalSupportList" path="mobileofficing.technologySupportTechnicalSupportList" />
+		</action>
+
+		<action attribute="accessoriesRequisitionForm" name="accessoriesRequisitionForm"
+			parameter="method" path="/accessoriesRequisitionAction" scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.accessoriesrequisition.AccessoriesRequisitionAction">
+			<forward name="accessoriesRequisitionList" path="mobileofficing.accessoriesRequisitionList" />
+			<forward name="accessoriesRequisitionDisplay" path="mobileofficing.accessoriesRequisitionDisplay" />
+			<forward name="accessoriesRequisitionModify" path="mobileofficing.accessoriesRequisitionModify" />
+			<forward name="returnList" path="/accessoriesRequisitionSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/accessoriesRequisitionSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.accessoriesrequisition.AccessoriesRequisitionAction">
+			<forward name="accessoriesRequisitionList" path="mobileofficing.accessoriesRequisitionList" />
+		</action>
+
+		<action attribute="accessoriesRequisitionMForm" name="accessoriesRequisitionMForm"
+			parameter="method" path="/accessoriesRequisitionMaintenanceAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.accessoriesrequisition.AccessoriesRequisitionMaintenanceAction">
+			<forward name="accessoriesRequisitionMaintenanceList" path="mobileofficing.accessoriesRequisitionMaintenanceList" />
+			<forward name="accessoriesRequisitionMaintenanceDisplay" path="mobileofficing.accessoriesRequisitionMaintenanceDisplay" />
+			<forward name="accessoriesRequisitionMaintenanceModify" path="mobileofficing.accessoriesRequisitionMaintenanceModify" />
+			<forward name="returnModify" path="/accessoriesRequisitionMaintenanceAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/accessoriesRequisitionMaintenanceSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/accessoriesRequisitionMaintenanceSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.accessoriesrequisition.AccessoriesRequisitionMaintenanceAction">
+			<forward name="accessoriesRequisitionMaintenanceList" path="mobileofficing.accessoriesRequisitionMaintenanceList" />
+		</action>
+
+		
+		<action attribute="accessoriesRequisitionSForm" name="accessoriesRequisitionSForm"
+			parameter="method" path="/accessoriesRequisitionStoremanAction" scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.accessoriesrequisition.AccessoriesRequisitionStoremanAction">
+			<forward name="accessoriesRequisitionStoremanList"  path="mobileofficing.accessoriesRequisitionStoremanList" />
+			<forward name="accessoriesRequisitionStoremanDisplay"  	path="mobileofficing.accessoriesRequisitionStoremanDisplay" />
+			<forward name="accessoriesRequisitionStoremanTrun"  	path="mobileofficing.accessoriesRequisitionStoremanTrun" />
+			<forward name="accessoriesRequisitionStoremanModify" path="mobileofficing.accessoriesRequisitionStoremanModify" />
+			<forward name="returnModify" path="/accessoriesRequisitionStoremanAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/accessoriesRequisitionStoremanSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/accessoriesRequisitionStoremanSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.accessoriesrequisition.AccessoriesRequisitionStoremanAction">
+			<forward name="accessoriesRequisitionStoremanList" path="mobileofficing.accessoriesRequisitionStoremanList" />
+		</action>
+		
+		<action attribute="accessoriesRequisitionRForm" name="accessoriesRequisitionRForm"
+			parameter="method" path="/accessoriesRequisitionReturnAction" scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.accessoriesrequisition.AccessoriesRequisitionReturnAction">
+			<forward name="accessoriesRequisitionReturnList"  path="mobileofficing.accessoriesRequisitionReturnList" />
+			<forward name="accessoriesRequisitionReturnModify" path="mobileofficing.accessoriesRequisitionReturnModify" />
+			<forward name="returnModify" path="/accessoriesRequisitionReturnAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/accessoriesRequisitionReturnSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/accessoriesRequisitionReturnSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.accessoriesrequisition.AccessoriesRequisitionReturnAction">
+			<forward name="accessoriesRequisitionReturnList" path="mobileofficing.accessoriesRequisitionReturnList" />
+		</action>
+		
+		<action attribute="accessoriesRequisitionCForm" name="accessoriesRequisitionCForm"
+			parameter="method" path="/accessoriesRequisitionCkblAction" scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.accessoriesrequisition.AccessoriesRequisitionCkblAction">
+			<forward name="accessoriesRequisitionCkblList"  path="mobileofficing.accessoriesRequisitionCkblList" />
+			<forward name="accessoriesRequisitionCkblModify"    path="mobileofficing.accessoriesRequisitionCkblModify" />
+			<forward name="accessoriesRequisitionCkblDisplay"  	path="mobileofficing.accessoriesRequisitionCkblDisplay" />
+			<forward name="returnModify" path="/accessoriesRequisitionCkblAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/accessoriesRequisitionCkblSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/accessoriesRequisitionCkblSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.accessoriesrequisition.AccessoriesRequisitionCkblAction">
+			<forward name="accessoriesRequisitionCkblList" path="mobileofficing.accessoriesRequisitionCkblList" />
+		</action>
+	
+		<action attribute="logManagementForm" name="logManagementForm"
+			parameter="method" path="/logManagementAction" scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.logmanagement.LogManagementAction">
+			<forward name="logManagementList"  path="mobileofficing.logManagementList" />
+			<forward name="logManagementDisplay"  	path="mobileofficing.logManagementDisplay" />
+			<forward name="logManagementAdd"  	path="mobileofficing.logManagementAdd" />
+			<forward name="returnList" path="/logManagementSearchAction.do?method=toSearchRecord" />
+			<forward name="returnAdd" path="/logManagementAction.do?method=toPrepareAddRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/logManagementSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.logmanagement.LogManagementAction">
+			<forward name="logManagementList" path="mobileofficing.logManagementList" />
+		</action>
+		
+		<action attribute="etcLogManagementForm" name="etcLogManagementForm"
+			parameter="method" path="/etcLogManagementAction" scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.logmanagement.EtcLogManagementAction">
+			<forward name="etclogManagementList"  path="mobileofficing.etclogManagementList" />
+			<forward name="etclogManagementDisplay"  	path="mobileofficing.etclogManagementDisplay" />
+			<forward name="etclogManagementAdd"  path="mobileofficing.etclogManagementAdd" />
+			<forward name="returnAdd" path="/etcLogManagementAction.do?method=toPrepareAddRecord" />
+			<forward name="returnList" path="/etcLogManagementSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/etcLogManagementSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.logmanagement.EtcLogManagementAction">
+			<forward name="etclogManagementList" path="mobileofficing.etclogManagementList" />
+		</action>
+		
+		<action attribute="qcLogManagementForm" name="qcLogManagementForm"
+			parameter="method" path="/qcLogManagementAction" scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.logmanagement.QcLogManagementAction">
+			<forward name="qclogManagementList"  path="mobileofficing.qclogManagementList" />
+			<forward name="qclogManagementDisplay"  	path="mobileofficing.qclogManagementDisplay" />
+			<forward name="qcLogManagementAdd"  path="mobileofficing.qcLogManagementAdd" />
+			<forward name="returnAdd" path="/qcLogManagementAction.do?method=toPrepareAddRecord" />
+			<forward name="returnList" path="/qcLogManagementSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/qcLogManagementSearchAction"
+			scope="request"
+			type="com.gzunicorn.struts.action.MobileOfficing.logmanagement.QcLogManagementAction">
+			<forward name="qclogManagementList" path="mobileofficing.qclogManagementList" />
+			<forward name="getMaintPersonnel"  path="mobileofficing.getMaintPersonnel" />
+		</action>
+
+        <action attribute="maintenanceReceiptForm" name="maintenanceReceiptForm"
+			parameter="method" path="/maintenanceReceiptAction" scope="request"
+			type="com.gzunicorn.struts.action.maintenanceworkplanmanager.MaintenanceReceiptAction">
+			<forward name="maintenanceReceiptList"  path="maintenanceworkplanmanager.maintenanceReceiptList" />
+			<forward name="returnList" path="/maintenanceReceiptAction.do?method=toSearchRecord" />
+			<forward name="toMaintenanceWorkPlan"  path="maintenanceworkplanmanager.maintenanceWorkPlanDisplay" />			
+		</action>
+
+        <action attribute="maintenanceWorkPlanCustomizeForm" name="maintenanceWorkPlanCustomizeForm" parameter="method"
+			path="/maintenanceWorkPlanCustomizeAction" scope="request"
+			type="com.gzunicorn.struts.action.maintenanceworkplanmanager.MaintenanceWorkPlanCustomizeAction">
+			<forward name="maintContractList" path="maintenanceworkplanmanager.maintenanceWorkPlanCustomizeList" />
+			<forward name="maintContractModify" path="maintenanceworkplanmanager.maintenanceWorkPlanCustomizeModify" />
+			<forward name="maintContractDisplay" path="maintenanceworkplanmanager.maintenanceWorkPlanCustomizeDisplay" />
+			<forward name="returnList" path="/maintenanceWorkPlanCustomizeSearchAction.do?method=toSearchRecord" />
+			<forward name="returnModify" path="/maintenanceWorkPlanCustomizeAction.do?method=toPrepareUpdateRecord" />
+		    <forward name="toMaintenanceWorkPlan"  path="maintenanceworkplanmanager.maintenanceWorkPlanDisplay" />			
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/maintenanceWorkPlanCustomizeSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.maintenanceworkplanmanager.MaintenanceWorkPlanCustomizeAction">
+			<forward name="maintContractList" path="maintenanceworkplanmanager.maintenanceWorkPlanCustomizeList" />
+		</action>
+       
+        <action attribute="maintenanceWorkPlanAuditForm" name="maintenanceWorkPlanAuditForm" parameter="method"
+			path="/maintenanceWorkPlanAuditAction" scope="request"
+			type="com.gzunicorn.struts.action.maintenanceworkplanmanager.MaintenanceWorkPlanAuditAction">
+			<forward name="maintContractList" path="maintenanceworkplanmanager.maintenanceWorkPlanAuditList" />
+			<forward name="maintContractModify" path="maintenanceworkplanmanager.maintenanceWorkPlanAuditModify" />
+			<forward name="maintContractDisplay" path="maintenanceworkplanmanager.maintenanceWorkPlanAuditDisplay" />		
+			<forward name="returnList" path="/maintenanceWorkPlanAuditSearchAction.do?method=toSearchRecord" />
+			<forward name="returnModify" path="/maintenanceWorkPlanAuditAction.do?method=toPrepareUpdateRecord" />
+		    <forward name="toMaintenanceWorkPlan"  path="maintenanceworkplanmanager.maintenanceWorkPlanDisplay" />			
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/maintenanceWorkPlanAuditSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.maintenanceworkplanmanager.MaintenanceWorkPlanAuditAction">
+			<forward name="maintContractList" path="maintenanceworkplanmanager.maintenanceWorkPlanAuditList" />
+		</action>
+        
+        <action attribute="maintenanceWorkPlanCompletionForm" name="maintenanceWorkPlanCompletionForm" parameter="method"
+			path="/maintenanceWorkPlanCompletionAction" scope="request"
+			type="com.gzunicorn.struts.action.maintenanceworkplanmanager.MaintenanceWorkPlanCompletionAction">
+			<forward name="maintenanceWorkPlanCompletionList" path="maintenanceworkplanmanager.maintenanceWorkPlanCompletionList" />
+			<forward name="maintenanceWorkPlanCompletionDisplay" path="maintenanceworkplanmanager.maintenanceWorkPlanCompletionDisplay" />
+			<forward name="maintenanceWorkPlanCompletionModify" path="maintenanceworkplanmanager.maintenanceWorkPlanCompletionModify" />
+			<forward name="maintenanceWorkPlanCompletionModify2" path="maintenanceworkplanmanager.maintenanceWorkPlanCompletionModify2" />
+			<forward name="maintenanceWorkPlanCompletionDelete" path="maintenanceworkplanmanager.maintenanceWorkPlanCompletionDelete" />
+			<forward name="returnModify" path="/maintenanceWorkPlanCompletionAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnModify2" path="/maintenanceWorkPlanCompletionAction.do?method=toPrepareUpdate2Record" />
+			<forward name="returnList" path="/maintenanceWorkPlanCompletionSearchAction.do?method=toSearchRecord" />
+		    <forward name="toMaintenanceWorkPlan"  path="maintenanceworkplanmanager.maintenanceWorkPlanDisplay" />			
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/maintenanceWorkPlanCompletionSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.maintenanceworkplanmanager.MaintenanceWorkPlanCompletionAction">
+			<forward name="maintenanceWorkPlanCompletionList" path="maintenanceworkplanmanager.maintenanceWorkPlanCompletionList" />
+		</action>
+		
+       <action attribute="maintenanceReportForm" name="maintenanceReportForm" parameter="method"
+			path="/maintenanceReportAction" scope="request"
+			type="com.gzunicorn.struts.action.maintenanceworkplanmanager.MaintenanceReportAction">
+			<forward name="maintenanceReportSearch" path="maintenanceworkplanmanager.maintenanceReportSearch" />
+			<forward name="maintenanceReportList" path="maintenanceworkplanmanager.maintenanceReportList" />
+			<forward name="maintenanceReportDisplay" path="maintenanceworkplanmanager.maintenanceReportDisplay" />
+			<forward name="returnSearch" path="/maintenanceReportAction.do?method=toSearchRecord" />
+		</action>
+		
+	<action attribute="elevatorTransferCaseRegisterManageForm" name="elevatorTransferCaseRegisterManageForm" parameter="method" path="/elevatorTransferCaseRegisterManageAction" scope="request"
+		type="com.gzunicorn.struts.action.infomanager.elevatortransfercaseregister.ElevatorTransferCaseRegisterManageAction">
+		<forward name="elevatorTransferCaseRegisterAdd" path="infomanager.elevatorTransferCaseRegisterAdd" />
+		<forward name="elevatorTransferCaseRegisterModify" path="infomanager.elevatorTransferCaseRegisterModify" />
+		<forward name="elevatorTransferCaseRegisterList" path="infomanager.elevatorTransferCaseRegisterList" />
+		<forward name="elevatorTransferCaseRegisterDisplay" path="infomanager.elevatorTransferCaseRegisterDisplay" />
+		<forward name="elevatorTransferCaseRegisterCopy" path="infomanager.elevatorTransferCaseRegisterCopy" />	
+		<forward name="elevatorTransferCaseRegisterPrint" path="infomanager.elevatorTransferCaseRegisterPrint" />			
+		<forward name="factoryInspection" path="infomanager.factoryInspection" />
+		<forward name="returnAdd" path="/elevatorTransferCaseRegisterManageAction.do?method=toPrepareAddRecord" />
+		<forward name="returnModify" path="/elevatorTransferCaseRegisterManageAction.do?method=toPrepareUpdateRecord" />
+		<forward name="returnList" path="/elevatorTransferCaseRegisterManageSearchAction.do?method=toSearchRecord" />
+		<forward name="returnCopy" path="/elevatorTransferCaseRegisterManageAction.do?method=toPrepareCopyRecord" />
+		<forward name="returnfactory" path="/elevatorTransferCaseRegisterManageAction.do?method=toPrepareFactoryRecord" />
+	</action>
+    <action attribute="serveTableForm" name="serveTableForm" parameter="method" path="/elevatorTransferCaseRegisterManageSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.infomanager.elevatortransfercaseregister.ElevatorTransferCaseRegisterManageAction">
+		<forward name="elevatorTransferCaseRegisterList" path="infomanager.elevatorTransferCaseRegisterList" />
+	</action>
+	
+	<action attribute="elevatorTransferCaseRegisterAuditForm" name="elevatorTransferCaseRegisterAuditForm" parameter="method" path="/elevatorTransferCaseRegisterAuditAction" scope="request"
+		type="com.gzunicorn.struts.action.infomanager.elevatortransfercaseregister.ElevatorTransferCaseRegisterAuditAction">
+		<forward name="elevatorTransferCaseRegisterAuditDisplay" path="infomanager.elevatorTransferCaseRegisterAuditDisplay"/>
+		<forward name="elevatorTransferCaseRegisterAuditList" path="infomanager.elevatorTransferCaseRegisterAuditList"/>
+		<forward name="returnList" path="/elevatorTransferCaseRegisterAuditSearchAction.do?method=toSearchRecord" />
+	</action>
+    <action attribute="serveTableForm" name="serveTableForm" parameter="method" path="/elevatorTransferCaseRegisterAuditSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.infomanager.elevatortransfercaseregister.ElevatorTransferCaseRegisterAuditAction">
+		<forward name="elevatorTransferCaseRegisterAuditList" path="infomanager.elevatorTransferCaseRegisterAuditList" />
+	</action>
+	
+	<action attribute="accountsPayableManageForm" name="accountsPayableManageForm" parameter="method" path="/accountsPayableManageAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.AccountsPayableManageAction">
+		<forward name="accountsPayableManageAdd" path="contractpaymentmanage.accountsPayableManageAdd" />
+		<forward name="accountsPayableManageModify" path="contractpaymentmanage.accountsPayableManageModify" />
+		<forward name="accountsPayableManageList" path="contractpaymentmanage.accountsPayableManageList" />
+		<forward name="accountsPayableManageDisplay" path="contractpaymentmanage.accountsPayableManageDisplay" />
+		<forward name="returnAdd" path="/accountsPayableManageAction.do?method=toPrepareAddRecord" />
+		<forward name="returnModify" path="/accountsPayableManageAction.do?method=toPrepareUpdateRecord" />
+		<forward name="returnList" path="/accountsPayableManageSearchAction.do?method=toSearchRecord" />
+	</action>
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/accountsPayableManageSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.AccountsPayableManageAction">
+		<forward name="accountsPayableManageList" path="contractpaymentmanage.accountsPayableManageList" />
+		<forward name="accountsPayableManageNextList" path="contractpaymentmanage.accountsPayableManageNextList" />
+	</action>
+	<action attribute="accountsPayableAuditForm" name="accountsPayableAuditForm" parameter="method" path="/accountsPayableAuditAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.AccountsPayableAuditAction">
+		<forward name="accountsPayableAuditModify" path="contractpaymentmanage.accountsPayableAuditModify" />
+		<forward name="accountsPayableAuditDisplay" path="contractpaymentmanage.accountsPayableAuditDisplay" />	
+		<forward name="accountsPayableAuditList" path="contractpaymentmanage.accountsPayableAuditList" />
+		<forward name="returnList" path="/accountsPayableAuditSearchAction.do?method=toSearchRecord" />
+	</action>
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/accountsPayableAuditSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.AccountsPayableAuditAction">
+		<forward name="accountsPayableAuditList" path="contractpaymentmanage.accountsPayableAuditList" />
+	</action>
+	
+	<action attribute="accountsPayableAuditForm" name="accountsPayableAuditForm" 
+		parameter="method" path="/accountsPayableModifyAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.AccountsPayableModifyAction">
+		<forward name="accountsPayableModify" path="contractpaymentmanage.accountsPayableModify" />
+		<forward name="accountsPayableModifyList" path="contractpaymentmanage.accountsPayableModifyList" />
+		<forward name="returnList" path="/accountsPayableModifySearchAction.do?method=toSearchRecord" />
+	</action>
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/accountsPayableModifySearchAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.AccountsPayableModifyAction">
+		<forward name="accountsPayableModifyList" path="contractpaymentmanage.accountsPayableModifyList" />
+	</action>
+	
+	<action attribute="invoiceManageForm" name="invoiceManageForm" parameter="method" path="/invoiceManageAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.InvoiceManageAction">
+		<forward name="invoiceManageAdd" path="contractpaymentmanage.invoiceManageAdd" />
+		<forward name="invoiceManageModify" path="contractpaymentmanage.invoiceManageModify" />
+		<forward name="invoiceManageList" path="contractpaymentmanage.invoiceManageList" />
+		<forward name="invoiceManageDisplay" path="contractpaymentmanage.invoiceManageDisplay" />
+		<forward name="returnAdd" path="/invoiceManageSearchAction.do?method=toSearchNext" />
+		<forward name="returnModify" path="/invoiceManageAction.do?method=toPrepareUpdateRecord" />
+		<forward name="returnList" path="/invoiceManageSearchAction.do?method=toSearchRecord" />
+	</action>
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/invoiceManageSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.InvoiceManageAction">
+		<forward name="invoiceManageList" path="contractpaymentmanage.invoiceManageList" />
+	    <forward name="invoiceManageNextList" path="contractpaymentmanage.invoiceManageNextList" />
+	</action>
+	
+	<action attribute="invoiceAuditForm" name="invoiceAuditForm" parameter="method" path="/invoiceAuditAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.InvoiceAuditAction">
+		<forward name="invoiceAuditModify" path="contractpaymentmanage.invoiceAuditModify" />
+		<forward name="invoiceAuditDisplay" path="contractpaymentmanage.invoiceAuditDisplay" />	
+		<forward name="invoiceAuditList" path="contractpaymentmanage.invoiceAuditList" />
+		<forward name="returnList" path="/invoiceAuditSearchAction.do?method=toSearchRecord" />
+	</action>
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/invoiceAuditSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.InvoiceAuditAction">
+		<forward name="invoiceAuditList" path="contractpaymentmanage.invoiceAuditList" />
+	</action>
+	
+	<action attribute="paymentManageForm" name="paymentManageForm" parameter="method" path="/paymentManageAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.PaymentManageAction">
+		<forward name="paymentManageAdd" path="contractpaymentmanage.paymentManageAdd" />
+		<forward name="paymentManageModify" path="contractpaymentmanage.paymentManageModify" />
+		<forward name="paymentManageList" path="contractpaymentmanage.paymentManageList" />
+		<forward name="paymentManageDisplay" path="contractpaymentmanage.paymentManageDisplay" />
+		<forward name="returnAdd" path="/paymentManageSearchAction.do?method=toSearchNext" />
+		<forward name="returnModify" path="/paymentManageAction.do?method=toPrepareUpdateRecord" />
+		<forward name="returnList" path="/paymentManageSearchAction.do?method=toSearchRecord" />
+	</action>
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/paymentManageSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.PaymentManageAction">
+		<forward name="paymentManageList" path="contractpaymentmanage.paymentManageList" />
+	    <forward name="paymentManageNextList" path="contractpaymentmanage.paymentManageNextList" />
+	</action>
+	
+	<action attribute="paymentAuditForm" name="paymentAuditForm" parameter="method" path="/paymentAuditAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.PaymentAuditAction">
+		<forward name="paymentAuditModify" path="contractpaymentmanage.paymentAuditModify" />
+		<forward name="paymentAuditList" path="contractpaymentmanage.paymentAuditList" />
+		<forward name="returnList" path="/paymentAuditSearchAction.do?method=toSearchRecord" />
+	</action>
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/paymentAuditSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.PaymentAuditAction">
+		<forward name="paymentAuditList" path="contractpaymentmanage.paymentAuditList" />
+	</action>
+	
+	<action attribute="contractPaymentEnquiryForm" name="contractPaymentEnquiryForm" parameter="method" path="/contractPaymentEnquiryAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.ContractPaymentEnquiryAction">
+		<forward name="contractPaymentEnquiryDisplay" path="contractpaymentmanage.contractPaymentEnquiryDisplay" />
+		<forward name="contractPaymentEnquiryList" path="contractpaymentmanage.contractPaymentEnquiryList" />
+		<forward name="returnList" path="/contractPaymentEnquirySearchAction.do?method=toSearchRecord" />
+	</action>
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/contractPaymentEnquirySearchAction" scope="request"
+		type="com.gzunicorn.struts.action.contractpaymentmanage.ContractPaymentEnquiryAction">
+		<forward name="contractPaymentEnquiryList" path="contractpaymentmanage.contractPaymentEnquiryList" />
+	</action>
+	
+	<action attribute="markingScoresForm" name="markingScoresForm"
+			parameter="method" path="/markingScoreAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.MarkingScoreAction">
+			<forward name="markingScoreList" path="basedata.markingItemsList" />
+			<forward name="markingScoreDisplay" path="basedata.markingItemsDisplay" />
+			<forward name="markingScoreAdd" path="basedata.markingItemsAdd" />
+			<forward name="markingScoreModify" path="basedata.markingItemsModify" />
+			<forward name="returnAdd" path="/markingScoreAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/markingScoreAction.do?method=toPrepareUpdateRecord" />
+			<forward name="returnList" path="/markingScoreSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/markingScoreSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.MarkingScoreAction">
+			<forward name="markingScoreList" path="basedata.markingItemsList" />
+		</action>
+	
+	<action attribute="outsideFootballElevatorForm" name="outsideFootballElevatorForm" parameter="method"
+			path="/outsideFootballElevatorAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.OutsideFootballElevatorAction">
+			<forward name="outsideFootballElevatorList" path="basedata.outsideFootballElevatorList" />
+			<forward name="outsideFootballElevatorImport" path="basedata.outsideFootballElevatorImport" />
+			<forward name="outsideFootballElevatorModify" path="basedata.outsideFootballElevatorModify" />
+			<forward name="outsideFootballElevatorDisplay" path="basedata.outsideFootballElevatorDisplay" />
+			<forward name="returnList" path="/outsideFootballElevatorSearchAction.do?method=toSearchRecord" />
+			<forward name="returnImport" path="/outsideFootballElevatorAction.do?method=toPrepareImportRecord" />
+			<forward name="returnModify" path="/outsideFootballElevatorAction.do?method=toPrepareUpdateRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/outsideFootballElevatorSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.OutsideFootballElevatorAction">
+			<forward name="outsideFootballElevatorList" path="basedata.outsideFootballElevatorList" />
+		</action>
+	
+	
+	<action attribute="entrustCustomerForm" name="entrustCustomerForm" parameter="method"
+			path="/entrustCustomerAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.EntrustCustomerAction">
+			<forward name="entrustCustomerList" path="basedata.entrustCustomerList" />
+			<forward name="entrustCustomerAdd" path="basedata.entrustCustomerAdd" />
+			<forward name="entrustCustomerModify" path="basedata.entrustCustomerModify" />
+			<forward name="entrustCustomerDisplay" path="basedata.entrustCustomerDisplay" />
+			<forward name="returnList" path="/entrustCustomerSearchAction.do?method=toSearchRecord" />
+			<forward name="returnAdd" path="/entrustCustomerAction.do?method=toPrepareAddRecord" />
+			<forward name="returnModify" path="/entrustCustomerAction.do?method=toPrepareUpdateRecord" />
+		    <forward name="entrustCustomerImport" path="basedata.entrustCustomerImport" />
+			<forward name="returnImport" path="/entrustCustomerAction.do?method=toPrepareImportRecord" />
+		
+		</action>		
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/entrustCustomerSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.basedata.EntrustCustomerAction">
+			<forward name="entrustCustomerList" path="basedata.entrustCustomerList" />
+			<forward name="principalEntrustSelect" path="basedata.principalEntrustSelect" />
+		</action>
+	
+	<action attribute="handoverElevatorSpecialClaimForm" name="handoverElevatorSpecialClaimForm" parameter="method"
+		path="/specialRequirementsAction" scope="request"
+		type="com.gzunicorn.struts.action.basedata.SpecialRequirementsAction">
+		<forward name="handoverElevatorSpecialClaimList" path="basedata.handoverElevatorSpecialClaimList" />
+		<forward name="handoverElevatorSpecialClaimAdd" path="basedata.handoverElevatorSpecialClaimAdd" />
+		<forward name="handoverElevatorSpecialClaimModify" path="basedata.handoverElevatorSpecialClaimModify" />
+		<forward name="handoverElevatorSpecialClaimDisplay" path="basedata.handoverElevatorSpecialClaimDisplay" />
+		<forward name="returnList" path="/specialRequirementsSearchAction.do?method=toSearchRecord" />
+		<forward name="returnAdd" path="/specialRequirementsAction.do?method=toPrepareAddRecord" />
+		<forward name="returnModify" path="/specialRequirementsAction.do?method=toPrepareUpdateRecord" />
+	</action>		
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/specialRequirementsSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.basedata.SpecialRequirementsAction">
+		<forward name="handoverElevatorSpecialClaimList" path="basedata.handoverElevatorSpecialClaimList" />
+	</action>
+	
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/searchSpecialRegisterAction" scope="request"
+		type="com.gzunicorn.struts.action.query.SpecialRegisterAction">
+		<forward name="specialRegisterList" path="basedata.specialRegisterList" />
+	</action>
+	
+	<action attribute="maintenanceRegistrationForm" name="maintenanceRegistrationForm" parameter="method"
+		path="/maintenanceRegistrationAction" scope="request"
+		type="com.gzunicorn.struts.action.MobileOfficing.MaintenanceRegistrationAction">
+		<forward name="maintenanceRegistrationList" path="MobileOfficing.MaintenanceRegistrationList" />
+		<forward name="maintenanceRegistrationModify" path="MobileOfficing.MaintenanceRegistrationModify" />
+		<forward name="maintenanceRegistrationDisplay" path="MobileOfficing.MaintenanceRegistrationDisplay" />
+		<forward name="returnList" path="/maintenanceRegistrationSearchAction.do?method=toSearchRecord" />
+		<forward name="returnModify" path="/maintenanceRegistrationAction.do?method=toPrepareUpdateRecord" />
+		<forward name="returnAccessoriesRequisition" path="/maintenanceRegistrationAction.do?method=toAccessoriesRequisition" />
+	    <forward name="toAccessoriesRequisition" path="MobileOfficing.AccessoriesRequisition" />
+	
+	</action>		
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/maintenanceRegistrationSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.MobileOfficing.MaintenanceRegistrationAction">
+		<forward name="maintenanceRegistrationList" path="MobileOfficing.MaintenanceRegistrationList" />
+	</action>
+	
+	
+	<action attribute="repairTasksRegistrationForm" name="repairTasksRegistrationForm" parameter="method"
+		path="/repairTasksRegistrationAction" scope="request"
+		type="com.gzunicorn.struts.action.MobileOfficing.RepairTasksRegistrationAction">
+		<forward name="repairTasksRegistrationList" path="MobileOfficing.repairTasksRegistrationList" />
+		<forward name="repairTasksRegistrationModify" path="MobileOfficing.repairTasksRegistrationModify" />
+		<forward name="repairTasksRegistrationDisplay" path="MobileOfficing.repairTasksRegistrationDisplay" />
+		<forward name="returnList" path="/repairTasksRegistrationSearchAction.do?method=toSearchRecord" />
+		<forward name="returnModify" path="/repairTasksRegistrationAction.do?method=toPrepareUpdateRecord" />
+		<forward name="returnAccessoriesRequisition" path="/repairTasksRegistrationAction.do?method=toAccessoriesRequisition" />
+	    <forward name="toAccessoriesRequisition" path="MobileOfficing.AccessoriesRequisition" />
+	    <forward name="toTechnologySupport" path="MobileOfficing.TechnologySupport" />
+	    <forward name="returnTechnologySupport" path="/repairTasksRegistrationAction.do?method=toTechnologySupport" />
+	    
+	    
+	</action>		
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/repairTasksRegistrationSearchAction" scope="request"
+		type="com.gzunicorn.struts.action.MobileOfficing.RepairTasksRegistrationAction">
+		<forward name="repairTasksRegistrationList" path="MobileOfficing.repairTasksRegistrationList" />
+	</action>
+	
+	
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/searchReimbursPeopleationAction" scope="request"
+		type="com.gzunicorn.struts.action.query.SearchReimbursPeopleAction">
+		<forward name="searchReimbursPeopleList" path="query.searchReimbursPeopleList" />
+	</action>
+	
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/searchMaintDivisionBXAction" scope="request"
+		type="com.gzunicorn.struts.action.query.SearchMaintDivisionBXAction">
+		<forward name="searchMaintDivisionBXList" path="query.searchMaintDivisionBXList" />
+	</action>
+	
+	<action attribute="serveTableForm" name="serveTableForm"
+		parameter="method" path="/searchCalloutAction" scope="request"
+		type="com.gzunicorn.struts.action.query.SearchCalloutAction">
+		<forward name="searchCalloutHmtList" path="query.searchCalloutHmtList" />
+		<forward name="searchCalloutHftList" path="query.searchCalloutHftList" />
+		<forward name="searchCalloutElenoList" path="query.searchCalloutElenoList" />
+	</action>
+	  
+	<action attribute="customerVisitFeedbackAuditForm" name="customerVisitFeedbackAuditForm"
+			parameter="method" path="/customerVisitFeedbackAuditAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustomerVisitFeedbackAuditAction">
+			<forward name="customerVisitFeedbackAuditList" path="custregistervisitplan.customerVisitFeedbackAuditList" />
+			<forward name="customerVisitFeedbackAuditDisplay" path="custregistervisitplan.customerVisitFeedbackAuditDisplay" />
+			<forward name="customerVisitFeedbackAuditModify" path="custregistervisitplan.customerVisitFeedbackAuditModify" />
+			<forward name="returnList" path="/customerVisitFeedbackAuditSearchAction.do?method=toSearchRecord" />
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/customerVisitFeedbackAuditSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.custregistervisitplan.CustomerVisitFeedbackAuditAction">
+			<forward name="customerVisitFeedbackAuditList" path="custregistervisitplan.customerVisitFeedbackAuditList" />
+		</action>
+	
+	<action attribute="outsourcingContractForm" name="outsourcingContractForm"
+			parameter="method" path="/outsourcingContractAction" scope="request"
+			type="com.gzunicorn.struts.action.engcontractmanager.outsourcingcontract.OutsourcingContractAction">
+			<forward name="returnList" path="/outsourcingContractSearchAction.do?method=toSearchRecord"></forward> 
+	      	<forward name="returnAdd" path="/outsourcingContractSearchAction.do?method=toNextSearchRecord"></forward>
+	      	<forward name="returnMondity" path="/outsourcingContractAction.do?method=toPrepareUpdateRecord"></forward>
+	      	<forward name="returntotask" path="/outsourcingContractAction.do?method=totask"></forward>
+	      	<forward name="toContractDisplayAddMondity" path="toOutsourcing.DisplayAddMondity"></forward>    	
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/outsourcingContractSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.engcontractmanager.outsourcingcontract.OutsourcingContractAction">
+			<forward name="outsourcingContractList" path="outsourcingContract.outsourcingContractList" />
+			<forward name="tonextList" path="outsourcingContract.tonextList" />
+		</action>
+	
+	<action attribute="outsourcingContractForm" name="outsourcingContractForm"
+			parameter="method" path="/outsourcingContractAuditAction" scope="request"
+			type="com.gzunicorn.struts.action.engcontractmanager.outsourcingcontract.OutsourcingContractAuditAction">
+			<forward name="returnList" path="/outsourcingContractAuditSearchAction.do?method=toSearchRecord"></forward>
+			<forward name="toOutsourcingAuditDisplay" path="outsourcingAudit.display"></forward>   	
+		</action>
+		<action attribute="serveTableForm" name="serveTableForm"
+			parameter="method" path="/outsourcingContractAuditSearchAction" scope="request"
+			type="com.gzunicorn.struts.action.engcontractmanager.outsourcingcontract.OutsourcingContractAuditAction">
+			<forward name="toOutsourcingList" path="outsourcingAudit.list" />
+		</action>
+	
+	<action attribute="elevatorTransferCaseRegisterManageForm" name="elevatorTransferCaseRegisterManageForm" parameter="method" path="/elevatorTransferCaseRegisterDisplayAction" scope="request"
+		type="com.gzunicorn.struts.action.infomanager.elevatortransfercaseregister.ElevatorTransferCaseRegisterDisplayAction">
+		<forward name="elevatorTransferCaseRegisterDisplayList" path="infomanager.elevatorTransferCaseRegisterDisplayList" />
+		<forward name="elevatorTransferCaseRegisterDisplayDisplay" path="infomanager.elevatorTransferCaseRegisterDisplayDisplay" />
+	</action>
+    <action attribute="serveTableForm" name="serveTableForm" parameter="method" path="/elevatorTransferCaseRegisterDisplaySearchAction" scope="request"
+		type="com.gzunicorn.struts.action.infomanager.elevatortransfercaseregister.ElevatorTransferCaseRegisterDisplayAction">
+		<forward name="elevatorTransferCaseRegisterDisplayList" path="infomanager.elevatorTransferCaseRegisterDisplayList" />
+	</action>
+	<action attribute="elevatorTransferCaseRegisterManageForm" name="elevatorTransferCaseRegisterManageForm" parameter="method" path="/elevatorTransferCaseRegisterModifyAction" scope="request"
+		type="com.gzunicorn.struts.action.infomanager.elevatortransfercaseregister.ElevatorTransferCaseRegisterModifyAction">
+		<forward name="elevatorTransferCaseRegisterModifyList" path="infomanager.elevatorTransferCaseRegisterModifyList" />
+		<forward name="elevatorTransferCaseRegisterModifyModify" path="infomanager.elevatorTransferCaseRegisterModifyModify" />
+		<forward name="elevatorTransferCaseRegisterModifyDisplay" path="infomanager.elevatorTransferCaseRegisterModifyDisplay" />
+		<forward name="returnList" path="/elevatorTransferCaseRegisterModifySearchAction.do?method=toSearchRecord" />
+		<forward name="returnModify" path="/elevatorTransferCaseRegisterModifyAction.do?method=toPrepareUpdateRecord" />
+	    
+	</action>
+    <action attribute="serveTableForm" name="serveTableForm" parameter="method" path="/elevatorTransferCaseRegisterModifySearchAction" scope="request"
+		type="com.gzunicorn.struts.action.infomanager.elevatortransfercaseregister.ElevatorTransferCaseRegisterModifyAction">
+		<forward name="elevatorTransferCaseRegisterModifyList" path="infomanager.elevatorTransferCaseRegisterModifyList" />
+	</action>
+
+	<action attribute="maintenanceWorkPlanTurnActionForm" name="maintenanceWorkPlanTurnActionForm" parameter="method" path="/maintenanceWorkPlanTurnAction" scope="request"
+		type="com.gzunicorn.struts.action.maintenanceworkplanmanager.MaintenanceWorkPlanTurnAction">
+		<forward name="maintenanceTurnList" path="maintenanceworkplanmanager.maintenanceworkplanturnList" />
+		<forward name="returnList" path="/maintenanceWorkPlanTurnAction.do?method=toSearchRecord" />
+	    
+	</action>
+	</action-mappings>
+</struts-config>

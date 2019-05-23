@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Sat Nov 05 17:04:28 CST 2005                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.sysmanager">
+
+    <class name="Loginuser" table="LoginUser">
+        <id name="userid" column="UserID" type="string">
+            <generator class="assigned"/>
+        </id>
+ 
+        <property name="username" column="UserName" type="string"  not-null="true" />
+        <property name="passwd" column="Passwd" type="string"  not-null="true" />
+        <property name="storageid" column="StorageID" type="string" not-null="true" />
+        <property name="class1id" column="Class1ID" type="string" not-null="true" />
+        <property name="roleid" column="RoleID" type="string"  not-null="true" />
+        <property name="dutyid" column="DutyID" type="string" />
+        <property name="operref" column="OperRef" type="string" />
+        <property name="phone" column="Phone" type="string" />
+        <property name="fax" column="Fax" type="string" />
+        <property name="email" column="Email" type="string"/>
+        <property name="enabledflag" column="EnabledFlag" type="string"  not-null="true" />
+        <property name="rem1" column="Rem1" type="string" />
+        <property name="grcid" column="grcid" type="string" />
+        <property name="idcardno" column="IdCardNo" type="string" />
+        <property name="phoneimei" column="phoneimei" type="string" />
+        
+        <property name="newphone" column="newPhone" type="string" />
+        <property name="newemail" column="newEmail" type="string" />
+        <property name="nweidcardno" column="nweIDCardNo" type="string" />
+        <property name="auditoperid" column="AuditOperid" type="string" />
+        <property name="auditdate" column="AuditDate" type="string" />
+        <property name="auditrem" column="AuditRem" type="string" />
+    </class>
+    
+</hibernate-mapping>

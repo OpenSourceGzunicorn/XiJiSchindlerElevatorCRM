@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root-container name="servicingcontractquotemaster" width="915" height="372">
+  <node name="填写维改报价申请表" x="384" y="12" width="168" height="36">
+    <edge>
+      <label x="-11" y="-10"/>
+    </edge>
+  </node>
+  <node name="修改维改报价申请表" x="142" y="100" width="173" height="36">
+    <edge>
+      <label x="-17" y="-15"/>
+    </edge>
+    <edge>
+      <label x="-14" y="-10"/>
+    </edge>
+  </node>
+  <node name="维保分部长审核" x="400" y="99" width="132" height="36">
+    <edge>
+      <label x="-50" y="-10"/>
+    </edge>
+    <edge>
+      <label x="-19" y="-12"/>
+      <bendpoint w1="-113" h1="38" w2="124" h2="35"/>
+    </edge>
+  </node>
+  <node name="维保总部长审核" x="400" y="203" width="132" height="36">
+    <edge>
+      <label x="5" y="-10"/>
+    </edge>
+    <edge>
+      <label x="-10" y="-20"/>
+      <bendpoint w1="-106" h1="1" w2="131" h2="96"/>
+    </edge>
+  </node>
+  <node name="流程通过" x="400" y="285" width="132" height="36"/>
+  <node name="流程终止" x="164" y="283" width="132" height="36"/>
+</root-container>

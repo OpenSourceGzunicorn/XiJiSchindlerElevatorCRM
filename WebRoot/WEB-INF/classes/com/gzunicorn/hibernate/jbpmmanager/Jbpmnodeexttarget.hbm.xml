@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Sun Jan 18 15:21:59 CST 2009                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.jbpmmanager">
+
+    <class name="Jbpmnodeexttarget" table="JBPM_NodeExtTarget">
+        <id name="actionid" column="ActionId" type="long">
+            <generator class="native"/>
+        </id>
+ 		<property name="nodeid" column="NodeId" type="long"  not-null="true" />
+        <property name="actionname" column="ActionName" type="string"  not-null="true" />
+        <property name="des" column="Des" type="string" />
+        <property name="enabledflag" column="EnabledFlag" type="string"  not-null="true" />
+        <property name="url1" column="Url1" type="string"  not-null="true" />
+        <property name="target1" column="Target1" type="string"  not-null="true" />
+        <property name="param1" column="Param1" type="string"  not-null="true" />
+        <property name="url2" column="Url2" type="string" />
+        <property name="target2" column="Target2" type="string" />
+        <property name="param2" column="Param2" type="string" />
+        <property name="url3" column="Url3" type="string" />
+        <property name="target3" column="Target3" type="string" />
+        <property name="param3" column="Param3" type="string" />
+        <property name="ext1" column="Ext1" type="string" />
+        <property name="ext2" column="Ext2" type="string" />
+        <property name="ext3" column="Ext3" type="string" />
+        <property name="ext4" column="Ext4" type="string" />
+        <property name="ext5" column="Ext5" type="string" />
+ 
+    </class>
+    
+</hibernate-mapping>

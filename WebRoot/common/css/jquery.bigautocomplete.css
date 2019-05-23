@@ -1,0 +1,30 @@
+.bigautocomplete{
+	display: none;
+	background-color: #FFFFFF;
+	border: 1px solid #BCBCBC;
+	position: absolute;
+	z-index: 100;
+	max-height: 220px;
+	overflow-x:hidden;
+	overflow-y:auto; 
+}
+.bigautocomplete table{
+	border-collapse: collapse;
+    border-spacing: 0;	
+	background: none repeat scroll 0 0 #FFFFFF;
+	width: 100%;
+	cursor: default;
+}
+
+.bigautocomplete table tr{
+	background: none repeat scroll 0 0 #FFFFFF;
+}
+
+.bigautocomplete .ct{
+	background: none repeat scroll 0 0 #D2DEE8 !important;
+}
+.bigautocomplete div{
+	word-wrap:break-word;
+	word-break:break-all;
+	padding:1px 5px;
+}

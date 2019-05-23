@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+"http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<!-- ???????TabLib -->
+<taglib>
+	<tlibversion>1.0</tlibversion>
+	<jspversion>1.1</jspversion>
+  <shortname>RoleShow</shortname>
+	<info></info>
+
+  <tag>
+    <name>RoleShowTag</name>
+    <tagclass>com.gzunicorn.common.taglib.roleshow.RoleShowTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info></info>
+  </tag>
+   <tag>
+    <name>RoleShowNostatusTag</name>
+    <tagclass>com.gzunicorn.common.taglib.roleshow.RoleShowNostatusTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info></info>
+  </tag>
+  
+    <tag>
+    <name>RoleUserShowTag</name>
+    <tagclass>com.gzunicorn.common.taglib.roleshow.RoleUserShowTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info></info>
+  </tag>
+  
+  <tag>
+    <name>EngineUserShowTag</name>
+    <tagclass>com.gzunicorn.common.taglib.roleshow.EngineUserShowTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info></info>
+  </tag>
+  
+  <tag>
+    <name>RoleAreaShowTag</name>
+    <tagclass>com.gzunicorn.common.taglib.roleshow.RoleAreaShowTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info></info>
+  </tag>
+  
+  <tag>
+    <name>RoleDeckUserAreaShowTag</name>
+    <tagclass>com.gzunicorn.common.taglib.roleshow.RoleDeckUserAreaShowTag</tagclass>
+    <bodycontent>empty</bodycontent>
+    <info></info>
+  </tag>
+</taglib>

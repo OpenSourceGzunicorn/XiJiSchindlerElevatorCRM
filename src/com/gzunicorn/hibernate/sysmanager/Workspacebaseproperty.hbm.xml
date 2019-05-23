@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+                            "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                            "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<!-- DO NOT EDIT: This is a generated file that is synchronized -->
+<!-- by MyEclipse Hibernate tool integration.                   -->
+<!-- Created Fri Jan 18 17:08:31 CST 2008                         -->
+<hibernate-mapping package="com.gzunicorn.hibernate.sysmanager">
+
+    <class name="Workspacebaseproperty" table="WorkspaceBaseProperty">
+        <id name="wsid" column="WsId" type="string">
+            <generator class="assigned"/>
+        </id>
+ 
+        <property name="wskey" column="WsKey" type="string"  not-null="true" />
+        <property name="title" column="Title" type="string"  not-null="true" />
+        <property name="link" column="Link" type="string"  not-null="true" />
+        <property name="tip" column="Tip" type="string" />
+        <property name="enabledflag" column="EnabledFlag" type="string" />
+        <property name="ext1" column="Ext1" type="string" />
+        <property name="ext2" column="Ext2" type="string" />
+        <property name="ext3" column="Ext3" type="string" />
+        <property name="divid" column="DIVID" type="string" />
+        <property name="jsfuname" column="JSfuName" type="string" />
+        <property name="numno" column="numno" type="integer" />
+
+    </class>
+    
+</hibernate-mapping>

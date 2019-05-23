@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- jdbc connection properties -->
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.SQLServerDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			net.sourceforge.jtds.jdbc.Driver
+		</property>
+		<property name="hibernate.connection.url">
+			jdbc:jtds:sqlserver://192.168.1.56:1533/XJSCRM
+		</property>
+		<property name="hibernate.connection.username">xjscrm</property>
+		<property name="hibernate.connection.password">xjscrm</property>
+
+		<!-- property name="connection.pool.size">20</property-->
+		<property name="show_sql">false</property>
+		<property name="format_sql">true</property>
+		<property name="dbcp.min_size">3</property>
+		<property name="dbcp.max_size">2000</property>
+		<property name="dbcp.timeout">36000</property>
+		<property name="dbcp.max_statements">500</property>
+		<property name="dbcp.idle_test_period">300000</property>
+
+		<!-- 配置缓存ehcache.xml  -->
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<property name="hibernate.cache.provider_class">
+			org.hibernate.cache.EhCacheProvider
+		</property>
+
+		<!-- property name="hibernate.connection.provider_class">
+			org.hibernate.connection.C3P0ConnectionProvider
+			</property-->
+
+		<!-- c3p0-->
+
+		<!-- property name="c3p0.acquire_increment">1</property>
+			<property name="c3p0.idle_test_period">100</property>
+			<property name="c3p0.max_size">10</property>
+			<property name="c3p0.max_statements">2</property>
+			<property name="c3p0.min_size">1</property>
+			<property name="c3p0.timeout">6000</property>
+			<property name="c3p0.timeout">6000</property>
+			<property name="preferredTestQuery">select 'test'</property>
+			<property   name="show_sql">false</property-->
+
+		<!-- property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+			<property name="hibernate.c3p0.min_size">8</property>
+			<property name="hibernate.c3p0.max_size">200</property>
+			<property name="hibernate.c3p0.timeout">600</property>
+			<property name="hibernate.c3p0.max_statements">0</property>
+			<property name="hibernate.c3p0.idle_test_period">60</property>
+			<property name="hibernate.c3p0.acquire_increment">2</property>
+			<property name="hibernate.c3p0.validate">true</property-->
+
+
+		<mapping resource="org/jbpm/graph/action/Script.hbm.xml" />
+		<mapping resource="org/jbpm/identity/User.hbm.xml" />
+		<mapping resource="org/jbpm/identity/Group.hbm.xml" />
+		<mapping resource="org/jbpm/identity/Membership.hbm.xml" />
+
+		<!-- ###################### -->
+		<!-- # jbpm mapping files # -->
+		<!-- ###################### -->
+
+
+		<mapping resource="org/jbpm/db/hibernate.queries.hbm.xml" />
+
+		<mapping
+			resource="org/jbpm/graph/def/ProcessDefinition.hbm.xml" />
+		<mapping resource="org/jbpm/graph/def/Node.hbm.xml" />
+		<mapping resource="org/jbpm/graph/def/Transition.hbm.xml" />
+		<mapping resource="org/jbpm/graph/def/Event.hbm.xml" />
+		<mapping resource="org/jbpm/graph/def/Action.hbm.xml" />
+		<mapping resource="org/jbpm/graph/def/SuperState.hbm.xml" />
+		<mapping resource="org/jbpm/graph/def/ExceptionHandler.hbm.xml" />
+		<mapping resource="org/jbpm/instantiation/Delegation.hbm.xml" />
+
+		<!-- graph.node mapping files -->
+		<mapping resource="org/jbpm/graph/node/StartState.hbm.xml" />
+		<mapping resource="org/jbpm/graph/node/EndState.hbm.xml" />
+		<mapping resource="org/jbpm/graph/node/ProcessState.hbm.xml" />
+		<mapping resource="org/jbpm/graph/node/Decision.hbm.xml" />
+		<mapping resource="org/jbpm/graph/node/Fork.hbm.xml" />
+		<mapping resource="org/jbpm/graph/node/Join.hbm.xml" />
+		<mapping resource="org/jbpm/graph/node/State.hbm.xml" />
+		<mapping resource="org/jbpm/graph/node/TaskNode.hbm.xml" />
+
+		<!-- context.def mapping files -->
+		<mapping
+			resource="org/jbpm/context/def/ContextDefinition.hbm.xml" />
+		<mapping resource="org/jbpm/context/def/VariableAccess.hbm.xml" />
+
+		<!-- taskmgmt.def mapping files -->
+		<mapping
+			resource="org/jbpm/taskmgmt/def/TaskMgmtDefinition.hbm.xml" />
+		<mapping resource="org/jbpm/taskmgmt/def/Swimlane.hbm.xml" />
+		<mapping resource="org/jbpm/taskmgmt/def/Task.hbm.xml" />
+		<mapping
+			resource="org/jbpm/taskmgmt/def/TaskController.hbm.xml" />
+
+		<!-- module.def mapping files -->
+		<mapping
+			resource="org/jbpm/module/def/ModuleDefinition.hbm.xml" />
+
+		<!-- bytes mapping files -->
+		<mapping resource="org/jbpm/bytes/ByteArray.hbm.xml" />
+
+		<!-- file.def mapping files -->
+		<mapping resource="org/jbpm/file/def/FileDefinition.hbm.xml" />
+
+		<!-- scheduler.def mapping files -->
+		<mapping
+			resource="org/jbpm/scheduler/def/CreateTimerAction.hbm.xml" />
+		<mapping
+			resource="org/jbpm/scheduler/def/CancelTimerAction.hbm.xml" />
+
+		<!-- graph.exe mapping files -->
+		<mapping resource="org/jbpm/graph/exe/Comment.hbm.xml" />
+		<mapping resource="org/jbpm/graph/exe/ProcessInstance.hbm.xml" />
+		<mapping resource="org/jbpm/graph/exe/Token.hbm.xml" />
+		<mapping resource="org/jbpm/graph/exe/RuntimeAction.hbm.xml" />
+
+		<!-- module.exe mapping files -->
+		<mapping resource="org/jbpm/module/exe/ModuleInstance.hbm.xml" />
+
+		<!-- context.exe mapping files -->
+		<mapping
+			resource="org/jbpm/context/exe/ContextInstance.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/exe/TokenVariableMap.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/exe/VariableInstance.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/exe/variableinstance/ByteArrayInstance.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/exe/variableinstance/DateInstance.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/exe/variableinstance/DoubleInstance.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/exe/variableinstance/HibernateLongInstance.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/exe/variableinstance/HibernateStringInstance.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/exe/variableinstance/LongInstance.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/exe/variableinstance/NullInstance.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/exe/variableinstance/StringInstance.hbm.xml" />
+
+		<!-- msg.db mapping files -->
+		<mapping resource="org/jbpm/msg/Message.hbm.xml" />
+		<mapping resource="org/jbpm/msg/db/TextMessage.hbm.xml" />
+		<mapping
+			resource="org/jbpm/command/ExecuteActionCommand.hbm.xml" />
+		<mapping resource="org/jbpm/command/ExecuteNodeCommand.hbm.xml" />
+		<mapping resource="org/jbpm/command/SignalCommand.hbm.xml" />
+		<mapping
+			resource="org/jbpm/command/TaskInstanceEndCommand.hbm.xml" />
+
+		<!-- taskmgmt.exe mapping files -->
+		<mapping
+			resource="org/jbpm/taskmgmt/exe/TaskMgmtInstance.hbm.xml" />
+		<mapping resource="org/jbpm/taskmgmt/exe/TaskInstance.hbm.xml" />
+		<mapping resource="org/jbpm/taskmgmt/exe/PooledActor.hbm.xml" />
+		<mapping
+			resource="org/jbpm/taskmgmt/exe/SwimlaneInstance.hbm.xml" />
+
+		<!-- scheduler.exe mapping files -->
+		<mapping resource="org/jbpm/scheduler/exe/Timer.hbm.xml" />
+
+		<!-- logging mapping files -->
+		<mapping resource="org/jbpm/logging/log/ProcessLog.hbm.xml" />
+		<mapping resource="org/jbpm/logging/log/MessageLog.hbm.xml" />
+		<mapping resource="org/jbpm/logging/log/CompositeLog.hbm.xml" />
+		<mapping resource="org/jbpm/graph/log/ActionLog.hbm.xml" />
+		<mapping resource="org/jbpm/graph/log/NodeLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/graph/log/ProcessInstanceCreateLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/graph/log/ProcessInstanceEndLog.hbm.xml" />
+		<mapping resource="org/jbpm/graph/log/ProcessStateLog.hbm.xml" />
+		<mapping resource="org/jbpm/graph/log/SignalLog.hbm.xml" />
+		<mapping resource="org/jbpm/graph/log/TokenCreateLog.hbm.xml" />
+		<mapping resource="org/jbpm/graph/log/TokenEndLog.hbm.xml" />
+		<mapping resource="org/jbpm/graph/log/TransitionLog.hbm.xml" />
+		<mapping resource="org/jbpm/context/log/VariableLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/log/VariableCreateLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/log/VariableDeleteLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/log/VariableUpdateLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/log/variableinstance/ByteArrayUpdateLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/log/variableinstance/DateUpdateLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/log/variableinstance/DoubleUpdateLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/log/variableinstance/HibernateLongUpdateLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/log/variableinstance/HibernateStringUpdateLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/log/variableinstance/LongUpdateLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/context/log/variableinstance/StringUpdateLog.hbm.xml" />
+		<mapping resource="org/jbpm/taskmgmt/log/TaskLog.hbm.xml" />
+		<mapping resource="org/jbpm/taskmgmt/log/TaskCreateLog.hbm.xml" />
+		<mapping resource="org/jbpm/taskmgmt/log/TaskAssignLog.hbm.xml" />
+		<mapping resource="org/jbpm/taskmgmt/log/TaskEndLog.hbm.xml" />
+		<mapping resource="org/jbpm/taskmgmt/log/SwimlaneLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/taskmgmt/log/SwimlaneCreateLog.hbm.xml" />
+		<mapping
+			resource="org/jbpm/taskmgmt/log/SwimlaneAssignLog.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/ContractFileinfo/ContractFileinfo.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/servicingcontractmaster/ServicingContractMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/servicingcontractdetail/ServicingContractDetail.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/servicingcontractquotemaster/ServicingContractQuoteMaster.hbm.xml" />
+		<mapping
+			resource="com/gzunicorn/hibernate/engcontractmanager/servicingcontractquotedetail/ServicingContractQuoteDetail.hbm.xml" />
+
+		<!-- mapping resource="demo/domain/TbBaoxiao.hbm.xml" />
+			<mapping resource="demo/domain/TbApprove.hbm.xml" />
+			<mapping resource="demo/domain/TbBaoxiaoItem.hbm.xml" />
+			<mapping resource="demo/domain/TbUser.hbm.xml" /-->
+
+	</session-factory>
+</hibernate-configuration>
